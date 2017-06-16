@@ -2,6 +2,8 @@ import React from "react";
 import {BrowserRouter as Router, Link, Route} from "react-router-dom";
 
 import Stations from "./Stations/Stations";
+import Home from "./Home/Home";
+
 import "./App.css";
 
 class App extends React.Component {
@@ -15,7 +17,8 @@ class App extends React.Component {
               <Link to="/stations">Stations</Link>
             </nav>
           </header>
-          
+
+          <Route path="/" exact component={Home} />
           <Route path="/stations" component={Stations} />
         </div>
       </Router>
