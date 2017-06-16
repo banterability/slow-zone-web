@@ -1,4 +1,6 @@
 import React from "react";
+
+import {StationRequest} from "../requests";
 import Station from "./Station";
 
 class Stations extends React.Component {
@@ -8,7 +10,7 @@ class Stations extends React.Component {
   };
 
   fetchStations = () =>
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/stations`)
+    fetch(new StationRequest())
       .then(res => res.json())
       .then(json => json.data)
       .then(stations => this.setState({stations, loading: false}));
