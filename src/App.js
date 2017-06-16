@@ -1,5 +1,5 @@
 import React from "react";
-import {BrowserRouter as Router, Link, Route} from "react-router-dom";
+import {BrowserRouter as Router, NavLink, Route} from "react-router-dom";
 
 import Stations from "./Stations/Stations";
 import Home from "./Home/Home";
@@ -13,8 +13,8 @@ class App extends React.Component {
         <div>
           <header className="top-bar">
             <nav>
-              <Link to="/">Home</Link>
-              <Link to="/stations">Stations</Link>
+              <NavLink exact to="/">Home</NavLink>
+              <NavLink to="/stations">Stations</NavLink>
             </nav>
           </header>
 
