@@ -47,9 +47,7 @@ class Station extends React.Component {
     return (
       <div>
         <h3>{name}</h3>
-        <div>
-          {lines.map((line, index) => <Line key={index} line={line} />)}
-        </div>
+        <Lines lines={lines} />
         <ArrivalList arrivals={arrivals} />
       </div>
     );

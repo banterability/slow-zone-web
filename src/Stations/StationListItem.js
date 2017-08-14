@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Line from "./Line";
+import Lines from "./Lines";
 
 class StationListItem extends React.Component {
   render() {
@@ -10,9 +10,7 @@ class StationListItem extends React.Component {
     return (
       <Link to={url ? url : `/stations/${id}`}>
         <p>{name}</p>
-        <div>
-          {lines.map((line, index) => <Line key={index} line={line} />)}
-        </div>
+        <Lines lines={lines} />
       </Link>
     );
   }
