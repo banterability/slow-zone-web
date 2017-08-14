@@ -3,6 +3,7 @@ import {BrowserRouter as Router, NavLink, Route} from "react-router-dom";
 
 import Stations from "./Stations/Stations";
 import Home from "./Home/Home";
+import Recent from "./Recent/Recent";
 
 import "./App.css";
 
@@ -15,11 +16,13 @@ class App extends React.Component {
             <nav>
               <NavLink exact to="/">Home</NavLink>
               <NavLink to="/stations">Stations</NavLink>
+              <NavLink to="/recent">Recent</NavLink>
             </nav>
           </header>
 
           <Route path="/" exact component={Home} />
           <Route path="/stations" component={Stations} />
+          <Route path="/recent" component={Recent} />
         </div>
       </Router>
     );
