@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {StationRequest} from "../requests";
+import {pushStation} from "../store/MostRecentlyUsed";
 
 import ArrivalList from "./ArrivalList";
 import Line from "./Line";
@@ -29,6 +30,11 @@ class Station extends React.Component {
       .then(res => res.json())
       .then(json => json.data)
       .then(station => {
+        pushStation(station.id, {
+          lines: station.lines,
+          title: station.name,
+          pathname: window.location.pathname
+        });
         this.setState({station, loading: false});
       });
 
