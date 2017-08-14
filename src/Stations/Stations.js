@@ -1,34 +1,18 @@
 import React from "react";
+import {Route} from "react-router-dom";
 
-import {StationRequest} from "../requests";
 import Station from "./Station";
+import StationList from "./StationList";
 
 class Stations extends React.Component {
-  state = {
-    loading: true,
-    stations: []
-  };
-
-  fetchStations = () =>
-    fetch(new StationRequest())
-      .then(res => res.json())
-      .then(json => json.data)
-      .then(stations => this.setState({stations, loading: false}));
-
-  componentDidMount() {
-    this.fetchStations();
-  }
-
   render() {
+    const {match} = this.props;
+
     return (
       <div>
         <h2>Stations</h2>
-        {this.state.loading && <p>Loading</p>}
-        <ul>
-          {this.state.stations.map((station, index) =>
-            <li key={index}><Station {...station} /></li>
-          )}
-        </ul>
+        <Route path={match.url} exact component={StationList} />
+        <Route path={`${match.url}/:stationId`} component={Station} />
       </div>
     );
   }
