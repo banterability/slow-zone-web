@@ -5,7 +5,7 @@ import {StationRequest} from "../requests";
 import {pushStation} from "../store/MostRecentlyUsed";
 
 import ArrivalList from "./ArrivalList";
-import Line from "./Line";
+import Lines from "./Lines";
 
 class Station extends React.Component {
   state = {

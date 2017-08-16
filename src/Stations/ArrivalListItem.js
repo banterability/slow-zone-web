@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Line from "./Line";
+import Lines from "./Lines";
 
 class ArrivalListItem extends React.Component {
   static propTypes = {
@@ -17,7 +17,7 @@ class ArrivalListItem extends React.Component {
   render() {
     return (
       <li>
-        <Line line={this.props.line} />
+        <Lines lines={[this.props.line]} />
         <span>{this.props.etaMinutes}m – </span>
         <span>{this.props.etaString} – </span>
         <span>
