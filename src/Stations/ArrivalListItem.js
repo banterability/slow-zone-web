@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import Lines from "./Lines";
+import "./ArrivalListItem.css";
 
 class ArrivalListItem extends React.Component {
   static propTypes = {
@@ -16,16 +16,13 @@ class ArrivalListItem extends React.Component {
 
   render() {
     return (
-      <li>
-        <Lines lines={[this.props.line]} />
-        <span>{this.props.etaMinutes}m – </span>
-        <span>{this.props.etaString} – </span>
-        <span>
-          {this.props.destination}
+      <li className={`arrival-list-item cta-${this.props.line}`}>
+        <span className="arrival--eta">{this.props.etaMinutes}m</span>
+        <span className="arrival--headsign">{this.props.destination}</span>
+        <span className="arrival--time">
+          {this.props.etaString.replace(/\s([ap])\.m\./, "$1")}
         </span>
-        {this.props.approaching && "approaching!"}
-        {this.props.scheduled && "scheduled!"}
-        {this.props.delayed && "delayed!"}
+
       </li>
     );
   }

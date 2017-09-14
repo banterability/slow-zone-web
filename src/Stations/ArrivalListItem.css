@@ -1,0 +1,24 @@
+.arrival-list-item {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  align-items: center;
+  padding: 1em 0.5em;
+  font-weight: bold;
+  border-bottom: 3px solid white;
+}
+.arrival--eta {
+  font-size: 2em;
+  flex-basis: 20%;
+  font-weight: bold;
+}
+
+.arrival--headsign {
+  font-size: 1.1em;
+}
+
+.arrival--time {
+  font-size: 2em;
+  flex-basis: 20%;
+  text-align: right;
+}

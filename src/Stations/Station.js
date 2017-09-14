@@ -28,14 +28,13 @@ class Station extends React.Component {
       })
     )
       .then(res => res.json())
-      .then(json => json.data)
-      .then(station => {
+      .then(({station, arrivals}) => {
         pushStation(station.id, {
           lines: station.lines,
           title: station.name,
           pathname: window.location.pathname
         });
-        this.setState({station, loading: false});
+        this.setState({station, arrivals, loading: false});
       });
 
   componentDidMount() {
@@ -43,7 +42,7 @@ class Station extends React.Component {
   }
 
   _renderStation = () => {
-    const {station: {name, lines, arrivals}} = this.state;
+    const {station: {name, lines}, arrivals} = this.state;
     return (
       <div>
         <h3>{name}</h3>

@@ -12,7 +12,7 @@ class StationList extends React.Component {
   fetchStations = () =>
     fetch(new StationRequest())
       .then(res => res.json())
-      .then(json => json.data)
+      .then(json => json.stations)
       .then(stations => this.setState({stations, loading: false}));
 
   componentDidMount() {

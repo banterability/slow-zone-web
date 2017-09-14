@@ -2,6 +2,8 @@ import React from "react";
 
 import ArrivalListItem from "./ArrivalListItem";
 
+import "./ArrivalList.css";
+
 class ArrivalList extends React.Component {
   filterChildProps(item) {
     return {
@@ -19,7 +21,7 @@ class ArrivalList extends React.Component {
     return (
       <div>
         <h3>Arrivals</h3>
-        <ul>
+        <ul className="arrival-list">
           {this.props.arrivals.map((arrival, index) =>
             <ArrivalListItem key={index} {...this.filterChildProps(arrival)} />
           )}
