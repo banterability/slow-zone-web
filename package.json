@@ -10,7 +10,7 @@
   },
   "devDependencies": {
     "prettier": "1.7",
-    "react-scripts": "1.0.11"
+    "react-scripts": "1.0.13"
   },
   "now": {
     "alias": "slow-zone.now.sh",
