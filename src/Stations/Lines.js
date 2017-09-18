@@ -2,11 +2,12 @@ import React from "react";
 
 import "./Lines.css";
 
-const Lines = props =>
+const Lines = props => (
   <div className="lines">
-    {props.lines.map((line, index) =>
+    {props.lines.map((line, index) => (
       <div className={`line cta-${line}`} key={line} />
-    )}
-  </div>;
+    ))}
+  </div>
+);
 
 export default Lines;

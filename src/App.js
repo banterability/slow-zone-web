@@ -15,7 +15,9 @@ class App extends React.Component {
         <div>
           <header className="top-bar">
             <nav>
-              <NavLink exact to="/">Home</NavLink>
+              <NavLink exact to="/">
+                Home
+              </NavLink>
               <NavLink to="/stations">Stations</NavLink>
               <NavLink to="/nearby">Nearby</NavLink>
               <NavLink to="/recent">Recent</NavLink>

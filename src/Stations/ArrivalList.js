@@ -22,9 +22,9 @@ class ArrivalList extends React.Component {
       <div>
         <h3>Arrivals</h3>
         <ul className="arrival-list">
-          {this.props.arrivals.map((arrival, index) =>
+          {this.props.arrivals.map((arrival, index) => (
             <ArrivalListItem key={index} {...this.filterChildProps(arrival)} />
-          )}
+          ))}
         </ul>
       </div>
     );

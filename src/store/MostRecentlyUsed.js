@@ -15,10 +15,13 @@ class MostRecentlyUsed {
   }
 
   get() {
-    return this.list.slice().reverse().map(item => {
-      const {key, ...values} = item;
-      return values;
-    });
+    return this.list
+      .slice()
+      .reverse()
+      .map(item => {
+        const {key, ...values} = item;
+        return values;
+      });
   }
 
   toJSON() {

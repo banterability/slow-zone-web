@@ -22,7 +22,6 @@ class ArrivalListItem extends React.Component {
         <span className="arrival--time">
           {this.props.etaString.replace(/\s([ap])\.m\./, "$1")}
         </span>
-
       </li>
     );
   }

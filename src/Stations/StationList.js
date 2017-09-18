@@ -24,9 +24,11 @@ class StationList extends React.Component {
       <div>
         {this.state.loading && <p>Loading</p>}
         <ul>
-          {this.state.stations.map((station, index) =>
-            <li key={index}><StationListItem {...station} /></li>
-          )}
+          {this.state.stations.map((station, index) => (
+            <li key={index}>
+              <StationListItem {...station} />
+            </li>
+          ))}
         </ul>
       </div>
     );

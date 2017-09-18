@@ -12,11 +12,11 @@ class Recent extends React.Component {
       <div>
         <h3>Recent Stations</h3>
         <ul>
-          {recentStations.map(({pathname, title, lines}, index) =>
+          {recentStations.map(({pathname, title, lines}, index) => (
             <li key={index}>
               <StationListItem name={title} lines={lines} url={pathname} />
             </li>
-          )}
+          ))}
         </ul>
       </div>
     );

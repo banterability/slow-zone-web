@@ -50,14 +50,15 @@ class Nearby extends React.Component {
         <h2>Nearby</h2>
         {this.state.locationLoading && <p>Loading location</p>}
         {this.state.stationsLoading && <p>Loading stations</p>}
-        {this.state.stations &&
+        {this.state.stations && (
           <ul>
-            {this.state.stations.map((station, index) =>
+            {this.state.stations.map((station, index) => (
               <li key={index}>
                 <StationListItem {...station} />
               </li>
-            )}
-          </ul>}
+            ))}
+          </ul>
+        )}
       </div>
     );
   }
