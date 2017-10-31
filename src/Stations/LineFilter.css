@@ -1,0 +1,16 @@
+.line-filter {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.line-filter__line {
+  cursor: pointer;
+  width: 2em;
+  height: 2em;
+}
+
+.line-filter__line--active {
+  box-shadow: 0 0 2px 2px white inset;
+}
