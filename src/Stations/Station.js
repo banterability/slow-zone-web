@@ -10,7 +10,8 @@ import Lines from "./Lines";
 class Station extends React.Component {
   state = {
     loading: true,
-    station: {}
+    station: {},
+    arrivals: []
   };
 
   static propTypes = {
