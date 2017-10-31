@@ -1,8 +1,13 @@
+// @flow
 import React from "react";
 
 import "./Lines.css";
 
-const Lines = props => (
+type Props = {
+  lines: Array<number>
+};
+
+const Lines = (props: Props) => (
   <div className="lines">
     {props.lines.map((line, index) => (
       <div className={`line cta-${line}`} key={line} />
