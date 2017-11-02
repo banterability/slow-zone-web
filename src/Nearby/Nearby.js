@@ -41,15 +41,19 @@ class Nearby extends React.Component {
       .then(res => res.json())
       .then(json => json.stations)
       .then(stations => {
+        if (this.unmounted) {
+          return false;
+        }
         this.setState({stations, loadingStations: false});
       });
+  };
 
   render() {
     return (
       <div>
         <h2>Nearby</h2>
-        {this.state.locationLoading && <p>Loading location</p>}
-        {this.state.stationsLoading && <p>Loading stations</p>}
+        {this.state.loadingLocation && <p>Loading location...</p>}
+        {this.state.loadingStations && <p>Loading stations...</p>}
         {this.state.stations && (
           <ul>
             {this.state.stations.map((station, index) => (
