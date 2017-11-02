@@ -1,6 +1,6 @@
 import React from "react";
 
-import {getRecentStations} from "../store/MostRecentlyUsed";
+import {getRecentStations} from "../store/RecentStations";
 
 import StationListItem from "../Stations/StationListItem";
 

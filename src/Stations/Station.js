@@ -2,16 +2,16 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import {StationRequest} from "../requests";
-import {pushStation} from "../store/MostRecentlyUsed";
+import {pushStation} from "../store/RecentStations";
 
 import ArrivalList from "./ArrivalList";
 import Lines from "./Lines";
 
 class Station extends React.Component {
   state = {
+    arrivals: [],
     loading: true,
-    station: {},
-    arrivals: []
+    station: {}
   };
 
   static propTypes = {

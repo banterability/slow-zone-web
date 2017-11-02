@@ -1,21 +1,27 @@
-const keyName = "slowzone:recent";
+/* @flow */
 
 class MostRecentlyUsed {
-  constructor(list = []) {
-    this.list = list;
+  data: Array<mixed>;
+  storageKey: string;
+
+  constructor(storageKey: string) {
+    this.storageKey = storageKey;
   }
 
-  push(key, item) {
-    const newItem = {...item, key};
-    const filteredList = this.list.filter(entry => entry.key !== key);
+  _fetch = () => {
+    this.data = JSON.parse(
+      window.localStorage.getItem(this.storageKey) || "[]"
+    );
+  };
 
-    filteredList.push(newItem);
-    this.list = filteredList;
-    return this.list;
-  }
+  _persist = () => {
+    window.localStorage.setItem(this.storageKey, JSON.stringify(this.data));
+  };
 
   get() {
-    return this.list
+    this._fetch();
+
+    return this.data
       .slice()
       .reverse()
       .map(item => {
@@ -24,21 +30,19 @@ class MostRecentlyUsed {
       });
   }
 
-  toJSON() {
-    return this.list;
+  push(key: string, item: any) {
+    this._fetch();
+
+    const newItem = {...item, key};
+    const filteredList = this.data.filter(entry => entry.key !== key);
+
+    filteredList.push(newItem);
+    this.data = filteredList;
+
+    this._persist();
+
+    return this.data;
   }
 }
 
-export const getRecentStations = () => {
-  const data = window.localStorage.getItem(keyName) || "[]";
-  return new MostRecentlyUsed(JSON.parse(data)).get();
-};
-
-export const pushStation = (stationId, station) => {
-  const data = window.localStorage.getItem(keyName) || "[]";
-  const list = new MostRecentlyUsed(JSON.parse(data));
-
-  list.push(stationId, station);
-
-  window.localStorage.setItem(keyName, JSON.stringify(list));
-};
+export default MostRecentlyUsed;
