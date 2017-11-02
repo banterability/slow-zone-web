@@ -30,6 +30,9 @@ class LineFilter extends React.Component<Props, State> {
   };
 
   render() {
+    if (this.props.lines.length < 2) {
+      return null;
+    }
     return (
       <div>
         <h3>Filter by Line</h3>
