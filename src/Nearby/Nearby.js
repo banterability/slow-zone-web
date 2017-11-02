@@ -31,7 +31,7 @@ class Nearby extends React.Component {
       );
     });
 
-  fetchNearbyStations = () =>
+  fetchNearbyStations = () => {
     fetch(
       new StationRequest({
         url: `/nearby?lat=${this.state.location.latitude}&lng=${this.state
