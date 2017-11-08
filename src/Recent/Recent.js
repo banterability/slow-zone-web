@@ -1,22 +1,24 @@
+/* @flow */
+
 import React from "react";
 
-import {getRecentStations} from "../store/RecentStations";
-
 import StationListItem from "../Stations/StationListItem";
+import {getRecentStations} from "../store/RecentStations";
+import type {RecentStation} from "../types";
 
-class Recent extends React.Component {
+class Recent extends React.Component<{}> {
   render() {
-    const recentStations = getRecentStations();
-
     return (
       <div>
         <h3>Recent Stations</h3>
         <ul>
-          {recentStations.map(({pathname, title, lines}, index) => (
-            <li key={index}>
-              <StationListItem name={title} lines={lines} url={pathname} />
-            </li>
-          ))}
+          {getRecentStations().map(
+            ({pathname, title, lines}: RecentStation, index: number) => (
+              <li key={index}>
+                <StationListItem name={title} lines={lines} url={pathname} />
+              </li>
+            )
+          )}
         </ul>
       </div>
     );
