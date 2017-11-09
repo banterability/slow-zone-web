@@ -1,21 +1,37 @@
+/* @flow */
+
 import React from "react";
 
 import {StationRequest} from "../requests";
 import StationListItem from "../Stations/StationListItem";
+import type {Location, Station} from "../types";
 
-class Nearby extends React.Component {
+type State = {
+  loadingLocation: boolean,
+  loadingStations: boolean,
+  location: Location,
+  stations: Array<Station>
+};
+
+class Nearby extends React.Component<{}, State> {
   state = {
     loadingLocation: true,
     loadingStations: false,
-    location: null,
+    location: {},
     stations: []
   };
+
+  unmounted = false;
 
   componentDidMount() {
     this.fetchLocation().then(this.fetchNearbyStations);
   }
 
-  fetchLocation = () =>
+  componentWillUnmount() {
+    this.unmounted = true;
+  }
+
+  fetchLocation = (): Promise<any> =>
     new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         position => {
@@ -32,10 +48,11 @@ class Nearby extends React.Component {
     });
 
   fetchNearbyStations = () => {
+    const {location: {latitude, longitude}} = this.state;
+
     fetch(
       new StationRequest({
-        url: `/nearby?lat=${this.state.location.latitude}&lng=${this.state
-          .location.longitude}`
+        url: `/nearby?lat=${latitude}&lng=${longitude}`
       })
     )
       .then(res => res.json())
