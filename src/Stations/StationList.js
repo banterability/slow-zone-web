@@ -6,6 +6,8 @@ import {lines as ALL_LINES} from "./constants";
 import LineFilter from "./LineFilter";
 import StationListItem from "./StationListItem";
 
+import "./StationList.css";
+
 class StationList extends React.Component {
   state = {
     loading: true,
@@ -50,7 +52,7 @@ class StationList extends React.Component {
           onClearFilter={this.clearFilterByLine}
           onFilter={this.filterByLine}
         />
-        <ul>
+        <ul className="station-list">
           {this.state.filteredStations.map((station, index) => (
             <li key={index}>
               <StationListItem {...station} />

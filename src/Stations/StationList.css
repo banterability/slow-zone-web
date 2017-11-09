@@ -1,0 +1,12 @@
+.station-list {
+  list-style: none;
+  padding: 0;
+}
+
+.station-list li {
+  border-bottom: 2px solid rgb(86, 90, 92);
+}
+
+.station-list li:first-child {
+  border-top: 2px solid rgb(86, 90, 92);
+}
