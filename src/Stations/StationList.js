@@ -2,8 +2,7 @@ import React from "react";
 
 import {StationRequest} from "../requests";
 
-import {lines as ALL_LINES} from "./constants";
-import LineFilter from "./LineFilter";
+import {LineFilter} from "./Filters";
 import StationListItem from "./StationListItem";
 
 import "./StationList.css";
@@ -48,8 +47,7 @@ class StationList extends React.Component {
       <div>
         {this.state.loading && <p>Loading</p>}
         <LineFilter
-          lines={ALL_LINES}
-          onClearFilter={this.clearFilterByLine}
+          onReset={this.clearFilterByLine}
           onFilter={this.filterByLine}
         />
         <ul className="station-list">

@@ -1,0 +1,10 @@
+.filter {
+  align-items: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.filter--active {
+  box-shadow: 0 0 2px 2px white inset;
+}

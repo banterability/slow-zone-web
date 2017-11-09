@@ -2,7 +2,7 @@ import React from "react";
 import unique from "array-unique";
 
 import ArrivalListItem from "./ArrivalListItem";
-import LineFilter from "./LineFilter";
+import {LineFilter} from "./Filters";
 
 import "./ArrivalList.css";
 
@@ -67,7 +67,7 @@ class ArrivalList extends React.Component {
 
         <LineFilter
           lines={this.getAllLines().map(line => line.toLowerCase())}
-          onClearFilter={this.clearFilterByLine}
+          onReset={this.clearFilterByLine}
           onFilter={this.filterByLine}
         />
 
