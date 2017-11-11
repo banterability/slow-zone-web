@@ -1,5 +1,7 @@
 {
   "name": "slow-zone-web",
+  "description": "Mobile-friendly CTA arrival data",
+  "author": "Jeff Long <hello@banterability.com>",
   "license": "MIT",
   "version": "0.1.0",
   "private": true,
@@ -31,5 +33,13 @@
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.js'",
     "flow": "flow"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/banterability/slow-zone-web.git"
+  },
+  "bugs": {
+    "url": "https://github.com/banterability/slow-zone-web/issues"
+  },
+  "homepage": "https://github.com/banterability/slow-zone-web#readme"
 }
