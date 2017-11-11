@@ -1,42 +1,37 @@
-import React from "react";
+/* @flow */
 
-import {StationRequest} from "../requests";
+import React from "react";
 
 import {LineFilter} from "./Filters";
 import StationListItem from "./StationListItem";
+import type {Line, Station} from "../types";
 
 import "./StationList.css";
 
-class StationList extends React.Component {
+type Props = {
+  stations: Array<Station>
+};
+
+type State = {
+  filteredStations: Array<Station>
+};
+
+class StationList extends React.Component<Props, State> {
   state = {
-    loading: true,
-    stations: [],
-    filteredStations: []
+    filteredStations: this.props.stations
   };
 
-  fetchStations = () =>
-    fetch(new StationRequest())
-      .then(res => res.json())
-      .then(json => json.stations)
-      .then(stations =>
-        this.setState({
-          stations,
-          filteredStations: stations,
-          loading: false
-        })
-      );
-
-  componentDidMount() {
-    this.fetchStations();
+  componentWillReceiveProps(newProps: Props) {
+    this.setState({filteredStations: newProps.stations});
   }
 
   clearFilterByLine = () => {
-    this.setState({filteredStations: this.state.stations});
+    this.setState({filteredStations: this.props.stations});
   };
 
-  filterByLine = line => {
+  filterByLine = (line: Line) => {
     this.setState({
-      filteredStations: this.state.stations.filter(station =>
+      filteredStations: this.props.stations.filter(station =>
         station.lines.includes(line)
       )
     });
@@ -45,14 +40,13 @@ class StationList extends React.Component {
   render() {
     return (
       <div>
-        {this.state.loading && <p>Loading</p>}
         <LineFilter
           onReset={this.clearFilterByLine}
           onFilter={this.filterByLine}
         />
         <ul className="station-list">
-          {this.state.filteredStations.map((station, index) => (
-            <li key={index}>
+          {this.state.filteredStations.map((station: Station) => (
+            <li key={station.id}>
               <StationListItem {...station} />
             </li>
           ))}

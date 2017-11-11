@@ -2,7 +2,7 @@ import React from "react";
 import {Route} from "react-router-dom";
 
 import Station from "./Station";
-import StationList from "./StationList";
+import StationListFetch from "./StationListFetch";
 
 class Stations extends React.Component {
   render() {
@@ -11,7 +11,7 @@ class Stations extends React.Component {
     return (
       <div>
         <h2>Stations</h2>
-        <Route path={match.url} exact component={StationList} />
+        <Route path={match.url} exact component={StationListFetch} />
         <Route path={`${match.url}/:stationId`} component={Station} />
       </div>
     );
