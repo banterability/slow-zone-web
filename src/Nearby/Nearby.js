@@ -3,7 +3,7 @@
 import React from "react";
 
 import {StationRequest} from "../requests";
-import StationListItem from "../Stations/StationListItem";
+import StationList from "../Stations/StationList";
 import type {Location, Station} from "../types";
 
 type State = {
@@ -71,15 +71,9 @@ class Nearby extends React.Component<{}, State> {
         <h2>Nearby</h2>
         {this.state.loadingLocation && <p>Loading location...</p>}
         {this.state.loadingStations && <p>Loading stations...</p>}
-        {this.state.stations && (
-          <ul>
-            {this.state.stations.map((station, index) => (
-              <li key={index}>
-                <StationListItem {...station} />
-              </li>
-            ))}
-          </ul>
-        )}
+        {this.state.stations.length ? (
+          <StationList stations={this.state.stations} />
+        ) : null}
       </div>
     );
   }
