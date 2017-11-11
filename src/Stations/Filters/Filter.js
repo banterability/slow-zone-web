@@ -47,12 +47,12 @@ class Filter extends React.Component<Props, State> {
               <li
                 className={classNames(
                   "filter",
-                  `filter__${description}`,
-                  `filter__${description}__${option}`,
+                  `filter--${description}`,
+                  `filter--${description}--${option}`,
                   {
                     "filter--active": isActive,
-                    [`filter__${description}--active`]: isActive,
-                    [`filter__${description}__${option}--active`]: isActive
+                    [`filter--${description}--active`]: isActive,
+                    [`filter--${description}--${option}--active`]: isActive
                   }
                 )}
                 data-attr={option}
