@@ -1,13 +1,13 @@
 .station-list__item {
-  display: flex;
   align-items: center;
+  cursor: pointer;
+  display: flex;
   justify-content: space-between;
   padding: 0.5em;
   text-decoration: none;
-  cursor: pointer;
 }
 
 .station-list__item__station-name {
-  font-size: 1.1em;
   color: #222;
+  font-size: 1.1em;
 }

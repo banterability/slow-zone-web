@@ -1,15 +1,15 @@
 .arrival-list-item {
+  align-items: center;
+  border-bottom: 3px solid white;
   display: flex;
+  font-weight: bold;
   justify-content: space-between;
   list-style: none;
-  align-items: center;
   padding: 1em 0.5em;
-  font-weight: bold;
-  border-bottom: 3px solid white;
 }
 .arrival--eta {
-  font-size: 2em;
   flex-basis: 20%;
+  font-size: 2em;
   font-weight: bold;
 }
 
@@ -18,7 +18,7 @@
 }
 
 .arrival--time {
-  font-size: 2em;
   flex-basis: 20%;
+  font-size: 2em;
   text-align: right;
 }
