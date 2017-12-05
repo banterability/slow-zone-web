@@ -1,10 +1,18 @@
+//@flow
 import React from "react";
 
 import Filter from "./Filter";
 import {lines as ALL_LINES} from "../constants";
 import "./LineFilter.css";
 
-class LineFilter extends React.Component {
+type Props = {
+  description: string,
+  lines: Array<string>,
+  onFilter: Function,
+  onReset: Function
+};
+
+class LineFilter extends React.Component<Props> {
   static defaultProps = {
     lines: ALL_LINES
   };
@@ -20,4 +28,5 @@ class LineFilter extends React.Component {
     );
   }
 }
+
 export default LineFilter;
