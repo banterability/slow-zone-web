@@ -15,8 +15,8 @@
     "serve": "latest"
   },
   "devDependencies": {
-    "prettier": "^1.7.4",
-    "react-scripts": "1.0.14"
+    "prettier": "^1.10.0",
+    "react-scripts": "1.1.0"
   },
   "now": {
     "alias": "slow-zone.now.sh",
