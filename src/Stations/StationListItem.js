@@ -1,7 +1,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Distance from "./Distance";
+import Distance from "../Components/Distance";
 import Lines from "./Lines";
 
 import "./StationListItem.css";
