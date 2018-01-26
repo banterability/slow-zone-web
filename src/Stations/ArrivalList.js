@@ -65,11 +65,15 @@ class ArrivalList extends React.Component {
       <div>
         <h3>Arrivals</h3>
 
-        <LineFilter
-          lines={this.getAllLines().map(line => line.toLowerCase())}
-          onReset={this.clearFilterByLine}
-          onFilter={this.filterByLine}
-        />
+        <div>
+          <h4>Filters</h4>
+
+          <LineFilter
+            lines={this.getAllLines().map(line => line.toLowerCase())}
+            onReset={this.clearFilterByLine}
+            onFilter={this.filterByLine}
+          />
+        </div>
 
         <ul className="arrival-list">
           {this.filteredArrivals().map((arrival, index) => (
