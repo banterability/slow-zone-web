@@ -2,12 +2,13 @@ import React from "react";
 import unique from "array-unique";
 
 import ArrivalListItem from "./ArrivalListItem";
-import {LineFilter} from "./Filters";
+import {DirectionFilter, LineFilter} from "./Filters";
 
 import "./ArrivalList.css";
 
 class ArrivalList extends React.Component {
   state = {
+    filterByHeadsign: null,
     filterByLine: null
   };
 
@@ -43,8 +44,6 @@ class ArrivalList extends React.Component {
     return unique(this.props.arrivals.map(arrival => arrival.destination.name));
   }
 
-  filterByHeadsign() {}
-
   filteredArrivals() {
     let arrivals = this.props.arrivals;
 
@@ -54,11 +53,22 @@ class ArrivalList extends React.Component {
       );
     }
 
+    if (this.state.filterByHeadsign) {
+      arrivals = arrivals.filter(
+        arrival => arrival.destination.name === this.state.filterByHeadsign
+      );
+    }
+
     return arrivals;
   }
 
   clearFilterByLine = () => this.setState({filterByLine: null});
   filterByLine = line => this.setState({filterByLine: line});
+
+  clearFilterByHeadsign = () => this.setState({filterByHeadsign: null});
+  filterByHeadsign = headsign => {
+    this.setState({filterByHeadsign: headsign});
+  };
 
   render() {
     return (
@@ -72,6 +82,12 @@ class ArrivalList extends React.Component {
             lines={this.getAllLines().map(line => line.toLowerCase())}
             onReset={this.clearFilterByLine}
             onFilter={this.filterByLine}
+          />
+
+          <DirectionFilter
+            directions={this.getAllHeadsigns()}
+            onReset={this.clearFilterByHeadsign}
+            onFilter={this.filterByHeadsign}
           />
         </div>
 
