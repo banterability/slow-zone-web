@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import type {Distance} from "./Distance";
 import type {Line} from "./Line";

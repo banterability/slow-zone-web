@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import {apiBaseUrl} from "../config";
 

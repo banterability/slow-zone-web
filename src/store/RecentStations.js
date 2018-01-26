@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 import MostRecentlyUsed from "./MostRecentlyUsed";
 import {STATION_LIST_KEY} from "./constants";

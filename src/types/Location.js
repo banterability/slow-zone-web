@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 export type Location = {
   latitude: number,

@@ -1,4 +1,4 @@
-/* @flow */
+// @flow
 
 class MostRecentlyUsed {
   data: Array<mixed>;
