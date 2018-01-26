@@ -1,5 +1,6 @@
 .filter {
   align-items: center;
+  cursor: pointer;
   display: flex;
   list-style: none;
   padding: 0;

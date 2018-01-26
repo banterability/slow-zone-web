@@ -58,7 +58,9 @@ class Filter extends React.Component<Props, State> {
                 data-attr={option}
                 key={option}
                 onClick={this.handleFilter}
-              />
+              >
+                {option}
+              </li>
             );
           })}
           <li>
