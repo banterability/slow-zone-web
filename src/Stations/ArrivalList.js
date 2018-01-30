@@ -1,12 +1,24 @@
+// @flow
 import React from "react";
 import unique from "array-unique";
 
 import ArrivalListItem from "./ArrivalListItem";
 import {DirectionFilter, LineFilter} from "./Filters";
 
+import type {Arrival as ArrivalType} from "../types";
+
 import "./ArrivalList.css";
 
-class ArrivalList extends React.Component {
+type Props = {
+  arrivals: Array<ArrivalType>
+};
+
+type State = {
+  filterByHeadsign: ?string,
+  filterByLine: ?string
+};
+
+class ArrivalList extends React.Component<Props, State> {
   state = {
     filterByHeadsign: null,
     filterByLine: null
@@ -15,36 +27,20 @@ class ArrivalList extends React.Component {
   mounted = true;
 
   componentWillUnmount() {
-    this.mouted = false;
+    this.mounted = false;
   }
 
-  filterChildProps(item) {
-    return {
-      destination: item.destination.name,
-      etaString: item.prediction.arrivalString,
-      etaMinutes: item.prediction.arrivalMinutes,
-      approaching: item.status.approaching,
-      delayed: item.status.delayed,
-      scheduled: item.status.scheduled,
-      line: item.route.class
-    };
-  }
-
-  getAllDestinations() {
+  getAllLines(): Array<string> {
     return unique(
-      this.props.arrivals.map(arrival => arrival.station.stop.description)
+      this.props.arrivals.map(arrival => arrival.route.name.toLowerCase())
     );
   }
 
-  getAllLines() {
-    return unique(this.props.arrivals.map(arrival => arrival.route.name));
-  }
-
-  getAllHeadsigns() {
+  getAllHeadsigns(): Array<string> {
     return unique(this.props.arrivals.map(arrival => arrival.destination.name));
   }
 
-  filteredArrivals() {
+  filteredArrivals(): Array<ArrivalType> {
     let arrivals = this.props.arrivals;
 
     if (this.state.filterByLine) {
@@ -62,13 +58,14 @@ class ArrivalList extends React.Component {
     return arrivals;
   }
 
-  clearFilterByLine = () => this.setState({filterByLine: null});
-  filterByLine = line => this.setState({filterByLine: line});
+  clearFilterByHeadsign = (): void => this.setState({filterByHeadsign: null});
 
-  clearFilterByHeadsign = () => this.setState({filterByHeadsign: null});
-  filterByHeadsign = headsign => {
+  clearFilterByLine = (): void => this.setState({filterByLine: null});
+
+  filterByHeadsign = (headsign: string): void =>
     this.setState({filterByHeadsign: headsign});
-  };
+
+  filterByLine = (line: string): void => this.setState({filterByLine: line});
 
   render() {
     return (
@@ -79,7 +76,7 @@ class ArrivalList extends React.Component {
           <h4>Filters</h4>
 
           <LineFilter
-            lines={this.getAllLines().map(line => line.toLowerCase())}
+            lines={this.getAllLines()}
             onReset={this.clearFilterByLine}
             onFilter={this.filterByLine}
           />
@@ -93,7 +90,7 @@ class ArrivalList extends React.Component {
 
         <ul className="arrival-list">
           {this.filteredArrivals().map((arrival, index) => (
-            <ArrivalListItem key={index} {...this.filterChildProps(arrival)} />
+            <ArrivalListItem key={index} {...arrival} />
           ))}
         </ul>
       </div>
