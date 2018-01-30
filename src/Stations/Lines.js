@@ -4,7 +4,7 @@ import React from "react";
 import "./Lines.css";
 
 type Props = {
-  lines: Array<number>
+  lines: Array<string>
 };
 
 const Lines = (props: Props) => (
