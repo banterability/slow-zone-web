@@ -1,3 +1,4 @@
+// @flow
 import React from "react";
 
 const Home = () => <h2>Slow Zone</h2>;
