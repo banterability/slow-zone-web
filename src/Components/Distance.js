@@ -2,7 +2,7 @@
 
 import React from "react";
 
-import {Distance as DistanceType} from "../types";
+import type {Distance as DistanceType} from "../types";
 
 class Distance extends React.Component<DistanceType> {
   render() {
