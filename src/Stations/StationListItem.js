@@ -1,12 +1,15 @@
+// @flow
 import React from "react";
 import {Link} from "react-router-dom";
 
 import Distance from "../Components/Distance";
 import Lines from "./Lines";
 
+import type {Station as StationType} from "../types";
+
 import "./StationListItem.css";
 
-class StationListItem extends React.Component {
+class StationListItem extends React.Component<StationType> {
   render() {
     const {id, name, lines, url, distance} = this.props;
 
