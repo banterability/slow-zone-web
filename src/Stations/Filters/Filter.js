@@ -1,5 +1,4 @@
 //@flow
-
 import React from "react";
 import classNames from "classnames";
 
@@ -12,10 +11,12 @@ type Props = {
   options: Array<string>
 };
 
-type State = {activeFilter: string};
+type State = {
+  activeFilter: ?string
+};
 
 class Filter extends React.Component<Props, State> {
-  state = {activeFilter: ""};
+  state = {activeFilter: null};
 
   clearFilter = () => {
     this.setState({activeFilter: ""}, () => this.props.onReset());
