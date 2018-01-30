@@ -1,5 +1,4 @@
 // @flow
-
 import type {Distance} from "./Distance";
 import type {Line} from "./Line";
 import type {Location} from "./Location";

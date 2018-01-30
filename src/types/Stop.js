@@ -1,5 +1,4 @@
 // @flow
-
 import type {Line} from "./Line";
 
 export type Stop = {
