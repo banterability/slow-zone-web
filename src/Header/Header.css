@@ -1,16 +1,16 @@
-.top-bar {
+.header {
   background-color: #222;
   color: white;
   padding: 20px 0;
 }
 
-.top-bar a {
+.header a {
   color: #ffc200;
   display: inline-block;
   margin-left: 1em;
 }
 
-.top-bar a.active {
+.header a.active {
   color: #ff9a00;
   font-weight: bold;
   text-decoration: none;
