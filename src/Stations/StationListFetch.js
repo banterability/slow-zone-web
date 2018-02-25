@@ -27,14 +27,10 @@ class StationListFetch extends React.Component {
   }
 
   render() {
-    return (
-      <div>
-        {this.state.loading ? (
-          <LoadingBar />
-        ) : (
-          <StationList stations={this.state.stations} />
-        )}
-      </div>
+    return this.state.loading ? (
+      <LoadingBar />
+    ) : (
+      <StationList stations={this.state.stations} />
     );
   }
 }
