@@ -1,6 +1,6 @@
 // @flow
 
-import React from "react";
+import React, {Fragment} from "react";
 
 import {StationRequest} from "../requests";
 import StationList from "../Stations/StationList";
@@ -67,14 +67,14 @@ class Nearby extends React.Component<{}, State> {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <h2>Nearby</h2>
         {this.state.loadingLocation && <p>Loading location...</p>}
         {this.state.loadingStations && <p>Loading stations...</p>}
         {this.state.stations.length ? (
           <StationList stations={this.state.stations} />
         ) : null}
-      </div>
+      </Fragment>
     );
   }
 }

@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, {Fragment} from "react";
 
 import {LineFilter} from "./Filters";
 import StationListItem from "./StationListItem";
@@ -38,7 +38,7 @@ class StationList extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <LineFilter
           onReset={this.clearFilterByLine}
           onFilter={this.filterByLine}
@@ -50,7 +50,7 @@ class StationList extends React.Component<Props, State> {
             </li>
           ))}
         </ul>
-      </div>
+      </Fragment>
     );
   }
 }

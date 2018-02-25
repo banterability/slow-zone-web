@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, {Fragment} from "react";
 import unique from "array-unique";
 
 import ArrivalListItem from "./ArrivalListItem";
@@ -69,7 +69,7 @@ class ArrivalList extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <Fragment>
         <h3>Arrivals</h3>
 
         <div>
@@ -93,7 +93,7 @@ class ArrivalList extends React.Component<Props, State> {
             <ArrivalListItem key={index} {...arrival} />
           ))}
         </ul>
-      </div>
+      </Fragment>
     );
   }
 }

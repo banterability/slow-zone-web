@@ -1,5 +1,5 @@
 //@flow
-import React from "react";
+import React, {Fragment} from "react";
 import classNames from "classnames";
 
 import "./Filter.css";
@@ -38,7 +38,7 @@ class Filter extends React.Component<Props, State> {
     }
 
     return (
-      <div>
+      <Fragment>
         <h3>{`Filter by ${description}`}</h3>
 
         <ul className="filter">
@@ -68,7 +68,7 @@ class Filter extends React.Component<Props, State> {
             <button onClick={this.clearFilter}>Reset</button>
           </li>
         </ul>
-      </div>
+      </Fragment>
     );
   }
 }
