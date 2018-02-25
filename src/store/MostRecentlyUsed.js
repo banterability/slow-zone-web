@@ -1,7 +1,7 @@
 // @flow
 
 class MostRecentlyUsed {
-  data: Array<mixed>;
+  data: Array<any>;
   storageKey: string;
 
   constructor(storageKey: string) {
