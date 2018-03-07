@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import Header from "./Header/Header";
@@ -11,12 +11,16 @@ class App extends React.Component {
   render() {
     return (
       <Router>
-        <Header />
+        <Fragment>
+          <Header />
 
-        <Route path="/" exact component={Home} />
-        <Route path="/stations" component={Stations} />
-        <Route path="/nearby" component={Nearby} />
-        <Route path="/recent" component={Recent} />
+          <main>
+            <Route path="/" exact component={Home} />
+            <Route path="/stations" component={Stations} />
+            <Route path="/nearby" component={Nearby} />
+            <Route path="/recent" component={Recent} />
+          </main>
+        </Fragment>
       </Router>
     );
   }
