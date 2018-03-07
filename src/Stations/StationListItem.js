@@ -26,7 +26,7 @@ class StationListItem extends React.Component<Props> {
   };
 
   render() {
-    const {id, name, lines, url, distance} = this.props;
+    const {name, lines, distance} = this.props;
 
     return (
       <Link className="station-list__item" to={this.stationUrl()}>
