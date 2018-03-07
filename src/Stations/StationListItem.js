@@ -11,18 +11,25 @@ import "./StationListItem.css";
 
 type Props = {
   distance?: DistanceType,
-  id: number,
+  id?: number,
   lines: Array<LineType>,
   name: string,
   url?: string
 };
 
 class StationListItem extends React.Component<Props> {
+  stationUrl = () => {
+    const {id, url} = this.props;
+
+    if (url) return url;
+    if (id) return `/stations/${id}`;
+  };
+
   render() {
     const {id, name, lines, url, distance} = this.props;
 
     return (
-      <Link className="station-list__item" to={url ? url : `/stations/${id}`}>
+      <Link className="station-list__item" to={this.stationUrl()}>
         <p className="station-list__item__station-name">{name}</p>
         {distance && (
           <div className="station-list__item__distance">
