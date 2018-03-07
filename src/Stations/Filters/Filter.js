@@ -22,6 +22,26 @@ class Filter extends React.Component<Props, State> {
     this.setState({activeFilter: ""}, () => this.props.onReset());
   };
 
+  filterClasses = ({
+    description,
+    option,
+    isActive
+  }: {
+    description: string,
+    option: string,
+    isActive: boolean
+  }) =>
+    classNames(
+      "filter",
+      `filter--${description}`,
+      `filter--${description}--${option}`,
+      {
+        "filter--active": isActive,
+        [`filter--${description}--active`]: isActive,
+        [`filter--${description}--${option}--active`]: isActive
+      }
+    );
+
   handleFilter = (ev: SyntheticEvent<HTMLElement>) => {
     const selectedFilter = ev.currentTarget.dataset.attr;
     this.setState({activeFilter: selectedFilter}, () =>
@@ -46,16 +66,7 @@ class Filter extends React.Component<Props, State> {
             const isActive = activeFilter === option;
             return (
               <li
-                className={classNames(
-                  "filter",
-                  `filter--${description}`,
-                  `filter--${description}--${option}`,
-                  {
-                    "filter--active": isActive,
-                    [`filter--${description}--active`]: isActive,
-                    [`filter--${description}--${option}--active`]: isActive
-                  }
-                )}
+                className={this.filterClasses({description, option, isActive})}
                 data-attr={option}
                 key={option}
                 onClick={this.handleFilter}
