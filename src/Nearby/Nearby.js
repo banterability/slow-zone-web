@@ -4,13 +4,13 @@ import React, {Fragment} from "react";
 
 import {StationRequest} from "../requests";
 import StationList from "../Stations/StationList";
-import type {Location, Station} from "../types";
+import type {Location as LocationType, Station as StationType} from "../types";
 
 type State = {
   loadingLocation: boolean,
   loadingStations: boolean,
-  location: Location,
-  stations: Array<Station>
+  location: LocationType,
+  stations: Array<StationType>
 };
 
 class Nearby extends React.Component<{}, State> {

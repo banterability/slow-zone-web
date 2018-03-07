@@ -5,11 +5,19 @@ import {Link} from "react-router-dom";
 import Distance from "../Components/Distance";
 import Lines from "./Lines";
 
-import type {Station as StationType} from "../types";
+import type {Line as LineType, Distance as DistanceType} from "../types";
 
 import "./StationListItem.css";
 
-class StationListItem extends React.Component<StationType> {
+type Props = {
+  distance?: DistanceType,
+  id: number,
+  lines: Array<LineType>,
+  name: string,
+  url?: string
+};
+
+class StationListItem extends React.Component<Props> {
   render() {
     const {id, name, lines, url, distance} = this.props;
 

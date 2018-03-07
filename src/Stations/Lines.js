@@ -1,10 +1,11 @@
 // @flow
 import React from "react";
+import type {Line as LineType} from "../types";
 
 import "./Lines.css";
 
 type Props = {
-  lines: Array<string>
+  lines: Array<LineType>
 };
 
 const Lines = (props: Props) => (
