@@ -20,10 +20,10 @@
   },
   "now": {
     "alias": "slow-zone.now.sh",
-    "name": "slow-zone",
     "env": {
       "NODE_ENV": "production"
-    }
+    },
+    "name": "slow-zone"
   },
   "scripts": {
     "start": "react-scripts start",
