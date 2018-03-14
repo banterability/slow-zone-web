@@ -4,20 +4,22 @@ import React, {Fragment} from "react";
 
 import {StationRequest} from "../requests";
 import StationList from "../Stations/StationList";
-import type {Location as LocationType, Station as StationType} from "../types";
+import type {Station as StationType} from "../types";
 
 type State = {
+  latitude: ?number,
   loadingLocation: boolean,
   loadingStations: boolean,
-  location: LocationType,
+  longitude: ?number,
   stations: Array<StationType>
 };
 
 class Nearby extends React.Component<{}, State> {
   state = {
+    latitude: undefined,
     loadingLocation: true,
     loadingStations: false,
-    location: {},
+    longitude: undefined,
     stations: []
   };
 
@@ -35,7 +37,8 @@ class Nearby extends React.Component<{}, State> {
     new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         position => {
-          this.setState({loadingLocation: false, location: position.coords});
+          const {latitude, longitude} = position.coords;
+          this.setState({loadingLocation: false, latitude, longitude});
           resolve();
         },
         err => reject(err),
@@ -48,21 +51,22 @@ class Nearby extends React.Component<{}, State> {
     });
 
   fetchNearbyStations = () => {
-    const {location: {latitude, longitude}} = this.state;
-
-    fetch(
-      new StationRequest({
-        url: `/nearby?lat=${latitude}&lng=${longitude}`
-      })
-    )
-      .then(res => res.json())
-      .then(json => json.stations)
-      .then(stations => {
-        if (this.unmounted) {
-          return false;
-        }
-        this.setState({stations, loadingStations: false});
-      });
+    const {latitude, longitude} = this.state;
+    if (latitude && longitude) {
+      fetch(
+        new StationRequest({
+          url: `/nearby?lat=${latitude}&lng=${longitude}`
+        })
+      )
+        .then(res => res.json())
+        .then(json => json.stations)
+        .then(stations => {
+          if (this.unmounted) {
+            return false;
+          }
+          this.setState({stations, loadingStations: false});
+        });
+    }
   };
 
   render() {
