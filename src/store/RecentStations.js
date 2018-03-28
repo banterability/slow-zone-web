@@ -1,5 +1,4 @@
 // @flow
-
 import MostRecentlyUsed from "./MostRecentlyUsed";
 import {STATION_LIST_KEY} from "./constants";
 import type {RecentStation} from "../types";
