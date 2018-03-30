@@ -6,22 +6,30 @@ import {StationRequest} from "../requests";
 import LoadingBar from "../Components/LoadingBar";
 import StationList from "./StationList";
 
-class StationListFetch extends React.Component {
+import type {Station as StationType} from "../types";
+
+type State = {
+  loading: boolean,
+  stations: Array<StationType>
+};
+
+class StationListFetch extends React.Component<{}, State> {
   state = {
     loading: true,
     stations: []
   };
 
-  fetchStations = () =>
+  fetchStations = (): void => {
     fetch(new StationRequest())
       .then(res => res.json())
       .then(json => json.stations)
-      .then(stations =>
+      .then((stations: Array<StationType>) =>
         this.setState({
           stations,
           loading: false
         })
       );
+  };
 
   componentDidMount() {
     this.fetchStations();
