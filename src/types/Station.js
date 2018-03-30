@@ -12,5 +12,6 @@ export type Station = {
   location: Location,
   stops: Array<Stop>,
   lines: Array<Line>,
-  accessible: boolean
+  accessible: boolean,
+  url: ?string
 };
