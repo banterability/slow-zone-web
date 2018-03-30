@@ -1,6 +1,5 @@
 // @flow
 import React from "react";
-import PropTypes from "prop-types";
 
 import {StationRequest} from "../requests";
 import {pushStation} from "../store/RecentStations";
@@ -8,19 +7,21 @@ import {pushStation} from "../store/RecentStations";
 import ArrivalList from "./ArrivalList";
 import Lines from "./Lines";
 
-class Station extends React.Component {
+import type {Match as MatchType} from "react-router";
+import type {Station as StationType, Arrival as ArrivalType} from "../types";
+
+type Props = {match: MatchType};
+type State = {
+  arrivals: Array<ArrivalType>,
+  loading: boolean,
+  station: StationType
+};
+
+class Station extends React.Component<Props, State> {
   state = {
     arrivals: [],
     loading: true,
     station: {}
-  };
-
-  static propTypes = {
-    match: PropTypes.shape({
-      params: PropTypes.shape({
-        stationId: PropTypes.string.isRequired
-      }).isRequired
-    }).isRequired
   };
 
   fetchStation = () =>
