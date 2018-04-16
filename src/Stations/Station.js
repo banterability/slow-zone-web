@@ -1,8 +1,8 @@
 // @flow
-import React from "react";
 
 import {StationRequest} from "../requests";
 import {pushStation} from "../store/RecentStations";
+import React, {Fragment} from "react";
 
 import ArrivalList from "./ArrivalList/ArrivalList";
 import Lines from "./Lines";
@@ -47,11 +47,11 @@ class Station extends React.Component<Props, State> {
   _renderStation = () => {
     const {station: {name, lines}, arrivals} = this.state;
     return (
-      <div>
+      <Fragment>
         <h3>{name}</h3>
         <Lines lines={lines} />
         <ArrivalList arrivals={arrivals} />
-      </div>
+      </Fragment>
     );
   };
 
