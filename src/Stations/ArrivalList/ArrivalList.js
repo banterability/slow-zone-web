@@ -3,9 +3,9 @@ import React, {Fragment} from "react";
 import unique from "array-unique";
 
 import ArrivalListItem from "./ArrivalListItem";
-import {DirectionFilter, LineFilter} from "./Filters";
+import {DirectionFilter, LineFilter} from "../Filters";
 
-import type {Arrival as ArrivalType} from "../types";
+import type {Arrival as ArrivalType} from "../../types";
 
 import "./ArrivalList.css";
 

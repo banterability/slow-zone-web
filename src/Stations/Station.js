@@ -4,7 +4,7 @@ import React from "react";
 import {StationRequest} from "../requests";
 import {pushStation} from "../store/RecentStations";
 
-import ArrivalList from "./ArrivalList";
+import ArrivalList from "./ArrivalList/ArrivalList";
 import Lines from "./Lines";
 
 import type {Match as MatchType} from "react-router";

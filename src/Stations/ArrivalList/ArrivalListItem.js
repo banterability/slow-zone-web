@@ -1,8 +1,8 @@
 // @flow
 import React, {Fragment} from "react";
 
-import FollowListFetch from "./Follow/FollowListFetch";
-import type {Arrival as ArrivalType} from "../types";
+import FollowListFetch from "../FollowList/FollowListFetch";
+import type {Arrival as ArrivalType} from "../../types";
 
 import "./ArrivalListItem.css";
 
@@ -15,7 +15,8 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
     showNextStops: false
   };
 
-  showNextStops = () => this.setState({showNextStops: true});
+  toggleNextStops = () =>
+    this.setState({showNextStops: !this.state.showNextStops});
 
   render() {
     const {
@@ -28,7 +29,7 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
       <Fragment>
         <li
           className={`arrival-list-item cta-${this.props.route.class}`}
-          onClick={this.showNextStops}
+          onClick={this.toggleNextStops}
         >
           <span className="arrival--eta">{arrivalMinutes}m</span>
           <span className="arrival--headsign">{name}</span>
