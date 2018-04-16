@@ -1,12 +1,12 @@
 // @flow
 import React from "react";
 
-import {StationRequest} from "../requests";
+import {StationRequest} from "../../requests";
 
-import LoadingBar from "../Components/LoadingBar";
+import LoadingBar from "../../Components/LoadingBar";
 import StationList from "./StationList";
 
-import type {Station as StationType} from "../types";
+import type {Station as StationType} from "../../types";
 
 type State = {
   loading: boolean,

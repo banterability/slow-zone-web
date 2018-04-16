@@ -2,10 +2,10 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import Distance from "../Components/Distance";
-import Lines from "./Lines";
+import Distance from "../../Components/Distance";
+import Lines from "../Lines";
 
-import type {Line as LineType, Distance as DistanceType} from "../types";
+import type {Line as LineType, Distance as DistanceType} from "../../types";
 
 import "./StationListItem.css";
 

@@ -1,7 +1,7 @@
 // @flow
 import React, {Fragment} from "react";
 
-import StationListItem from "../Stations/StationListItem";
+import StationListItem from "../Stations/StationList/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
 import type {RecentStation} from "../types";
 
