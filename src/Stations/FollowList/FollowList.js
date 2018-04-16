@@ -1,5 +1,8 @@
 // @flow
 import React from "react";
+
+import FollowListItem from "./FollowListItem";
+
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {
@@ -12,10 +15,8 @@ class FollowList extends React.Component<Props> {
       <li>
         <p>Next Stops:</p>
         <ul>
-          {this.props.arrivals.map(station => (
-            <li>{`${station.prediction.arrivalMinutes} – ${
-              station.station.name
-            }`}</li>
+          {this.props.arrivals.map((arrival, index) => (
+            <FollowListItem arrival={arrival} key={index} />
           ))}
         </ul>
       </li>
