@@ -11,12 +11,14 @@ type Props = {
 
 type State = {
   arrivals: Array<ArrivalType>,
+  errored: boolean,
   loading: boolean
 };
 
 class FollowListFetch extends React.Component<Props, State> {
   state = {
     arrivals: [],
+    errored: false,
     loading: true
   };
 
@@ -28,10 +30,17 @@ class FollowListFetch extends React.Component<Props, State> {
     fetch(`https://api.slow.zone/follow/${this.props.runId}`)
       .then(res => res.json())
       .then(({data}: {data: Array<ArrivalType>}) => {
-        this.setState({
-          arrivals: data,
-          loading: false
-        });
+        if (data) {
+          this.setState({
+            arrivals: data,
+            loading: false
+          });
+        } else {
+          this.setState({
+            errored: true,
+            loading: false
+          });
+        }
       });
   }
 
@@ -39,7 +48,7 @@ class FollowListFetch extends React.Component<Props, State> {
     return this.state.loading ? (
       <LoadingBar />
     ) : (
-      <FollowList arrivals={this.state.arrivals} />
+      <FollowList arrivals={this.state.arrivals} errored={this.state.errored} />
     );
   }
 }
