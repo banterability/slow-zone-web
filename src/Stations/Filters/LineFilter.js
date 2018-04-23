@@ -3,6 +3,7 @@ import React from "react";
 
 import Filter from "./Filter";
 import {lines as ALL_LINES} from "../constants";
+
 import "./LineFilter.css";
 
 type Props = {

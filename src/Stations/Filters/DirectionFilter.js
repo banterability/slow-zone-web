@@ -2,6 +2,7 @@
 import React from "react";
 
 import Filter from "./Filter";
+
 import "./DirectionFilter.css";
 
 type Props = {

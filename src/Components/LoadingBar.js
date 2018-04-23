@@ -1,5 +1,6 @@
 // @flow
 import React from "react";
+
 import "./LoadingBar.css";
 
 const LoadingBar = () => (
