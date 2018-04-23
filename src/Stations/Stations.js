@@ -1,23 +1,20 @@
 // @flow
-import React from "react";
+import React, {Fragment} from "react";
 import {Route} from "react-router-dom";
-import type {Match as MatchType} from "react-router-dom";
 
-import StationFetch from "./StationFetch";
+import StationFetch from "./Station/StationFetch";
 import StationListFetch from "./StationList/StationListFetch";
 
-class Stations extends React.Component<{match: MatchType}> {
-  render() {
-    const {match} = this.props;
+import type {Match as MatchType} from "react-router-dom";
 
-    return (
-      <div>
-        <h2>Stations</h2>
-        <Route path={match.url} exact component={StationListFetch} />
-        <Route path={`${match.url}/:stationId`} component={StationFetch} />
-      </div>
-    );
-  }
-}
+type Props = {match: MatchType};
+
+const Stations = ({match}: Props) => (
+  <Fragment>
+    <h2>Stations</h2>
+    <Route path={match.url} exact component={StationListFetch} />
+    <Route path={`${match.url}/:stationId`} component={StationFetch} />
+  </Fragment>
+);
 
 export default Stations;

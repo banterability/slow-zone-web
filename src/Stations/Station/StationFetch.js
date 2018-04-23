@@ -1,21 +1,20 @@
 // @flow
 import React from "react";
 
-import {StationRequest} from "../requests";
-import {pushStation} from "../store/RecentStations";
-
-import type {Match as MatchType} from "react-router-dom";
-
-import type {Station as StationType, Arrival as ArrivalType} from "../types";
-
-import LoadingBar from "../Components/LoadingBar";
+import LoadingBar from "../../Components/LoadingBar";
+import {pushStation} from "../../store/RecentStations";
+import {StationRequest} from "../../requests";
 import Station from "./Station";
 
+import type {Match as MatchType} from "react-router-dom";
+import type {Station as StationType, Arrival as ArrivalType} from "../../types";
+
 type Props = {match: MatchType};
+
 type State = {
   arrivals: Array<ArrivalType>,
   loading: boolean,
-  station: StationType
+  station: Object
 };
 
 class StationFetch extends React.Component<Props, State> {
@@ -42,11 +41,12 @@ class StationFetch extends React.Component<Props, State> {
           station: StationType,
           arrivals: Array<ArrivalType>
         }) => {
-          pushStation(station.id, {
+          const stationData = {
             lines: station.lines,
             title: station.name,
             pathname: window.location.pathname
-          });
+          };
+          pushStation(station.id, stationData);
           this.setState({station, arrivals, loading: false});
         }
       );

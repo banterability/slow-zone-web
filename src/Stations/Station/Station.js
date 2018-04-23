@@ -1,10 +1,10 @@
 // @flow
 import React, {Fragment} from "react";
 
-import ArrivalList from "./ArrivalList/ArrivalList";
-import Lines from "./Lines";
+import ArrivalList from "../ArrivalList/ArrivalList";
+import Lines from "../Lines";
 
-import type {Station as StationType, Arrival as ArrivalType} from "../types";
+import type {Station as StationType, Arrival as ArrivalType} from "../../types";
 
 type Props = {
   arrivals: Array<ArrivalType>,
