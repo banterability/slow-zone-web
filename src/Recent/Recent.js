@@ -13,7 +13,7 @@ class Recent extends React.Component<{}> {
     return (
       <Fragment>
         <h3>Recent Stations</h3>
-        <ul className="station-list">
+        <ul className="station-list" elementtiming="station-list">
           {getRecentStations().map(
             ({pathname, title, lines}: RecentStation, index: number) => (
               <li key={index}>
