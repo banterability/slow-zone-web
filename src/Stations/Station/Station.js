@@ -13,7 +13,10 @@ type Props = {
 
 class Station extends React.Component<Props> {
   render() {
-    const {station: {name, lines}, arrivals} = this.props;
+    const {
+      station: {name, lines},
+      arrivals
+    } = this.props;
     return (
       <Fragment>
         <h3>{name}</h3>
