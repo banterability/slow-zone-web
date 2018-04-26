@@ -30,7 +30,7 @@ class MostRecentlyUsed {
       });
   }
 
-  push(key: string, item: any) {
+  push(key: number | string, item: any) {
     this._fetch();
 
     const newItem = {...item, key};

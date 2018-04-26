@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, {Fragment} from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
 import {pushStation} from "../../store/RecentStations";
@@ -14,14 +14,14 @@ type Props = {match: MatchType};
 type State = {
   arrivals: Array<ArrivalType>,
   loading: boolean,
-  station: Object
+  station: ?StationType
 };
 
 class StationFetch extends React.Component<Props, State> {
   state = {
     arrivals: [],
     loading: true,
-    station: {}
+    station: null
   };
 
   fetchStation = (): void => {
@@ -57,11 +57,16 @@ class StationFetch extends React.Component<Props, State> {
   }
 
   render() {
-    const {station, arrivals} = this.state;
-    return this.state.loading ? (
-      <LoadingBar />
-    ) : (
-      <Station station={station} arrivals={arrivals} />
+    const {station, arrivals, loading} = this.state;
+
+    if (loading) {
+      return <LoadingBar />;
+    }
+
+    return (
+      <Fragment>
+        {station && <Station station={station} arrivals={arrivals} />}
+      </Fragment>
     );
   }
 }

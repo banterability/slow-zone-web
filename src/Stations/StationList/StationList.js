@@ -47,7 +47,11 @@ class StationList extends React.Component<Props, State> {
         <ul className="station-list">
           {this.state.filteredStations.map((station: StationType) => (
             <li key={station.id}>
-              <StationListItem {...station} />
+              <StationListItem
+                name={station.name}
+                id={station.id}
+                lines={station.lines}
+              />
             </li>
           ))}
         </ul>
