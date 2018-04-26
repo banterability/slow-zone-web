@@ -8,17 +8,17 @@ class MostRecentlyUsed {
     this.storageKey = storageKey;
   }
 
-  _fetch = () => {
+  _fetch = (): void => {
     this.data = JSON.parse(
       window.localStorage.getItem(this.storageKey) || "[]"
     );
   };
 
-  _persist = () => {
+  _persist = (): void => {
     window.localStorage.setItem(this.storageKey, JSON.stringify(this.data));
   };
 
-  get() {
+  get(): Array<any> {
     this._fetch();
 
     return this.data
