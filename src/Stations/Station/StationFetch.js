@@ -24,10 +24,10 @@ class StationFetch extends React.Component<Props, State> {
     station: null
   };
 
-  fetchStation = (): void => {
+  fetchStation = (): Promise<any> => {
     const stationId = this.props.match.params.stationId;
 
-    fetch(
+    return fetch(
       new StationRequest({
         url: `/${stationId}`
       })
@@ -56,6 +56,10 @@ class StationFetch extends React.Component<Props, State> {
     this.fetchStation();
   }
 
+  refresh = (promise: Promise<any>) => {
+    this.fetchStation().then(promise);
+  };
+
   render() {
     const {station, arrivals, loading} = this.state;
 
@@ -65,7 +69,14 @@ class StationFetch extends React.Component<Props, State> {
 
     return (
       <Fragment>
-        {station && <Station station={station} arrivals={arrivals} />}
+        {station && (
+          <Station
+            station={station}
+            arrivals={arrivals}
+            loading={loading}
+            onRefresh={this.refresh}
+          />
+        )}
       </Fragment>
     );
   }
