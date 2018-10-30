@@ -20,10 +20,6 @@
     "react-scripts": "2.0.3",
     "request": "^2.85.0"
   },
-  "now": {
-    "alias": "slow-zone.now.sh",
-    "name": "slow-zone"
-  },
   "scripts": {
     "start": "react-scripts start",
     "build": "NODE_ENV=production react-scripts build",
@@ -46,8 +42,5 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ],
-  "engines": {
-    "node": "10.13.0"
-  }
+  ]
 }
