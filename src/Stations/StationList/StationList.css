@@ -1,6 +1,7 @@
 .station-list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
 .station-list li {
@@ -9,4 +10,26 @@
 
 .station-list li:first-child {
   border-top: 2px solid rgb(86, 90, 92);
+}
+
+.station-list__text-filter {
+  width: 100%;
+  font-size: 1em;
+  padding: 0.5em;
+  vertical-align: middle;
+  background-color: gray;
+  border: 0;
+}
+.station-list__text-filter::placeholder {
+  color: #eee;
+}
+
+.station-list__text-filter--active,
+.station-list__text-filter:focus {
+  background-color: white;
+}
+
+.station-list__text-filter--active::placeholder,
+.station-list__text-filter:focus::placeholder {
+  color: #444;
 }

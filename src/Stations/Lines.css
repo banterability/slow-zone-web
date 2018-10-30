@@ -1,8 +1,12 @@
+.lines {
+  text-align: right;
+}
 .line {
   display: inline-block;
   height: 20px;
   width: 20px;
   border-radius: 50%;
+  margin: 1px;
 }
 
 .cta-blue {

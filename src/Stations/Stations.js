@@ -11,7 +11,6 @@ type Props = {match: MatchType};
 
 const Stations = ({match}: Props) => (
   <Fragment>
-    <h2>Stations</h2>
     <Route path={match.url} exact component={StationListFetch} />
     <Route path={`${match.url}/:stationId`} component={StationFetch} />
   </Fragment>

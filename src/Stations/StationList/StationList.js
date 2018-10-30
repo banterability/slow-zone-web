@@ -1,7 +1,6 @@
 // @flow
 import React, {Fragment} from "react";
-
-import {LineFilter} from "../Filters";
+import classnames from "classnames";
 import StationListItem from "./StationListItem";
 
 import type {Line as LineType, Station as StationType} from "../../types";
@@ -9,7 +8,6 @@ import type {Line as LineType, Station as StationType} from "../../types";
 import "./StationList.css";
 
 type Props = {
-  showDistances: boolean,
   stations: Array<StationType>
 };
 
@@ -18,12 +16,9 @@ type State = {
 };
 
 class StationList extends React.Component<Props, State> {
-  defaultProps = {
-    showDistances: false
-  };
-
   state = {
-    filteredStations: this.props.stations
+    filteredStations: this.props.stations,
+    searchString: ""
   };
 
   componentWillReceiveProps(newProps: Props) {
@@ -42,12 +37,27 @@ class StationList extends React.Component<Props, State> {
     });
   };
 
+  filterByText = ev => {
+    const searchString = ev.target.value;
+    this.setState({
+      filteredStations: this.props.stations.filter(station =>
+        station.name.toLowerCase().includes(searchString.toLowerCase())
+      ),
+      searchString
+    });
+  };
+
   render() {
     return (
       <Fragment>
-        <LineFilter
-          onReset={this.clearFilterByLine}
-          onFilter={this.filterByLine}
+        <input
+          className={classnames("station-list__text-filter", {
+            "station-list__text-filter--active": this.state.searchString
+          })}
+          placeholder="🔍 Filter by Station Name"
+          onChange={this.filterByText}
+          type="search"
+          value={this.state.searchString}
         />
         <ul className="station-list">
           {this.state.filteredStations.map((station: StationType) => (
@@ -56,7 +66,6 @@ class StationList extends React.Component<Props, State> {
                 name={station.name}
                 id={station.id}
                 lines={station.lines}
-                distance={this.props.showDistances && station.distance}
               />
             </li>
           ))}

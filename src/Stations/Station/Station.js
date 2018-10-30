@@ -1,7 +1,6 @@
 // @flow
 import React, {Fragment} from "react";
 import ArrivalList from "../ArrivalList/ArrivalList";
-import Lines from "../Lines";
 
 import type {Station as StationType, Arrival as ArrivalType} from "../../types";
 
@@ -14,14 +13,13 @@ type Props = {
 class Station extends React.Component<Props> {
   render() {
     const {
-      station: {name, lines},
+      station: {name},
       arrivals
     } = this.props;
 
     return (
       <Fragment>
-        <h3>{name}</h3>
-        <Lines lines={lines} />
+        <h2>{name}</h2>
         <ArrivalList arrivals={arrivals} />
       </Fragment>
     );
