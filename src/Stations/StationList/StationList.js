@@ -9,6 +9,7 @@ import type {Line as LineType, Station as StationType} from "../../types";
 import "./StationList.css";
 
 type Props = {
+  showDistances: boolean,
   stations: Array<StationType>
 };
 
@@ -17,6 +18,10 @@ type State = {
 };
 
 class StationList extends React.Component<Props, State> {
+  defaultProps = {
+    showDistances: false
+  };
+
   state = {
     filteredStations: this.props.stations
   };
@@ -51,6 +56,7 @@ class StationList extends React.Component<Props, State> {
                 name={station.name}
                 id={station.id}
                 lines={station.lines}
+                distance={this.props.showDistances && station.distance}
               />
             </li>
           ))}

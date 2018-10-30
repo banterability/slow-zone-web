@@ -1,6 +1,5 @@
 // @flow
 import React, {Fragment} from "react";
-import LoadingBar from "../../Components/LoadingBar";
 import ArrivalList from "../ArrivalList/ArrivalList";
 import Lines from "../Lines";
 
@@ -16,17 +15,14 @@ class Station extends React.Component<Props> {
   render() {
     const {
       station: {name, lines},
-      arrivals,
-      loading
+      arrivals
     } = this.props;
+
     return (
       <Fragment>
         <h3>{name}</h3>
         <Lines lines={lines} />
-
-
-          <ArrivalList arrivals={arrivals} />
-
+        <ArrivalList arrivals={arrivals} />
       </Fragment>
     );
   }

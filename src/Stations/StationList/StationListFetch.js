@@ -20,7 +20,7 @@ class StationListFetch extends React.Component<{}, State> {
 
   fetchStations = (): void => {
     this.setState({loading: true});
-    
+
     fetch(new StationRequest())
       .then(res => res.json())
       .then(json => json.stations)
@@ -37,10 +37,12 @@ class StationListFetch extends React.Component<{}, State> {
   }
 
   render() {
-    return <Fragment>
-      {this.state.loading && <LoadingBar />}
-      <StationList stations={this.state.stations} />
-    </Fragment>
+    return (
+      <Fragment>
+        {this.state.loading && <LoadingBar />}
+        <StationList stations={this.state.stations} />
+      </Fragment>
+    );
   }
 }
 
