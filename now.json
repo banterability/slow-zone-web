@@ -2,7 +2,7 @@
   "alias": "slow-zone.now.sh",
   "name": "slow-zone",
   "scale": {
-    "iad": {
+    "iad1": {
       "min": 3,
       "max": 5
     }
