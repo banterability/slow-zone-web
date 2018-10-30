@@ -12,7 +12,8 @@ type Props = {
 };
 
 type State = {
-  filteredStations: Array<StationType>
+  filteredStations: Array<StationType>,
+  searchString: string
 };
 
 class StationList extends React.Component<Props, State> {
@@ -25,19 +26,7 @@ class StationList extends React.Component<Props, State> {
     this.setState({filteredStations: newProps.stations});
   }
 
-  clearFilterByLine = () => {
-    this.setState({filteredStations: this.props.stations});
-  };
-
-  filterByLine = (line: LineType) => {
-    this.setState({
-      filteredStations: this.props.stations.filter(station =>
-        station.lines.includes(line)
-      )
-    });
-  };
-
-  filterByText = ev => {
+  filterByText = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     const searchString = ev.target.value;
     this.setState({
       filteredStations: this.props.stations.filter(station =>
