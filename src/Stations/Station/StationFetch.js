@@ -20,11 +20,12 @@ type State = {
 class StationFetch extends React.Component<Props, State> {
   state = {
     arrivals: [],
-    loading: true,
+    loading: false,
     station: null
   };
 
   fetchStation = (): Promise<any> => {
+    console.log("#fetchStation");
     const stationId = this.props.match.params.stationId;
 
     return fetch(
@@ -56,11 +57,8 @@ class StationFetch extends React.Component<Props, State> {
     this.fetchStation();
   }
 
-  refresh = (promise: Promise<any>) => {
-    this.fetchStation().then(promise);
-  };
-
   render() {
+    console.log("rendering with state", this.state);
     const {station, arrivals, loading} = this.state;
 
     if (loading) {
@@ -72,9 +70,9 @@ class StationFetch extends React.Component<Props, State> {
         {station && (
           <Station
             station={station}
-            arrivals={arrivals}
             loading={loading}
-            onRefresh={this.refresh}
+            arrivals={arrivals}
+            onRefresh={this.fetchStation}
           />
         )}
       </Fragment>

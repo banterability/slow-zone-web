@@ -9,15 +9,17 @@
     "array-unique": "^0.3.2",
     "classnames": "^2.2.5",
     "flow-bin": "0.79.1",
-    "react": "16.4.2",
-    "react-dom": "16.4.2",
-    "react-pull-to-refresh": "^1.1.2",
+    "react": "16.6.0",
+    "react-dom": "16.6.0",
     "react-router-dom": "4.3.1",
-    "serve": "latest"
+    "serve": "^10.0.2"
   },
   "devDependencies": {
+    "git-rev-sync": "^1.11.1",
     "prettier": "1.14.2",
-    "react-scripts": "1.1.4"
+    "prompt": "^1.0.0",
+    "react-scripts": "2.0.3",
+    "request": "^2.85.0"
   },
   "now": {
     "alias": "slow-zone.now.sh",
@@ -33,7 +35,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "format": "prettier --write 'src/**/*.js'",
-    "flow": "flow"
+    "flow": "flow",
+    "postdeploy": "node scripts/speedcurve.js"
   },
   "repository": {
     "type": "git",
@@ -41,5 +44,11 @@
   },
   "bugs": {
     "url": "https://github.com/banterability/slow-zone-web/issues"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
