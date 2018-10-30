@@ -23,14 +23,11 @@
   },
   "now": {
     "alias": "slow-zone.now.sh",
-    "env": {
-      "NODE_ENV": "production"
-    },
     "name": "slow-zone"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "NODE_ENV=production react-scripts build",
     "now-start": "serve ./build --single",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
