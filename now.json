@@ -10,7 +10,7 @@
   "build": {
     "env": {
       "REACT_APP_API_BASE_URL": "https://api.slow.zone",
-      "SENTRY_DSN": "@sentry-dsn",
+      "SENTRY_DSN": "@sentry-dsn"
     }
   }
 }
