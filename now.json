@@ -7,5 +7,13 @@
       "REACT_APP_SENTRY_DSN": "@sentry-dsn"
     }
   },
+  "routes": [
+    { "src": "/", "dest": "build/index.html" },
+    { "src": "/stations/?", "dest": "build/index.html" },
+    { "src": "/stations/.*", "dest": "build/index.html" },
+    { "src": "/nearby/?", "dest": "build/index.html" },
+    { "src": "/recent/?", "dest": "build/index.html" },
+    { "src": "/(.+)", "dest": "build/$1" }
+  ],
   "version": 2
 }
