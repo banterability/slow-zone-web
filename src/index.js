@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as Sentry from '@sentry/browser';
 
-import {sentryDsn, revision} from "../config";
+import {sentryDsn, revision} from "./config";
 import App from "./App";
 import {unregister} from "./registerServiceWorker";
 
