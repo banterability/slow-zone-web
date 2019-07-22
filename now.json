@@ -7,12 +7,18 @@
       "SENTRY_DSN": "@sentry-dsn"
     }
   },
+  "env": {
+    "SENTRY_DSN": "@sentry-dsn"
+  },
   "builds": [
     {
       "src": "package.json",
       "use": "@now/static-build@canary",
       "config": {"distDir": "build"}
     }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/" }
   ],
   "version": 2
 }
