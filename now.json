@@ -8,12 +8,12 @@
     }
   },
   "routes": [
-    { "src": "/", "dest": "build/index.html" },
-    { "src": "/stations/?", "dest": "build/index.html" },
-    { "src": "/stations/.*", "dest": "build/index.html" },
-    { "src": "/nearby/?", "dest": "build/index.html" },
-    { "src": "/recent/?", "dest": "build/index.html" },
-    { "src": "/(.+)", "dest": "build/$1" }
+    { "src": "/", "dest": "index.html" },
+    { "src": "/stations/?", "dest": "index.html" },
+    { "src": "/stations/.*", "dest": "index.html" },
+    { "src": "/nearby/?", "dest": "index.html" },
+    { "src": "/recent/?", "dest": "index.html" },
+    { "src": "/(.+)", "dest": "$1" }
   ],
   "version": 2
 }
