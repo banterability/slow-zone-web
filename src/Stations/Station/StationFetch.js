@@ -25,7 +25,6 @@ class StationFetch extends React.Component<Props, State> {
   };
 
   fetchStation = (): Promise<any> => {
-    console.log("#fetchStation");
     const stationId = this.props.match.params.stationId;
 
     return fetch(
@@ -58,7 +57,6 @@ class StationFetch extends React.Component<Props, State> {
   }
 
   render() {
-    console.log("rendering with state", this.state);
     const {station, arrivals, loading} = this.state;
 
     if (loading) {
