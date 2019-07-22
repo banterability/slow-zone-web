@@ -7,8 +7,10 @@
       "max": 5
     }
   },
-  "env": {
-    "REACT_APP_API_BASE_URL": "https://api.slow.zone",
-    "SENTRY_DSN": "@sentry-dsn"
+  "build": {
+    "env": {
+      "REACT_APP_API_BASE_URL": "https://api.slow.zone",
+      "SENTRY_DSN": "@sentry-dsn",
+    }
   }
 }
