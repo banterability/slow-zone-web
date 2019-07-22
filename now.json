@@ -4,21 +4,8 @@
   "build": {
     "env": {
       "REACT_APP_API_BASE_URL": "https://api.slow.zone",
-      "SENTRY_DSN": "@sentry-dsn"
+      "REACT_APP_SENTRY_DSN": "@sentry-dsn"
     }
   },
-  "env": {
-    "SENTRY_DSN": "@sentry-dsn"
-  },
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@now/static-build@canary",
-      "config": {"distDir": "build"}
-    }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/" }
-  ],
   "version": 2
 }
