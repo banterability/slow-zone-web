@@ -14,6 +14,7 @@
     "serve": "^11.1.0"
   },
   "devDependencies": {
+    "@sentry/cli": "^1.46.0",
     "flow-bin": "0.103.0",
     "git-rev-sync": "^1.12.0",
     "prettier": "1.18.2",
