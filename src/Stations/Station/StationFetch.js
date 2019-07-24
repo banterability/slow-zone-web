@@ -61,7 +61,7 @@ class StationFetch extends React.Component<Props, State> {
 
     if (loading) {
       return <LoadingBar />;
-    } else {
+    } else if (station) {
       return (
         <Station
           station={station}
@@ -70,6 +70,8 @@ class StationFetch extends React.Component<Props, State> {
           onRefresh={this.fetchStation}
         />
       );
+    } else {
+      return null;
     }
   }
 }
