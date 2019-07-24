@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Route} from "react-router-dom";
 import Header from "./Header/Header";
 import Home from "./Home/Home";
 
-const Follow = React.lazy(() => import("./Follow/Follow"));
 const Nearby = React.lazy(() => import("./Nearby/Nearby"));
 const Recent = React.lazy(() => import("./Recent/Recent"));
 const Stations = React.lazy(() => import("./Stations/Stations"));
@@ -19,7 +18,6 @@ const App = () => (
         <Route path="/stations" component={Stations} />
         <Route path="/nearby" component={Nearby} />
         <Route path="/recent" component={Recent} />
-        <Route path="/follow" component={Follow} />
       </React.Suspense>
     </main>
   </Router>
