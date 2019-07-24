@@ -2,6 +2,8 @@
 import React from "react";
 import ArrivalList from "../ArrivalList/ArrivalList";
 
+import StationHeader from "./StationHeader";
+
 import type {Station as StationType, Arrival as ArrivalType} from "../../types";
 
 type Props = {
@@ -13,13 +15,16 @@ type Props = {
 class Station extends React.Component<Props> {
   render() {
     const {
-      station: {name},
+      station: {
+        name,
+        location: {lat, lng}
+      },
       arrivals
     } = this.props;
 
     return (
       <>
-        <h2>{name}</h2>
+        <StationHeader name={name} latitude={lat} longitude={lng} />
         <ArrivalList arrivals={arrivals} />
       </>
     );
