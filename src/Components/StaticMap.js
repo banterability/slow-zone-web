@@ -1,6 +1,6 @@
 import React from "react";
 
-import {googleStaticMapsKey} from '../config';
+import {googleStaticMapsKey} from "../config";
 
 const BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
 
