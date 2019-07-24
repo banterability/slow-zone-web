@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 import ArrivalList from "../ArrivalList/ArrivalList";
 
 import type {Station as StationType, Arrival as ArrivalType} from "../../types";
@@ -18,10 +18,10 @@ class Station extends React.Component<Props> {
     } = this.props;
 
     return (
-      <Fragment>
+      <>
         <h2>{name}</h2>
         <ArrivalList arrivals={arrivals} />
-      </Fragment>
+      </>
     );
   }
 }

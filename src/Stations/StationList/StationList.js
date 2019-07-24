@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 import classnames from "classnames";
 import StationListItem from "./StationListItem";
 
@@ -38,7 +38,7 @@ class StationList extends React.Component<Props, State> {
 
   render() {
     return (
-      <Fragment>
+      <>
         <input
           className={classnames("station-list__text-filter", {
             "station-list__text-filter--active": this.state.searchString
@@ -59,7 +59,7 @@ class StationList extends React.Component<Props, State> {
             </li>
           ))}
         </ul>
-      </Fragment>
+      </>
     );
   }
 }

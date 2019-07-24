@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 
 import FollowListFetch from "../FollowList/FollowListFetch";
 
@@ -27,7 +27,7 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
     } = this.props;
 
     return (
-      <Fragment>
+      <>
         <li
           className={`arrival-list-item cta-${this.props.route.class}`}
           onClick={this.toggleNextStops}
@@ -39,7 +39,7 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
           </span>
         </li>
         {this.state.showNextStops ? <FollowListFetch runId={run} /> : null}
-      </Fragment>
+      </>
     );
   }
 }

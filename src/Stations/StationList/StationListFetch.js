@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 
 import {StationRequest} from "../../requests";
 import LoadingBar from "../../Components/LoadingBar";
@@ -37,11 +37,10 @@ class StationListFetch extends React.Component<{}, State> {
   }
 
   render() {
-    return (
-      <Fragment>
-        {this.state.loading && <LoadingBar />}
-        <StationList stations={this.state.stations} />
-      </Fragment>
+    return this.state.loading ? (
+      <LoadingBar />
+    ) : (
+      <StationList stations={this.state.stations} />
     );
   }
 }

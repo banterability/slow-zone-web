@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 
 import FollowListItem from "./FollowListItem";
 
@@ -16,14 +16,14 @@ class FollowList extends React.Component<Props> {
       <li>
         {this.props.errored && "No stop data available"}
         {!this.props.errored && (
-          <Fragment>
+          <>
             <p>Next Stops:</p>
             <ul>
               {this.props.arrivals.map((arrival, index) => (
                 <FollowListItem arrival={arrival} key={index} />
               ))}
             </ul>
-          </Fragment>
+          </>
         )}
       </li>
     );

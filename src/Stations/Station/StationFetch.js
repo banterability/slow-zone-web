@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
 import {pushStation} from "../../store/RecentStations";
@@ -61,20 +61,16 @@ class StationFetch extends React.Component<Props, State> {
 
     if (loading) {
       return <LoadingBar />;
+    } else {
+      return (
+        <Station
+          station={station}
+          loading={loading}
+          arrivals={arrivals}
+          onRefresh={this.fetchStation}
+        />
+      );
     }
-
-    return (
-      <Fragment>
-        {station && (
-          <Station
-            station={station}
-            loading={loading}
-            arrivals={arrivals}
-            onRefresh={this.fetchStation}
-          />
-        )}
-      </Fragment>
-    );
   }
 }
 
