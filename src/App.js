@@ -1,23 +1,27 @@
 // @flow
 import React from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
-
 import Header from "./Header/Header";
-import Stations from "./Stations/Stations";
 import Home from "./Home/Home";
-import Recent from "./Recent/Recent";
-import Nearby from "./Nearby/Nearby";
+
+const Follow = React.lazy(() => import("./Follow/Follow"));
+const Nearby = React.lazy(() => import("./Nearby/Nearby"));
+const Recent = React.lazy(() => import("./Recent/Recent"));
+const Stations = React.lazy(() => import("./Stations/Stations"));
 
 const App = () => (
   <Router>
     <Header />
 
-      <main>
+    <main>
+      <React.Suspense fallback={<p>loading</p>}>
         <Route path="/" exact component={Home} />
         <Route path="/stations" component={Stations} />
         <Route path="/nearby" component={Nearby} />
         <Route path="/recent" component={Recent} />
-      </main>
+        <Route path="/follow" component={Follow} />
+      </React.Suspense>
+    </main>
   </Router>
 );
 
