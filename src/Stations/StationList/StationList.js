@@ -3,7 +3,7 @@ import React from "react";
 import classnames from "classnames";
 import StationListItem from "./StationListItem";
 
-import type {Line as LineType, Station as StationType} from "../../types";
+import type {Station as StationType} from "../../types";
 
 import "./StationList.css";
 
