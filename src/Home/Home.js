@@ -1,11 +1,11 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 
 import "./Home.css";
 
 const Home = () => (
-  <Fragment>
+  <>
     <h2>Slow Zone</h2>
 
     <div className="home-buttons">
@@ -21,7 +21,7 @@ const Home = () => (
         <button>Recently Viewed Stations</button>
       </Link>
     </div>
-  </Fragment>
+  </>
 );
 
 export default Home;

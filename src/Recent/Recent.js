@@ -1,5 +1,5 @@
 // @flow
-import React, {Fragment} from "react";
+import React from "react";
 
 import StationListItem from "../Stations/StationList/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
@@ -11,7 +11,7 @@ import "../Stations/StationList/StationList.css";
 class Recent extends React.Component<{}> {
   render() {
     return (
-      <Fragment>
+      <>
         <h3>Recent Stations</h3>
         <ul className="station-list" elementtiming="station-list">
           {getRecentStations().map(
@@ -22,7 +22,7 @@ class Recent extends React.Component<{}> {
             )
           )}
         </ul>
-      </Fragment>
+      </>
     );
   }
 }
