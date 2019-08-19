@@ -1,11 +1,9 @@
 // @flow
 import React from "react";
-import {Route} from "react-router-dom";
+import {Route, type Match as MatchType} from "react-router-dom";
 
 import StationFetch from "./Station/StationFetch";
 import StationListFetch from "./StationList/StationListFetch";
-
-import type {Match as MatchType} from "react-router-dom";
 
 type Props = {match: MatchType};
 

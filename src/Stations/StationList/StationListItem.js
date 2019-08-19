@@ -3,7 +3,6 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import Lines from "../Lines";
-
 import type {Line as LineType, Distance as DistanceType} from "../../types";
 
 import "./StationListItem.css";

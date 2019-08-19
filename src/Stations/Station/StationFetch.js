@@ -1,12 +1,11 @@
 // @flow
 import React from "react";
+import type {Match as MatchType} from "react-router-dom";
 
 import LoadingBar from "../../Components/LoadingBar";
 import {pushStation} from "../../store/RecentStations";
 import {StationRequest} from "../../requests";
 import Station from "./Station";
-
-import type {Match as MatchType} from "react-router-dom";
 import type {Station as StationType, Arrival as ArrivalType} from "../../types";
 
 type Props = {match: MatchType};

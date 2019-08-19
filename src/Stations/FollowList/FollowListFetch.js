@@ -3,7 +3,6 @@ import React from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
 import FollowList from "./FollowList";
-
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {

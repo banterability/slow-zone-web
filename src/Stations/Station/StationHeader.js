@@ -1,4 +1,5 @@
 import React from "react";
+
 import StaticMap from "../../Components/StaticMap";
 
 const StationHeader = ({name, latitude, longitude}) => (

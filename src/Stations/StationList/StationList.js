@@ -1,8 +1,8 @@
 // @flow
 import React from "react";
 import classnames from "classnames";
-import StationListItem from "./StationListItem";
 
+import StationListItem from "./StationListItem";
 import type {Station as StationType} from "../../types";
 
 import "./StationList.css";

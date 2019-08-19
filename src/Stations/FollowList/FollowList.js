@@ -2,7 +2,6 @@
 import React from "react";
 
 import FollowListItem from "./FollowListItem";
-
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {

@@ -3,7 +3,6 @@ import React from "react";
 
 import StationListItem from "../Stations/StationList/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
-
 import type {RecentStation} from "../types";
 
 import "../Stations/StationList/StationList.css";
