@@ -6,9 +6,15 @@ import Header from "./Header/Header";
 import Home from "./Home/Home";
 import LoadingBar from "./Components/LoadingBar";
 
-const Nearby = React.lazy(() => import("./Nearby/Nearby"));
-const Recent = React.lazy(() => import("./Recent/Recent"));
-const Stations = React.lazy(() => import("./Stations/Stations"));
+const Nearby = React.lazy(() =>
+  import(/* webpackChunkName: "nearby" */ "./Nearby/Nearby")
+);
+const Recent = React.lazy(() =>
+  import(/* webpackChunkName: "recent" */ "./Recent/Recent")
+);
+const Stations = React.lazy(() =>
+  import(/* webpackChunkName: "stations" */ "./Stations/Stations")
+);
 
 const App = () => (
   <Router>
