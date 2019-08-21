@@ -13,8 +13,9 @@ class FollowList extends React.Component<Props> {
   render() {
     return (
       <li>
-        {this.props.errored && "No stop data available"}
-        {!this.props.errored && (
+        {this.props.errored ? (
+          "No stop data available"
+        ) : (
           <>
             <p>Next Stops:</p>
             <ul>
