@@ -1,11 +1,9 @@
 // @flow
-import {apiBaseUrl, revision} from "../config";
+import BaseRequest from "./BaseRequest";
 
-export class StationsRequest {
+export class StationsRequest extends BaseRequest {
   constructor({url = ""}: {url?: string} = {}) {
-    return new Request(`${apiBaseUrl}/stations/${url}`, {
-      headers: {"SZ-Web-Revision": revision}
-    });
+    super({url: `/stations${url}`});
   }
 }
 
