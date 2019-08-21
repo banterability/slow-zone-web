@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-import {StationRequest} from "../../requests";
+import {StationsRequest} from "../../requests";
 import LoadingBar from "../../Components/LoadingBar";
 import StationList from "./StationList";
 import type {Station as StationType} from "../../types";
@@ -20,7 +20,7 @@ class StationListFetch extends React.Component<{}, State> {
   fetchStations = (): void => {
     this.setState({loading: true});
 
-    fetch(new StationRequest())
+    fetch(new StationsRequest())
       .then(res => res.json())
       .then(json => json.stations)
       .then((stations: Array<StationType>) =>

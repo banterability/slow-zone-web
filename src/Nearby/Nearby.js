@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-import {StationRequest} from "../requests";
+import {NearbyStationsRequest} from "../requests";
 import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
 
@@ -52,11 +52,7 @@ class Nearby extends React.Component<{}, State> {
   fetchNearbyStations = () => {
     const {latitude, longitude} = this.state;
     if (latitude && longitude) {
-      fetch(
-        new StationRequest({
-          url: `/nearby?lat=${latitude}&lng=${longitude}`
-        })
-      )
+      fetch(new NearbyStationsRequest({lat: latitude, lng: longitude}))
         .then(res => res.json())
         .then(json => json.stations)
         .then(stations => {

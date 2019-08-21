@@ -26,11 +26,7 @@ class StationFetch extends React.Component<Props, State> {
   fetchStation = (): Promise<any> => {
     const stationId = this.props.match.params.stationId;
 
-    return fetch(
-      new StationRequest({
-        url: `/${stationId}`
-      })
-    )
+    return fetch(new StationRequest({stationId}))
       .then(res => res.json())
       .then(
         ({
