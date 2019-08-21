@@ -3,6 +3,7 @@ import React from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
 import FollowList from "./FollowList";
+import {FollowRequest} from "../../requests";
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {
@@ -27,7 +28,7 @@ class FollowListFetch extends React.Component<Props, State> {
   }
 
   fetchFollow() {
-    fetch(`https://api.slow.zone/follow/${this.props.runId}`)
+    fetch(new FollowRequest({runId: this.props.runId}))
       .then(res => res.json())
       .then(({data}: {data: Array<ArrivalType>}) => {
         if (data) {
