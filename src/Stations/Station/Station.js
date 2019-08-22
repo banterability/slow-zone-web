@@ -17,14 +17,14 @@ class Station extends React.Component<Props> {
     const {
       station: {
         name,
-        location: {lat, lng}
+        location: {latitude, longitude}
       },
       arrivals
     } = this.props;
 
     return (
       <>
-        <StationHeader name={name} latitude={lat} longitude={lng} />
+        <StationHeader name={name} latitude={latitude} longitude={longitude} />
         <ArrivalList arrivals={arrivals} />
       </>
     );

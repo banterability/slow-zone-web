@@ -14,7 +14,7 @@ export class StationRequest extends StationsRequest {
 }
 
 export class NearbyStationsRequest extends StationsRequest {
-  constructor({lat, lng}: {lat: number, lng: number}) {
-    super({url: `/nearby?lat=${lat}&lng=${lng}`});
+  constructor({latitude, longitude}: {latitude: number, longitude: number}) {
+    super({url: `/nearby?latitude=${latitude}&longitude=${longitude}`});
   }
 }

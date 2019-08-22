@@ -52,7 +52,7 @@ class Nearby extends React.Component<{}, State> {
   fetchNearbyStations = () => {
     const {latitude, longitude} = this.state;
     if (latitude && longitude) {
-      fetch(new NearbyStationsRequest({lat: latitude, lng: longitude}))
+      fetch(new NearbyStationsRequest({latitude, longitude}))
         .then(res => res.json())
         .then(json => json.stations)
         .then(stations => {
