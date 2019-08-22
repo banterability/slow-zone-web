@@ -8,6 +8,7 @@ import type {Station as StationType} from "../../types";
 import "./StationList.css";
 
 type Props = {
+  showFilter: boolean,
   stations: Array<StationType>
 };
 
@@ -20,6 +21,10 @@ class StationList extends React.Component<Props, State> {
   state = {
     filteredStations: this.props.stations,
     searchString: ""
+  };
+
+  static defaultProps = {
+    showFilter: true
   };
 
   componentWillReceiveProps(newProps: Props) {
@@ -39,15 +44,17 @@ class StationList extends React.Component<Props, State> {
   render() {
     return (
       <>
-        <input
-          className={classnames("station-list__text-filter", {
-            "station-list__text-filter--active": this.state.searchString
-          })}
-          placeholder="🔍 Filter by Station Name"
-          onChange={this.filterByText}
-          type="search"
-          value={this.state.searchString}
-        />
+        {this.props.showFilter && (
+          <input
+            className={classnames("station-list__text-filter", {
+              "station-list__text-filter--active": this.state.searchString
+            })}
+            placeholder="🔍 Filter by Station Name"
+            onChange={this.filterByText}
+            type="search"
+            value={this.state.searchString}
+          />
+        )}
         <ul className="station-list">
           {this.state.filteredStations.map((station: StationType) => (
             <li key={station.id}>

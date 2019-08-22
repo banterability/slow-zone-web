@@ -77,7 +77,7 @@ class Nearby extends React.Component<{}, State> {
         }`}</p>
         {this.state.loading && <LoadingBar />}
         {this.state.stations.length ? (
-          <StationList stations={this.state.stations} />
+          <StationList stations={this.state.stations} showFilter={false} />
         ) : null}
       </>
     );
