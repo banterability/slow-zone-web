@@ -2,7 +2,6 @@
 import React from "react";
 
 import ArrivalList from "../ArrivalList/ArrivalList";
-import LoadingBar from "../../Components/LoadingBar";
 import StationHeader from "./StationHeader";
 import type {Station as StationType, Arrival as ArrivalType} from "../../types";
 

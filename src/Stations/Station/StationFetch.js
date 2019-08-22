@@ -24,6 +24,8 @@ class StationFetch extends React.Component<Props, State> {
   };
 
   fetchStation = (): Promise<any> => {
+    this.setState({loading: true});
+
     const stationId = this.props.match.params.stationId;
 
     return fetch(new StationRequest({stationId}))

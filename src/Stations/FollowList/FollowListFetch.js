@@ -20,7 +20,7 @@ class FollowListFetch extends React.Component<Props, State> {
   state = {
     arrivals: [],
     errored: false,
-    loading: true
+    loading: false
   };
 
   componentDidMount() {
@@ -28,6 +28,8 @@ class FollowListFetch extends React.Component<Props, State> {
   }
 
   fetchFollow() {
+    this.setState({loading: true});
+
     fetch(new FollowRequest({runId: this.props.runId}))
       .then(res => res.json())
       .then(({data}: {data: Array<ArrivalType>}) => {
