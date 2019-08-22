@@ -2,13 +2,13 @@
 import React from "react";
 
 import {NearbyStationsRequest} from "../requests";
+import LoadingBar from "../Components/LoadingBar";
 import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
 
 type State = {
   latitude: ?number,
-  loadingLocation: boolean,
-  loadingStations: boolean,
+  loading: boolean,
   longitude: ?number,
   stations: Array<StationType>
 };
@@ -16,8 +16,7 @@ type State = {
 class Nearby extends React.Component<{}, State> {
   state = {
     latitude: undefined,
-    loadingLocation: true,
-    loadingStations: false,
+    loading: false,
     longitude: undefined,
     stations: []
   };
@@ -32,12 +31,14 @@ class Nearby extends React.Component<{}, State> {
     this.unmounted = true;
   }
 
-  fetchLocation = (): Promise<any> =>
-    new Promise((resolve, reject) => {
+  fetchLocation = (): Promise<any> => {
+    this.setState({loading: true});
+
+    return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
         position => {
           const {latitude, longitude} = position.coords;
-          this.setState({loadingLocation: false, latitude, longitude});
+          this.setState({loading: false, latitude, longitude});
           resolve();
         },
         err => reject(err),
@@ -48,8 +49,11 @@ class Nearby extends React.Component<{}, State> {
         }
       );
     });
+  };
 
   fetchNearbyStations = () => {
+    this.setState({loading: true});
+
     const {latitude, longitude} = this.state;
     if (latitude && longitude) {
       fetch(new NearbyStationsRequest({latitude, longitude}))
@@ -59,7 +63,7 @@ class Nearby extends React.Component<{}, State> {
           if (this.unmounted) {
             return false;
           }
-          this.setState({stations, loadingStations: false});
+          this.setState({stations, loading: false});
         });
     }
   };
@@ -68,8 +72,10 @@ class Nearby extends React.Component<{}, State> {
     return (
       <>
         <h2>Nearby</h2>
-        {this.state.loadingLocation && <p>Loading location...</p>}
-        {this.state.loadingStations && <p>Loading stations...</p>}
+        <p>{`Location: ${
+          this.state.latitude ? "detected" : "searching..."
+        }`}</p>
+        {this.state.loading && <LoadingBar />}
         {this.state.stations.length ? (
           <StationList stations={this.state.stations} />
         ) : null}
