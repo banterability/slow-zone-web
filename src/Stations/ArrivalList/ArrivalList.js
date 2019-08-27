@@ -7,12 +7,17 @@ import type {Arrival as ArrivalType} from "../../types";
 import "./ArrivalList.css";
 
 type Props = {
-  arrivals: Array<ArrivalType>
+  arrivals: Array<ArrivalType>,
+  loading: boolean,
+  refresh: () => void
 };
 
-const ArrivalList = ({arrivals}: Props) => (
+const ArrivalList = ({arrivals, loading, refresh}: Props) => (
   <>
-    <h3>Arrivals</h3>
+    <div className="arrival-list--header">
+      <h3>Arrivals</h3>
+      {loading ? <p>loading...</p> : <button onClick={refresh}>Refresh</button>}
+    </div>
 
     <ul className="arrival-list">
       {arrivals.map((arrival, index) => (

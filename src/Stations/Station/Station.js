@@ -1,13 +1,12 @@
 // @flow
 import React from "react";
 
-import ArrivalList from "../ArrivalList/ArrivalList";
+import ArrivalListFetch from "../ArrivalList/ArrivalListFetch";
 import StationHeader from "./StationHeader";
-import type {Station as StationType, Arrival as ArrivalType} from "../../types";
+import type {Station as StationType} from "../../types";
 
 type Props = {
-  arrivals: Array<ArrivalType>,
-  onRefresh(): Promise<any>,
+  loading: boolean,
   station: StationType
 };
 
@@ -15,16 +14,16 @@ class Station extends React.Component<Props> {
   render() {
     const {
       station: {
+        id,
         name,
         location: {latitude, longitude}
-      },
-      arrivals
+      }
     } = this.props;
 
     return (
       <>
         <StationHeader name={name} latitude={latitude} longitude={longitude} />
-        <ArrivalList arrivals={arrivals} />
+        <ArrivalListFetch stationId={id} />
       </>
     );
   }

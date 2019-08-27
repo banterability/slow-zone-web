@@ -13,6 +13,12 @@ export class StationRequest extends StationsRequest {
   }
 }
 
+export class StationArrivalsRequest extends StationsRequest {
+  constructor({stationId}: {stationId: number}) {
+    super({url: `/${stationId}/arrivals`});
+  }
+}
+
 export class NearbyStationsRequest extends StationsRequest {
   constructor({latitude, longitude}: {latitude: number, longitude: number}) {
     super({url: `/nearby?latitude=${latitude}&longitude=${longitude}`});
