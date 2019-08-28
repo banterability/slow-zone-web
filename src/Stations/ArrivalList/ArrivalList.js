@@ -15,7 +15,7 @@ type Props = {
 const ArrivalList = ({arrivals, loading, refresh}: Props) => (
   <>
     <div className="arrival-list--header">
-      <h3>Arrivals</h3>
+      <h3 className="arrival-list--title">Arrivals</h3>
       {loading ? <p>loading...</p> : <button onClick={refresh}>Refresh</button>}
     </div>
 

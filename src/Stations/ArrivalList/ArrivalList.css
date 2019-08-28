@@ -1,9 +1,14 @@
 .arrival-list {
   padding: 0;
+  margin: 0;
 }
 
 .arrival-list--header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.arrival-list--title {
+  margin: 0.5em;
 }
