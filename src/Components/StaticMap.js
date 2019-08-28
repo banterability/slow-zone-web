@@ -8,7 +8,7 @@ const getParams = props => {
   const {latitude, longitude, width, height, ...passthrough} = props;
   return Object.entries({
     ...passthrough,
-    center: `${latitude},${longitude}`,
+    center: `${latitude + 0.0005},${longitude}`,
     size: `${width}x${height}`
   })
     .reduce((memo, [key, value]) => {

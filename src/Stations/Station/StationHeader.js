@@ -1,17 +1,25 @@
 import React from "react";
 
+import Lines from "../Lines";
 import StaticMap from "../../Components/StaticMap";
 
-const StationHeader = ({name, latitude, longitude}) => (
-  <>
-    <h2>{name}</h2>
+import "./StationHeader.css";
+
+const StationHeader = ({name, latitude, longitude, lines}) => (
+  <div className="station-header">
+    <div className="station-header--meta">
+      <h2 className="station-header--name">{name}</h2>
+      <div className="station-header--lines">
+        <Lines lines={lines} />
+      </div>
+    </div>
     <StaticMap
       latitude={latitude}
       longitude={longitude}
       width={480}
       height={200}
     />
-  </>
+  </div>
 );
 
 export default StationHeader;

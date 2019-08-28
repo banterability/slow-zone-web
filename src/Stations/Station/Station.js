@@ -16,13 +16,19 @@ class Station extends React.Component<Props> {
       station: {
         id,
         name,
-        location: {latitude, longitude}
+        location: {latitude, longitude},
+        lines
       }
     } = this.props;
 
     return (
       <>
-        <StationHeader name={name} latitude={latitude} longitude={longitude} />
+        <StationHeader
+          name={name}
+          latitude={latitude}
+          longitude={longitude}
+          lines={lines}
+        />
         <ArrivalListFetch stationId={id} />
       </>
     );
