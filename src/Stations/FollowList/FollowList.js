@@ -17,7 +17,6 @@ class FollowList extends React.Component<Props> {
           "No stop data available"
         ) : (
           <>
-            <p>Next Stops:</p>
             <ul>
               {this.props.arrivals.map((arrival, index) => (
                 <FollowListItem arrival={arrival} key={index} />
