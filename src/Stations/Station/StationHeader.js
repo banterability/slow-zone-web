@@ -16,8 +16,8 @@ const StationHeader = ({name, latitude, longitude, lines}) => (
     <StaticMap
       latitude={latitude}
       longitude={longitude}
-      width={480}
-      height={200}
+      width={420}
+      height={190}
     />
   </div>
 );
