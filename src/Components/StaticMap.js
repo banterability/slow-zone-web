@@ -1,6 +1,7 @@
 import React from "react";
 
 import {googleStaticMapsKey} from "../config";
+import "./StaticMap.css";
 
 const BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
 
@@ -23,11 +24,11 @@ const buildUrl = props => {
 };
 
 const StaticMap = props => (
-  <img
-    src={buildUrl(props)}
-    width={props.width}
-    height={props.height}
-    alt={`Map of ${props.latitude}, ${props.longitude}`}
+  <div
+    className="static-map"
+    style={{
+      backgroundImage: `url(${buildUrl(props)})`
+    }}
   />
 );
 
