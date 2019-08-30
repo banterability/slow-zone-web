@@ -17,7 +17,10 @@
 
   &:hover {
     color: #ff9a00;
-    text-decoration: underline;
+  }
+
+  &:active {
+    color: #ff7700;
   }
 
   &.active {
