@@ -28,7 +28,6 @@ class StationListItem extends React.Component<Props> {
 
   render() {
     const {name, lines, distance} = this.props;
-    console.log(distance);
 
     if (distance) {
       return (
