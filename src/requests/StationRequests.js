@@ -20,7 +20,18 @@ export class StationArrivalsRequest extends StationsRequest {
 }
 
 export class NearbyStationsRequest extends StationsRequest {
-  constructor({latitude, longitude}: {latitude: number, longitude: number}) {
-    super({url: `/nearby?latitude=${latitude}&longitude=${longitude}`});
+  constructor({
+    latitude,
+    longitude,
+    limit
+  }: {
+    latitude: number,
+    longitude: number,
+    limit?: number
+  }) {
+    const limitParam = limit ? `&limit=${limit}` : "";
+    super({
+      url: `/nearby?latitude=${latitude}&longitude=${longitude}${limitParam}`
+    });
   }
 }
