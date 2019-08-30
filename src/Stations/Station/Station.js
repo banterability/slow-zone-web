@@ -10,29 +10,23 @@ type Props = {
   station: StationType
 };
 
-class Station extends React.Component<Props> {
-  render() {
-    const {
-      station: {
-        id,
-        name,
-        location: {latitude, longitude},
-        lines
-      }
-    } = this.props;
-
-    return (
-      <>
-        <StationHeader
-          name={name}
-          latitude={latitude}
-          longitude={longitude}
-          lines={lines}
-        />
-        <ArrivalListFetch stationId={id} />
-      </>
-    );
+const Station = ({
+  station: {
+    id,
+    name,
+    location: {latitude, longitude},
+    lines
   }
-}
+}: Props) => (
+  <>
+    <StationHeader
+      name={name}
+      latitude={latitude}
+      longitude={longitude}
+      lines={lines}
+    />
+    <ArrivalListFetch stationId={id} />
+  </>
+);
 
 export default Station;

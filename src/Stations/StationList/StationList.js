@@ -53,7 +53,7 @@ class StationList extends React.Component<Props, State> {
             <li key={station.id}>
               <StationListItem
                 name={station.name}
-                id={station.id}
+                url={`/stations/${station.id}`}
                 lines={station.lines}
                 distance={station.distance}
               />
