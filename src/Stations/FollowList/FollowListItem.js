@@ -9,14 +9,17 @@ type Props = {
   arrival: ArrivalType
 };
 
-const FollowListItem = ({arrival}: Props) => (
+const FollowListItem = ({
+  arrival: {
+    prediction: {arrivalMinutes, arrivalString},
+    station: {name: stationName}
+  }
+}: Props) => (
   <li className="follow-list-item">
-    <span className="follow-list-item__minutes">
-      {arrival.prediction.arrivalMinutes} m
-    </span>
-    <span className="follow-list-item__headsign">{arrival.station.name}</span>
+    <span className="follow-list-item__minutes">{arrivalMinutes} m</span>
+    <span className="follow-list-item__headsign">{stationName}</span>
     <span className="follow-list-item__time">
-      {arrival.prediction.arrivalString.replace(/\s([ap])\.m\./, "$1")}
+      {arrivalString.replace(/\s([ap])\.m\./, "$1")}
     </span>
   </li>
 );
