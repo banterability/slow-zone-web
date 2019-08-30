@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
-import classnames from "classnames";
 
+import ListFilter from "../../Components/ListFilter";
 import StationListItem from "./StationListItem";
 import type {Station as StationType} from "../../types";
 
@@ -42,17 +42,14 @@ class StationList extends React.Component<Props, State> {
   };
 
   render() {
+    const {showFilter} = this.props;
+
     return (
       <>
-        {this.props.showFilter && (
-          <input
-            className={classnames("station-list__text-filter", {
-              "station-list__text-filter--active": this.state.searchString
-            })}
-            placeholder="🔍 Filter by Station Name"
+        {showFilter && (
+          <ListFilter
             onChange={this.filterByText}
-            type="search"
-            value={this.state.searchString}
+            searchString={this.state.searchString}
           />
         )}
         <ul className="station-list">
