@@ -27,10 +27,6 @@ class StationList extends React.Component<Props, State> {
     showFilter: true
   };
 
-  UNSAFE_componentWillReceiveProps(newProps: Props) {
-    this.setState({filteredStations: newProps.stations});
-  }
-
   filterByText = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     const searchString = ev.target.value;
     this.setState({
