@@ -27,7 +27,7 @@ class StationList extends React.Component<Props, State> {
     showFilter: true
   };
 
-  componentWillReceiveProps(newProps: Props) {
+  UNSAFE_componentWillReceiveProps(newProps: Props) {
     this.setState({filteredStations: newProps.stations});
   }
 
