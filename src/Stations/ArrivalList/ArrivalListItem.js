@@ -31,7 +31,7 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
           className={`arrival-list-item cta-${this.props.route.class}`}
           onClick={this.toggleNextStops}
         >
-          <span className="arrival--eta">{arrivalMinutes}m</span>
+          <span className="arrival--eta">{arrivalMinutes} m</span>
           <span className="arrival--headsign">{name}</span>
           <span className="arrival--time">
             {arrivalString.replace(/\s([ap])\.m\./, "$1")}
