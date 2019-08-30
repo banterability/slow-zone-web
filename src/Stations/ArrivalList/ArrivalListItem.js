@@ -4,7 +4,7 @@ import React from "react";
 import FollowListFetch from "../FollowList/FollowListFetch";
 import type {Arrival as ArrivalType} from "../../types";
 
-import "../../css/ArrivalListItem.css";
+import "../../css/ArrivalListItem.scss";
 
 type State = {
   showNextStops: boolean
@@ -31,9 +31,9 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
           className={`arrival-list-item cta-${this.props.route.class}`}
           onClick={this.toggleNextStops}
         >
-          <span className="arrival--eta">{arrivalMinutes} m</span>
-          <span className="arrival--headsign">{name}</span>
-          <span className="arrival--time">
+          <span className="arrival-list-item__eta">{arrivalMinutes} m</span>
+          <span className="arrival-list-item__headsign">{name}</span>
+          <span className="arrival-list-item__time">
             {arrivalString.replace(/\s([ap])\.m\./, "$1")}
           </span>
         </li>

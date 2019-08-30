@@ -5,7 +5,7 @@ import Lines from "../../Components/Lines";
 import StaticMap from "../../Components/StaticMap";
 import type {Line as LineType} from "../../types";
 
-import "../../css/StationHeader.css";
+import "../../css/StationHeader.scss";
 
 type Props = {
   name: string,

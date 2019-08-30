@@ -1,0 +1,24 @@
+.station-header {
+  position: relative;
+
+  &--meta {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.65);
+    padding: 0.5em;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &--name {
+    margin: 0;
+  }
+
+  &--lines {
+    margin-right: 1em;
+  }
+}

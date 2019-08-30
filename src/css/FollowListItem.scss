@@ -6,12 +6,13 @@
   align-items: center;
   margin: 0.5em 0;
   width: 100%;
-}
 
-.follow-list-item__headsign {
-  text-align: left;
-}
-.follow-list-item__time {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
+  &__headsign {
+    text-align: left;
+  }
+
+  &__time {
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+  }
 }

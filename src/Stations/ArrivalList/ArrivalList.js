@@ -4,7 +4,7 @@ import React from "react";
 import ArrivalListItem from "./ArrivalListItem";
 import type {Arrival as ArrivalType} from "../../types";
 
-import "../../css/ArrivalList.css";
+import "../../css/ArrivalList.scss";
 
 type Props = {
   arrivals: Array<ArrivalType>,
@@ -14,8 +14,8 @@ type Props = {
 
 const ArrivalList = ({arrivals, loading, refresh}: Props) => (
   <>
-    <div className="arrival-list--header">
-      <h3 className="arrival-list--title">Arrivals</h3>
+    <div className="arrival-list__header">
+      <h3 className="arrival-list__title">Arrivals</h3>
       {loading ? <p>loading...</p> : <button onClick={refresh}>Refresh</button>}
     </div>
 

@@ -1,0 +1,15 @@
+.home-buttons {
+  display: flex;
+  flex-direction: column;
+
+  a {
+    display: block;
+    margin: 1em 0;
+
+    button {
+      font-size: 2em;
+      height: 88px;
+      width: 100%;
+    }
+  }
+}

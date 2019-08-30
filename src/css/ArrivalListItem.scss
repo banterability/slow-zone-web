@@ -1,0 +1,25 @@
+.arrival-list-item {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  align-items: center;
+  border-bottom: 3px solid white;
+  font-weight: bold;
+  list-style: none;
+  padding: 1em 0.5em;
+
+  &__eta {
+    font-size: 2em;
+    font-weight: bold;
+  }
+
+  &__headsign {
+    font-size: 1.1em;
+    text-align: center;
+  }
+
+  &__time {
+    font-variant-numeric: tabular-nums;
+    font-size: 2em;
+    text-align: right;
+  }
+}

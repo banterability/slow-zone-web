@@ -12,10 +12,10 @@
 .loading-bar {
   height: 5px;
   overflow: hidden;
-}
 
-.loading-bar--inner {
-  animation: loading 2000ms cubic-bezier(0.33, 0.99, 0.6, 1.01) infinite;
-  background: linear-gradient(to left, white, blue, white);
-  height: 100%;
+  &--inner {
+    animation: loading 2000ms cubic-bezier(0.33, 0.99, 0.6, 1.01) infinite;
+    background: linear-gradient(to left, white, blue, white);
+    height: 100%;
+  }
 }

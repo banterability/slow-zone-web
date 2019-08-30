@@ -5,7 +5,7 @@ import ListFilter from "../../Components/ListFilter";
 import StationListItem from "./StationListItem";
 import type {Station as StationType} from "../../types";
 
-import "../../css/StationList.css";
+import "../../css/StationList.scss";
 
 type Props = {
   showFilter: boolean,
