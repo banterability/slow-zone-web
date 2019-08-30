@@ -2,6 +2,8 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import Distance from "../../Components/Distance";
+
 import Lines from "../Lines";
 import type {Line as LineType, Distance as DistanceType} from "../../types";
 
@@ -25,14 +27,27 @@ class StationListItem extends React.Component<Props> {
   };
 
   render() {
-    const {name, lines} = this.props;
+    const {name, lines, distance} = this.props;
+    console.log(distance);
 
-    return (
-      <Link className="station-list__item" to={this.stationUrl()}>
-        <p className="station-list__item__station-name">{name}</p>
-        <Lines lines={lines} />
-      </Link>
-    );
+    if (distance) {
+      return (
+        <Link className="station-list__item" to={this.stationUrl()}>
+          <div>
+            <p className="station-list__item__name">{name}</p>
+            <Distance {...distance} />
+          </div>
+          <Lines lines={lines} />
+        </Link>
+      );
+    } else {
+      return (
+        <Link className="station-list__item" to={this.stationUrl()}>
+          <p className="station-list__item__name">{name}</p>
+          <Lines lines={lines} />
+        </Link>
+      );
+    }
   }
 }
 

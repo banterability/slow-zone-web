@@ -62,6 +62,7 @@ class StationList extends React.Component<Props, State> {
                 name={station.name}
                 id={station.id}
                 lines={station.lines}
+                distance={station.distance}
               />
             </li>
           ))}

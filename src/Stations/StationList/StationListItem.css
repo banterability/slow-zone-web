@@ -6,8 +6,15 @@
   padding: 0.5em;
   color: black;
   text-decoration: none;
+  margin: 0.75em 0;
 }
 
-.station-list__item__station-name {
+.station-list__item__name {
   font-size: 1.1em;
+  margin: 0;
+}
+
+.station-list__item__distance {
+  font-size: 0.85em;
+  margin: 0;
 }
