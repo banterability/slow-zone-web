@@ -3,7 +3,7 @@ import React from "react";
 
 import type {Line as LineType} from "../types";
 
-import "./Lines.css";
+import "./Lines.scss";
 
 type Props = {
   lines: Array<LineType>
