@@ -1,6 +1,6 @@
 import React from "react";
 
-import Lines from "../Lines";
+import Lines from "../../Components/Lines";
 import StaticMap from "../../Components/StaticMap";
 
 import "./StationHeader.css";

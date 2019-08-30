@@ -9,9 +9,9 @@ type Props = {
   lines: Array<LineType>
 };
 
-const Lines = (props: Props) => (
+const Lines = ({lines}: Props) => (
   <div className="lines">
-    {props.lines.map((line, index) => (
+    {lines.map((line, index) => (
       <div className={`line cta-${line}`} key={line} />
     ))}
   </div>
