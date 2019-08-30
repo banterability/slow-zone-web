@@ -2,7 +2,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import "./ListFilter.scss";
+import "../css/ListFilter.scss";
 
 type Props = {
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void,

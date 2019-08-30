@@ -3,7 +3,7 @@ import React from "react";
 
 import type {Arrival as ArrivalType} from "../../types";
 
-import "./FollowListItem.css";
+import "../../css/FollowListItem.css";
 
 type Props = {
   arrival: ArrivalType

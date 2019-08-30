@@ -4,7 +4,7 @@ import React from "react";
 import FollowListItem from "./FollowListItem";
 import type {Arrival as ArrivalType} from "../../types";
 
-import "./FollowList.css";
+import "../../css/FollowList.css";
 
 type Props = {
   arrivals: Array<ArrivalType>,

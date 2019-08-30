@@ -4,7 +4,7 @@ import React from "react";
 import ArrivalListItem from "./ArrivalListItem";
 import type {Arrival as ArrivalType} from "../../types";
 
-import "./ArrivalList.css";
+import "../../css/ArrivalList.css";
 
 type Props = {
   arrivals: Array<ArrivalType>,

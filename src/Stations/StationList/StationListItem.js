@@ -7,7 +7,7 @@ import Lines from "../../Components/Lines";
 
 import type {Line as LineType, Distance as DistanceType} from "../../types";
 
-import "./StationListItem.css";
+import "../../css/StationListItem.css";
 
 type Props = {
   distance?: DistanceType,

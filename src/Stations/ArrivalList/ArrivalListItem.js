@@ -4,7 +4,7 @@ import React from "react";
 import FollowListFetch from "../FollowList/FollowListFetch";
 import type {Arrival as ArrivalType} from "../../types";
 
-import "./ArrivalListItem.css";
+import "../../css/ArrivalListItem.css";
 
 type State = {
   showNextStops: boolean

@@ -5,7 +5,7 @@ import StationListItem from "../Stations/StationList/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
 import type {RecentStation} from "../types";
 
-import "../Stations/StationList/StationList.css";
+import "../css/StationList.css";
 
 const Recent = () => (
   <>
