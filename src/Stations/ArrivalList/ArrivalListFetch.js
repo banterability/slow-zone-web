@@ -27,7 +27,7 @@ class ArrivalListFetch extends React.Component<Props, State> {
 
     const stationId = this.props.stationId;
 
-    fetch(new StationArrivalsRequest({stationId}))
+    fetch(new StationArrivalsRequest(stationId))
       .then(res => res.json())
       .then(({arrivals}: {arrivals: Array<ArrivalType>}) => {
         this.setState({arrivals, loading: false});

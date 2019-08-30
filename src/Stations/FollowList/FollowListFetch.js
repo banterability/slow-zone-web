@@ -30,7 +30,7 @@ class FollowListFetch extends React.Component<Props, State> {
   fetchFollow() {
     this.setState({loading: true});
 
-    fetch(new FollowRequest({runId: this.props.runId}))
+    fetch(new FollowRequest(this.props.runId))
       .then(res => res.json())
       .then(({data}: {data: Array<ArrivalType>}) => {
         if (data) {

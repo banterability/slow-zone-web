@@ -26,7 +26,7 @@ class StationFetch extends React.Component<Props, State> {
 
     const stationId = this.props.match.params.stationId;
 
-    return fetch(new StationRequest({stationId}))
+    return fetch(new StationRequest(stationId))
       .then(res => res.json())
       .then(({station}: {station: StationType}) => {
         const stationData = {

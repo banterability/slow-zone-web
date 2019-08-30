@@ -2,8 +2,8 @@
 import BaseRequest from "./BaseRequest";
 
 class FollowRequest extends BaseRequest {
-  constructor({runId}: {runId: number}) {
-    super({url: `/follow/${runId}`});
+  constructor(runId: number, init?: RequestOptions = {}) {
+    super(`/follow/${runId}`, init);
   }
 }
 

@@ -1,9 +1,9 @@
 // @flow
 import {apiBaseUrl} from "../config";
 
-class BaseRequest {
-  constructor({url = ""}: {url?: string} = {}) {
-    return new Request(`${apiBaseUrl}${url}`);
+class BaseRequest extends Request {
+  constructor(url: string, init?: RequestOptions = {}) {
+    super(`${apiBaseUrl}${url}`, init);
   }
 }
 
