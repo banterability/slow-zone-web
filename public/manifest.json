@@ -3,7 +3,7 @@
   "name": "Slow Zone",
   "icons": [
     {
-      "src": "AppIcon-v2.png",
+      "src": "AppIcon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
