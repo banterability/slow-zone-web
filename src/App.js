@@ -3,9 +3,11 @@ import React from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
 import Header from "./Header/Header";
-import Home from "./Home/Home";
 import LoadingBar from "./Components/LoadingBar";
 
+const Favorites = React.lazy(() =>
+  import(/* webpackChunkName: "favorites" */ "./Favorites/Favorites")
+);
 const Nearby = React.lazy(() =>
   import(/* webpackChunkName: "nearby" */ "./Nearby/Nearby")
 );
@@ -22,7 +24,7 @@ const App = () => (
 
     <main>
       <React.Suspense fallback={<LoadingBar />}>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={Favorites} />
         <Route path="/stations" component={Stations} />
         <Route path="/nearby" component={Nearby} />
         <Route path="/recent" component={Recent} />
