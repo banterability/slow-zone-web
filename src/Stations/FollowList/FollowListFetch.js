@@ -23,8 +23,14 @@ class FollowListFetch extends React.Component<Props, State> {
     loading: false
   };
 
+  unmounted = false;
+
   componentDidMount() {
     this.fetchFollow();
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
   }
 
   fetchFollow() {
@@ -33,16 +39,18 @@ class FollowListFetch extends React.Component<Props, State> {
     fetch(new FollowRequest(this.props.runId))
       .then(res => res.json())
       .then(({data}: {data: Array<ArrivalType>}) => {
-        if (data) {
-          this.setState({
-            arrivals: data,
-            loading: false
-          });
-        } else {
-          this.setState({
-            errored: true,
-            loading: false
-          });
+        if (!this.unmounted) {
+          if (data) {
+            this.setState({
+              arrivals: data,
+              loading: false
+            });
+          } else {
+            this.setState({
+              errored: true,
+              loading: false
+            });
+          }
         }
       });
   }

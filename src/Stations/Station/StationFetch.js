@@ -21,6 +21,8 @@ class StationFetch extends React.Component<Props, State> {
     station: null
   };
 
+  unmounted = false;
+
   fetchStation = (): Promise<any> => {
     this.setState({loading: true});
 
@@ -35,12 +37,18 @@ class StationFetch extends React.Component<Props, State> {
           pathname: window.location.pathname
         };
         pushRecentStation(station.id, stationData);
-        this.setState({station, loading: false});
+        if (!this.unmounted) {
+          this.setState({station, loading: false});
+        }
       });
   };
 
   componentDidMount() {
     this.fetchStation();
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
   }
 
   render() {

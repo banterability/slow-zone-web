@@ -22,6 +22,8 @@ class ArrivalListFetch extends React.Component<Props, State> {
     arrivals: []
   };
 
+  unmounted = false;
+
   fetchArrivals = () => {
     this.setState({loading: true});
 
@@ -30,12 +32,18 @@ class ArrivalListFetch extends React.Component<Props, State> {
     fetch(new StationArrivalsRequest(stationId))
       .then(res => res.json())
       .then(({arrivals}: {arrivals: Array<ArrivalType>}) => {
-        this.setState({arrivals, loading: false});
+        if (!this.unmounted) {
+          this.setState({arrivals, loading: false});
+        }
       });
   };
 
   componentDidMount() {
     this.fetchArrivals();
+  }
+
+  componentWillUnmount() {
+    this.unmounted = true;
   }
 
   render() {

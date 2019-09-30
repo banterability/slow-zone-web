@@ -17,18 +17,26 @@ class StationListFetch extends React.Component<{}, State> {
     stations: []
   };
 
+  unmounted = false;
+
+  componentWillUnmount() {
+    this.unmounted = true;
+  }
+
   fetchStations = (): void => {
     this.setState({loading: true});
 
     fetch(new StationsRequest())
       .then(res => res.json())
       .then(json => json.stations)
-      .then((stations: Array<StationType>) =>
-        this.setState({
-          stations,
-          loading: false
-        })
-      );
+      .then((stations: Array<StationType>) => {
+        if (!this.unmounted) {
+          this.setState({
+            stations,
+            loading: false
+          });
+        }
+      });
   };
 
   componentDidMount() {

@@ -38,7 +38,10 @@ class Nearby extends React.Component<{}, State> {
       navigator.geolocation.getCurrentPosition(
         position => {
           const {latitude, longitude} = position.coords;
-          this.setState({loading: false, latitude, longitude});
+
+          if (!this.unmounted) {
+            this.setState({loading: false, latitude, longitude});
+          }
           resolve();
         },
         err => reject(err),
@@ -52,19 +55,23 @@ class Nearby extends React.Component<{}, State> {
   };
 
   fetchNearbyStations = () => {
-    this.setState({loading: true});
+    if (!this.unmounted) {
+      this.setState({loading: true});
 
-    const {latitude, longitude} = this.state;
-    if (latitude && longitude) {
-      fetch(new NearbyStationsRequest({latitude, longitude, limit: 6}))
-        .then(res => res.json())
-        .then(json => json.stations)
-        .then(stations => {
-          if (this.unmounted) {
-            return false;
-          }
-          this.setState({stations, loading: false});
-        });
+      const {latitude, longitude} = this.state;
+      if (latitude && longitude) {
+        fetch(new NearbyStationsRequest({latitude, longitude, limit: 6}))
+          .then(res => res.json())
+          .then(json => json.stations)
+          .then(stations => {
+            if (this.unmounted) {
+              return false;
+            }
+            if (!this.unmounted) {
+              this.setState({stations, loading: false});
+            }
+          });
+      }
     }
   };
 
