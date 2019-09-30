@@ -4,6 +4,7 @@ import React from "react";
 import Lines from "../../Components/Lines";
 import StaticMap from "../../Components/StaticMap";
 import type {Line as LineType} from "../../types";
+import Star from "../../Favorites/Star";
 
 import "../../css/StationHeader.scss";
 
@@ -30,9 +31,9 @@ const StationHeader = ({
       <div className="station-header--lines">
         <Lines lines={lines} />
       </div>
-      <button onClick={onToggleFavorite}>
-        {isFavorite ? "Remove Favorite" : "Make Favorite"}
-      </button>
+      <div className="station-header--favorite">
+        <Star active={isFavorite} onClick={onToggleFavorite} />
+      </div>
     </div>
     <StaticMap
       latitude={latitude}
