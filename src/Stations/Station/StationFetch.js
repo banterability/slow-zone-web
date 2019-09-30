@@ -3,7 +3,7 @@ import React from "react";
 import type {Match as MatchType} from "react-router-dom";
 
 import LoadingBar from "../../Components/LoadingBar";
-import {pushStation} from "../../store/RecentStations";
+import {pushRecentStation} from "../../store/RecentStations";
 import {StationRequest} from "../../requests";
 import Station from "./Station";
 import type {Station as StationType} from "../../types";
@@ -34,7 +34,7 @@ class StationFetch extends React.Component<Props, State> {
           title: station.name,
           pathname: window.location.pathname
         };
-        pushStation(station.id, stationData);
+        pushRecentStation(station.id, stationData);
         this.setState({station, loading: false});
       });
   };

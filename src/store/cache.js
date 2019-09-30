@@ -1,6 +1,6 @@
 // @flow
 
-class MostRecentlyUsed {
+class LocalStorageCache {
   data: Array<any>;
   storageKey: string;
 
@@ -8,26 +8,19 @@ class MostRecentlyUsed {
     this.storageKey = storageKey;
   }
 
-  _fetch = (): void => {
+  _fetch(): void {
     this.data = JSON.parse(
       window.localStorage.getItem(this.storageKey) || "[]"
     );
-  };
+  }
 
-  _persist = (): void => {
+  _flush(): void {
     window.localStorage.setItem(this.storageKey, JSON.stringify(this.data));
-  };
+  }
 
   get(): Array<any> {
     this._fetch();
-
-    return this.data
-      .slice()
-      .reverse()
-      .map(item => {
-        const {key, ...values} = item;
-        return values;
-      });
+    return this.data;
   }
 
   push(key: number | string, item: any) {
@@ -39,10 +32,20 @@ class MostRecentlyUsed {
     filteredList.push(newItem);
     this.data = filteredList;
 
-    this._persist();
+    this._flush();
 
     return this.data;
   }
+
+  delete(key: number | string) {
+    this._fetch();
+
+    const filteredList = this.data.filter(entry => entry.key !== key);
+    this.data = filteredList;
+
+    this._flush();
+    return;
+  }
 }
 
-export default MostRecentlyUsed;
+export default LocalStorageCache;

@@ -1,12 +1,23 @@
 // @flow
-import MostRecentlyUsed from "./MostRecentlyUsed";
-import {STATION_LIST_KEY} from "./constants";
+import LocalStorageCache from "./cache";
+import {RECENT_STATIONS_KEY} from "./constants";
 import type {RecentStation} from "../types";
 
-export const getRecentStations = (): Array<RecentStation> =>
-  new MostRecentlyUsed(STATION_LIST_KEY).get();
+const cache = new LocalStorageCache(RECENT_STATIONS_KEY);
 
-export const pushStation = (stationId: number, station: RecentStation) => {
-  const stationList = new MostRecentlyUsed(STATION_LIST_KEY);
-  stationList.push(stationId, station);
+export const getRecentStations = (): Array<RecentStation> =>
+  cache
+    .get()
+    .slice()
+    .reverse()
+    .map(item => {
+      const {key, ...values} = item;
+      return values;
+    });
+
+export const pushRecentStation = (
+  stationId: number,
+  station: RecentStation
+) => {
+  cache.push(stationId, station);
 };

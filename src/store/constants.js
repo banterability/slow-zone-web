@@ -1,3 +1,2 @@
 // @flow
-
-export const STATION_LIST_KEY = "slowzone:recentStations";
+export const RECENT_STATIONS_KEY = "slow-zone:cache:recent-stations";
