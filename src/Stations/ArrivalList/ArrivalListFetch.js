@@ -2,7 +2,6 @@
 import React from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
-
 import {StationArrivalsRequest} from "../../requests";
 import ArrivalList from "./ArrivalList";
 import type {Arrival as ArrivalType} from "../../types";

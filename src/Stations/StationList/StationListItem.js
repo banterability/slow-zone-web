@@ -4,7 +4,6 @@ import {Link} from "react-router-dom";
 
 import Distance from "../../Components/Distance";
 import Lines from "../../Components/Lines";
-
 import type {Line as LineType, Distance as DistanceType} from "../../types";
 
 import "../../css/StationListItem.scss";

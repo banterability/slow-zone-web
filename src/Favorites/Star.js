@@ -1,7 +1,7 @@
 // @flow
-
 import React from "react";
 import classnames from "classnames";
+
 import "../css/Star.scss";
 
 type Props = {
