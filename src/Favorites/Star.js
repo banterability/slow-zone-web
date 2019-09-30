@@ -17,6 +17,7 @@ const Star = ({active, onClick}: Props) => (
     onClick={onClick}
     aria-label={active ? "Remove Favorite" : "Add Favorite"}
     className={classnames("icon--star", {
+      "icon--star--active": active,
       "icon--star--clickable": onClick
     })}
     viewBox="0 0 164 164"
@@ -26,7 +27,7 @@ const Star = ({active, onClick}: Props) => (
         d="M126.77 143.622l-9.394-50.128 37.065-35.031-50.577-6.556L82 5.832 60.136 51.907 9.56 58.463l37.065 35.031-9.395 50.128L82 119.197l44.77 24.425z"
         stroke="#000"
         stroke-width="5"
-        fill={active ? "#F9E300" : "#EBE5AC"}
+        className="icon-star__shape"
       />
       {active ? (
         <path
