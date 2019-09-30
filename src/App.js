@@ -2,12 +2,10 @@
 import React from "react";
 import {BrowserRouter as Router, Route} from "react-router-dom";
 
+import Favorites from "./Favorites/Favorites";
 import Header from "./Header/Header";
 import LoadingBar from "./Components/LoadingBar";
 
-const Favorites = React.lazy(() =>
-  import(/* webpackChunkName: "favorites" */ "./Favorites/Favorites")
-);
 const Nearby = React.lazy(() =>
   import(/* webpackChunkName: "nearby" */ "./Nearby/Nearby")
 );
