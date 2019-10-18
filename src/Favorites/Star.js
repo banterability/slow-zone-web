@@ -6,7 +6,7 @@ import "../css/Star.scss";
 
 type Props = {
   active: boolean,
-  onClick: () => void
+  onClick?: () => void
 };
 
 const Star = ({active, onClick}: Props) => (

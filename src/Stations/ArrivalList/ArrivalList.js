@@ -14,8 +14,26 @@ type Props = {
   refresh: () => void
 };
 
+const ArrivalListStopSection = ({arrivals, stopDescription}) => {
+  return (
+    <Fragment>
+      <ArrivalListSectionHeader title={stopDescription} />
+
+      {arrivals.map((arrival: ArrivalType) => (
+        <ArrivalListItem
+          key={`arrival-list-item:${arrival.route.class}:${arrival.route.run}`}
+          {...arrival}
+        />
+      ))}
+    </Fragment>
+  );
+};
+
 const ArrivalList = ({arrivals, loading, refresh}: Props) => {
-  const arrivalsByStop = groupBy(arrivals, arrival => arrival.station.stop.id);
+  const arrivalsByStop: {[number]: Array<ArrivalType>} = groupBy(
+    arrivals,
+    arrival => arrival.station.stop.id
+  );
 
   return (
     <>
@@ -31,19 +49,19 @@ const ArrivalList = ({arrivals, loading, refresh}: Props) => {
       </div>
 
       <ul className="arrival-list">
-        {Object.values(arrivalsByStop).map(arrivalGroup => {
-          const {id, description} = arrivalGroup[0].station.stop;
+        {(Object.values(arrivalsByStop): any).map(
+          (arrivals: Array<ArrivalType>) => {
+            const {id, description} = arrivals[0].station.stop;
 
-          return (
-            <Fragment key={`arrival-list:section:${id}`}>
-              <ArrivalListSectionHeader title={description} />
-
-              {arrivalGroup.map((arrival, index) => (
-                <ArrivalListItem key={index} {...arrival} />
-              ))}
-            </Fragment>
-          );
-        })}
+            return (
+              <ArrivalListStopSection
+                key={`arrival-list-section:${id}`}
+                stopDescription={description}
+                arrivals={arrivals}
+              />
+            );
+          }
+        )}
       </ul>
     </>
   );
