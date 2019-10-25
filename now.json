@@ -1,5 +1,5 @@
 {
-  "alias": "slow-zone.now.sh",
+  "alias": "slow.zone",
   "name": "slow-zone",
   "build": {
     "env": {
