@@ -6,6 +6,8 @@ import LoadingBar from "../Components/LoadingBar";
 import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
 
+import "../css/Nearby.scss";
+
 type State = {
   latitude: ?number,
   loading: boolean,
@@ -24,7 +26,7 @@ class Nearby extends React.Component<{}, State> {
   unmounted = false;
 
   componentDidMount() {
-    this.fetchLocation().then(this.fetchNearbyStations);
+    this.refresh();
   }
 
   componentWillUnmount() {
@@ -48,7 +50,7 @@ class Nearby extends React.Component<{}, State> {
         {
           enableHighAccuracy: true,
           timeout: 5000,
-          maximumAge: 1000 * 60
+          maximumAge: 1000 * 30
         }
       );
     });
@@ -75,15 +77,23 @@ class Nearby extends React.Component<{}, State> {
     }
   };
 
+  refresh = () => {
+    this.fetchLocation().then(this.fetchNearbyStations);
+  };
+
   render() {
     return (
       <>
-        <h2>Nearby</h2>
-        <p>{`Location: ${
-          this.state.latitude ? "detected" : "searching..."
-        }`}</p>
+        <div className="nearby-list__header">
+          <h2 className="nearby-list__title">Nearby</h2>
+          {this.state.loading ? null : (
+            <button className="nearby-list__refresh" onClick={this.refresh}>
+              Update Location
+            </button>
+          )}
+        </div>
         {this.state.loading && <LoadingBar />}
-        {this.state.stations.length ? (
+        {!this.state.loading && this.state.stations.length ? (
           <StationList stations={this.state.stations} showFilter={false} />
         ) : null}
       </>
