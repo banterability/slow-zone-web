@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 
+import {setDocumentTitle} from "../../lib/document";
 import {StationsRequest} from "../../requests";
 import LoadingBar from "../../Components/LoadingBar";
 import StationList from "./StationList";
@@ -18,6 +19,11 @@ class StationListFetch extends React.Component<{}, State> {
   };
 
   unmounted = false;
+
+  componentDidMount() {
+    setDocumentTitle("Stations");
+    this.fetchStations();
+  }
 
   componentWillUnmount() {
     this.unmounted = true;
@@ -38,10 +44,6 @@ class StationListFetch extends React.Component<{}, State> {
         }
       });
   };
-
-  componentDidMount() {
-    this.fetchStations();
-  }
 
   render() {
     return this.state.loading ? (

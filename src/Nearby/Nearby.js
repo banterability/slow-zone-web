@@ -3,6 +3,7 @@ import React from "react";
 
 import {NearbyStationsRequest} from "../requests";
 import LoadingBar from "../Components/LoadingBar";
+import {setDocumentTitle} from "../lib/document";
 import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
 
@@ -28,6 +29,7 @@ class Nearby extends React.Component<{}, State> {
 
   componentDidMount() {
     this.refresh();
+    setDocumentTitle("Nearby Stations");
   }
 
   componentWillUnmount() {

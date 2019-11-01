@@ -3,6 +3,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import EmptyState from "./EmptyState";
+import {setDocumentTitle} from "../lib/document";
 import StationListItem from "../Stations/StationList/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
 import type {RecentStation} from "../types";
@@ -12,6 +13,7 @@ import "../css/Page.scss";
 
 const Recent = () => {
   const stations = getRecentStations();
+  setDocumentTitle("Recent Stations");
 
   return (
     <>

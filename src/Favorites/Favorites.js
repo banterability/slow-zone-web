@@ -2,6 +2,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
+import {setDocumentTitle} from "../lib/document";
 import StationListItem from "../Stations/StationList/StationListItem";
 import {getFavoriteStations} from "../store/FavoriteStations";
 import type {RecentStation} from "../types";
@@ -11,6 +12,7 @@ import "../css/StationList.scss";
 
 const Favorites = () => {
   const stations = getFavoriteStations();
+  setDocumentTitle("Favorite Stations");
 
   return (
     <>
