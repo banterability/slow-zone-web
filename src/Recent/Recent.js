@@ -20,7 +20,7 @@ const Recent = () => {
       </div>
       {stations.length ? (
         <ul className="station-list" elementtiming="station-list">
-          {getRecentStations().map(
+          {stations.map(
             ({pathname, title, lines}: RecentStation, index: number) => (
               <li key={index}>
                 <StationListItem name={title} lines={lines} url={pathname} />
