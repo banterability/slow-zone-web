@@ -27,12 +27,12 @@ const StationHeader = ({
 }: Props) => (
   <div className="station-header">
     <div className="station-header--meta">
+      <div className="station-header--favorite">
+        <Star active={isFavorite} onClick={onToggleFavorite} />
+      </div>
       <h2 className="station-header--title">{title}</h2>
       <div className="station-header--lines">
         <Lines lines={lines} />
-      </div>
-      <div className="station-header--favorite">
-        <Star active={isFavorite} onClick={onToggleFavorite} />
       </div>
     </div>
     <StaticMap
