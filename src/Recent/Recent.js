@@ -8,12 +8,15 @@ import {getRecentStations} from "../store/RecentStations";
 import type {RecentStation} from "../types";
 
 import "../css/StationList.scss";
+import "../css/Page.scss";
 
 const Recent = () => {
   const stations = getRecentStations();
   return (
     <>
-      <h3>Recent Stations</h3>
+      <div className="page__header">
+        <h3>Recent Stations</h3>
+      </div>
       {stations.length ? (
         <ul className="station-list" elementtiming="station-list">
           {getRecentStations().map(
@@ -27,8 +30,9 @@ const Recent = () => {
       ) : (
         <EmptyState />
       )}
-
-      <Link to="/stations">View All Stations</Link>
+      <div className="page__footer">
+        <Link to="/stations">View All Stations</Link>
+      </div>
     </>
   );
 };

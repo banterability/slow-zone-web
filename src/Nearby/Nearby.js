@@ -7,6 +7,7 @@ import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
 
 import "../css/Nearby.scss";
+import "../css/Page.scss";
 
 type State = {
   latitude: ?number,

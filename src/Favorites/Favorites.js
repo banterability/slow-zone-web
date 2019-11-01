@@ -13,7 +13,9 @@ const Favorites = () => {
   const stations = getFavoriteStations();
   return (
     <>
-      <h3>Favorite Stations</h3>
+      <div className="page__header">
+        <h3>Favorite Stations</h3>
+      </div>
       {stations.length ? (
         <ul className="station-list" elementtiming="station-list">
           {stations.map(
@@ -28,7 +30,9 @@ const Favorites = () => {
         <EmptyState />
       )}
 
-      <Link to="/stations">View All Stations</Link>
+      <div className="page__footer">
+        <Link to="/stations">View All Stations</Link>
+      </div>
     </>
   );
 };
