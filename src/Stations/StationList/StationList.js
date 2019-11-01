@@ -38,11 +38,9 @@ class StationList extends React.Component<Props, State> {
   };
 
   render() {
-    const {showFilter} = this.props;
-
     return (
       <>
-        {showFilter && (
+        {this.props.showFilter && (
           <ListFilter
             onChange={this.filterByText}
             searchString={this.state.searchString}

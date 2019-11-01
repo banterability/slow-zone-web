@@ -11,6 +11,7 @@ import "../css/StationList.scss";
 
 const Favorites = () => {
   const stations = getFavoriteStations();
+
   return (
     <>
       <div className="page__header">

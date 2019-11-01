@@ -15,7 +15,7 @@ type Props = {
   url: string
 };
 
-const StationListItem = ({name, lines, distance, url}: Props) => (
+const StationListItem = ({distance, lines, name, url}: Props) => (
   <Link className="station-list__item" to={url}>
     <div>
       <p className="station-list__item__name">{name}</p>

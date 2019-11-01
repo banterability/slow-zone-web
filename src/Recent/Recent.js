@@ -12,6 +12,7 @@ import "../css/Page.scss";
 
 const Recent = () => {
   const stations = getRecentStations();
+
   return (
     <>
       <div className="page__header">
