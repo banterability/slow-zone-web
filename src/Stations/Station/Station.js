@@ -61,7 +61,7 @@ class Station extends React.Component<Props, State> {
     return (
       <>
         <StationHeader
-          name={name}
+          title={name}
           latitude={latitude}
           longitude={longitude}
           lines={lines}
