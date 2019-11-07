@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 
+import Arrow from "../../Components/Arrow";
 import FollowListFetch from "../FollowList/FollowListFetch";
 import type {Arrival as ArrivalType} from "../../types";
 
@@ -25,6 +26,8 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
       route: {run}
     } = this.props;
 
+    const {showNextStops} = this.state;
+
     return (
       <>
         <li
@@ -36,8 +39,11 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
           <span className="arrival-list-item__time">
             {arrivalString.replace(/\s([ap])\.m\./, "$1")}
           </span>
+          <span className="arrival-list-item__toggle-next-stops">
+            <Arrow active={showNextStops} />
+          </span>
         </li>
-        {this.state.showNextStops ? <FollowListFetch runId={run} /> : null}
+        {showNextStops ? <FollowListFetch runId={run} /> : null}
       </>
     );
   }

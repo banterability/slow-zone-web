@@ -1,6 +1,6 @@
 .arrival-list-item {
   display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-columns: 1fr 4fr 1fr 0.75fr;
   align-items: center;
   border-bottom: 2px solid #f5f2f2;
   font-weight: bold;
@@ -21,6 +21,10 @@
   &__time {
     font-variant-numeric: tabular-nums;
     font-size: 1.7em;
+    text-align: right;
+  }
+
+  &__toggle-next-stops {
     text-align: right;
   }
 

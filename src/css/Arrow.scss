@@ -1,0 +1,9 @@
+.icon--arrow {
+  display: inline-block;
+  transition: transform 0.15s;
+  transform: rotate(-90deg);
+
+  &--active {
+    transform: rotate(0);
+  }
+}
