@@ -3,7 +3,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 
 import {setDocumentTitle} from "../lib/document";
-import StationListItem from "../Stations/StationList/StationListItem";
+import StationListItem from "../Components/StationListItem";
 import {getFavoriteStations} from "../store/FavoriteStations";
 import type {RecentStation} from "../types";
 import EmptyState from "./EmptyState";

@@ -4,7 +4,7 @@ import {Link} from "react-router-dom";
 
 import EmptyState from "./EmptyState";
 import {setDocumentTitle} from "../lib/document";
-import StationListItem from "../Stations/StationList/StationListItem";
+import StationListItem from "../Components/StationListItem";
 import {getRecentStations} from "../store/RecentStations";
 import type {RecentStation} from "../types";
 

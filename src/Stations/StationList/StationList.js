@@ -2,7 +2,8 @@
 import React from "react";
 
 import ListFilter from "../../Components/ListFilter";
-import StationListItem from "./StationListItem";
+import StationListItem from "../../Components/StationListItem";
+
 import type {Station as StationType} from "../../types";
 
 import "../../css/StationList.scss";
