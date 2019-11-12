@@ -23,7 +23,10 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
     const {
       destination: {name},
       prediction: {arrivalString, arrivalMinutes},
-      route: {run}
+      route: {run},
+      station: {
+        stop: {id: stopId}
+      }
     } = this.props;
 
     const {showNextStops} = this.state;
@@ -43,7 +46,9 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
             <Arrow active={showNextStops} />
           </span>
         </li>
-        {showNextStops ? <FollowListFetch runId={run} /> : null}
+        {showNextStops ? (
+          <FollowListFetch runId={run} currentStopId={stopId} />
+        ) : null}
       </>
     );
   }

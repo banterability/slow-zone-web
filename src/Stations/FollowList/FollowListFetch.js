@@ -56,12 +56,17 @@ class FollowListFetch extends React.Component<Props, State> {
   }
 
   render() {
+    const {currentStopId} = this.props;
     const {arrivals, errored, loading} = this.state;
 
     return loading ? (
       <LoadingBar />
     ) : (
-      <FollowList arrivals={arrivals} errored={errored} />
+      <FollowList
+        arrivals={arrivals}
+        currentStopId={currentStopId}
+        errored={errored}
+      />
     );
   }
 }

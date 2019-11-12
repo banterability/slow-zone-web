@@ -11,7 +11,7 @@ type Props = {
   errored: boolean
 };
 
-const FollowList = ({arrivals, errored}: Props) => (
+const FollowList = ({arrivals, currentStopId, errored}: Props) => (
   <li>
     {errored ? (
       <div className="follow-list__error">No stop data available</div>
@@ -19,7 +19,11 @@ const FollowList = ({arrivals, errored}: Props) => (
       <>
         <ul className="follow-list">
           {arrivals.map((arrival, index) => (
-            <FollowListItem arrival={arrival} key={index} />
+            <FollowListItem
+              arrival={arrival}
+              currentStopId={currentStopId}
+              key={index}
+            />
           ))}
         </ul>
       </>
