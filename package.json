@@ -9,7 +9,7 @@
     "node": ">=10 <12"
   },
   "dependencies": {
-    "@sentry/browser": "^5.7.1",
+    "@sentry/browser": "^5.8.0",
     "classnames": "2.2.6",
     "lodash-es": "^4.17.15",
     "node-sass": "4.13.0",
