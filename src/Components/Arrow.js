@@ -12,8 +12,8 @@ type Props = {
 const Arrow = ({active, onClick}: Props) => (
   <svg
     className={classnames("icon--arrow", {"icon--arrow--active": active})}
-    width="30"
-    height="30"
+    width="20"
+    height="20"
     viewBox="0 0 80 80"
     xmlns="http://www.w3.org/2000/svg"
   >
