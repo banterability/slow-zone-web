@@ -20,7 +20,7 @@ type State = {
 
 class StationList extends React.Component<Props, State> {
   state = {
-    filteredStations: this.props.stations,
+    filteredStations: this.props.stations || [],
     searchString: ""
   };
 
