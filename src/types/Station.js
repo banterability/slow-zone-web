@@ -4,7 +4,7 @@ import type {Line} from "./Line";
 import type {Location} from "./Location";
 import type {Stop} from "./Stop";
 
-export type Station = {
+export type Station = {|
   name: string,
   description: string,
   distance?: Distance,
@@ -14,4 +14,4 @@ export type Station = {
   lines: Array<Line>,
   accessible: boolean,
   url: ?string
-};
+|};

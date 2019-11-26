@@ -1,6 +1,6 @@
 // @flow
 
-export type Distance = {
+export type Distance = {|
   feet: number,
   miles: number
-};
+|};

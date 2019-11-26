@@ -1,7 +1,7 @@
 // @flow
 
-export type Location = {
+export type Location = {|
   latitude: number,
   longitude: number,
   heading?: number
-};
+|};
