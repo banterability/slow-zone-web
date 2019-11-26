@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-import Arrow from "../../Components/Arrow";
+import Arrow from "../../Components/icons/Arrow";
 import FollowListFetch from "../FollowList/FollowListFetch";
 import type {Arrival as ArrivalType} from "../../types";
 

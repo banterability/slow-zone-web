@@ -4,7 +4,7 @@ import React from "react";
 import Lines from "../../Components/Lines";
 import StaticMap from "../../Components/StaticMap";
 import type {Line as LineType} from "../../types";
-import Star from "../../Favorites/Star";
+import Star from "../../Components/icons/Star";
 
 import "../../css/StationHeader.scss";
 

@@ -2,7 +2,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import "../css/Arrow.scss";
+import "../../css/Arrow.scss";
 
 type Props = {
   active: boolean,

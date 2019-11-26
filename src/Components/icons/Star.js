@@ -2,7 +2,7 @@
 import React from "react";
 import classnames from "classnames";
 
-import "../css/Star.scss";
+import "../../css/Star.scss";
 
 type Props = {
   active: boolean,

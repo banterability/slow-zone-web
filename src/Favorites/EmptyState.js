@@ -1,7 +1,7 @@
 // @flow
 import React from "react";
 
-import Star from "./Star";
+import Star from "../Components/icons/Star";
 
 import "../css/Page.scss";
 
