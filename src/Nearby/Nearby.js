@@ -1,16 +1,19 @@
 // @flow
 import React from "react";
+import {Link} from "react-router-dom";
 
 import {NearbyStationsRequest} from "../requests";
 import LoadingBar from "../Components/LoadingBar";
 import {setDocumentTitle} from "../lib/document";
 import StationList from "../Stations/StationList/StationList";
 import type {Station as StationType} from "../types";
+import ErrorState from "./ErrorState";
 
 import "../css/Nearby.scss";
 import "../css/Page.scss";
 
 type State = {
+  errorFetchingLocation: boolean,
   latitude: ?number,
   loading: boolean,
   longitude: ?number,
@@ -19,6 +22,7 @@ type State = {
 
 class Nearby extends React.Component<{}, State> {
   state = {
+    errorFetchingLocation: false,
     latitude: undefined,
     loading: false,
     longitude: undefined,
@@ -49,7 +53,15 @@ class Nearby extends React.Component<{}, State> {
           }
           resolve();
         },
-        err => reject(err),
+        err => {
+          if (!this.unmounted) {
+            this.setState({
+              loading: false,
+              errorFetchingLocation: true
+            });
+          }
+          reject(err);
+        },
         {
           enableHighAccuracy: true,
           timeout: 5000,
@@ -69,9 +81,6 @@ class Nearby extends React.Component<{}, State> {
           .then(res => res.json())
           .then(json => json.stations)
           .then(stations => {
-            if (this.unmounted) {
-              return false;
-            }
             if (!this.unmounted) {
               this.setState({stations, loading: false});
             }
@@ -85,20 +94,35 @@ class Nearby extends React.Component<{}, State> {
   };
 
   render() {
+    const {errorFetchingLocation, loading, stations} = this.state;
+
     return (
       <>
-        <div className="nearby-list__header">
-          <h2 className="nearby-list__title">Nearby</h2>
-          {this.state.loading ? null : (
-            <button className="nearby-list__refresh" onClick={this.refresh}>
-              Update Location
-            </button>
-          )}
+        <div className="page__header">
+          <div className="nearby__header">
+            <h3>Recent Stations</h3>
+            {!loading && (
+              <div className="nearby__button">
+                <button className="nearby-list__refresh" onClick={this.refresh}>
+                  Update Location
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-        {this.state.loading && <LoadingBar />}
-        {!this.state.loading && this.state.stations.length ? (
-          <StationList stations={this.state.stations} showFilter={false} />
-        ) : null}
+
+        {loading && <LoadingBar />}
+
+        {!loading &&
+          (errorFetchingLocation ? (
+            <ErrorState />
+          ) : (
+            <StationList stations={stations} showFilter={false} />
+          ))}
+
+        <div className="page__footer">
+          <Link to="/stations">View All Stations</Link>
+        </div>
       </>
     );
   }
