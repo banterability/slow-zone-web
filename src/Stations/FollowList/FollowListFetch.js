@@ -7,6 +7,7 @@ import {FollowRequest} from "../../requests";
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {
+  currentStopId: number,
   runId: number
 };
 

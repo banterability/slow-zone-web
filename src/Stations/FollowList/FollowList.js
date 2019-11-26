@@ -8,6 +8,7 @@ import "../../css/FollowList.scss";
 
 type Props = {
   arrivals: Array<ArrivalType>,
+  currentStopId: number,
   errored: boolean
 };
 

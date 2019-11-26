@@ -7,7 +7,8 @@ import type {Arrival as ArrivalType} from "../../types";
 import "../../css/FollowListItem.scss";
 
 type Props = {
-  arrival: ArrivalType
+  arrival: ArrivalType,
+  currentStopId: number
 };
 
 const FollowListItem = ({

@@ -1,7 +1,7 @@
 // @flow
 import type {Location} from "./Location";
 
-export type Arrival = {
+export type Arrival = {|
   destination: {
     id: number,
     name: string
@@ -35,4 +35,4 @@ export type Arrival = {
     faulty: boolean,
     scheduled: boolean
   }
-};
+|};
