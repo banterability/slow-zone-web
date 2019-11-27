@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 import ArrivalListFetch from "../ArrivalList/ArrivalListFetch";
 import {setDocumentTitle} from "../../lib/document";
@@ -11,67 +11,47 @@ import {
   removeFavoriteStation
 } from "../../store/FavoriteStations";
 
-type Props = {
-  loading: boolean,
-  station: StationType
-};
-
-type State = {
-  isFavorite: boolean
-};
-
-class Station extends React.Component<Props, State> {
-  state = {
-    isFavorite: isFavorite(this.props.station.id)
-  };
-
-  toggleFavorite = () => {
-    const {
-      station: {id, name, lines}
-    } = this.props;
-    const {isFavorite} = this.state;
-
-    if (isFavorite) {
-      removeFavoriteStation(id);
-    } else {
-      addFavoriteStation(id, {
-        lines,
-        title: name,
-        pathname: window.location.pathname
-      });
-    }
-    this.setState({
-      isFavorite: !isFavorite
-    });
-  };
-
-  render() {
-    const {
-      station: {
-        id,
-        name,
-        description,
-        location: {latitude, longitude},
-        lines
-      }
-    } = this.props;
-    const {isFavorite} = this.state;
-    setDocumentTitle(`${isFavorite ? "⭐️" : ""} ${description}`);
-
-    return (
-      <>
-        <StationHeader
-          title={name}
-          latitude={latitude}
-          longitude={longitude}
-          lines={lines}
-          isFavorite={isFavorite}
-          onToggleFavorite={this.toggleFavorite}
-        />
-        <ArrivalListFetch stationId={id} />
-      </>
-    );
+const Station = ({
+  station: {
+    id,
+    name,
+    description,
+    location: {latitude, longitude},
+    lines
   }
-}
+}: {
+  station: StationType
+}) => {
+  const [favorite, setFavorite] = useState(isFavorite(id));
+
+  useEffect(() => {
+    setDocumentTitle(`${favorite ? "⭐️" : ""} ${description}`);
+  });
+
+  return (
+    <>
+      <StationHeader
+        title={name}
+        latitude={latitude}
+        longitude={longitude}
+        lines={lines}
+        isFavorite={favorite}
+        onToggleFavorite={() => {
+          if (favorite) {
+            removeFavoriteStation(id);
+          } else {
+            addFavoriteStation(id, {
+              lines,
+              title: name,
+              pathname: window.location.pathname
+            });
+          }
+          setFavorite(!favorite);
+        }}
+      />
+      <ArrivalListFetch stationId={id} />
+    </>
+  );
+};
 
 export default Station;
