@@ -1,5 +1,5 @@
 // @flow
-import React from "react";
+import React, {useEffect} from "react";
 import {Link} from "react-router-dom";
 
 import {setDocumentTitle} from "../lib/document";
@@ -12,7 +12,10 @@ import "../css/StationList.scss";
 
 const Favorites = () => {
   const stations = getFavoriteStations();
-  setDocumentTitle("Favorite Stations");
+
+  useEffect(() => {
+    setDocumentTitle("Favorite Stations");
+  });
 
   return (
     <>
