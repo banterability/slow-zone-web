@@ -4,7 +4,6 @@ import * as Sentry from "@sentry/browser";
 
 import {sentryDsn, revision} from "./config";
 import App from "./App";
-import {unregister} from "./registerServiceWorker";
 
 import "./index.css";
 
@@ -13,4 +12,3 @@ if (sentryDsn) {
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
-unregister();
