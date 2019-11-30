@@ -2,7 +2,7 @@
 import React from "react";
 import {Link} from "react-router-dom";
 
-import {NearbyStationsRequest} from "../requests";
+import {NearbyRequest} from "../requests";
 import LoadingBar from "../Components/LoadingBar";
 import {setDocumentTitle} from "../lib/document";
 import StationList from "../Stations/StationList/StationList";
@@ -77,7 +77,7 @@ class Nearby extends React.Component<{}, State> {
 
       const {latitude, longitude} = this.state;
       if (latitude && longitude) {
-        fetch(new NearbyStationsRequest({latitude, longitude, limit: 6}))
+        fetch(new NearbyRequest({latitude, longitude, limit: 6}))
           .then(res => res.json())
           .then(json => json.stations)
           .then(stations => {
