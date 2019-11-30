@@ -1,7 +1,7 @@
 // @flow
 import BaseRequest from "./BaseRequest";
 
-export class NearbyStationsRequest extends BaseRequest {
+class NearbyRequest extends BaseRequest {
   constructor(
     params: {latitude: number, longitude: number, limit?: number},
     init?: RequestOptions = {}
@@ -11,3 +11,5 @@ export class NearbyStationsRequest extends BaseRequest {
     super(`/nearby?latitude=${latitude}&longitude=${longitude}${limitString}`);
   }
 }
+
+export default NearbyRequest;
