@@ -3,11 +3,12 @@
   "alias": "slow.zone",
   "build": {
     "env": {
-      "CTA_API_KEY": "@cta-api-key",
-      "REACT_APP_API_BASE_URL": "https://api.slow.zone",
       "REACT_APP_GOOGLE_STATIC_MAPS_KEY": "@google-static-maps-key",
       "REACT_APP_SENTRY_DSN": "@sentry-dsn"
     }
+  },
+  "env": {
+    "CTA_API_KEY": "@cta-api-key"
   },
   "version": 2
 }
