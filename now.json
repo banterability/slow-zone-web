@@ -1,6 +1,6 @@
 {
-  "alias": "slow.zone",
   "name": "slow-zone",
+  "alias": "slow.zone",
   "build": {
     "env": {
       "CTA_API_KEY": "@cta-api-key",
@@ -9,13 +9,5 @@
       "REACT_APP_SENTRY_DSN": "@sentry-dsn"
     }
   },
-  "routes": [
-    { "src": "/", "dest": "index.html" },
-    { "src": "/stations/?", "dest": "index.html" },
-    { "src": "/stations/.*", "dest": "index.html" },
-    { "src": "/nearby/?", "dest": "index.html" },
-    { "src": "/recent/?", "dest": "index.html" },
-    { "src": "/(.+)", "dest": "$1" }
-  ],
   "version": 2
 }
