@@ -100,7 +100,7 @@ class Nearby extends React.Component<{}, State> {
       <>
         <div className="page__header">
           <div className="nearby__header">
-            <h3>Recent Stations</h3>
+            <h3>Nearby Stations</h3>
             {!loading && (
               <div className="nearby__button">
                 <button className="nearby-list__refresh" onClick={this.refresh}>
