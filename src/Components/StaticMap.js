@@ -1,6 +1,5 @@
 import React from "react";
 
-import {googleStaticMapsKey} from "../config";
 import {buildQueryString} from "../lib/url";
 
 import "../css/StaticMap.css";
@@ -30,7 +29,7 @@ const StaticMap = props => (
 );
 
 StaticMap.defaultProps = {
-  key: googleStaticMapsKey,
+  key: process.env.REACT_APP_GOOGLE_STATIC_MAPS_KEY,
   scale: 2,
   zoom: 16
 };
