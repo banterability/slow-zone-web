@@ -9,7 +9,6 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@sentry/browser": "5.10.2",
     "classnames": "2.2.6",
     "geolib": "3.2.0",
     "lodash-es": "^4.17.15",
@@ -27,9 +26,11 @@
     "prettier": "1.19.1",
     "prompt": "^1.0.0",
     "react-scripts": "3.3.0",
-    "request": "^2.88.0"
+    "request": "^2.88.0",
+    "source-map-explorer": "^2.1.2"
   },
   "scripts": {
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "build": "REACT_APP_REVISION=$NOW_GITHUB_COMMIT_SHA react-scripts build",
     "eject": "react-scripts eject",
     "flow": "flow",
