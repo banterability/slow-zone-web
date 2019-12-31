@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "classnames": "2.2.6",
-    "geolib": "3.2.0",
+    "geolib": "3.2.1",
     "lodash-es": "^4.17.15",
     "node-sass": "4.13.0",
     "react-dom": "16.12.0",
