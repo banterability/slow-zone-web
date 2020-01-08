@@ -5,10 +5,10 @@ const findStation = stationId =>
 
 module.exports = (req, res) => {
   const {stationId} = req.query;
-
   const station = findStation(stationId);
+
   if (station) {
-    res.setHeader("cache-control", "s-maxage=300, stale-while-revalidate");
+    res.setHeader("cache-control", "s-maxage=3600, stale-while-revalidate");
     res.setHeader("sz-station-data", GENERATED_AT);
     return res.send({
       station: station
