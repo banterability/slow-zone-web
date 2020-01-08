@@ -1,6 +1,7 @@
-const stations = require("../lib/stationsCache").ORDERED_STATIONS;
+const {ORDERED_STATIONS, GENERATED_AT} = require("../lib/stationsCache");
 
-// todo: caching headers
 module.exports = (req, res) => {
-  res.json({stations});
+  res.setHeader("cache-control", "s-maxage=300, stale-while-revalidate");
+  res.setHeader("sz-station-data", GENERATED_AT);
+  res.json({stations: ORDERED_STATIONS});
 };

@@ -1,4 +1,4 @@
-const {ORDERED_STATIONS} = require("../../../lib/stationsCache");
+const {GENERATED_AT, ORDERED_STATIONS} = require("../../../lib/stationsCache");
 
 const findStation = stationId =>
   ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
@@ -8,7 +8,8 @@ module.exports = (req, res) => {
 
   const station = findStation(stationId);
   if (station) {
-    // todo: caching headers
+    res.setHeader("cache-control", "s-maxage=300, stale-while-revalidate");
+    res.setHeader("sz-station-data", GENERATED_AT);
     return res.send({
       station: station
     });
