@@ -19,7 +19,7 @@
     "slow-zone": "2.1.0"
   },
   "devDependencies": {
-    "flow-bin": "0.115.0",
+    "flow-bin": "0.116.0",
     "lodash": "^4.17.15",
     "prettier": "1.19.1",
     "react-scripts": "3.3.0",
