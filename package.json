@@ -29,6 +29,7 @@
   "scripts": {
     "analyze": "source-map-explorer 'build/static/js/*.js'",
     "build": "REACT_APP_REVISION=$NOW_GITHUB_COMMIT_SHA react-scripts build",
+    "dev": "BROWSER=none react-scripts start",
     "eject": "react-scripts eject",
     "flow": "flow",
     "prettier": "prettier --write '{api,src}/**/*.js'",
