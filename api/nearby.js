@@ -1,5 +1,5 @@
 const geolib = require("geolib");
-const {ORDERED_STATIONS, STATION_LOCATIONS} = require("../lib/stationsCache");
+const {ORDERED_STATIONS, STATION_LOCATIONS} = require("./_stationCache");
 
 const findStation = stationId =>
   ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));

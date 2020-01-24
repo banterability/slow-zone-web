@@ -1,4 +1,4 @@
-const {GENERATED_AT, ORDERED_STATIONS} = require("../../../lib/stationsCache");
+const {GENERATED_AT, ORDERED_STATIONS} = require("../../_stationCache");
 
 const findStation = stationId =>
   ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
