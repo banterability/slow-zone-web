@@ -36,14 +36,14 @@ const buildStop = stop => {
     lines: []
   };
 
-  if (toBoolean(stop.BLUE)) stopData.lines.push("blue");
-  if (toBoolean(stop.RED)) stopData.lines.push("red");
-  if (toBoolean(stop.G)) stopData.lines.push("green");
-  if (toBoolean(stop.BRN)) stopData.lines.push("brown");
-  if (toBoolean(stop.P) || toBoolean(stop.Pexp)) stopData.lines.push("purple");
-  if (toBoolean(stop.Y)) stopData.lines.push("yellow");
-  if (toBoolean(stop.Pnk)) stopData.lines.push("pink");
-  if (toBoolean(stop.O)) stopData.lines.push("orange");
+  if (toBoolean(stop.BLUE)) stopData.lines.push("BLUE");
+  if (toBoolean(stop.RED)) stopData.lines.push("RED");
+  if (toBoolean(stop.G)) stopData.lines.push("GREEN");
+  if (toBoolean(stop.BRN)) stopData.lines.push("BROWN");
+  if (toBoolean(stop.P) || toBoolean(stop.Pexp)) stopData.lines.push("PURPLE");
+  if (toBoolean(stop.Y)) stopData.lines.push("YELLOW");
+  if (toBoolean(stop.Pnk)) stopData.lines.push("PINK");
+  if (toBoolean(stop.O)) stopData.lines.push("ORANGE");
 
   // sort lines by a-z
   stopData.lines = stopData.lines.sort();
