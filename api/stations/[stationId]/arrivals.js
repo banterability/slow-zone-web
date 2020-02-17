@@ -8,9 +8,7 @@ module.exports = (req, res) => {
   client
     .getArrivalsForStation(stationId)
     .then(arrivals => {
-      res.send({
-        arrivals: arrivals
-      });
+      res.send(arrivals);
     })
     .catch(err => {
       res.status(500).json({

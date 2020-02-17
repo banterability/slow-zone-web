@@ -30,7 +30,7 @@ class ArrivalListFetch extends React.Component<Props, State> {
 
     fetch(new StationArrivalsRequest(stationId))
       .then(res => res.json())
-      .then(({arrivals}: {arrivals: Array<ArrivalType>}) => {
+      .then((arrivals: {arrivals: Array<ArrivalType>}) => {
         if (!this.unmounted) {
           this.setState({arrivals, loading: false});
         }
