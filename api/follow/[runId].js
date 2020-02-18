@@ -7,7 +7,7 @@ module.exports = (req, res) => {
 
   client
     .followTrain(runId)
-    .then(data => res.send({data}))
+    .then(data => res.send(data))
     .catch(err => {
       res.status(500).json({
         error: {

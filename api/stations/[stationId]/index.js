@@ -10,9 +10,7 @@ module.exports = (req, res) => {
   if (station) {
     res.setHeader("cache-control", "s-maxage=3600, stale-while-revalidate");
     res.setHeader("sz-station-data", GENERATED_AT);
-    return res.send({
-      station: station
-    });
+    return res.send(station);
   } else {
     return res.status(404).send({
       error: {

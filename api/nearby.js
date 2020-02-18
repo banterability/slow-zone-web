@@ -34,5 +34,5 @@ module.exports = (req, res) => {
       };
     });
 
-  res.send({stations: nearestStations});
+  res.send(nearestStations);
 };
