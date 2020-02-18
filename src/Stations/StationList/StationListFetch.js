@@ -34,7 +34,6 @@ class StationListFetch extends React.Component<{}, State> {
 
     fetch(new StationsRequest())
       .then(res => res.json())
-      .then(json => json.stations)
       .then((stations: Array<StationType>) => {
         if (!this.unmounted) {
           this.setState({
