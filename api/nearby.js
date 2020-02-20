@@ -5,7 +5,7 @@ const findStation = stationId =>
   ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
 
 module.exports = (req, res) => {
-  let {limit, latitude, longitude} = req.query;
+  let {count, latitude, longitude} = req.query;
 
   if (!latitude && !longitude) {
     return res.status(400).json({
@@ -16,11 +16,10 @@ module.exports = (req, res) => {
   }
 
   const userLocation = {latitude, longitude};
-  limit = limit || 5;
 
   const nearestStations = geolib
     .orderByDistance(userLocation, STATION_LOCATIONS)
-    .slice(0, limit)
+    .slice(0, count || 5)
     .map(result => {
       const station = findStation(result.stationId);
       const distance = geolib.getDistance(station.location, userLocation);
