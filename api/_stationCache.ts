@@ -1,4 +1,4 @@
-const {generatedAt, stations} = require("../data/stations.json");
+import {generatedAt, stations} from '../data/stations.json';
 
 const compareStations = (stationA, stationB) => {
   if (stationA.name < stationB.name) {
@@ -10,11 +10,13 @@ const compareStations = (stationA, stationB) => {
   }
 };
 
+export const GENERATED_AT = generatedAt;
+
 // pre-sort a-z
-const ORDERED_STATIONS = stations.sort(compareStations);
+export const ORDERED_STATIONS = stations.sort(compareStations);
 
 // precompute list of stations ids + coordinates
-const STATION_LOCATIONS = stations.map(station => ({
+export const STATION_LOCATIONS = stations.map(station => ({
   ...station.location,
   stationId: station.id
 }));
