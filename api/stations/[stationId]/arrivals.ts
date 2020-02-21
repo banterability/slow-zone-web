@@ -1,12 +1,11 @@
-const SlowZone = require("slow-zone");
+import SlowZone from "slow-zone";
+import {NowRequest, NowResponse} from "@now/node";
 
 const client = new SlowZone({apiKey: process.env.CTA_API_KEY});
 
-module.exports = (req, res) => {
-  const {stationId} = req.query;
-
+const getArrivals = (req: NowRequest, res: NowResponse) => {
   client
-    .getArrivalsForStation(stationId)
+    .getArrivalsForStation(req.query)
     .then(arrivals => {
       res.send({data: arrivals, error: null});
     })
@@ -21,3 +20,5 @@ module.exports = (req, res) => {
       ]);
     });
 };
+
+export default getArrivals;
