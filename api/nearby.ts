@@ -25,7 +25,9 @@ const getNearbyStations = (req: NowRequest, res: NowResponse) => {
     .orderByDistance(userLocation, STATION_LOCATIONS)
     .slice(0, resultCount)
     .map(result => {
+      // @ts-ignore
       const station = findStation(result.stationId);
+      // @ts-ignore
       const distance = geolib.getDistance(station.location, userLocation);
 
       return {
