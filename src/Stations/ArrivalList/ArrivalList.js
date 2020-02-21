@@ -31,7 +31,14 @@ const ArrivalListStopSection = ({arrivals, stopDescription}) => {
 const ArrivalList = ({arrivals, loading, refresh}: Props) => {
   const arrivalsByStop: {[number]: Array<ArrivalType>} = arrivals.reduce(
     (memo, arrival) => {
-      memo[arrival.station.stop.id] = arrival;
+      const stopId = arrival.station.stop.id;
+
+      if (memo[stopId]) {
+        memo[stopId].push(arrival);
+      } else {
+        memo[stopId] = [arrival];
+      }
+
       return memo;
     },
     {}
