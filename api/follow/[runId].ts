@@ -1,12 +1,11 @@
-const SlowZone = require("slow-zone");
+import SlowZone from 'slow-zone';
+import { NowRequest, NowResponse } from '@now/node';
 
 const client = new SlowZone({apiKey: process.env.CTA_API_KEY});
 
-module.exports = (req, res) => {
-  const {runId} = req.query;
-
+const getFollow = (req: NowRequest, res: NowResponse) => {
   client
-    .followTrain(runId)
+    .followTrain(req.query)
     .then(data => res.send({data, error: null}))
     .catch(err => {
       res.status(500).json([
@@ -18,4 +17,6 @@ module.exports = (req, res) => {
         }
       ]);
     });
-};
+}
+
+export default getFollow;
