@@ -1,6 +1,9 @@
-import {generatedAt, stations} from '../data/stations.json';
+import {generatedAt, stations} from "../data/stations.json";
 
-const compareStations = (stationA, stationB) => {
+const compareStations = (
+  stationA: {name: string},
+  stationB: {name: string}
+) => {
   if (stationA.name < stationB.name) {
     return -1;
   } else if (stationA.name > stationB.name) {
@@ -22,4 +25,6 @@ export const STATION_LOCATIONS = stations.map(station => ({
 }));
 
 export const findStation = (stationId: string | string[]) =>
-  ORDERED_STATIONS.find(station => station.id === parseInt(<string>stationId, 10));
+  ORDERED_STATIONS.find(
+    station => station.id === parseInt(<string>stationId, 10)
+  );

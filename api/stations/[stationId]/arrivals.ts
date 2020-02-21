@@ -6,7 +6,7 @@ const client = new SlowZone({apiKey: process.env.CTA_API_KEY});
 const getArrivals = (req: NowRequest, res: NowResponse) => {
   client
     .getArrivalsForStation(req.query)
-    .then(arrivals => {
+    .then((arrivals: [any]) => {
       res.send({data: arrivals, error: null});
     })
     .catch((err: Error) => {

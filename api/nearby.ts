@@ -1,7 +1,7 @@
-import geolib from 'geolib';
-import { NowRequest, NowResponse } from '@now/node';
+import geolib from "geolib";
+import {NowRequest, NowResponse} from "@now/node";
 
-import {findStation, STATION_LOCATIONS} from './_stationCache';
+import {findStation, STATION_LOCATIONS} from "./_stationCache";
 
 const getNearbyStations = (req: NowRequest, res: NowResponse) => {
   let {count, latitude, longitude} = req.query;
@@ -38,6 +38,6 @@ const getNearbyStations = (req: NowRequest, res: NowResponse) => {
     });
 
   res.send({data: nearestStations, error: null});
-}
+};
 
 export default getNearbyStations;
