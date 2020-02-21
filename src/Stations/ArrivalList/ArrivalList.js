@@ -1,6 +1,5 @@
 // @flow
 import React, {Fragment} from "react";
-import {groupBy} from "lodash-es";
 
 import ArrivalListItem from "./ArrivalListItem";
 import ArrivalListSectionHeader from "./ArrivalListSectionHeader";
@@ -30,9 +29,12 @@ const ArrivalListStopSection = ({arrivals, stopDescription}) => {
 };
 
 const ArrivalList = ({arrivals, loading, refresh}: Props) => {
-  const arrivalsByStop: {[number]: Array<ArrivalType>} = groupBy(
-    arrivals,
-    arrival => arrival.station.stop.id
+  const arrivalsByStop: {[number]: Array<ArrivalType>} = arrivals.reduce(
+    (memo, arrival) => {
+      memo[arrival.station.stop.id] = arrival;
+      return memo;
+    },
+    {}
   );
 
   return (
