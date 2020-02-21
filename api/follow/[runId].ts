@@ -7,7 +7,7 @@ const getFollow = (req: NowRequest, res: NowResponse) => {
   client
     .followTrain(req.query)
     .then(data => res.send({data, error: null}))
-    .catch(err => {
+    .catch((err: Error) => {
       res.status(500).json([
         {
           data: [],

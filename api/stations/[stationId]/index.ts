@@ -1,8 +1,6 @@
 import {NowResponse, NowRequest} from "@now/node";
-import {GENERATED_AT, ORDERED_STATIONS} from "../../_stationCache";
 
-const findStation = stationId =>
-  ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
+import {findStation, GENERATED_AT} from "../../_stationCache";
 
 const getStation = (req: NowRequest, res: NowResponse) => {
   const {stationId} = req.query;

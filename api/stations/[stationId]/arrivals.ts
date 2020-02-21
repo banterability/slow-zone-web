@@ -9,7 +9,7 @@ const getArrivals = (req: NowRequest, res: NowResponse) => {
     .then(arrivals => {
       res.send({data: arrivals, error: null});
     })
-    .catch(err => {
+    .catch((err: Error) => {
       res.status(500).json([
         {
           data: [],

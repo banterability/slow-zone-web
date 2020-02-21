@@ -21,8 +21,5 @@ export const STATION_LOCATIONS = stations.map(station => ({
   stationId: station.id
 }));
 
-module.exports = {
-  GENERATED_AT: generatedAt,
-  ORDERED_STATIONS,
-  STATION_LOCATIONS
-};
+export const findStation = (stationId: string | string[]) =>
+  ORDERED_STATIONS.find(station => station.id === parseInt(<string>stationId, 10));

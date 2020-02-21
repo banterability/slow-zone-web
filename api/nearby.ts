@@ -1,10 +1,9 @@
-const geolib = require("geolib");
-const {ORDERED_STATIONS, STATION_LOCATIONS} = require("./_stationCache");
+import geolib from 'geolib';
+import { NowRequest, NowResponse } from '@now/node';
 
-const findStation = stationId =>
-  ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
+import {findStation, STATION_LOCATIONS} from './_stationCache';
 
-module.exports = (req, res) => {
+const getNearbyStations = (req: NowRequest, res: NowResponse) => {
   let {count, latitude, longitude} = req.query;
 
   if (!latitude && !longitude) {
@@ -15,7 +14,10 @@ module.exports = (req, res) => {
     });
   }
 
-  const userLocation = {latitude, longitude};
+  const userLocation = {
+    latitude: <string>latitude,
+    longitude: <string>longitude
+  };
 
   const nearestStations = geolib
     .orderByDistance(userLocation, STATION_LOCATIONS)
@@ -34,4 +36,6 @@ module.exports = (req, res) => {
     });
 
   res.send({data: nearestStations, error: null});
-};
+}
+
+export default getNearbyStations;
