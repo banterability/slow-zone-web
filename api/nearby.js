@@ -33,5 +33,5 @@ module.exports = (req, res) => {
       };
     });
 
-  res.send(nearestStations);
+  res.send({data: nearestStations, error: null});
 };

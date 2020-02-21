@@ -10,9 +10,10 @@ module.exports = (req, res) => {
   if (station) {
     res.setHeader("cache-control", "s-maxage=3600, stale-while-revalidate");
     res.setHeader("sz-station-data", GENERATED_AT);
-    return res.send(station);
+    return res.send({data: station, error: null});
   } else {
     return res.status(404).send({
+      data: {},
       error: {
         status: 404,
         message: `No station found with id ${stationId}`

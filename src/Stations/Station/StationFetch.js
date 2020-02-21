@@ -30,6 +30,7 @@ class StationFetch extends React.Component<Props, State> {
 
     return fetch(new StationRequest(stationId))
       .then(res => res.json())
+      .then(json => json.data)
       .then((station: StationType) => {
         const stationData = {
           lines: station.lines,

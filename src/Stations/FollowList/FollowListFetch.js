@@ -39,9 +39,9 @@ class FollowListFetch extends React.Component<Props, State> {
 
     fetch(new FollowRequest(this.props.runId))
       .then(res => res.json())
-      .then((arrivals: Array<ArrivalType>) => {
+      .then(({arrivals, error}: {data: Array<ArrivalType>, error: any}) => {
         if (!this.unmounted) {
-          if (arrivals) {
+          if (data) {
             this.setState({
               arrivals: arrivals,
               loading: false

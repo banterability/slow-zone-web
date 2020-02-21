@@ -8,9 +8,16 @@ module.exports = (req, res) => {
   client
     .getArrivalsForStation(stationId)
     .then(arrivals => {
-      res.send(arrivals);
+      res.send({data: arrivals, error: null});
     })
     .catch(err => {
-      res.status(500).json([]);
+      res.status(500).json([
+        {
+          data: [],
+          error: {
+            message: err.toString()
+          }
+        }
+      ]);
     });
 };
