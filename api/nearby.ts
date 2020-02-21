@@ -19,9 +19,11 @@ const getNearbyStations = (req: NowRequest, res: NowResponse) => {
     longitude: <string>longitude
   };
 
+  const resultCount = parseInt(<string>count, 10) || 5;
+
   const nearestStations = geolib
     .orderByDistance(userLocation, STATION_LOCATIONS)
-    .slice(0, count || 5)
+    .slice(0, resultCount)
     .map(result => {
       const station = findStation(result.stationId);
       const distance = geolib.getDistance(station.location, userLocation);
