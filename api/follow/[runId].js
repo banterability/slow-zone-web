@@ -9,10 +9,6 @@ module.exports = (req, res) => {
     .followTrain(runId)
     .then(data => res.send(data))
     .catch(err => {
-      res.status(500).json({
-        error: {
-          message: err.toString()
-        }
-      });
+      res.status(500).json([]);
     });
 };

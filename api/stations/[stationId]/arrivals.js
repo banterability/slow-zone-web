@@ -11,10 +11,6 @@ module.exports = (req, res) => {
       res.send(arrivals);
     })
     .catch(err => {
-      res.status(500).json({
-        error: {
-          message: err.toString()
-        }
-      });
+      res.status(500).json([]);
     });
 };
