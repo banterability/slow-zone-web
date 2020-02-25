@@ -1,11 +1,11 @@
 // @flow
-import uuid from "uuid/v4";
+import {v4 as uuidv4} from "uuid";
 
 class BaseRequest extends Request {
   constructor(url: string, options?: RequestOptions = {}) {
     const headers = {
       ...options.headers,
-      "Request-Id": uuid()
+      "Request-Id": uuidv4()
     };
 
     super(`/api${url}`, {
