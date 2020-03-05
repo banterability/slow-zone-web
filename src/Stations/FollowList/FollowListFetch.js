@@ -51,6 +51,8 @@ class FollowListFetch extends React.Component<Props, State> {
             Sentry.withScope(scope => {
               scope.setLevel("info");
               scope.setExtra("component", "FollowListFetch");
+              scope.setExtra("runId", this.props.runId);
+              scope.setExtra("stopId", this.props.currentStopId);
               Sentry.captureException(error);
             });
             this.setState({
