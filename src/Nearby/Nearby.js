@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 import {Link} from "react-router-dom";
+import * as Sentry from "@sentry/browser";
 
 import {NearbyRequest} from "../requests";
 import LoadingBar from "../Components/LoadingBar";
@@ -54,6 +55,12 @@ class Nearby extends React.Component<{}, State> {
           resolve();
         },
         err => {
+          Sentry.withScope(scope => {
+            scope.setExtra("component", "Nearby");
+            scope.setExtra("method", "fetchLocation");
+            Sentry.captureException(err);
+          });
+
           if (!this.unmounted) {
             this.setState({
               loading: false,

@@ -1,5 +1,6 @@
 // @flow
 import React from "react";
+import * as Sentry from "@sentry/browser";
 
 import LoadingBar from "../../Components/LoadingBar";
 import FollowList from "./FollowList";
@@ -47,6 +48,11 @@ class FollowListFetch extends React.Component<Props, State> {
               loading: false
             });
           } else {
+            Sentry.withScope(scope => {
+              scope.setLevel("info");
+              scope.setExtra("component", "FollowListFetch");
+              Sentry.captureException(err);
+            });
             this.setState({
               errored: true,
               loading: false
