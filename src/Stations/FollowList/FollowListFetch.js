@@ -1,4 +1,5 @@
 // @flow
+/* global Sentry */
 import React from "react";
 
 import LoadingBar from "../../Components/LoadingBar";
@@ -50,7 +51,7 @@ class FollowListFetch extends React.Component<Props, State> {
             Sentry.withScope(scope => {
               scope.setLevel("info");
               scope.setExtra("component", "FollowListFetch");
-              Sentry.captureException(err);
+              Sentry.captureException(error);
             });
             this.setState({
               errored: true,
