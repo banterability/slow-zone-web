@@ -1,6 +1,5 @@
 // @flow
 import React from "react";
-import * as Sentry from "@sentry/browser";
 
 import LoadingBar from "../../Components/LoadingBar";
 import FollowList from "./FollowList";
