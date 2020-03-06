@@ -1,6 +1,6 @@
 // @flow
-/* global Sentry */
 import React from "react";
+import {captureException, withScope} from "@sentry/browser";
 
 import LoadingBar from "../../Components/LoadingBar";
 import FollowList from "./FollowList";
@@ -48,12 +48,12 @@ class FollowListFetch extends React.Component<Props, State> {
               loading: false
             });
           } else {
-            Sentry.withScope(scope => {
+            withScope(scope => {
               scope.setLevel("info");
               scope.setExtra("component", "FollowListFetch");
               scope.setExtra("runId", this.props.runId);
               scope.setExtra("stopId", this.props.currentStopId);
-              Sentry.captureException(error);
+              captureException(error);
             });
             this.setState({
               errored: true,
