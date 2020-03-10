@@ -15,7 +15,8 @@
     "node-sass": "4.13.1",
     "react": "16.13.0",
     "react-dom": "16.13.0",
-    "react-router-dom": "5.1.2",
+    "react-router": "^6.0.0-alpha.2",
+    "react-router-dom": "^6.0.0-alpha.2",
     "slow-zone": "2.1.2",
     "uuid": "7.0.2"
   },
