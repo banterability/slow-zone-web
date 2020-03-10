@@ -58,7 +58,7 @@ class Nearby extends React.Component<{}, State> {
         err => {
           withScope(scope => {
             scope.setExtra("component", "Nearby");
-            scope.setExtra("method", "fetchLocation");
+            scope.setExtra("message", err.message);
             captureException(err);
           });
 
