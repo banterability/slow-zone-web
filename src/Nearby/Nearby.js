@@ -92,13 +92,16 @@ class Nearby extends React.Component<{}, State> {
             if (!this.unmounted) {
               this.setState({stations, loading: false});
             }
-          });
+          })
+          .catch(captureException);
       }
     }
   };
 
   refresh = () => {
-    this.fetchLocation().then(this.fetchNearbyStations);
+    this.fetchLocation()
+      .then(this.fetchNearbyStations)
+      .catch(captureException);
   };
 
   render() {
