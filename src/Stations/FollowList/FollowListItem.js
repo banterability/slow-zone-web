@@ -1,6 +1,7 @@
 // @flow
 import React from "react";
 import classnames from "classnames";
+import {Link} from "react-router-dom";
 
 import type {Arrival as ArrivalType} from "../../types";
 
@@ -15,6 +16,7 @@ const FollowListItem = ({
   arrival: {
     prediction: {arrivalMinutes, arrivalString},
     station: {
+      id: stationId,
       name: stationName,
       stop: {id: stopId}
     }
@@ -30,7 +32,9 @@ const FollowListItem = ({
       })}
     >
       <span className="follow-list-item__minutes">{arrivalMinutes} m</span>
-      <span className="follow-list-item__headsign">{stationName}</span>
+      <span className="follow-list-item__headsign">
+        <Link to={`/stations/${stationId}`}>{stationName}</Link>
+      </span>
       <span className="follow-list-item__time">
         {arrivalString.replace(/\s([ap])\.m\./, "$1")}
       </span>
