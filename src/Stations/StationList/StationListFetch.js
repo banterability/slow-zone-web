@@ -1,5 +1,5 @@
 // @flow
-import React, {useEffect} from "react";
+import React from "react";
 
 import {setDocumentTitle} from "../../lib/document";
 import {StationsRequest} from "../../requests";
@@ -21,6 +21,7 @@ class StationListFetch extends React.Component<{}, State> {
   unmounted = false;
 
   componentDidMount() {
+    setDocumentTitle("Stations");
     this.fetchStations();
   }
 
@@ -45,10 +46,6 @@ class StationListFetch extends React.Component<{}, State> {
   };
 
   render() {
-    useEffect(() => {
-      setDocumentTitle("Stations");
-    });
-
     return this.state.loading ? (
       <LoadingBar />
     ) : (

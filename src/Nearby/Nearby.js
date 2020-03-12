@@ -1,6 +1,6 @@
 // @flow
 
-import React, {useEffect} from "react";
+import React from "react";
 import {Link} from "react-router-dom";
 import {captureException, withScope} from "@sentry/browser";
 
@@ -35,6 +35,7 @@ class Nearby extends React.Component<{}, State> {
 
   componentDidMount() {
     this.refresh();
+    setDocumentTitle("Nearby Stations");
   }
 
   componentWillUnmount() {
@@ -105,10 +106,6 @@ class Nearby extends React.Component<{}, State> {
 
   render() {
     const {errorFetchingLocation, loading, stations} = this.state;
-
-    useEffect(() => {
-      setDocumentTitle("Nearby Stations");
-    });
 
     return (
       <>
