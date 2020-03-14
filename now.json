@@ -1,5 +1,4 @@
 {
-  "name": "slow-zone",
   "alias": "slow.zone",
   "build": {
     "env": {
