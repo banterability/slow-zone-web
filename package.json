@@ -23,7 +23,7 @@
     "flow-bin": "0.121.0",
     "lodash": "4.17.15",
     "prettier": "1.19.1",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.1",
     "source-map-explorer": "2.4.0"
   },
   "scripts": {
