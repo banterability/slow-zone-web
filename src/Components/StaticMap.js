@@ -18,7 +18,7 @@ type Props = {
   longitude: number,
   scale: number,
   width: number,
-  zoom: number
+  zoom: number,
 };
 
 const generateMapUrl = ({
@@ -31,7 +31,7 @@ const generateMapUrl = ({
   return `${BASE_URL}${buildQueryString({
     ...passthrough,
     center: `${latitude + LATITUDE_OFFSET},${longitude}`,
-    size: `${width}x${height}`
+    size: `${width}x${height}`,
   })}`;
 };
 
@@ -45,7 +45,7 @@ const StaticMap = (props: Props) => (
 StaticMap.defaultProps = {
   key: API_KEY,
   scale: 2,
-  zoom: 16
+  zoom: 16,
 };
 
 export default StaticMap;

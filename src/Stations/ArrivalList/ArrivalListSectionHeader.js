@@ -5,7 +5,7 @@ import React from "react";
 import "../../css/ArrivalListSectionHeader.scss";
 
 type Props = {
-  title: string
+  title: string,
 };
 
 const ArrivalListSectionHeader = ({title}: Props) => (

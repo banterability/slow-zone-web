@@ -14,13 +14,13 @@ const compareStations = (stationA, stationB) => {
 const ORDERED_STATIONS = stations.sort(compareStations);
 
 // precompute list of stations ids + coordinates
-const STATION_LOCATIONS = stations.map(station => ({
+const STATION_LOCATIONS = stations.map((station) => ({
   ...station.location,
-  stationId: station.id
+  stationId: station.id,
 }));
 
 module.exports = {
   GENERATED_AT: generatedAt,
   ORDERED_STATIONS,
-  STATION_LOCATIONS
+  STATION_LOCATIONS,
 };

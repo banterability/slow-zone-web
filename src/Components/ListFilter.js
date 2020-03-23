@@ -6,13 +6,13 @@ import "../css/ListFilter.scss";
 
 type Props = {
   onChange: (SyntheticInputEvent<HTMLInputElement>) => void,
-  searchString: string
+  searchString: string,
 };
 
 const ListFilter = ({searchString, onChange}: Props) => (
   <input
     className={classnames("list-filter", {
-      "list-filter--active": searchString
+      "list-filter--active": searchString,
     })}
     placeholder="🔍 Filter by Station Name"
     onChange={onChange}

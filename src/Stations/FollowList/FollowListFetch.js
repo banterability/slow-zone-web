@@ -9,20 +9,20 @@ import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {
   currentStopId: number,
-  runId: number
+  runId: number,
 };
 
 type State = {
   arrivals: Array<ArrivalType>,
   errored: boolean,
-  loading: boolean
+  loading: boolean,
 };
 
 class FollowListFetch extends React.Component<Props, State> {
   state = {
     arrivals: [],
     errored: false,
-    loading: false
+    loading: false,
   };
 
   unmounted = false;
@@ -39,16 +39,16 @@ class FollowListFetch extends React.Component<Props, State> {
     this.setState({loading: true});
 
     fetch(new FollowRequest(this.props.runId))
-      .then(res => res.json())
+      .then((res) => res.json())
       .then(({data, error}: {data: Array<ArrivalType>, error: any}) => {
         if (!this.unmounted) {
           if (data) {
             this.setState({
               arrivals: data,
-              loading: false
+              loading: false,
             });
           } else {
-            withScope(scope => {
+            withScope((scope) => {
               scope.setLevel("info");
               scope.setExtra("component", "FollowListFetch");
               scope.setExtra("runId", this.props.runId);
@@ -57,7 +57,7 @@ class FollowListFetch extends React.Component<Props, State> {
             });
             this.setState({
               errored: true,
-              loading: false
+              loading: false,
             });
           }
         }

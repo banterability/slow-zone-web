@@ -7,17 +7,17 @@ module.exports = (req, res) => {
 
   client
     .getArrivalsForStation(stationId)
-    .then(arrivals => {
+    .then((arrivals) => {
       res.send({data: arrivals, error: null});
     })
-    .catch(err => {
+    .catch((err) => {
       res.status(500).json([
         {
           data: [],
           error: {
-            message: err.toString()
-          }
-        }
+            message: err.toString(),
+          },
+        },
       ]);
     });
 };

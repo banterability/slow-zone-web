@@ -14,7 +14,7 @@ type Props = {
   longitude: number,
   lines: Array<LineType>,
   isFavorite: boolean,
-  onToggleFavorite: () => void
+  onToggleFavorite: () => void,
 };
 
 const StationHeader = ({
@@ -23,7 +23,7 @@ const StationHeader = ({
   longitude,
   lines,
   onToggleFavorite,
-  isFavorite
+  isFavorite,
 }: Props) => (
   <div className="station-header">
     <div className="station-header--meta">

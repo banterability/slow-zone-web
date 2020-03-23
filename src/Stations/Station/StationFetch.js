@@ -12,13 +12,13 @@ type Props = {match: MatchType};
 
 type State = {
   loading: boolean,
-  station: ?StationType
+  station: ?StationType,
 };
 
 class StationFetch extends React.Component<Props, State> {
   state = {
     loading: false,
-    station: null
+    station: null,
   };
 
   unmounted = false;
@@ -29,13 +29,13 @@ class StationFetch extends React.Component<Props, State> {
     const stationId = this.props.match.params.stationId || "";
 
     return fetch(new StationRequest(stationId))
-      .then(res => res.json())
-      .then(json => json.data)
+      .then((res) => res.json())
+      .then((json) => json.data)
       .then((station: StationType) => {
         const stationData = {
           lines: station.lines,
           title: station.name,
-          pathname: window.location.pathname
+          pathname: window.location.pathname,
         };
         pushRecentStation(station.id, stationData);
         if (!this.unmounted) {

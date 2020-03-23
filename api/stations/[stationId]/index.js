@@ -1,7 +1,7 @@
 const {GENERATED_AT, ORDERED_STATIONS} = require("../../_stationCache");
 
-const findStation = stationId =>
-  ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
+const findStation = (stationId) =>
+  ORDERED_STATIONS.find((station) => station.id === parseInt(stationId, 10));
 
 module.exports = (req, res) => {
   const {stationId} = req.query;
@@ -16,8 +16,8 @@ module.exports = (req, res) => {
       data: {},
       error: {
         status: 404,
-        message: `No station found with id ${stationId}`
-      }
+        message: `No station found with id ${stationId}`,
+      },
     });
   }
 };

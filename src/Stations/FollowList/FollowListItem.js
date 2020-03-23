@@ -8,7 +8,7 @@ import "../../css/FollowListItem.scss";
 
 type Props = {
   arrival: ArrivalType,
-  currentStopId: number
+  currentStopId: number,
 };
 
 const FollowListItem = ({
@@ -17,17 +17,17 @@ const FollowListItem = ({
     station: {
       id: stationId,
       name: stationName,
-      stop: {id: stopId}
-    }
+      stop: {id: stopId},
+    },
   },
-  currentStopId
+  currentStopId,
 }: Props) => {
   const isCurrentStop = stopId === currentStopId;
 
   return (
     <li
       className={classnames("follow-list-item", {
-        "follow-list-item--selected": isCurrentStop
+        "follow-list-item--selected": isCurrentStop,
       })}
     >
       <span className="follow-list-item__minutes">{arrivalMinutes} m</span>

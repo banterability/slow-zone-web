@@ -10,31 +10,31 @@ import "../../css/StationList.scss";
 
 type Props = {
   showFilter: boolean,
-  stations: Array<StationType>
+  stations: Array<StationType>,
 };
 
 type State = {
   filteredStations: Array<StationType>,
-  searchString: string
+  searchString: string,
 };
 
 class StationList extends React.Component<Props, State> {
   state = {
     filteredStations: this.props.stations || [],
-    searchString: ""
+    searchString: "",
   };
 
   static defaultProps = {
-    showFilter: true
+    showFilter: true,
   };
 
   filterByText = (ev: SyntheticInputEvent<HTMLInputElement>) => {
     const searchString = ev.target.value;
     this.setState({
-      filteredStations: this.props.stations.filter(station =>
+      filteredStations: this.props.stations.filter((station) =>
         station.name.toLowerCase().includes(searchString.toLowerCase())
       ),
-      searchString
+      searchString,
     });
   };
 

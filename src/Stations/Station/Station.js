@@ -8,7 +8,7 @@ import type {Station as StationType} from "../../types";
 import {
   isFavorite,
   addFavoriteStation,
-  removeFavoriteStation
+  removeFavoriteStation,
 } from "../../store/FavoriteStations";
 
 const Station = ({
@@ -17,10 +17,10 @@ const Station = ({
     name,
     description,
     location: {latitude, longitude},
-    lines
-  }
+    lines,
+  },
 }: {
-  station: StationType
+  station: StationType,
 }) => {
   const [favorite, setFavorite] = useState(isFavorite(id));
 
@@ -43,7 +43,7 @@ const Station = ({
             addFavoriteStation(id, {
               lines,
               title: name,
-              pathname: window.location.pathname
+              pathname: window.location.pathname,
             });
           }
           setFavorite(!favorite);

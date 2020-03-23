@@ -6,7 +6,7 @@ import type {RecentStation} from "../types";
 const cache = new LocalStorageCache(FAVORITE_STATIONS_KEY);
 
 export const getFavoriteStations = (): Array<RecentStation> =>
-  cache.get().map(item => {
+  cache.get().map((item) => {
     const {key, ...values} = item;
     return values;
   });

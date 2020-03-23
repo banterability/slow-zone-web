@@ -13,7 +13,7 @@ type Props = {
   distance?: DistanceType,
   lines: Array<LineType>,
   name: string,
-  url: string
+  url: string,
 };
 
 const StationListItem = ({distance, lines, name, url}: Props) => (

@@ -9,7 +9,7 @@ import "../../css/FollowList.scss";
 type Props = {
   arrivals: Array<ArrivalType>,
   currentStopId: number,
-  errored: boolean
+  errored: boolean,
 };
 
 const FollowList = ({arrivals, currentStopId, errored}: Props) => (

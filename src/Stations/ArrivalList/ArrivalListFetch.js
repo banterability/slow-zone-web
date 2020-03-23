@@ -7,18 +7,18 @@ import ArrivalList from "./ArrivalList";
 import type {Arrival as ArrivalType} from "../../types";
 
 type Props = {
-  stationId: number
+  stationId: number,
 };
 
 type State = {
   loading: boolean,
-  arrivals: Array<ArrivalType>
+  arrivals: Array<ArrivalType>,
 };
 
 class ArrivalListFetch extends React.Component<Props, State> {
   state = {
     loading: false,
-    arrivals: []
+    arrivals: [],
   };
 
   unmounted = false;
@@ -29,8 +29,8 @@ class ArrivalListFetch extends React.Component<Props, State> {
     const stationId = this.props.stationId;
 
     fetch(new StationArrivalsRequest(stationId))
-      .then(res => res.json())
-      .then(json => json.data)
+      .then((res) => res.json())
+      .then((json) => json.data)
       .then((arrivals: Array<ArrivalType>) => {
         if (!this.unmounted) {
           this.setState({arrivals, loading: false});

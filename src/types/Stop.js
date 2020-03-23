@@ -6,5 +6,5 @@ export type Stop = {|
   direction: "N" | "S" | "E" | "W",
   name: string,
   accessible: boolean,
-  lines: Array<Line>
+  lines: Array<Line>,
 |};

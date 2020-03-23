@@ -1,8 +1,8 @@
 const geolib = require("geolib");
 const {ORDERED_STATIONS, STATION_LOCATIONS} = require("./_stationCache");
 
-const findStation = stationId =>
-  ORDERED_STATIONS.find(station => station.id === parseInt(stationId, 10));
+const findStation = (stationId) =>
+  ORDERED_STATIONS.find((station) => station.id === parseInt(stationId, 10));
 
 module.exports = (req, res) => {
   let {count, latitude, longitude} = req.query;
@@ -10,8 +10,8 @@ module.exports = (req, res) => {
   if (!latitude && !longitude) {
     return res.status(400).json({
       error: {
-        message: "missing required parameters"
-      }
+        message: "missing required parameters",
+      },
     });
   }
 
@@ -20,7 +20,7 @@ module.exports = (req, res) => {
   const nearestStations = geolib
     .orderByDistance(userLocation, STATION_LOCATIONS)
     .slice(0, count || 5)
-    .map(result => {
+    .map((result) => {
       const station = findStation(result.stationId);
       const distance = geolib.getDistance(station.location, userLocation);
 
@@ -28,8 +28,8 @@ module.exports = (req, res) => {
         ...station,
         distance: {
           feet: geolib.convertDistance(distance, "ft"),
-          miles: geolib.convertDistance(distance, "mi")
-        }
+          miles: geolib.convertDistance(distance, "mi"),
+        },
       };
     });
 

@@ -27,7 +27,7 @@ class LocalStorageCache {
     this._fetch();
 
     const newItem = {...item, key};
-    const filteredList = this.data.filter(entry => entry.key !== key);
+    const filteredList = this.data.filter((entry) => entry.key !== key);
 
     filteredList.push(newItem);
     this.data = filteredList;
@@ -40,7 +40,7 @@ class LocalStorageCache {
   delete(key: number | string) {
     this._fetch();
 
-    const filteredList = this.data.filter(entry => entry.key !== key);
+    const filteredList = this.data.filter((entry) => entry.key !== key);
     this.data = filteredList;
 
     this._flush();

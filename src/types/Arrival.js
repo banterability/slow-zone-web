@@ -4,7 +4,7 @@ import type {Location} from "./Location";
 export type Arrival = {|
   destination: {
     id: number,
-    name: string
+    name: string,
   },
   location: Location,
   prediction: {
@@ -12,27 +12,27 @@ export type Arrival = {|
     arrivalString: string,
     arrivalTime: string,
     predictionAge: number,
-    predictionTime: string
+    predictionTime: string,
   },
   route: {
     class: string,
     directionId: number,
     id: string,
     name: string,
-    run: number
+    run: number,
   },
   station: {
     id: number,
     name: string,
     stop: {
       id: number,
-      description: string
-    }
+      description: string,
+    },
   },
   status: {
     approaching: boolean,
     delayed: boolean,
     faulty: boolean,
-    scheduled: boolean
-  }
+    scheduled: boolean,
+  },
 |};

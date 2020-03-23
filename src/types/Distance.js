@@ -2,5 +2,5 @@
 
 export type Distance = {|
   feet: number,
-  miles: number
+  miles: number,
 |};

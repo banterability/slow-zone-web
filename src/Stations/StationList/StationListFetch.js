@@ -9,13 +9,13 @@ import type {Station as StationType} from "../../types";
 
 type State = {
   loading: boolean,
-  stations: Array<StationType>
+  stations: Array<StationType>,
 };
 
 class StationListFetch extends React.Component<{}, State> {
   state = {
     loading: true,
-    stations: []
+    stations: [],
   };
 
   unmounted = false;
@@ -33,13 +33,13 @@ class StationListFetch extends React.Component<{}, State> {
     this.setState({loading: true});
 
     fetch(new StationsRequest())
-      .then(res => res.json())
-      .then(json => json.data)
+      .then((res) => res.json())
+      .then((json) => json.data)
       .then((stations: Array<StationType>) => {
         if (!this.unmounted) {
           this.setState({
             stations,
-            loading: false
+            loading: false,
           });
         }
       });

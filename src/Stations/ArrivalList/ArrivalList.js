@@ -10,7 +10,7 @@ import "../../css/ArrivalList.scss";
 type Props = {
   arrivals: Array<ArrivalType>,
   loading: boolean,
-  refresh: () => void
+  refresh: () => void,
 };
 
 const ArrivalListStopSection = ({arrivals, stopDescription}) => {

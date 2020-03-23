@@ -7,15 +7,15 @@ module.exports = (req, res) => {
 
   client
     .followTrain(runId)
-    .then(data => res.send({data, error: null}))
-    .catch(err => {
+    .then((data) => res.send({data, error: null}))
+    .catch((err) => {
       res.status(500).json([
         {
           data: [],
           error: {
-            message: err.toString()
-          }
-        }
+            message: err.toString(),
+          },
+        },
       ]);
     });
 };

@@ -10,7 +10,7 @@ export const getRecentStations = (): Array<RecentStation> =>
     .get()
     .slice()
     .reverse()
-    .map(item => {
+    .map((item) => {
       const {key, ...values} = item;
       return values;
     });

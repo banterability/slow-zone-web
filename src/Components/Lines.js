@@ -6,7 +6,7 @@ import type {Line as LineType} from "../types";
 import "../css/Lines.scss";
 
 type Props = {
-  lines: Array<LineType>
+  lines: Array<LineType>,
 };
 
 const Lines = ({lines}: Props) => (

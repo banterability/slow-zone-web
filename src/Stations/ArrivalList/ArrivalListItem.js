@@ -8,12 +8,12 @@ import type {Arrival as ArrivalType} from "../../types";
 import "../../css/ArrivalListItem.scss";
 
 type State = {
-  showNextStops: boolean
+  showNextStops: boolean,
 };
 
 class ArrivalListItem extends React.Component<ArrivalType, State> {
   state = {
-    showNextStops: false
+    showNextStops: false,
   };
 
   toggleNextStops = () =>
@@ -25,8 +25,8 @@ class ArrivalListItem extends React.Component<ArrivalType, State> {
       prediction: {arrivalString, arrivalMinutes},
       route: {run},
       station: {
-        stop: {id: stopId}
-      }
+        stop: {id: stopId},
+      },
     } = this.props;
 
     const {showNextStops} = this.state;

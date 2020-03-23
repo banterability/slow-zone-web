@@ -6,7 +6,7 @@ import "../../css/Arrow.scss";
 
 type Props = {
   active: boolean,
-  onClick?: () => void
+  onClick?: () => void,
 };
 
 const Arrow = ({active, onClick}: Props) => (

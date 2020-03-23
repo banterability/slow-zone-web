@@ -6,7 +6,7 @@ import "../../css/Star.scss";
 
 type Props = {
   active: boolean,
-  onClick?: () => void
+  onClick?: () => void,
 };
 
 const Star = ({active, onClick}: Props) => (
@@ -18,7 +18,7 @@ const Star = ({active, onClick}: Props) => (
     aria-label={active ? "Remove Favorite" : "Add Favorite"}
     className={classnames("icon--star", {
       "icon--star--active": active,
-      "icon--star--clickable": onClick
+      "icon--star--clickable": onClick,
     })}
     viewBox="0 0 164 164"
   >

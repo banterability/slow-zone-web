@@ -19,7 +19,7 @@ type State = {
   latitude: ?number,
   loading: boolean,
   longitude: ?number,
-  stations: Array<StationType>
+  stations: Array<StationType>,
 };
 
 class Nearby extends React.Component<{}, State> {
@@ -28,7 +28,7 @@ class Nearby extends React.Component<{}, State> {
     latitude: undefined,
     loading: false,
     longitude: undefined,
-    stations: []
+    stations: [],
   };
 
   unmounted = false;
@@ -47,7 +47,7 @@ class Nearby extends React.Component<{}, State> {
 
     return new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
-        position => {
+        (position) => {
           const {latitude, longitude} = position.coords;
 
           if (!this.unmounted) {
@@ -55,8 +55,8 @@ class Nearby extends React.Component<{}, State> {
           }
           resolve();
         },
-        err => {
-          withScope(scope => {
+        (err) => {
+          withScope((scope) => {
             scope.setExtra("component", "Nearby");
             scope.setExtra("message", err.message);
             captureException(err);
@@ -65,7 +65,7 @@ class Nearby extends React.Component<{}, State> {
           if (!this.unmounted) {
             this.setState({
               loading: false,
-              errorFetchingLocation: true
+              errorFetchingLocation: true,
             });
           }
           reject(err);
@@ -73,7 +73,7 @@ class Nearby extends React.Component<{}, State> {
         {
           enableHighAccuracy: true,
           timeout: 5000,
-          maximumAge: 1000 * 30
+          maximumAge: 1000 * 30,
         }
       );
     });
@@ -86,9 +86,9 @@ class Nearby extends React.Component<{}, State> {
       const {latitude, longitude} = this.state;
       if (latitude && longitude) {
         fetch(new NearbyRequest({latitude, longitude, count: 8}))
-          .then(res => res.json())
-          .then(json => json.data)
-          .then(stations => {
+          .then((res) => res.json())
+          .then((json) => json.data)
+          .then((stations) => {
             if (!this.unmounted) {
               this.setState({stations, loading: false});
             }
@@ -99,9 +99,7 @@ class Nearby extends React.Component<{}, State> {
   };
 
   refresh = () => {
-    this.fetchLocation()
-      .then(this.fetchNearbyStations)
-      .catch(captureException);
+    this.fetchLocation().then(this.fetchNearbyStations).catch(captureException);
   };
 
   render() {
