@@ -16,7 +16,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
-    "slow-zone": "2.1.3",
+    "slow-zone": "2.1.5",
     "uuid": "7.0.3"
   },
   "devDependencies": {
