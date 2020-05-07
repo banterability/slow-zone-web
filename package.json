@@ -6,7 +6,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "12.x"
+    "node": "14.x"
   },
   "dependencies": {
     "@sentry/browser": "5.15.5",
@@ -17,7 +17,7 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.1.2",
     "slow-zone": "2.1.5",
-    "uuid": "7.0.3"
+    "uuid": "8.0.0"
   },
   "devDependencies": {
     "flow-bin": "0.124.0",
