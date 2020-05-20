@@ -1,3 +1,5 @@
+require("./_sentry");
+
 const {ORDERED_STATIONS, GENERATED_AT} = require("./_stationCache");
 
 module.exports = (req, res) => {

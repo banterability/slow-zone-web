@@ -1,3 +1,5 @@
+require("./_sentry");
+
 const geolib = require("geolib");
 const {ORDERED_STATIONS, STATION_LOCATIONS} = require("./_stationCache");
 

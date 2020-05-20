@@ -1,3 +1,5 @@
+require("./_sentry");
+
 const SlowZone = require("slow-zone");
 
 const client = new SlowZone({apiKey: process.env.CTA_API_KEY});
