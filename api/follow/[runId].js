@@ -1,4 +1,4 @@
-require("./_sentry");
+require("../_sentry");
 
 const SlowZone = require("slow-zone");
 
