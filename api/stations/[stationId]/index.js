@@ -1,4 +1,4 @@
-require("../_sentry");
+require("../../_sentry");
 
 const {GENERATED_AT, ORDERED_STATIONS} = require("../../_stationCache");
 
