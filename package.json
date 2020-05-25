@@ -13,7 +13,7 @@
     "@sentry/browser": "5.15.5",
     "@sentry/node": "^5.15.5",
     "classnames": "2.2.6",
-    "geolib": "3.2.1",
+    "geolib": "3.3.1",
     "node-sass": "4.14.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
