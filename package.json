@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sentry/apm": "5.16.1",
-    "@sentry/browser": "5.16.1",
+    "@sentry/browser": "5.17.0",
     "@sentry/node": "5.16.1",
     "classnames": "2.2.6",
     "geolib": "3.3.1",
