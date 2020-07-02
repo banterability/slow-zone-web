@@ -9,9 +9,9 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@sentry/apm": "5.17.0",
-    "@sentry/browser": "5.17.0",
-    "@sentry/node": "5.17.0",
+    "@sentry/apm": "5.19.0",
+    "@sentry/browser": "5.19.0",
+    "@sentry/node": "5.19.0",
     "classnames": "2.2.6",
     "geolib": "3.3.1",
     "node-sass": "4.14.1",
@@ -22,7 +22,7 @@
     "uuid": "8.2.0"
   },
   "devDependencies": {
-    "flow-bin": "0.126.1",
+    "flow-bin": "0.128.0",
     "lodash": "4.17.15",
     "prettier": "2.0.5",
     "react-scripts": "3.4.1",
