@@ -9,7 +9,7 @@
     "node": "12.x"
   },
   "dependencies": {
-    "@sentry/apm": "5.19.2",
+    "@sentry/apm": "5.20.0",
     "@sentry/browser": "5.19.2",
     "@sentry/node": "5.19.2",
     "classnames": "2.2.6",
