@@ -24,7 +24,7 @@
   "devDependencies": {
     "flow-bin": "0.133.0",
     "lodash": "4.17.20",
-    "prettier": "2.1.1",
+    "prettier": "2.1.2",
     "react-scripts": "3.4.3",
     "source-map-explorer": "2.5.0"
   },
