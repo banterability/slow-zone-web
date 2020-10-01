@@ -22,7 +22,7 @@
     "uuid": "8.3.0"
   },
   "devDependencies": {
-    "flow-bin": "0.134.0",
+    "flow-bin": "0.135.0",
     "lodash": "4.17.20",
     "prettier": "2.1.2",
     "react-scripts": "3.4.3",
