@@ -19,7 +19,7 @@
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "slow-zone": "2.1.6",
-    "uuid": "8.3.0"
+    "uuid": "8.3.1"
   },
   "devDependencies": {
     "flow-bin": "0.135.0",
