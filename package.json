@@ -15,7 +15,7 @@
     "classnames": "2.2.6",
     "geolib": "3.3.1",
     "node-sass": "4.14.1",
-    "react": "16.13.1",
+    "react": "16.14.0",
     "react-dom": "16.13.1",
     "react-router-dom": "5.2.0",
     "slow-zone": "2.1.6",
