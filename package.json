@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@sentry/node": "6.15.0",
-    "@sentry/react": "6.15.0",
+    "@sentry/react": "6.16.0",
     "classnames": "2.3.1",
     "geolib": "3.3.3",
     "node-sass": "5.0.0",
