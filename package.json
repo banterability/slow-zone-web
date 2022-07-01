@@ -9,7 +9,7 @@
     "node": "14.x"
   },
   "dependencies": {
-    "@sentry/node": "6.19.7",
+    "@sentry/node": "7.4.0",
     "@sentry/react": "6.19.7",
     "classnames": "2.3.1",
     "geolib": "3.3.3",
