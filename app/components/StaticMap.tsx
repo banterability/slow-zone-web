@@ -1,4 +1,10 @@
-const API_KEY = process.env.GOOGLE_MAPS_STATIC_API_KEY;
+let API_KEY;
+// todo: fix this
+if (typeof window === "undefined") {
+  API_KEY = process.env.GOOGLE_MAPS_STATIC_API_KEY;
+} else {
+  API_KEY = window.ENV.GOOGLE_MAPS_STATIC_API_KEY;
+}
 const BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
 const LATITUDE_OFFSET = 0.0005;
 

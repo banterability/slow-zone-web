@@ -41,11 +41,7 @@ export default function Nearby() {
     stationFetcher.load(`/nearby/stations?${qs.toString()}`);
   };
 
-  useEffect(() => {
-    if (located) {
-      console.log("do not try to find them again");
-      return;
-    }
+  const getLocation = () => {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
@@ -61,6 +57,14 @@ export default function Nearby() {
       },
       { enableHighAccuracy: true, timeout: 2500, maximumAge: 1000 * 30 }
     );
+  };
+
+  useEffect(() => {
+    if (located) {
+      console.log("do not try to find them again");
+      return;
+    }
+    getLocation();
   }, []);
 
   return (
@@ -68,7 +72,15 @@ export default function Nearby() {
       <div className="page__header">
         <div className="nearby__header">
           <h3>Nearby Stations</h3>
-          {/* {loading button} */}
+          <div className="nearby__button">
+            <button
+              className="nearby-list__refresh"
+              onClick={getLocation}
+              disabled={stationFetcher.state !== "idle"}
+            >
+              Update Location
+            </button>
+          </div>
         </div>
       </div>
 
