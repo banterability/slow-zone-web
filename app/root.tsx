@@ -18,8 +18,11 @@ export function links() {
       rel: "stylesheet",
       href: styles,
     },
-    { rel: "icon", href: "/favicon.png" },
+    { rel: "shortcut icon", href: "favicon.png" },
+    { rel: "apple-touch-icon", href: "AppIcon.png" },
+    { rel: "manifest", href: "manifest.json" },
     { rel: "dns-prefetch", href: "https://maps.googleapis.com" },
+    { rel: "apple-mobile-web-app-status-bar-style", href: "black-translucent" },
   ];
 }
 
@@ -27,6 +30,8 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Slow Zone",
   viewport: "width=device-width,initial-scale=1",
+  "apple-mobile-web-app-title": "Slow Zone",
+  "theme-color": "#000000",
 });
 
 export function loader() {
