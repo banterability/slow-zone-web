@@ -45,13 +45,12 @@ export default function Nearby() {
     navigator.geolocation.getCurrentPosition(
       (position) => {
         const { latitude, longitude } = position.coords;
-        console.log("got location", position.coords);
+
         setErrored(false);
         setLocated(true);
         fetchStations(latitude, longitude);
       },
       (err) => {
-        console.log("did not get location", err);
         setLocated(true);
         setErrored(true);
       },
