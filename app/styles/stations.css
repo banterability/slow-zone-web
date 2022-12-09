@@ -51,7 +51,7 @@
 
 .arrival-list-item {
   display: grid;
-  grid-template-columns: 1fr 3fr 1.4fr 0.4fr;
+  grid-template-columns: 1fr 3fr 1.4fr;
   align-items: center;
   border-bottom: 2px solid #f5f2f2;
   font-weight: bold;
