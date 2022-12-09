@@ -48,7 +48,6 @@ export function ArrivalList({ arrivals }) {
                     <span className="arrival-list-item__time">
                       {arrivalString}
                     </span>
-                    <span>⬇️</span>
                   </li>
                 );
               })}
