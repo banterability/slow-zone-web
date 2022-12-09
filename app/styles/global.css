@@ -77,6 +77,33 @@ header a.active {
   margin: 1px;
 }
 
+.line--clickable {
+  cursor: pointer;
+}
+
+.line--hidden {
+  filter: blur(2px) saturate(60%);
+}
+
+.line--clickable:hover {
+  filter: blur(2px) saturate(60%);
+}
+
+.line--hidden:hover {
+  filter: blur(2px) saturate(100%);
+}
+
+.line-filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+
+.line-filter-container h4 {
+  margin: 0;
+}
+
 .cta-blue {
   background-color: rgb(0, 161, 222);
   color: white;
