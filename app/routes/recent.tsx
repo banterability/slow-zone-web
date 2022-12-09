@@ -29,12 +29,7 @@ export default function Recent() {
       {stations.length ? (
         <ul className="station-list">
           {stations.map(({ id, title, lines }) => (
-            <StationListItem
-              key={id}
-              name={title}
-              lines={lines}
-              url={`/stations/${id}`}
-            />
+            <StationListItem key={id} name={title} lines={lines} id={id} />
           ))}
         </ul>
       ) : (
