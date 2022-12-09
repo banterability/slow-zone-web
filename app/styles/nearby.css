@@ -1,0 +1,9 @@
+
+  .nearby__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nearby__button {
+    max-height: 30px;
+  }

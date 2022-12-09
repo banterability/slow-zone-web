@@ -1,0 +1,10 @@
+{
+  "files.exclude": {
+    ".cache": true,
+    "api/": true,
+    "public/build/": true
+  },
+  "search.exclude": {
+    "package-lock.json": true
+  }
+}
