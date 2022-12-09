@@ -1,5 +1,4 @@
-// const API_KEY = process.env.GOOGLE_MAPS_STATIC_API_KEY;
-const API_KEY = "AIzaSyCujVmZ4OjBanzyUZKOgwI0JYwyyAAudKQ";
+const API_KEY = process.env.GOOGLE_MAPS_STATIC_API_KEY;
 const BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
 const LATITUDE_OFFSET = 0.0005;
 
