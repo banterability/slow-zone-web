@@ -18,10 +18,8 @@ export function links() {
       rel: "stylesheet",
       href: styles,
     },
-    {
-      rel: "icon",
-      href: "/favicon.png",
-    },
+    { rel: "icon", href: "/favicon.png" },
+    { rel: "dns-prefetch", href: "https://maps.googleapis.com" },
   ];
 }
 

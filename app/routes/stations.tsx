@@ -8,10 +8,7 @@ export function links() {
 export default function StationsRoute() {
   return (
     <div>
-      <h1>Stations</h1>
-      <main>
-        <Outlet />
-      </main>
+      <Outlet />
     </div>
   );
 }

@@ -25,11 +25,12 @@ export function StationListItem({
   lines: [Line];
 }) {
   return (
-    <li className="station-list__item">
-      <Link className="station-list__item__name" to={`/stations/${id}`}>
-        {name}
+    <li>
+      <Link className="station-list__item" to={`/stations/${id}`}>
+        <p className="station-list__item__name">{name}</p>
+
+        <Lines lines={lines} />
       </Link>
-      <Lines lines={lines} />
     </li>
   );
 }
@@ -38,15 +39,12 @@ export default function StationList() {
   const { stations } = useLoaderData();
 
   return (
-    <>
-      <h2>Station list</h2>
-      <ul className="station-list">
-        {stations.map((station: Station) => {
-          const { id, name, lines } = station;
-          return <StationListItem key={id} id={id} name={name} lines={lines} />;
-        })}
-      </ul>
-    </>
+    <ul className="station-list">
+      {stations.map((station: Station) => {
+        const { id, name, lines } = station;
+        return <StationListItem key={id} id={id} name={name} lines={lines} />;
+      })}
+    </ul>
   );
 }
 

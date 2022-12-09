@@ -63,7 +63,6 @@ export default function StationId() {
 
   return (
     <>
-      <Link to="/stations">⬅️ Back to Stations</Link>
       <div className="station-header">
         <div className="station-header--meta">
           <div className="station-header--favorite">
