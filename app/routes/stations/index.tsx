@@ -3,6 +3,7 @@ import { Link, useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import { Lines } from "~/components/Lines";
 import { StationListItem } from "~/components/StationListItem";
+import { ListFilter } from "~/components/ListFilter";
 
 import { ORDERED_STATIONS } from "~/data/stations";
 import { Line, Station } from "~/types/station";
@@ -17,13 +18,6 @@ export function meta() {
   };
 }
 
-
-
-function ListFilter({ lines, visibleLines, onLineClick }) {
-  return (
-    <Lines lines={lines} activeLines={visibleLines} onLineClick={onLineClick} />
-  );
-}
 
 export default function StationList() {
   const { stations } = useLoaderData();
