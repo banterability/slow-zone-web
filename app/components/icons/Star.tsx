@@ -1,6 +1,11 @@
 import classnames from "classnames";
 
-export function Star({ active, onClick }) {
+type Props = {
+  active?: boolean;
+  onClick?: () => {};
+};
+
+export function Star({ active, onClick }: Props) {
   return (
     <svg
       width="164"
