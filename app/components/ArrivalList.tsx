@@ -31,9 +31,6 @@ export function ArrivalList({ arrivals }: { arrivals: [Arrival] }) {
                   destination: { name },
                   prediction: { arrivalString, arrivalMinutes },
                   route,
-                  station: {
-                    stop: { id: stopId },
-                  },
                 } = arrival;
 
                 return (
