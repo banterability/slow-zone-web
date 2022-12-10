@@ -6,7 +6,7 @@ import { StationListItem } from "~/components/StationListItem";
 import { ListFilter } from "~/components/ListFilter";
 
 import { ORDERED_STATIONS } from "~/data/stations";
-import { Line, Station } from "~/types/station";
+import { Station } from "~/types/station";
 
 export function loader() {
   return json({ stations: ORDERED_STATIONS });

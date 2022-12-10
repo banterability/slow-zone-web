@@ -1,9 +1,8 @@
 import { Lines } from "./Lines";
-import type { Line } from "~/types/station";
 
 type ListFilterProps = {
-  lines: [Line];
-  visibleLines: [Line];
+  lines: [string];
+  visibleLines: [string];
   onLineClick: () => {};
 };
 

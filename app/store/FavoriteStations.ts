@@ -2,7 +2,7 @@ import type { Line } from "~/types/station";
 import LocalStorageCache from "./cache";
 
 export type RecentStation = {
-  lines: Array<Line>;
+  lines: [string];
   id: number;
   title: string;
 };

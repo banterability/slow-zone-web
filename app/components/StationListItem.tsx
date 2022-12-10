@@ -1,11 +1,10 @@
 import { Link } from "@remix-run/react";
 import { Lines } from "./Lines";
-import type { Line } from "~/types/station";
 
 type Props = {
   id: number;
   name: string;
-  lines: [Line];
+  lines: [string];
 };
 
 export function StationListItem({ id, name, lines }: Props) {

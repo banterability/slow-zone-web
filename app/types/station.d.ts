@@ -5,17 +5,6 @@ export enum Direction {
   W,
 }
 
-export enum Line {
-  blue,
-  brown,
-  green,
-  orange,
-  pink,
-  purple,
-  red,
-  yellow,
-}
-
 export type Location = {
   latitude: number;
   longitude: number;
@@ -26,7 +15,7 @@ export type Stop = {
   direction: Direction;
   name: string;
   accessible: boolean;
-  lines: [Line];
+  lines: [string];
 };
 
 export type Station = {
@@ -35,6 +24,6 @@ export type Station = {
   id: number;
   location: Location;
   stops: [Stop];
-  lines: [Line];
+  lines: [string];
   accessible: boolean;
 };
