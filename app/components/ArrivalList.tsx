@@ -1,7 +1,7 @@
 import React from "react";
 import type { Arrival } from "~/types/arrival";
 
-export function ArrivalList({ arrivals }) {
+export function ArrivalList({ arrivals }: { arrivals: [Arrival] }) {
   const arrivalsByStop = arrivals.reduce((memo: object, arrival: Arrival) => {
     const stopId = arrival.station.stop.id;
 

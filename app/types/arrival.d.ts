@@ -33,6 +33,7 @@ export type Arrival = {
   location: Location;
   prediction: Prediction;
   station: Station;
+  route: Route;
   status: {
     approaching: boolean;
     delayed: boolean;
