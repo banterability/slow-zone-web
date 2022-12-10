@@ -5,6 +5,11 @@ declare global {
       GOOGLE_MAPS_STATIC_API_KEY: string;
     }
   }
+  interface Window {
+    ENV: {
+      GOOGLE_MAPS_STATIC_API_KEY: string;
+    };
+  }
 }
 
 export {};
