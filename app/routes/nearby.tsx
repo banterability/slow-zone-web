@@ -2,7 +2,7 @@ import { Link, useFetcher } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import nearbyStyles from "~/styles/nearby.css";
 import stationStyles from "~/styles/stations.css";
-import { StationListItem } from "./stations/index";
+import { StationListItem } from "~/components/StationListItem";
 
 function LoadingState() {
   return (

@@ -2,6 +2,7 @@ import { json } from "@remix-run/node";
 import { Link, useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import { Lines } from "~/components/Lines";
+import { StationListItem } from "~/components/StationListItem";
 
 import { ORDERED_STATIONS } from "~/data/stations";
 import { Line, Station } from "~/types/station";
@@ -16,24 +17,7 @@ export function meta() {
   };
 }
 
-export function StationListItem({
-  id,
-  name,
-  lines,
-}: {
-  id: number;
-  name: string;
-  lines: [Line];
-}) {
-  return (
-    <li>
-      <Link className="station-list__item" to={`/stations/${id}`}>
-        <p className="station-list__item__name">{name}</p>
-        <Lines lines={lines} />
-      </Link>
-    </li>
-  );
-}
+
 
 function ListFilter({ lines, visibleLines, onLineClick }) {
   return (

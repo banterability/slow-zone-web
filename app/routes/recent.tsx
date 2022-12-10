@@ -1,7 +1,7 @@
 import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { getRecentStations } from "~/store/RecentStations";
-import { StationListItem } from "./stations/index";
+import { StationListItem } from "~/components/StationListItem";
 
 function EmptyState() {
   return (

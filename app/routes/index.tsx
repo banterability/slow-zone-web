@@ -3,7 +3,7 @@ import {
   getFavoriteStations,
   type RecentStation,
 } from "~/store/FavoriteStations";
-import { StationListItem } from "./stations/index";
+import { StationListItem } from "~/components/StationListItem";
 import { Star } from "~/components/icons/Star";
 import { Link } from "@remix-run/react";
 
