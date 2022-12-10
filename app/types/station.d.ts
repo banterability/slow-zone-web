@@ -1,11 +1,11 @@
-enum Direction {
+export enum Direction {
   N,
   S,
   E,
   W,
 }
 
-enum Line {
+export enum Line {
   blue,
   brown,
   green,
@@ -16,7 +16,7 @@ enum Line {
   yellow,
 }
 
-type Location = {
+export type Location = {
   latitude: number;
   longitude: number;
 };
