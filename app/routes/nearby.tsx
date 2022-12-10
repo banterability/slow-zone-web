@@ -36,8 +36,8 @@ export default function Nearby() {
 
   const fetchStations = (lat: number, lng: number) => {
     const qs = new URLSearchParams();
-    qs.set("lat", lat);
-    qs.set("lng", lng);
+    qs.set("lat", lat.toString());
+    qs.set("lng", lng.toString());
     stationFetcher.load(`/nearby/stations?${qs.toString()}`);
   };
 
