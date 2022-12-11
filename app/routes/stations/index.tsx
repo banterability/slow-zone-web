@@ -1,12 +1,11 @@
 import { json } from "@remix-run/node";
-import { Link, useCatch, useLoaderData } from "@remix-run/react";
+import { useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
-import { Lines } from "~/components/Lines";
-import { StationListItem } from "~/components/StationListItem";
-import { ListFilter } from "~/components/ListFilter";
 
+import { ListFilter } from "~/components/ListFilter";
+import { StationListItem } from "~/components/StationListItem";
 import { ORDERED_STATIONS } from "~/data/stations";
-import { Station } from "~/types/station";
+import type { Station } from "~/types/station";
 
 export function loader() {
   return json({ stations: ORDERED_STATIONS });
@@ -17,7 +16,6 @@ export function meta() {
     title: "Stations",
   };
 }
-
 
 export default function StationList() {
   const { stations } = useLoaderData();

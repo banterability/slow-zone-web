@@ -1,8 +1,9 @@
 import { Link, useFetcher } from "@remix-run/react";
 import { useEffect, useState } from "react";
+
+import { StationListItem } from "~/components/StationListItem";
 import nearbyStyles from "~/styles/nearby.css";
 import stationStyles from "~/styles/stations.css";
-import { StationListItem } from "~/components/StationListItem";
 
 function LoadingState() {
   return (
@@ -31,7 +32,6 @@ function links() {
 export default function Nearby() {
   const [errored, setErrored] = useState(false);
   const [located, setLocated] = useState(false);
-  const [stations, setStations] = useState([]);
   const stationFetcher = useFetcher();
 
   const fetchStations = (lat: number, lng: number) => {

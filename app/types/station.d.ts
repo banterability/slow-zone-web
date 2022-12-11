@@ -12,9 +12,9 @@ export type Station = {
       direction: string;
       name: string;
       accessible: boolean;
-      lines: [string];
+      lines: string[];
     }
   ];
-  lines: [string];
+  lines: string[];
   accessible: boolean;
 };

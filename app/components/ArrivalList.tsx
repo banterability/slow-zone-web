@@ -1,7 +1,8 @@
-import React from "react";
+import { Fragment } from "react";
+
 import type { Arrival } from "~/types/arrival";
 
-export function ArrivalList({ arrivals }: { arrivals: [Arrival] }) {
+export function ArrivalList({ arrivals }: { arrivals: Arrival[] }) {
   const arrivalsByStop = arrivals.reduce((memo: object, arrival: Arrival) => {
     const stopId = arrival.station.stop.id;
 
@@ -24,7 +25,7 @@ export function ArrivalList({ arrivals }: { arrivals: [Arrival] }) {
           const { id, description } = arrivals[0].station.stop;
 
           return (
-            <React.Fragment key={id}>
+            <Fragment key={id}>
               <li className="arrival-list__section-header">{description}</li>
               {arrivals.map((arrival: Arrival) => {
                 const {
@@ -48,7 +49,7 @@ export function ArrivalList({ arrivals }: { arrivals: [Arrival] }) {
                   </li>
                 );
               })}
-            </React.Fragment>
+            </Fragment>
           );
         })}
       </ul>

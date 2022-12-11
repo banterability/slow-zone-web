@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
+import { Link } from "@remix-run/react";
+
+import { StationListItem } from "~/components/StationListItem";
+import { Star } from "~/components/icons/Star";
 import {
   getFavoriteStations,
   type RecentStation,
 } from "~/store/FavoriteStations";
-import { StationListItem } from "~/components/StationListItem";
-import { Star } from "~/components/icons/Star";
-import { Link } from "@remix-run/react";
+
 
 export default function Index() {
-  const [stations, setStations] = useState([]);
+  const [stations, setStations] = useState<RecentStation[]>([]);
 
   // hydrate favorites in browser
   useEffect(() => {

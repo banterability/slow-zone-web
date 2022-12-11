@@ -1,9 +1,8 @@
 import { getDistance, orderByDistance, convertDistance } from "geolib";
-import { json } from "@remix-run/node";
-import type { LoaderArgs } from "@remix-run/node";
+import { json, type LoaderArgs } from "@remix-run/node";
+import invariant from "tiny-invariant";
 
 import { STATION_LOCATIONS, ORDERED_STATIONS } from "~/data/stations";
-import invariant from "tiny-invariant";
 
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);

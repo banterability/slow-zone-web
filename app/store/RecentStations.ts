@@ -3,7 +3,7 @@ import { RecentStation } from "./FavoriteStations";
 
 const cache = new LocalStorageCache("slow-zone:cache:recent-stations");
 
-export const getRecentStations = (): [RecentStation] =>
+export const getRecentStations = (): RecentStation[] =>
   cache
     .get()
     .slice()

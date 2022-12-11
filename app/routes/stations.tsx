@@ -1,4 +1,5 @@
 import { Outlet, useCatch } from "@remix-run/react";
+
 import styles from "~/styles/stations.css";
 
 export function links() {

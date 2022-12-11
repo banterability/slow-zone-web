@@ -1,7 +1,7 @@
 import LocalStorageCache from "./cache";
 
 export type RecentStation = {
-  lines: [string];
+  lines: string[];
   id: number;
   title: string;
 };

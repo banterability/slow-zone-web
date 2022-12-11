@@ -21,7 +21,9 @@ export const ORDERED_STATIONS = stations.sort((stationA, stationB) => {
   return 0;
 });
 
-export const STATION_LOCATIONS: [StationLocations] = stations.map((station) => ({
-  ...station.location,
-  stationId: station.id,
-}));
+export const STATION_LOCATIONS: StationLocations[] = stations.map(
+  (station) => ({
+    ...station.location,
+    stationId: station.id,
+  })
+);

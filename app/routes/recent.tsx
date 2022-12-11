@@ -1,7 +1,9 @@
 import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
-import { getRecentStations } from "~/store/RecentStations";
+
 import { StationListItem } from "~/components/StationListItem";
+import { RecentStation } from "~/store/FavoriteStations";
+import { getRecentStations } from "~/store/RecentStations";
 
 function EmptyState() {
   return (
@@ -14,10 +16,11 @@ function EmptyState() {
   );
 }
 export default function Recent() {
-  const [stations, setStations] = useState([]);
+  const [stations, setStations] = useState<RecentStation[]>([]);
 
   useEffect(() => {
-    setStations(getRecentStations());
+    const recentStations = getRecentStations();
+    setStations(recentStations);
   }, [setStations]);
 
   return (

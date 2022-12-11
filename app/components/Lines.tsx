@@ -1,9 +1,9 @@
 import classNames from "classnames";
 
 type LinesProps = {
-  lines: [string];
-  activeLines?: [string];
-  onLineClick?: () => {};
+  lines: string[];
+  activeLines?: string[];
+  onLineClick?: (line: string) => {};
 };
 
 export function Lines({ lines, activeLines = lines, onLineClick }: LinesProps) {

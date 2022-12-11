@@ -1,21 +1,25 @@
-import { json, Response } from "@remix-run/node";
-import type { LoaderFunction, MetaFunction } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { StaticMap } from "~/components/StaticMap";
-import { ORDERED_STATIONS } from "~/data/stations";
-import { ArrivalList } from "~/components/ArrivalList";
-import { Star } from "~/components/icons/Star";
 import { useEffect, useState } from "react";
-
+import {
+  json,
+  Response,
+  type LoaderFunction,
+  type MetaFunction,
+} from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
-import SlowZone from "~/util/slow-zone.server";
+
+import { ArrivalList } from "~/components/ArrivalList";
 import { Lines } from "~/components/Lines";
+import { StaticMap } from "~/components/StaticMap";
+import { Star } from "~/components/icons/Star";
+import { ORDERED_STATIONS } from "~/data/stations";
 import {
   addFavoriteStation,
   isFavorite,
   removeFavoriteStation,
 } from "~/store/FavoriteStations";
 import { pushRecentStation } from "~/store/RecentStations";
+import SlowZone from "~/util/slow-zone.server";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { stationId } = params;
