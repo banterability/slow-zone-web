@@ -1,7 +1,12 @@
-import { Station } from "~/types/station";
 import { stations } from "./stations.json";
 
-function compareStations(stationA: Station, stationB: Station): number {
+export type StationLocations = {
+  latitude: number;
+  longitude: number;
+  stationId: number;
+};
+
+export const ORDERED_STATIONS = stations.sort((stationA, stationB) => {
   if (stationA.name < stationB.name) {
     return -1;
   } else if (stationA.name > stationB.name) {
@@ -14,11 +19,9 @@ function compareStations(stationA: Station, stationB: Station): number {
     }
   }
   return 0;
-}
+});
 
-export const ORDERED_STATIONS = stations.sort(compareStations);
-
-export const STATION_LOCATIONS = stations.map((station) => ({
+export const STATION_LOCATIONS: [StationLocations] = stations.map((station) => ({
   ...station.location,
   stationId: station.id,
 }));

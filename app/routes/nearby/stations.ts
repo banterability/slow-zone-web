@@ -3,23 +3,31 @@ import { json } from "@remix-run/node";
 import type { LoaderArgs } from "@remix-run/node";
 
 import { STATION_LOCATIONS, ORDERED_STATIONS } from "~/data/stations";
+import invariant from "tiny-invariant";
 
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
 
 export async function loader({ request }: LoaderArgs) {
-  const url = new URL(request.url);
-  const latitude = url.searchParams.get("lat");
-  const longitude = url.searchParams.get("lng");
+  let latitude, longitude, count;
 
-  if (!latitude && !longitude) {
+  try {
+    const url = new URL(request.url);
+    const latStr = url.searchParams.get("lat");
+    const longStr = url.searchParams.get("lng");
+    const countStr = url.searchParams.get("count");
+
+    invariant(latStr, "latitude is required");
+    invariant(longStr, "longitude is required");
+
+    latitude = parseFloat(latStr);
+    longitude = parseFloat(longStr);
+    count = countStr ? parseInt(countStr, 10) : 5;
+  } catch {
     return new Response(null, { status: 400 });
   }
 
-  let countStr = url.searchParams.get("count");
-  let count = countStr ? parseInt(countStr, 10) : 5;
-
-  const userLocation = {
+  const userLocation: { latitude: number; longitude: number } = {
     latitude,
     longitude,
   };
@@ -28,6 +36,7 @@ export async function loader({ request }: LoaderArgs) {
     .slice(0, count)
     .map((result) => {
       const station = findStation(result.stationId);
+      invariant(station);
       const distance = getDistance(station.location, userLocation);
 
       return {

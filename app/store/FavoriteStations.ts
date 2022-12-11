@@ -1,4 +1,3 @@
-import type { Line } from "~/types/station";
 import LocalStorageCache from "./cache";
 
 export type RecentStation = {

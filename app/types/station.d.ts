@@ -1,29 +1,20 @@
-export enum Direction {
-  N,
-  S,
-  E,
-  W,
-}
-
-export type Location = {
-  latitude: number;
-  longitude: number;
-};
-
-export type Stop = {
-  id: number;
-  direction: Direction;
-  name: string;
-  accessible: boolean;
-  lines: [string];
-};
-
 export type Station = {
   name: string;
   description: string;
   id: number;
-  location: Location;
-  stops: [Stop];
+  location: {
+    latitude: number;
+    longitude: number;
+  };
+  stops: [
+    {
+      id: number;
+      direction: string;
+      name: string;
+      accessible: boolean;
+      lines: [string];
+    }
+  ];
   lines: [string];
   accessible: boolean;
 };
