@@ -18,7 +18,7 @@ export default function Recent() {
 
   useEffect(() => {
     setStations(getRecentStations());
-  }, []);
+  }, [setStations]);
 
   return (
     <>

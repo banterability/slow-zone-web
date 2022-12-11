@@ -59,7 +59,7 @@ export default function StationId() {
   useEffect(() => {
     pushRecentStation(id, { lines, title: name, id });
     setFavorite(isFavorite(id));
-  }, []);
+  }, [setFavorite]);
 
   return (
     <>

@@ -13,7 +13,7 @@ export default function Index() {
   // hydrate favorites in browser
   useEffect(() => {
     setStations(getFavoriteStations());
-  }, []);
+  }, [setStations]);
 
   return (
     <>

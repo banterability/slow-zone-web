@@ -60,11 +60,10 @@ export default function Nearby() {
 
   useEffect(() => {
     if (located) {
-      console.log("do not try to find them again");
       return;
     }
     getLocation();
-  }, []);
+  }, [getLocation]);
 
   return (
     <>
