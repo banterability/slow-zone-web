@@ -3,17 +3,20 @@ import { Fragment } from "react";
 import type { Arrival } from "~/types/arrival";
 
 export function ArrivalList({ arrivals }: { arrivals: Arrival[] }) {
-  const arrivalsByStop = arrivals.reduce((memo: object, arrival: Arrival) => {
-    const stopId = arrival.station.stop.id;
+  const arrivalsByStop = arrivals.reduce(
+    (memo: { [key: string]: Arrival[] }, arrival: Arrival) => {
+      const stopId = arrival.station.stop.id;
 
-    if (memo[stopId]) {
-      memo[stopId].push(arrival);
-    } else {
-      memo[stopId] = [arrival];
-    }
+      if (memo[stopId]) {
+        memo[stopId].push(arrival);
+      } else {
+        memo[stopId] = [arrival];
+      }
 
-    return memo;
-  }, {});
+      return memo;
+    },
+    {}
+  );
 
   return (
     <>

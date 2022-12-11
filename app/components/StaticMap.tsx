@@ -18,7 +18,7 @@ type StaticMapProps = {
   zoom: number;
 };
 
-function query(options) {
+function query(options: { [key: string]: any }) {
   const { latitude, longitude, width, height, ...rest } = options;
 
   const urlSearchParms = new URLSearchParams();

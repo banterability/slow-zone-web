@@ -8,7 +8,6 @@ import {
   type RecentStation,
 } from "~/store/FavoriteStations";
 
-
 export default function Index() {
   const [stations, setStations] = useState<RecentStation[]>([]);
 

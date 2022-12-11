@@ -1,10 +1,14 @@
+type CacheEntry = {
+  key: string;
+};
+
 class LocalStorageCache {
-  data: [];
+  data: CacheEntry[];
   storageKey: string;
 
   constructor(storageKey: string) {
-    this.storageKey = storageKey;
     this.data = [];
+    this.storageKey = storageKey;
   }
 
   _fetch(): void {
@@ -25,7 +29,7 @@ class LocalStorageCache {
   push(key: number | string, item: any) {
     this._fetch();
 
-    const newItem = { ...item, key };
+    const newItem: CacheEntry = { ...item, key };
     const filteredList = this.data.filter((entry) => entry.key !== key);
 
     filteredList.push(newItem);
