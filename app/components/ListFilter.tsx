@@ -3,7 +3,7 @@ import { Lines } from "./Lines";
 type ListFilterProps = {
   lines: string[];
   visibleLines: string[];
-  onLineClick: (line: string) => {};
+  onLineClick: (line: string) => void;
 };
 
 export function ListFilter({

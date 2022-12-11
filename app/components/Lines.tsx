@@ -3,7 +3,7 @@ import classNames from "classnames";
 type LinesProps = {
   lines: string[];
   activeLines?: string[];
-  onLineClick?: (line: string) => {};
+  onLineClick?: (line: string) => void;
 };
 
 export function Lines({ lines, activeLines = lines, onLineClick }: LinesProps) {

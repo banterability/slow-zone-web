@@ -2,7 +2,7 @@ import classnames from "classnames";
 
 type Props = {
   active?: boolean;
-  onClick?: () => {};
+  onClick?: () => void;
 };
 
 export function Star({ active, onClick }: Props) {

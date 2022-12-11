@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { StationListItem } from "~/components/StationListItem";
 import nearbyStyles from "~/styles/nearby.css";
 import stationStyles from "~/styles/stations.css";
+import type { Station } from "~/types/station";
 
 function LoadingState() {
   return (
@@ -85,7 +86,7 @@ export default function Nearby() {
       {located ? (
         stationFetcher.data?.stations ? (
           <ul className="station-list">
-            {stationFetcher.data?.stations.map((station) => {
+            {stationFetcher.data?.stations.map((station: Station) => {
               const { id, name, lines } = station;
               return (
                 <StationListItem key={id} id={id} name={name} lines={lines} />
