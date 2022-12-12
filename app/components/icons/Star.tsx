@@ -1,4 +1,4 @@
-import classnames from "classnames";
+import { clsx } from "clsx";
 
 type Props = {
   active?: boolean;
@@ -13,7 +13,7 @@ export function Star({ active, onClick }: Props) {
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       aria-label={active ? "Remove Favorite" : "Add Favorite"}
-      className={classnames("icon--star", {
+      className={clsx("icon--star", {
         "icon--star--active": active,
         "icon--star--clickable": onClick,
       })}

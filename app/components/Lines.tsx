@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import { clsx } from "clsx";
 
 import type { Line } from "~/types/line";
 
@@ -13,7 +13,7 @@ export function Lines({ lines, activeLines = lines, onLineClick }: LinesProps) {
     <div className="lines">
       {lines.map((line) => (
         <div
-          className={classNames(`line cta-${line}`, {
+          className={clsx(`line cta-${line}`, {
             "line--hidden": !activeLines.includes(line),
             "line--clickable": Boolean(onLineClick),
           })}
