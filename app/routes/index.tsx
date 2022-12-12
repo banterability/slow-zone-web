@@ -3,13 +3,11 @@ import { Link } from "@remix-run/react";
 
 import { StationListItem } from "~/components/StationListItem";
 import { Star } from "~/components/icons/Star";
-import {
-  getFavoriteStations,
-  type RecentStation,
-} from "~/store/FavoriteStations";
+import { getFavoriteStations } from "~/store/FavoriteStations";
+import type { CachedStation } from "~/types/station";
 
 export default function Index() {
-  const [stations, setStations] = useState<RecentStation[]>([]);
+  const [stations, setStations] = useState<CachedStation[]>([]);
 
   // hydrate favorites in browser
   useEffect(() => {
@@ -23,7 +21,7 @@ export default function Index() {
       </div>
       {stations.length ? (
         <ul className="station-list">
-          {stations.map(({ id, title, lines }: RecentStation) => (
+          {stations.map(({ id, title, lines }) => (
             <StationListItem key={id} name={title} lines={lines} id={id} />
           ))}
         </ul>

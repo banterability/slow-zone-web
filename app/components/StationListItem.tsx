@@ -1,14 +1,15 @@
 import { Link } from "@remix-run/react";
 
 import { Lines } from "./Lines";
+import type { Line } from "~/types/line";
 
-type Props = {
+type StationListItemProps = {
   id: number;
   name: string;
-  lines: string[];
+  lines: Line[];
 };
 
-export function StationListItem({ id, name, lines }: Props) {
+export function StationListItem({ id, name, lines }: StationListItemProps) {
   return (
     <li>
       <Link className="station-list__item" to={`/stations/${id}`}>

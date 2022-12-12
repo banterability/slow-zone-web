@@ -1,9 +1,10 @@
 import { Lines } from "./Lines";
+import type { Line } from "~/types/line";
 
 type ListFilterProps = {
-  lines: string[];
-  visibleLines: string[];
-  onLineClick: (line: string) => void;
+  lines: Line[];
+  visibleLines: Line[];
+  onLineClick: (line: Line) => void;
 };
 
 export function ListFilter({

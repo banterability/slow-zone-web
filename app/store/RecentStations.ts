@@ -1,9 +1,9 @@
 import LocalStorageCache from "./cache";
-import { RecentStation } from "./FavoriteStations";
+import type { CachedStation } from "~/types/station";
 
 const cache = new LocalStorageCache("slow-zone:cache:recent-stations");
 
-export const getRecentStations = (): RecentStation[] =>
+export const getRecentStations = (): CachedStation[] =>
   cache
     .get()
     .slice()
@@ -15,7 +15,7 @@ export const getRecentStations = (): RecentStation[] =>
 
 export const pushRecentStation = (
   stationId: number,
-  station: RecentStation
+  station: CachedStation
 ) => {
   cache.push(stationId, station);
 };

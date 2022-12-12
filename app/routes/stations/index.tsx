@@ -5,6 +5,7 @@ import { useState } from "react";
 import { ListFilter } from "~/components/ListFilter";
 import { StationListItem } from "~/components/StationListItem";
 import { ORDERED_STATIONS } from "~/data/stations";
+import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
 export function loader() {
@@ -19,7 +20,7 @@ export function meta() {
 
 export default function StationList() {
   const { stations } = useLoaderData();
-  const allLines = [
+  const allLines: Line[] = [
     "blue",
     "brown",
     "green",
@@ -39,7 +40,7 @@ export default function StationList() {
       .some((el) => Boolean(el));
   });
 
-  const toggleLine = (line: string) => {
+  const toggleLine = (line: Line) => {
     if (visibleLines.includes(line)) {
       let idx = visibleLines.indexOf(line);
       visibleLines.splice(idx, 1);
@@ -57,7 +58,7 @@ export default function StationList() {
         <ListFilter
           lines={allLines}
           visibleLines={visibleLines}
-          onLineClick={(line: string) => toggleLine(line)}
+          onLineClick={(line) => toggleLine(line)}
         />
         <button
           disabled={visibleLines.length === 8}

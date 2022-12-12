@@ -1,3 +1,11 @@
+import type { Line } from "./line";
+
+export type CachedStation = {
+  id: number;
+  lines: Line[];
+  title: string;
+};
+
 export type Station = {
   name: string;
   description: string;
@@ -12,9 +20,9 @@ export type Station = {
       direction: string;
       name: string;
       accessible: boolean;
-      lines: string[];
+      lines: Line[];
     }
   ];
-  lines: string[];
+  lines: Line[];
   accessible: boolean;
 };

@@ -1,15 +1,17 @@
 import classNames from "classnames";
 
+import type { Line } from "~/types/line";
+
 type LinesProps = {
-  lines: string[];
-  activeLines?: string[];
-  onLineClick?: (line: string) => void;
+  lines: Line[];
+  activeLines?: Line[];
+  onLineClick?: (line: Line) => void;
 };
 
 export function Lines({ lines, activeLines = lines, onLineClick }: LinesProps) {
   return (
     <div className="lines">
-      {lines.map((line: string) => (
+      {lines.map((line) => (
         <div
           className={classNames(`line cta-${line}`, {
             "line--hidden": !activeLines.includes(line),

@@ -2,8 +2,8 @@ import { Link } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
 import { StationListItem } from "~/components/StationListItem";
-import { RecentStation } from "~/store/FavoriteStations";
 import { getRecentStations } from "~/store/RecentStations";
+import type { CachedStation } from "~/types/station";
 
 function EmptyState() {
   return (
@@ -16,7 +16,7 @@ function EmptyState() {
   );
 }
 export default function Recent() {
-  const [stations, setStations] = useState<RecentStation[]>([]);
+  const [stations, setStations] = useState<CachedStation[]>([]);
 
   useEffect(() => {
     const recentStations = getRecentStations();

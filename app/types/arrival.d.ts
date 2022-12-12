@@ -1,3 +1,5 @@
+import type { Line } from "./line";
+
 type Destination = {
   id: number;
   name: string;
@@ -12,10 +14,10 @@ type Prediction = {
 };
 
 type Route = {
-  class: string;
+  class: Line;
   directionId: number;
   id: string;
-  name: string;
+  name: Line;
   run: number;
 };
 type Stop = {
