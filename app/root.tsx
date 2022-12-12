@@ -20,9 +20,9 @@ export function links() {
       rel: "stylesheet",
       href: styles,
     },
-    { rel: "shortcut icon", href: "favicon.png" },
-    { rel: "apple-touch-icon", href: "AppIcon.png" },
-    { rel: "manifest", href: "manifest.json" },
+    { rel: "shortcut icon", href: "/favicon.png" },
+    { rel: "apple-touch-icon", href: "/AppIcon.png" },
+    { rel: "manifest", href: "/manifest.json" },
     { rel: "dns-prefetch", href: "https://maps.googleapis.com" },
     { rel: "apple-mobile-web-app-status-bar-style", href: "black-translucent" },
   ];
