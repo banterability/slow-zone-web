@@ -1,5 +1,0 @@
-- [ ] Sort arrival list by time
-- [ ] Sort lines consistently
-- [ ] Add refresh button/gesture
-- [ ] Close follow
-- [ ] Handle follow request errors
