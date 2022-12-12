@@ -2,7 +2,12 @@ import { getDistance, orderByDistance, convertDistance } from "geolib";
 import { json, type LoaderArgs } from "@remix-run/node";
 import invariant from "tiny-invariant";
 
-import { STATION_LOCATIONS, ORDERED_STATIONS } from "~/data/stations";
+import {
+  STATION_LOCATIONS,
+  ORDERED_STATIONS,
+  type StationLocation,
+} from "~/data/stations";
+import { GeolibInputCoordinates } from "geolib/es/types";
 
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
@@ -26,7 +31,7 @@ export async function loader({ request }: LoaderArgs) {
     return new Response(null, { status: 400 });
   }
 
-  const userLocation: { latitude: number; longitude: number } = {
+  const userLocation = {
     latitude,
     longitude,
   };
@@ -34,7 +39,7 @@ export async function loader({ request }: LoaderArgs) {
   const nearestStations = orderByDistance(userLocation, STATION_LOCATIONS)
     .slice(0, count)
     .map((result) => {
-      const station = findStation(result.stationId);
+      const station = findStation((<StationLocation>result).stationId);
       invariant(station);
       const distance = getDistance(station.location, userLocation);
 

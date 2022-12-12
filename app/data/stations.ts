@@ -1,6 +1,6 @@
 import { stations } from "./stations.json";
 
-export type StationLocations = {
+export type StationLocation = {
   latitude: number;
   longitude: number;
   stationId: number;
@@ -21,9 +21,7 @@ export const ORDERED_STATIONS = stations.sort((stationA, stationB) => {
   return 0;
 });
 
-export const STATION_LOCATIONS: StationLocations[] = stations.map(
-  (station) => ({
-    ...station.location,
-    stationId: station.id,
-  })
-);
+export const STATION_LOCATIONS: StationLocation[] = stations.map((station) => ({
+  ...station.location,
+  stationId: station.id,
+}));
