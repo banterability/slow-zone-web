@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { HeadersFunction, json } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 
@@ -9,12 +9,25 @@ import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
 export function loader() {
-  return json({ stations: ORDERED_STATIONS });
+  return json(
+    { stations: ORDERED_STATIONS },
+    {
+      headers: {
+        "Cache-Control": "s-maxage=30, stale-while-revalidate=90",
+      },
+    }
+  );
 }
 
 export function meta() {
   return {
     title: "Stations",
+  };
+}
+
+export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
+  return {
+    "Cache-Control": loaderHeaders.get("Cache-Control"),
   };
 }
 
