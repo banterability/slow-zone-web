@@ -1,5 +1,8 @@
 import type { Line } from "./line";
 
+type DirectionId = 1 | 5;
+type RouteId = "Red" | "Blue" | "Brn" | "G" | "Org" | "P" | "Pink" | "Y";
+
 type Destination = {
   id: number;
   name: string;
@@ -15,8 +18,8 @@ type Prediction = {
 
 type Route = {
   class: Line;
-  directionId: number;
-  id: string;
+  directionId: DirectionId;
+  id: RouteId;
   name: Line;
   run: number;
 };
