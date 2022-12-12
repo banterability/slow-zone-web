@@ -9,6 +9,8 @@ import {
   ScrollRestoration,
   useLoaderData,
 } from "@remix-run/react";
+import { withSentry } from "@sentry/remix";
+
 import Header from "./components/Header";
 import styles from "~/styles/global.css";
 
@@ -38,11 +40,12 @@ export function loader() {
   return json({
     ENV: {
       GOOGLE_MAPS_STATIC_API_KEY: process.env.GOOGLE_MAPS_STATIC_API_KEY,
+      SENTRY_DSN: process.env.SENTRY_DSN,
     },
   });
 }
 
-export default function App() {
+function App() {
   const data = useLoaderData();
   return (
     <html lang="en">
@@ -67,3 +70,5 @@ export default function App() {
     </html>
   );
 }
+
+export default withSentry(App);
