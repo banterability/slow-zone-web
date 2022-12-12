@@ -7,7 +7,6 @@ import {
   ORDERED_STATIONS,
   type StationLocation,
 } from "~/data/stations";
-import { GeolibInputCoordinates } from "geolib/es/types";
 
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
