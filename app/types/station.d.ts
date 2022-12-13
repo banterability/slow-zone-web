@@ -14,15 +14,13 @@ export type Station = {
     latitude: number;
     longitude: number;
   };
-  stops: [
-    {
-      id: number;
-      direction: string;
-      name: string;
-      accessible: boolean;
-      lines: Line[];
-    }
-  ];
+  stops: {
+    id: number;
+    direction: string;
+    name: string;
+    accessible: boolean;
+    lines: Line[];
+  }[];
   lines: Line[];
   accessible: boolean;
 };
