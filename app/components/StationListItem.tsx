@@ -12,7 +12,11 @@ type StationListItemProps = {
 export function StationListItem({ id, name, lines }: StationListItemProps) {
   return (
     <li>
-      <Link className="station-list__item" to={`/stations/${id}`}>
+      <Link
+        className="station-list__item"
+        to={`/stations/${id}`}
+        prefetch="intent"
+      >
         <p className="station-list__item__name">{name}</p>
         <Lines lines={lines} />
       </Link>
