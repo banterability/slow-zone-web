@@ -4,7 +4,7 @@ import { Link } from "@remix-run/react";
 import { StationListItem } from "~/components/StationListItem";
 import { Star } from "~/components/icons/Star";
 import { getFavoriteStations } from "~/store/FavoriteStations";
-import type { CachedStation } from "~/types/station";
+import type { CachedStation } from "~/types/cache";
 
 export default function Index() {
   const [stations, setStations] = useState<CachedStation[]>([]);

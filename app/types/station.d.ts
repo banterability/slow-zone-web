@@ -1,11 +1,5 @@
 import type { Line } from "./line";
 
-export type CachedStation = {
-  id: number;
-  lines: Line[];
-  title: string;
-};
-
 export type Station = {
   name: string;
   description: string;
