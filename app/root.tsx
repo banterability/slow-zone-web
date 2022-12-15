@@ -13,6 +13,7 @@ import { withSentry } from "@sentry/remix";
 
 import Header from "./components/Header";
 import styles from "~/styles/global.css";
+import Footer from "./components/Footer";
 
 export function links() {
   return [
@@ -58,6 +59,7 @@ function App() {
         <main>
           <Outlet />
         </main>
+        <Footer />
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

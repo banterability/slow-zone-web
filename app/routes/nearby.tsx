@@ -105,10 +105,6 @@ export default function Nearby() {
       ) : (
         <LoadingState />
       )}
-
-      <div className="page__footer">
-        <Link to="/stations">View All Stations</Link>
-      </div>
     </>
   );
 }

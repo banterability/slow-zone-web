@@ -44,10 +44,6 @@ export default function Recent() {
       ) : (
         <EmptyState />
       )}
-
-      <div className="page__footer">
-        <Link to="/stations">View All Stations</Link>
-      </div>
     </>
   );
 }

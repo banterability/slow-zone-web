@@ -32,10 +32,6 @@ export default function Index() {
           <p>Use the star on a station‘s page to add it to your favorites.</p>
         </div>
       )}
-
-      <div className="page__footer">
-        <Link to="/stations">View All Stations</Link>
-      </div>
     </>
   );
 }

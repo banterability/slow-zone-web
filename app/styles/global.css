@@ -1,14 +1,18 @@
+html {
+  background-color: #000;
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   margin: 0;
   padding: 0;
+  background-color: #f0eeee;
 }
 .page__header {
   margin: 0 0.5em;
 }
 
-.page__main,
-.page__footer {
+.page__main {
   margin: 0.5em;
 }
 
@@ -29,16 +33,27 @@ body {
   font-weight: bold;
   padding: 0 1em;
 }
-.header a:hover {
+.header a:hover,
+.footer a:hover {
   color: #ff9a00;
 }
 
-.header a:active {
+.header a:active,
+.footer a:active {
   color: #ff7700;
 }
 
-header a.active {
-  color: #ff9a00;
+.footer {
+  background-color: #000;
+  padding: 20px 10px;
+  color: #888;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+
+.footer a {
+  color: #ffc200;
 }
 
 .static-map {
