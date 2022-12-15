@@ -2,11 +2,11 @@ import { Fragment } from "react";
 
 import type { Arrival } from "~/types/arrival";
 
-type ArrivalListProps = {
+type Props = {
   arrivals: Arrival[];
 };
 
-export function ArrivalList({ arrivals }: ArrivalListProps) {
+export function ArrivalList({ arrivals }: Props) {
   const arrivalsByStop = arrivals.reduce(
     (memo: { [key: string]: Arrival[] }, arrival: Arrival) => {
       const stopId = arrival.station.stop.id;

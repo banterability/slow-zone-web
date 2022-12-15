@@ -2,13 +2,13 @@ import { clsx } from "clsx";
 
 import type { Line } from "~/types/line";
 
-type LinesProps = {
+type Props = {
   lines: Line[];
   activeLines?: Line[];
   onLineClick?: (line: Line) => void;
 };
 
-export function Lines({ lines, activeLines = lines, onLineClick }: LinesProps) {
+export function Lines({ lines, activeLines = lines, onLineClick }: Props) {
   return (
     <div className="lines">
       {lines.map((line) => (

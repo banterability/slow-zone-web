@@ -8,7 +8,7 @@ if (typeof window === "undefined") {
 const BASE_URL = "https://maps.googleapis.com/maps/api/staticmap";
 const LATITUDE_OFFSET = 0.0005;
 
-type StaticMapProps = {
+type Props = {
   height: number;
   key: string;
   latitude: number;
@@ -33,7 +33,7 @@ function query(options: { [key: string]: any }) {
   return urlSearchParms.toString();
 }
 
-export function StaticMap(props: StaticMapProps) {
+export function StaticMap(props: Props) {
   const mapUrl = `${BASE_URL}?${query(props)}`;
 
   return (
