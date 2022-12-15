@@ -17,8 +17,10 @@ function LoadingState() {
 function ErrorState() {
   return (
     <div className="page__main">
-      <p>Unable to get your current location.</p>
-      <p>Make sure you have allowed Slow Zone access to your location data.</p>
+      <p>Unable to get your location.</p>
+      <p>
+        Make sure you have allowed access to your location data in your browser.
+      </p>
     </div>
   );
 }

@@ -27,9 +27,9 @@ export default function Index() {
         </ul>
       ) : (
         <div className="page__main">
-          <p>You don't currently have any favorite stations.</p>
+          <p>You don't have any favorite stations.</p>
           <Star active={false} />
-          <p>Add a station to your favorites from its detail page.</p>
+          <p>Use the star on a station‘s page to add it to your favorites.</p>
         </div>
       )}
 
