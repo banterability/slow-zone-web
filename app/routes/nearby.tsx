@@ -1,4 +1,4 @@
-import { Link, useFetcher } from "@remix-run/react";
+import { useFetcher } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
 import { StationListItem } from "~/components/StationListItem";

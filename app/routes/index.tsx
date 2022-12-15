@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { Link } from "@remix-run/react";
 
 import { StationListItem } from "~/components/StationListItem";
 import { Star } from "~/components/icons/Star";
