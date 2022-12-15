@@ -3,16 +3,23 @@ import { clsx } from "clsx";
 type Props = {
   active?: boolean;
   onClick?: () => void;
+  altTextActive?: string;
+  altTextInactive?: string;
 };
 
-export function Star({ active, onClick }: Props) {
+export function Star({
+  active,
+  onClick,
+  altTextActive = "",
+  altTextInactive = "",
+}: Props) {
   return (
     <svg
       width="164"
       height="164"
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
-      aria-label={active ? "Remove Favorite" : "Add Favorite"}
+      aria-label={active ? altTextActive : altTextInactive}
       className={clsx("icon--star", {
         "icon--star--active": active,
         "icon--star--clickable": onClick,

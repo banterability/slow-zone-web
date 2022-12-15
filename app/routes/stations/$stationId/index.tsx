@@ -72,6 +72,8 @@ export default function StationId() {
           <div className="station-header--favorite">
             <Star
               active={favorite}
+              altTextActive="Remove Favorite"
+              altTextInactive="Add Favorite"
               onClick={() => {
                 favorite ? removeFavorite() : addFavorite();
                 setFavorite(!favorite);
