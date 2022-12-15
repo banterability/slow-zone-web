@@ -15,6 +15,12 @@ function EmptyState() {
     </div>
   );
 }
+
+export function meta() {
+  return {
+    title: "Recents • Slow Zone",
+  };
+}
 export default function Recent() {
   const [stations, setStations] = useState<CachedStation[]>([]);
 

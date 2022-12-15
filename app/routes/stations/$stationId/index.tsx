@@ -41,7 +41,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return {
-    title: data?.station?.name || "Station",
+    title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
   };
 };
 

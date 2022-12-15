@@ -19,12 +19,6 @@ export function loader() {
   );
 }
 
-export function meta() {
-  return {
-    title: "Stations",
-  };
-}
-
 export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
   return {
     "Cache-Control": loaderHeaders.get("Cache-Control"),

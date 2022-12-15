@@ -25,11 +25,15 @@ function ErrorState() {
   );
 }
 
-function links() {
+export function links() {
   return [
     { rel: "stylesheet", href: nearbyStyles },
     { rel: "stylesheet", href: stationStyles },
   ];
+}
+
+export function meta() {
+  return { title: "Nearby • Slow Zone" };
 }
 
 export default function Nearby() {
