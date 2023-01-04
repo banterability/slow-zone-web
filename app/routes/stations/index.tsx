@@ -1,6 +1,7 @@
 import { json } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
+import { cacheHeader } from "pretty-cache-header";
 
 import { ListFilter } from "~/components/ListFilter";
 import { StationListItem } from "~/components/StationListItem";
@@ -13,7 +14,10 @@ export function loader() {
     { stations: ORDERED_STATIONS },
     {
       headers: {
-        "Cache-Control": "s-maxage=30, stale-while-revalidate=90",
+        "Cache-Control": cacheHeader({
+          sMaxage: "30s",
+          staleWhileRevalidate: "5m",
+        }),
       },
     }
   );
