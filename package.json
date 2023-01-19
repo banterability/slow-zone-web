@@ -9,7 +9,7 @@
     "update-data": "node data/convert.js && prettier --write 'data/*json'"
   },
   "dependencies": {
-    "@remix-run/node": "1.10.1",
+    "@remix-run/node": "1.11.0",
     "@remix-run/react": "1.10.1",
     "@remix-run/vercel": "1.10.1",
     "@sentry/remix": "7.31.1",
