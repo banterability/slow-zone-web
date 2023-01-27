@@ -20,6 +20,7 @@ export function meta() {
     title: "Recents • Slow Zone",
   };
 }
+
 export default function Recent() {
   const [stations, setStations] = useState<CachedStation[]>([]);
 
