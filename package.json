@@ -12,7 +12,7 @@
     "@remix-run/node": "1.11.1",
     "@remix-run/react": "1.11.1",
     "@remix-run/vercel": "1.11.1",
-    "@sentry/remix": "7.33.0",
+    "@sentry/remix": "7.34.0",
     "@vercel/node": "2.8.16",
     "clsx": "1.2.1",
     "geolib": "3.3.3",
