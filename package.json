@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@remix-run/node": "1.11.1",
-    "@remix-run/react": "1.11.1",
+    "@remix-run/react": "1.13.0",
     "@remix-run/vercel": "1.11.1",
     "@sentry/remix": "7.37.2",
     "@vercel/node": "2.9.3",
