@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { StationListItem } from "~/components/StationListItem";
 import nearbyStyles from "~/styles/nearby.css";
 import stationStyles from "~/styles/stations.css";
+
 import type { Station } from "~/types/station";
 
 function LoadingState() {
@@ -37,7 +38,6 @@ export function meta() {
 }
 
 export default function Nearby() {
-  const [errored, setErrored] = useState(false);
   const [located, setLocated] = useState(false);
   const stationFetcher = useFetcher();
 
@@ -48,21 +48,22 @@ export default function Nearby() {
     stationFetcher.load(`/nearby/stations?${qs.toString()}`);
   };
 
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
+  function locationSuccess(position) {
+    const { latitude, longitude } = position.coords;
+    setLocated(true);
+    fetchStations(latitude, longitude);
+  }
 
-        setErrored(false);
-        setLocated(true);
-        fetchStations(latitude, longitude);
-      },
-      (err) => {
-        setLocated(true);
-        setErrored(true);
-      },
-      { enableHighAccuracy: true, timeout: 2500, maximumAge: 1000 * 30 }
-    );
+  function locationError(error) {
+    setLocated(true);
+  }
+
+  const getLocation = () => {
+    navigator.geolocation.getCurrentPosition(locationSuccess, locationError, {
+      enableHighAccuracy: true,
+      timeout: 2500,
+      maximumAge: 1000 * 30,
+    });
   };
 
   useEffect(() => {
@@ -70,7 +71,7 @@ export default function Nearby() {
       return;
     }
     getLocation();
-  }, [getLocation]);
+  }, []);
 
   return (
     <>

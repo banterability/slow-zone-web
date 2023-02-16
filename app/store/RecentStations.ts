@@ -1,4 +1,5 @@
 import LocalStorageCache from "./cache";
+
 import type { CachedStation } from "~/types/cache";
 
 const cache = new LocalStorageCache("slow-zone:cache:recent-stations");

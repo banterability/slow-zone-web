@@ -1,5 +1,4 @@
 import { json } from "@remix-run/node";
-import type { MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -11,9 +10,12 @@ import {
 } from "@remix-run/react";
 import { withSentry } from "@sentry/remix";
 
-import Header from "./components/Header";
 import styles from "~/styles/global.css";
+
 import Footer from "./components/Footer";
+import Header from "./components/Header";
+
+import type { MetaFunction } from "@remix-run/node";
 
 export function links() {
   return [
@@ -47,7 +49,7 @@ export function loader() {
 }
 
 function App() {
-  const data = useLoaderData();
+  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>

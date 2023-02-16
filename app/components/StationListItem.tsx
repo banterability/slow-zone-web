@@ -1,6 +1,7 @@
 import { Link } from "@remix-run/react";
 
 import { Lines } from "./Lines";
+
 import type { Line } from "~/types/line";
 
 type Props = {

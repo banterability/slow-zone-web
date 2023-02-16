@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import {
   json,
   Response,
@@ -6,12 +5,13 @@ import {
   type MetaFunction,
 } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 
 import { ArrivalList } from "~/components/ArrivalList";
+import { Star } from "~/components/icons/Star";
 import { Lines } from "~/components/Lines";
 import { StaticMap } from "~/components/StaticMap";
-import { Star } from "~/components/icons/Star";
 import { ORDERED_STATIONS } from "~/data/stations";
 import {
   addFavoriteStation,
@@ -19,7 +19,7 @@ import {
   removeFavoriteStation,
 } from "~/store/FavoriteStations";
 import { pushRecentStation } from "~/store/RecentStations";
-import SlowZone from "~/util/slow-zone.server";
+import { client } from "~/util/slow-zone.server";
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { stationId } = params;
@@ -33,7 +33,6 @@ export const loader: LoaderFunction = async ({ params }) => {
     });
   }
 
-  const client = new SlowZone({ apiKey: process.env.CTA_API_KEY });
   const arrivals = await client.getArrivalsForStation(stationId);
 
   return json({ station, arrivals });
@@ -46,8 +45,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 };
 
 export default function StationId() {
-  const { station, arrivals } = useLoaderData();
-  const { name, id, location, lines, accessible } = station;
+  const { station, arrivals } = useLoaderData<typeof loader>();
+  const { name, id, location, lines } = station;
 
   const { latitude, longitude } = location;
 
@@ -63,7 +62,7 @@ export default function StationId() {
   useEffect(() => {
     pushRecentStation(id, { lines, title: name, id });
     setFavorite(isFavorite(id));
-  }, [setFavorite]);
+  }, [id, lines, name]);
 
   return (
     <>

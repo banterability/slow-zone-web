@@ -1,6 +1,7 @@
 .station-header {
   position: relative;
 }
+
 .station-header--meta {
   position: absolute;
   top: 0;
@@ -8,7 +9,7 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   align-items: center;
-  background-color: rgba(245, 242, 242, 0.8);
+  background-color: rgb(245 242 242 / 80%);
   padding: 0.5em 0;
   width: 100%;
 }
@@ -33,6 +34,7 @@
   padding: 0;
   margin: 0;
 }
+
 .arrival-list__header {
   display: flex;
   align-items: center;
@@ -58,6 +60,7 @@
   list-style: none;
   padding: 0.9em 0.5em;
 }
+
 .arrival-list-item__eta {
   font-size: 1.2em;
   font-weight: bold;
@@ -83,7 +86,7 @@
 }
 
 .arrival-list__section-header {
-  background-color: rgb(86, 90, 92);
+  background-color: rgb(86 90 92);
   color: #f5f2f2;
   padding: 0.5em 0 0.5em 0.5em;
   font-size: 1em;

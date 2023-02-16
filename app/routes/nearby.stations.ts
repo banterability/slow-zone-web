@@ -1,5 +1,5 @@
-import { getDistance, orderByDistance, convertDistance } from "geolib";
 import { json, type LoaderArgs } from "@remix-run/node";
+import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 
 import {
@@ -38,7 +38,7 @@ export async function loader({ request }: LoaderArgs) {
   const nearestStations = orderByDistance(userLocation, STATION_LOCATIONS)
     .slice(0, count)
     .map((result) => {
-      const station = findStation((<StationLocation>result).stationId);
+      const station = findStation((result as StationLocation).stationId);
       invariant(station);
       const distance = getDistance(station.location, userLocation);
 

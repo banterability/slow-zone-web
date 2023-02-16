@@ -1,4 +1,5 @@
 const fs = require("fs");
+
 const {every, flatten, uniq} = require("lodash");
 
 const data = require(`${__dirname}/stations-raw.json`);

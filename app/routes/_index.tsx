@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 
-import { StationListItem } from "~/components/StationListItem";
 import { Star } from "~/components/icons/Star";
+import { StationListItem } from "~/components/StationListItem";
 import { getFavoriteStations } from "~/store/FavoriteStations";
+
 import type { CachedStation } from "~/types/cache";
 
 export default function Index() {

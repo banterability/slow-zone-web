@@ -1,11 +1,12 @@
 import { json } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
-import { useState } from "react";
 import { cacheHeader } from "pretty-cache-header";
+import { useState } from "react";
 
 import { ListFilter } from "~/components/ListFilter";
 import { StationListItem } from "~/components/StationListItem";
 import { ORDERED_STATIONS } from "~/data/stations";
+
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
@@ -30,7 +31,7 @@ export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
 }
 
 export default function StationList() {
-  const { stations } = useLoaderData();
+  const { stations } = useLoaderData<typeof loader>();
   const allLines: Line[] = [
     "blue",
     "brown",
