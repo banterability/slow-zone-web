@@ -6,6 +6,8 @@ import { getFavoriteStations } from "~/store/FavoriteStations";
 
 import type { CachedStation } from "~/types/cache";
 
+export const config = { runtime: 'edge' }
+
 export default function Index() {
   const [stations, setStations] = useState<CachedStation[]>([]);
 
