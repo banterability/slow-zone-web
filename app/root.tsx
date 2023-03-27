@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { json, type MetaFunction } from "@vercel/remix";
 import {
   Links,
   LiveReload,
@@ -14,8 +14,6 @@ import styles from "~/styles/global.css";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-
-import type { MetaFunction } from "@remix-run/node";
 
 export function links() {
   return [

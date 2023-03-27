@@ -1,4 +1,4 @@
-import { json, type LoaderArgs } from "@remix-run/node";
+import { json, type LoaderArgs } from "@vercel/remix";
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 

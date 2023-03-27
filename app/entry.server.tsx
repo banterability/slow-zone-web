@@ -2,7 +2,7 @@ import { RemixServer } from "@remix-run/react";
 import * as Sentry from "@sentry/remix";
 import { renderToString } from "react-dom/server";
 
-import type { EntryContext } from "@remix-run/node";
+import type { EntryContext } from "@vercel/remix";
 
 Sentry.init({
   dsn: process.env.SENTRY_DSN,

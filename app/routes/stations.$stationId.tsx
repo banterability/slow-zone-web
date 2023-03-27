@@ -3,7 +3,7 @@ import {
   Response,
   type LoaderFunction,
   type MetaFunction,
-} from "@remix-run/node";
+} from "@vercel/remix";
 import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
