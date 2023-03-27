@@ -16,8 +16,6 @@ function EmptyState() {
   );
 }
 
-export const config = { runtime: "edge" };
-
 export function meta() {
   return {
     title: "Recents • Slow Zone",
