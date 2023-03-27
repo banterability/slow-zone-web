@@ -25,6 +25,7 @@ function ErrorState() {
     </div>
   );
 }
+export const config = { runtime: "edge" };
 
 export function links() {
   return [

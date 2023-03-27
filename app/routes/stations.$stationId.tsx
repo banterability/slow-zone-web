@@ -1,10 +1,10 @@
+import { useLoaderData } from "@remix-run/react";
 import {
   json,
   Response,
   type LoaderFunction,
   type MetaFunction,
 } from "@vercel/remix";
-import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 

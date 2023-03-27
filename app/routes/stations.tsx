@@ -2,6 +2,8 @@ import { Outlet, useCatch } from "@remix-run/react";
 
 import styles from "~/styles/stations.css";
 
+export const config = { runtime: "edge" };
+
 export function meta() {
   return {
     title: "Stations • Slow Zone",
