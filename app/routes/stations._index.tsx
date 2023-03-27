@@ -1,5 +1,5 @@
-import { json } from "@remix-run/node";
 import { useCatch, useLoaderData } from "@remix-run/react";
+import { json } from "@vercel/remix";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
 
@@ -9,6 +9,8 @@ import { ORDERED_STATIONS } from "~/data/stations";
 
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
+
+export const config = { runtime: 'edge' }
 
 export function loader() {
   return json(
