@@ -13,5 +13,6 @@ module.exports = {
   serverDependenciesToBundle: ["slow-zone"],
   future: {
     v2_routeConvention: true,
+    v2_errorBoundary: true,
   },
 };

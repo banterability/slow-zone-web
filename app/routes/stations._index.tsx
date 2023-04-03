@@ -1,4 +1,4 @@
-import { useCatch, useLoaderData } from "@remix-run/react";
+import { useLoaderData } from "@remix-run/react";
 import { json } from "@vercel/remix";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
@@ -90,15 +90,6 @@ export default function StationList() {
       </ul>
     </>
   );
-}
-
-export function CatchBoundary() {
-  const caught = useCatch();
-
-  if (caught.status === 404) {
-    return <div className="error-container">Unknown station</div>;
-  }
-  throw new Error(`Unexpected caught response with status: ${caught.status}`);
 }
 
 export function ErrorBoundary() {

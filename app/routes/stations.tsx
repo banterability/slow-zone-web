@@ -1,4 +1,4 @@
-import { Outlet, useCatch } from "@remix-run/react";
+import { Outlet } from "@remix-run/react";
 
 import styles from "~/styles/stations.css";
 
@@ -18,15 +18,6 @@ export default function StationsRoute() {
       <Outlet />
     </div>
   );
-}
-
-export function CatchBoundary() {
-  const caught = useCatch();
-
-  if (caught.status === 404) {
-    return <div className="error-container">Unknown station</div>;
-  }
-  throw new Error(`Unexpected caught response with status: ${caught.status}`);
 }
 
 export function ErrorBoundary() {
