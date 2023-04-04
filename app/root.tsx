@@ -1,4 +1,3 @@
-import { json, type MetaFunction } from "@vercel/remix";
 import {
   Links,
   LiveReload,
@@ -9,6 +8,7 @@ import {
   useLoaderData,
 } from "@remix-run/react";
 import { withSentry } from "@sentry/remix";
+import { json, type MetaFunction } from "@vercel/remix";
 
 import styles from "~/styles/global.css";
 
