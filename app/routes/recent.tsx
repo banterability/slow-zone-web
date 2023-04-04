@@ -16,7 +16,7 @@ function EmptyState() {
   );
 }
 
-export const config = { runtime: 'edge' }
+export const config = { runtime: "edge" };
 
 export function meta() {
   return {

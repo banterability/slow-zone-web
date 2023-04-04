@@ -26,7 +26,7 @@ function ErrorState() {
   );
 }
 
-export const config = { runtime: 'edge' }
+export const config = { runtime: "edge" };
 
 export function links() {
   return [
