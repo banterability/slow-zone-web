@@ -3,7 +3,7 @@ import {
   json,
   Response,
   type LoaderFunction,
-  type MetaFunction,
+  type V2_MetaFunction,
 } from "@vercel/remix";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
@@ -38,10 +38,10 @@ export const loader: LoaderFunction = async ({ params }) => {
   return json({ station, arrivals });
 };
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-  return {
+export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+  return [{
     title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
-  };
+  }];
 };
 
 export default function StationId() {

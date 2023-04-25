@@ -36,7 +36,7 @@ export function links() {
 }
 
 export function meta() {
-  return { title: "Nearby • Slow Zone" };
+  return [{ title: "Nearby • Slow Zone" }];
 }
 
 export default function Nearby() {

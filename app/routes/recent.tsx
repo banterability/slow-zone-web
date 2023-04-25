@@ -19,9 +19,9 @@ function EmptyState() {
 export const config = { runtime: "edge" };
 
 export function meta() {
-  return {
+  return [{
     title: "Recents • Slow Zone",
-  };
+  }];
 }
 
 export default function Recent() {
