@@ -15,7 +15,7 @@
     "@remix-run/node": "1.16.1",
     "@remix-run/react": "1.16.1",
     "@remix-run/vercel": "1.16.1",
-    "@sentry/remix": "7.52.1",
+    "@sentry/remix": "7.53.1",
     "@vercel/node": "2.14.3",
     "@vercel/remix": "1.16.1",
     "clsx": "1.2.1",
