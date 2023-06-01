@@ -19,7 +19,7 @@
     "@vercel/node": "2.14.3",
     "@vercel/remix": "1.16.1",
     "clsx": "1.2.1",
-    "geolib": "3.3.3",
+    "geolib": "3.3.4",
     "pretty-cache-header": "1.0.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
