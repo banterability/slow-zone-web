@@ -30,9 +30,7 @@ export function links() {
 }
 
 export const meta: V2_MetaFunction = () => {
-  return [
-    { title: "Slow Zone" }
-  ]
+  return [{ title: "Slow Zone" }];
 };
 
 export function loader() {

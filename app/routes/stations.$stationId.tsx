@@ -39,9 +39,11 @@ export const loader: LoaderFunction = async ({ params }) => {
 };
 
 export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
-  return [{
-    title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
-  }];
+  return [
+    {
+      title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
+    },
+  ];
 };
 
 export default function StationId() {
