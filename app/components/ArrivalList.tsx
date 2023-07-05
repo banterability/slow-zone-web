@@ -19,7 +19,7 @@ export function ArrivalList({ arrivals }: Props) {
 
       return memo;
     },
-    {}
+    {},
   );
 
   return (

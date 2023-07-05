@@ -16,7 +16,7 @@ export const getRecentStations = (): CachedStation[] =>
 
 export const pushRecentStation = (
   stationId: number,
-  station: CachedStation
+  station: CachedStation,
 ) => {
   cache.push(stationId, station);
 };

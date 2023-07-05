@@ -15,7 +15,7 @@ export const isFavorite = (stationId: number) =>
 
 export const addFavoriteStation = (
   stationId: number,
-  station: CachedStation
+  station: CachedStation,
 ) => {
   cache.push(stationId, station);
 };

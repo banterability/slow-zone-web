@@ -11,7 +11,7 @@ Sentry.init({
       routingInstrumentation: Sentry.remixRouterInstrumentation(
         useEffect,
         useLocation,
-        useMatches
+        useMatches,
       ),
     }),
   ],
@@ -23,7 +23,7 @@ function hydrate() {
       document,
       <StrictMode>
         <RemixBrowser />
-      </StrictMode>
+      </StrictMode>,
     );
   });
 }

@@ -13,7 +13,7 @@ class LocalStorageCache {
 
   _fetch(): void {
     this.data = JSON.parse(
-      window.localStorage.getItem(this.storageKey) || "[]"
+      window.localStorage.getItem(this.storageKey) || "[]",
     );
   }
 

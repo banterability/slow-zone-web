@@ -23,7 +23,7 @@ export function loader() {
           staleWhileRevalidate: "5m",
         }),
       },
-    }
+    },
   );
 }
 

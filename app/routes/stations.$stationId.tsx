@@ -25,7 +25,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   const { stationId } = params;
   invariant(stationId, "stationId is required");
   const station = ORDERED_STATIONS.find(
-    (station) => station.id === parseInt(stationId, 10)
+    (station) => station.id === parseInt(stationId, 10),
   );
   if (!station) {
     throw new Response("Not Found", {
