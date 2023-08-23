@@ -17,7 +17,7 @@
     "@remix-run/vercel": "1.19.3",
     "@sentry/remix": "7.64.0",
     "@vercel/node": "2.15.10",
-    "@vercel/remix": "1.19.2",
+    "@vercel/remix": "1.19.3",
     "clsx": "2.0.0",
     "geolib": "3.3.4",
     "pretty-cache-header": "1.0.0",
