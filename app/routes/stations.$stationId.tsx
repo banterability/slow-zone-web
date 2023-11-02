@@ -1,9 +1,8 @@
 import { useLoaderData } from "@remix-run/react";
 import {
   json,
-  Response,
   type LoaderFunction,
-  type V2_MetaFunction,
+  type MetaFunction,
 } from "@vercel/remix";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
@@ -38,7 +37,7 @@ export const loader: LoaderFunction = async ({ params }) => {
   return json({ station, arrivals });
 };
 
-export const meta: V2_MetaFunction<typeof loader> = ({ data }) => {
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
     {
       title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",

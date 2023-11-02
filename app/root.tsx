@@ -6,9 +6,10 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useRouteError,
 } from "@remix-run/react";
-import { withSentry } from "@sentry/remix";
-import { json, type V2_MetaFunction } from "@vercel/remix";
+import { withSentry, captureRemixErrorBoundaryError } from "@sentry/remix";
+import { json, type MetaFunction } from "@vercel/remix";
 
 import styles from "~/styles/global.css";
 
@@ -29,7 +30,7 @@ export function links() {
   ];
 }
 
-export const meta: V2_MetaFunction = () => {
+export const meta: MetaFunction = () => {
   return [{ title: "Slow Zone" }];
 };
 
@@ -72,5 +73,11 @@ function App() {
     </html>
   );
 }
+
+export const ErrorBoundary = () => {
+  const error = useRouteError();
+  captureRemixErrorBoundaryError(error);
+  return <div>Something went wrong</div>;
+};
 
 export default withSentry(App);
