@@ -6,7 +6,7 @@ import * as Sentry from "@sentry/remix";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
-import type { AppLoadContext, EntryContext } from "@remix-run/node";
+import type { AppLoadContext, EntryContext } from "@vercel/remix";
 
 export function handleError(error, { request }) {
   Sentry.captureRemixServerException(error, "remix.server", request);
