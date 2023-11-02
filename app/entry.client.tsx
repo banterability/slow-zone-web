@@ -4,8 +4,11 @@ import { startTransition, StrictMode, useEffect } from "react";
 import { hydrateRoot } from "react-dom/client";
 
 Sentry.init({
-  dsn: window.ENV.SENTRY_DSN,
+  dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.sentry.io/4504314010730496",
   tracesSampleRate: 1,
+  replaysSessionSampleRate: 0.1,
+  replaysOnErrorSampleRate: 1,
+
   integrations: [
     new Sentry.BrowserTracing({
       routingInstrumentation: Sentry.remixRouterInstrumentation(
@@ -14,24 +17,15 @@ Sentry.init({
         useMatches,
       ),
     }),
+    new Sentry.Replay(),
   ],
 });
 
-function hydrate() {
-  startTransition(() => {
-    hydrateRoot(
-      document,
-      <StrictMode>
-        <RemixBrowser />
-      </StrictMode>,
-    );
-  });
-}
-
-if (window.requestIdleCallback) {
-  window.requestIdleCallback(hydrate);
-} else {
-  // Safari doesn't support requestIdleCallback
-  // https://caniuse.com/requestidlecallback
-  window.setTimeout(hydrate, 1);
-}
+startTransition(() => {
+  hydrateRoot(
+    document,
+    <StrictMode>
+      <RemixBrowser />
+    </StrictMode>,
+  );
+});

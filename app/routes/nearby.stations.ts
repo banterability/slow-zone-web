@@ -1,4 +1,4 @@
-import { json, type LoaderArgs } from "@vercel/remix";
+import { json, type DataFunctionArgs } from "@vercel/remix";
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 
@@ -11,7 +11,7 @@ import {
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
 
-export async function loader({ request }: LoaderArgs) {
+export async function loader({ request }: DataFunctionArgs) {
   let latitude, longitude, count;
 
   try {
