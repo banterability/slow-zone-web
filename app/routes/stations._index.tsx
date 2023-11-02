@@ -10,8 +10,6 @@ import { ORDERED_STATIONS } from "~/data/stations";
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
-export const config = { runtime: "edge" };
-
 export function loader() {
   return json(
     { stations: ORDERED_STATIONS },
