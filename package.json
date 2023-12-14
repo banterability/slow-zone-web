@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "@remix-run/node": "2.2.0",
-    "@remix-run/react": "2.2.0",
+    "@remix-run/react": "2.4.0",
     "@sentry/remix": "^7.80.1",
     "@vercel/remix": "2.2.0",
     "clsx": "2.0.0",
