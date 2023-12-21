@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { useLoaderData } from "@remix-run/react";
 
 import { StationListItem } from "~/components/StationListItem";
 import { getRecentStations } from "~/store/RecentStations";
 
-import type { CachedStation } from "~/types/cache";
+import type { ClientLoaderFunctionArgs } from "@remix-run/react";
 
 function EmptyState() {
   return (
@@ -24,13 +24,26 @@ export function meta() {
   ];
 }
 
-export default function Recent() {
-  const [stations, setStations] = useState<CachedStation[]>([]);
+export function clientLoader({ request }: ClientLoaderFunctionArgs) {
+  const stations = getRecentStations();
+  return stations;
+}
 
-  useEffect(() => {
-    const recentStations = getRecentStations();
-    setStations(recentStations);
-  }, [setStations]);
+export function HydrateFallback() {
+  return (
+    <>
+      <div className="page__header">
+        <h3>Recent Stations</h3>
+      </div>
+      <div className="page__main">
+        <p>Loading...</p>
+      </div>
+    </>
+  );
+}
+
+export default function Recent() {
+  const stations = useLoaderData<typeof clientLoader>();
 
   return (
     <>

@@ -1,18 +1,28 @@
-import { useEffect, useState } from "react";
+import { useLoaderData } from "@remix-run/react";
 
 import { Star } from "~/components/icons/Star";
 import { StationListItem } from "~/components/StationListItem";
 import { getFavoriteStations } from "~/store/FavoriteStations";
 
-import type { CachedStation } from "~/types/cache";
+export function clientLoader() {
+  const stations = getFavoriteStations();
+  return stations;
+}
 
+export function HydrateFallback() {
+  return (
+    <>
+      <div className="page__header">
+        <h3>Favorite Stations</h3>
+      </div>
+      <div className="page__main">
+        <p>Loading...</p>
+      </div>
+    </>
+  );
+}
 export default function Index() {
-  const [stations, setStations] = useState<CachedStation[]>([]);
-
-  // hydrate favorites in browser
-  useEffect(() => {
-    setStations(getFavoriteStations());
-  }, [setStations]);
+  const stations = useLoaderData<typeof clientLoader>();
 
   return (
     <>
