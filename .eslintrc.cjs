@@ -21,8 +21,6 @@ module.exports = {
         ],
         "newlines-between": "always",
       },
-    ],
-    "remix/node-server-imports": "error",
-    "remix/use-loader-data-types": "error",
+    ]
   },
 };
