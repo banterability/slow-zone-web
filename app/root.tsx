@@ -39,7 +39,6 @@ export function loader() {
   return json({
     ENV: {
       GOOGLE_MAPS_STATIC_API_KEY: process.env.GOOGLE_MAPS_STATIC_API_KEY,
-      SENTRY_DSN: process.env.SENTRY_DSN,
     },
   });
 }
