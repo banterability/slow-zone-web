@@ -1,8 +1,8 @@
-const fs = require("fs");
+import * as fs from 'node:fs';
 
-const {every, flatten, uniq} = require("lodash");
+import { every, flatten, uniq } from "lodash-es";
 
-const data = require(`${__dirname}/stations-raw.json`);
+const data = JSON.parse(fs.readFileSync('data/stations-raw.json', { encoding: 'utf-8' }));
 
 const buildLocation = locationString => {
   let [latitude, longitude] = locationString.match(/([\d-.]+)/g);
@@ -107,7 +107,7 @@ const summarize = Object.keys(byStation).map(stationId => {
 });
 
 fs.writeFileSync(
-  `${__dirname}/stations.json`,
+  `app/data/stations.json`,
   JSON.stringify({
     stations: summarize,
     generatedAt: new Date().toISOString().split("T")[0]
