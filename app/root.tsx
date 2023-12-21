@@ -76,7 +76,11 @@ function App() {
 
 export const ErrorBoundary = () => {
   const error = useRouteError();
-  captureRemixErrorBoundaryError(error);
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    // i can't know how to hear anymore about 404s!
+  } else {
+    captureRemixErrorBoundaryError(error);
+  }
   return <div>Something went wrong</div>;
 };
 
