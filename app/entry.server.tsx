@@ -3,7 +3,7 @@ import { PassThrough } from "node:stream";
 import { createReadableStreamFromReadable } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import * as Sentry from "@sentry/remix";
-import isbot from "isbot";
+import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 
 import type { AppLoadContext, EntryContext } from "@vercel/remix";

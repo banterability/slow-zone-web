@@ -19,7 +19,7 @@
     "@vercel/remix": "2.4.1",
     "clsx": "2.0.0",
     "geolib": "3.3.4",
-    "isbot": "latest",
+    "isbot": "4.1.0",
     "lodash-es": "^4.17.21",
     "pretty-cache-header": "1.0.0",
     "react": "18.2.0",
