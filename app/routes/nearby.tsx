@@ -1,4 +1,4 @@
-import { useFetcher } from "@remix-run/react";
+import { useFetcher, useLoaderData, useRevalidator } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
 import { StationListItem } from "~/components/StationListItem";
@@ -33,45 +33,66 @@ export function links() {
   ];
 }
 
+export async function clientLoader() {
+  console.log('inside client loader');
+  function getLocation(options?: PositionOptions): Promise<GeolocationPosition> {
+    return new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject, options))
+  };
+
+  let data;
+
+  try {
+    const position = await getLocation({
+      enableHighAccuracy: true,
+      timeout: 2500,
+      maximumAge: 1000 * 30,
+    });
+
+    console.log('position', position);
+
+    data = {
+      location: {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude,
+      }, error: null
+    }
+
+  } catch (e) {
+    console.log('geolocation error', e);
+    data = { location: null, error: e }
+  }
+
+  console.log('clientLoader returning', data);
+  return data;
+}
+
 export function meta() {
   return [{ title: "Nearby • Slow Zone" }];
 }
 
 export default function Nearby() {
-  const [located, setLocated] = useState(false);
+  const { location, error } = useLoaderData<typeof clientLoader>();
   const stationFetcher = useFetcher();
+  const revalidator = useRevalidator();
 
   const fetchStations = (lat: number, lng: number) => {
+    console.log('inside fetchStations');
     const qs = new URLSearchParams();
     qs.set("lat", lat.toString());
     qs.set("lng", lng.toString());
     stationFetcher.load(`/nearby/stations?${qs.toString()}`);
   };
 
-  function locationSuccess(position) {
-    const { latitude, longitude } = position.coords;
-    setLocated(true);
-    fetchStations(latitude, longitude);
-  }
-
-  function locationError(error) {
-    setLocated(true);
-  }
-
-  const getLocation = () => {
-    navigator.geolocation.getCurrentPosition(locationSuccess, locationError, {
-      enableHighAccuracy: true,
-      timeout: 2500,
-      maximumAge: 1000 * 30,
-    });
-  };
-
   useEffect(() => {
-    if (located) {
-      return;
+    console.log('inside effect');
+    if (error) {
+      console.log('error getting location (effect)', error)
     }
-    getLocation();
-  }, []);
+    if (location) {
+      console.log('got location (effect)', location);
+      fetchStations(location.latitude, location.longitude);
+    }
+  }, [location, error]);
 
   return (
     <>
@@ -81,7 +102,7 @@ export default function Nearby() {
           <div className="nearby__button">
             <button
               className="nearby-list__refresh"
-              onClick={getLocation}
+              onClick={() => revalidator.revalidate()}
               disabled={stationFetcher.state !== "idle"}
             >
               Update Location
@@ -90,7 +111,7 @@ export default function Nearby() {
         </div>
       </div>
 
-      {located ? (
+      {stationFetcher.data ? (
         stationFetcher.data?.stations ? (
           <ul className="station-list">
             {stationFetcher.data?.stations.map((station: Station) => {
