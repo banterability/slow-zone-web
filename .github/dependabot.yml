@@ -4,3 +4,9 @@ updates:
   directory: "/"
   schedule:
     interval: daily
+  commit-message:
+      prefix: '🤖 '
+  groups:
+    remix:
+      patterns:
+        - '*remix*'
