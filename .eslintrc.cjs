@@ -5,7 +5,6 @@ module.exports = {
     "@remix-run/eslint-config/node",
     "prettier",
   ],
-  plugins: ["remix"],
   rules: {
     "import/order": [
       "error",
