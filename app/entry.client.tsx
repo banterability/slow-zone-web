@@ -17,7 +17,7 @@ Sentry.init({
         useMatches,
       ),
     }),
-    new Sentry.Replay(),
+    Sentry.replayIntegration(),
   ],
 });
 
