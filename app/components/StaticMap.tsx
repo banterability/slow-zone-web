@@ -3,7 +3,7 @@ export function StaticMap({ stationId }: { stationId: string }) {
     <div
       className="static-map"
       style={{
-        backgroundImage: `url(/stations/${stationId}/map.png)`,
+        backgroundImage: `url(/stations/${stationId}/map)`,
       }}
     />
   );
