@@ -43,9 +43,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function StationId() {
   const { station, arrivals } = useLoaderData<typeof loader>();
-  const { name, id, location, lines } = station;
-
-  const { latitude, longitude } = location;
+  const { name, id, lines } = station;
 
   const [favorite, setFavorite] = useState(false);
 
@@ -82,12 +80,7 @@ export default function StationId() {
           </div>
         </div>
 
-        <StaticMap
-          latitude={latitude}
-          longitude={longitude}
-          height={200}
-          width={500}
-        />
+        <StaticMap stationId={station.id} />
       </div>
 
       <ArrivalList arrivals={arrivals} />

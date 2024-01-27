@@ -6,11 +6,10 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
-  useLoaderData,
   useRouteError,
 } from "@remix-run/react";
 import { withSentry, captureRemixErrorBoundaryError } from "@sentry/remix";
-import { json, type MetaFunction } from "@vercel/remix";
+import { type MetaFunction } from "@vercel/remix";
 
 import styles from "~/styles/global.css";
 
@@ -35,16 +34,7 @@ export const meta: MetaFunction = () => {
   return [{ title: "Slow Zone" }];
 };
 
-export function loader() {
-  return json({
-    ENV: {
-      GOOGLE_MAPS_STATIC_API_KEY: process.env.GOOGLE_MAPS_STATIC_API_KEY,
-    },
-  });
-}
-
 function App() {
-  const data = useLoaderData<typeof loader>();
   return (
     <html lang="en">
       <head>
@@ -64,11 +54,6 @@ function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
-          }}
-        />
       </body>
     </html>
   );
