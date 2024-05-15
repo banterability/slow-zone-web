@@ -10,12 +10,10 @@ Sentry.init({
   replaysOnErrorSampleRate: 1,
 
   integrations: [
-    new Sentry.BrowserTracing({
-      routingInstrumentation: Sentry.remixRouterInstrumentation(
-        useEffect,
-        useLocation,
-        useMatches,
-      ),
+    Sentry.browserTracingIntegration({
+      useEffect,
+      useLocation,
+      useMatches,
     }),
     Sentry.replayIntegration(),
   ],
