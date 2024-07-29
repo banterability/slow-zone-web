@@ -29,7 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.1.0",
-    "@eslint/js": "^9.7.0",
+    "@eslint/js": "^9.8.0",
     "@remix-run/dev": "2.10.3",
     "@remix-run/eslint-config": "2.10.3",
     "@remix-run/serve": "2.10.3",
