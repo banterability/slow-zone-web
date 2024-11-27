@@ -15,7 +15,7 @@
   "dependencies": {
     "@remix-run/node": "2.15.0",
     "@remix-run/react": "2.15.0",
-    "@sentry/remix": "8.40.0",
+    "@sentry/remix": "8.41.0",
     "@vercel/remix": "2.15.0",
     "clsx": "2.1.1",
     "geolib": "3.3.4",
