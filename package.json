@@ -13,10 +13,10 @@
     "update-data": "node data/convert.js && prettier --write 'data/*json'"
   },
   "dependencies": {
-    "@remix-run/node": "2.15.0",
-    "@remix-run/react": "2.15.0",
+    "@remix-run/node": "2.15.1",
+    "@remix-run/react": "2.15.1",
     "@sentry/remix": "8.42.0",
-    "@vercel/remix": "2.15.0",
+    "@vercel/remix": "2.15.1",
     "clsx": "2.1.1",
     "geolib": "3.3.4",
     "isbot": "5.1.17",
@@ -30,9 +30,9 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.16.0",
-    "@remix-run/dev": "2.15.0",
-    "@remix-run/eslint-config": "2.15.0",
-    "@remix-run/serve": "2.15.0",
+    "@remix-run/dev": "2.15.1",
+    "@remix-run/eslint-config": "2.15.1",
+    "@remix-run/serve": "2.15.1",
     "@types/react": "18.3.13",
     "@types/react-dom": "18.3.1",
     "eslint-config-prettier": " 9.1.0",
