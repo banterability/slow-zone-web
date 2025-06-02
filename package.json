@@ -41,7 +41,7 @@
     "prettier": "3.5.3",
     "stylelint-config-standard": "37.0.0",
     "stylelint": "16.20.0",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "engines": {
     "node": "22"
