@@ -9,6 +9,8 @@ if (!API_TOKEN) {
   process.exit(1);
 }
 
+const normalizeWhitespace = str => str.replace(/\s+/g, ' ');
+
 const buildLocation = locationString => {
   let [latitude, longitude] = locationString.match(/([\d-.]+)/g);
 
@@ -68,9 +70,9 @@ const buildStation = stop => {
 const transformRecord = record => ({
   STOP_ID: parseInt(record.stop_id, 10),
   DIRECTION_ID: record.direction_id,
-  STOP_NAME: record.stop_name,
-  STATION_NAME: record.station_name,
-  STATION_DESCRIPTIVE_NAME: record.station_descriptive_name,
+  STOP_NAME: normalizeWhitespace(record.stop_name),
+  STATION_NAME: normalizeWhitespace(record.station_name),
+  STATION_DESCRIPTIVE_NAME: normalizeWhitespace(record.station_descriptive_name),
   MAP_ID: parseInt(record.map_id, 10),
   ADA: record.ada,
   RED: record.red,
