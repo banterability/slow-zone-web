@@ -1,8 +1,6 @@
 import * as fs from 'node:fs';
 
-const API_URL = 'https://data.cityofchicago.org/resource/8pix-ypme.json';
 const API_TOKEN = process.env.CHICAGO_DATA_PORTAL_APP_TOKEN;
-
 if (!API_TOKEN) {
   console.error('CHICAGO_DATA_PORTAL_APP_TOKEN environment variable is required');
   process.exit(1);
@@ -49,14 +47,13 @@ const buildStation = station => {
 const updateStationData = async () => {
   console.log('Fetching data from Chicago Data Portal...');
 
-  const response = await fetch(`${API_URL}?$limit=50000`, {
-    headers: {
-      'X-App-Token': API_TOKEN
-    }
+  const response = await fetch('https://data.cityofchicago.org/resource/8pix-ypme.json', {
+    headers: { 'X-App-Token': API_TOKEN }
   });
 
   if (!response.ok) {
-    throw new Error(`HTTP error! status: ${response.status}`);
+    console.error(`HTTP error! status: ${response.status}`);
+    process.exit(1);
   }
 
   const apiData = await response.json();
