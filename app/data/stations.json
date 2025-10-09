@@ -4,10 +4,7 @@
       "name": "Austin",
       "description": "Austin (Blue Line)",
       "id": 40010,
-      "location": {
-        "latitude": 41.870851,
-        "longitude": -87.776812
-      },
+      "location": { "latitude": 41.870851, "longitude": -87.776812 },
       "stops": [
         {
           "id": 30001,
@@ -31,10 +28,7 @@
       "name": "Harlem/Lake",
       "description": "Harlem/Lake (Green Line)",
       "id": 40020,
-      "location": {
-        "latitude": 41.886848,
-        "longitude": -87.803176
-      },
+      "location": { "latitude": 41.886848, "longitude": -87.803176 },
       "stops": [
         {
           "id": 30003,
@@ -58,10 +52,7 @@
       "name": "Pulaski",
       "description": "Pulaski (Green Line)",
       "id": 40030,
-      "location": {
-        "latitude": 41.885412,
-        "longitude": -87.725404
-      },
+      "location": { "latitude": 41.885412, "longitude": -87.725404 },
       "stops": [
         {
           "id": 30005,
@@ -85,10 +76,7 @@
       "name": "Quincy/Wells",
       "description": "Quincy/Wells (Brown, Orange, Purple & Pink lines)",
       "id": 40040,
-      "location": {
-        "latitude": 41.878723,
-        "longitude": -87.63374
-      },
+      "location": { "latitude": 41.878723, "longitude": -87.63374 },
       "stops": [
         {
           "id": 30007,
@@ -112,10 +100,7 @@
       "name": "Davis",
       "description": "Davis (Purple Line)",
       "id": 40050,
-      "location": {
-        "latitude": 42.04771,
-        "longitude": -87.683543
-      },
+      "location": { "latitude": 42.04771, "longitude": -87.683543 },
       "stops": [
         {
           "id": 30010,
@@ -139,10 +124,7 @@
       "name": "Belmont",
       "description": "Belmont (Blue Line)",
       "id": 40060,
-      "location": {
-        "latitude": 41.938132,
-        "longitude": -87.712359
-      },
+      "location": { "latitude": 41.938132, "longitude": -87.712359 },
       "stops": [
         {
           "id": 30012,
@@ -166,10 +148,7 @@
       "name": "Jackson",
       "description": "Jackson (Blue Line)",
       "id": 40070,
-      "location": {
-        "latitude": 41.878183,
-        "longitude": -87.629296
-      },
+      "location": { "latitude": 41.878183, "longitude": -87.629296 },
       "stops": [
         {
           "id": 30014,
@@ -193,10 +172,7 @@
       "name": "Sheridan",
       "description": "Sheridan (Red Line)",
       "id": 40080,
-      "location": {
-        "latitude": 41.953775,
-        "longitude": -87.654929
-      },
+      "location": { "latitude": 41.953775, "longitude": -87.654929 },
       "stops": [
         {
           "id": 30016,
@@ -234,10 +210,7 @@
       "name": "Damen",
       "description": "Damen (Brown Line)",
       "id": 40090,
-      "location": {
-        "latitude": 41.966286,
-        "longitude": -87.678639
-      },
+      "location": { "latitude": 41.966286, "longitude": -87.678639 },
       "stops": [
         {
           "id": 30018,
@@ -261,10 +234,7 @@
       "name": "Morse",
       "description": "Morse (Red Line)",
       "id": 40100,
-      "location": {
-        "latitude": 42.008362,
-        "longitude": -87.665909
-      },
+      "location": { "latitude": 42.008362, "longitude": -87.665909 },
       "stops": [
         {
           "id": 30020,
@@ -288,10 +258,7 @@
       "name": "35th/Archer",
       "description": "35th/Archer (Orange Line)",
       "id": 40120,
-      "location": {
-        "latitude": 41.829353,
-        "longitude": -87.680622
-      },
+      "location": { "latitude": 41.829353, "longitude": -87.680622 },
       "stops": [
         {
           "id": 30022,
@@ -315,10 +282,7 @@
       "name": "51st",
       "description": "51st (Green Line)",
       "id": 40130,
-      "location": {
-        "latitude": 41.80209,
-        "longitude": -87.618487
-      },
+      "location": { "latitude": 41.80209, "longitude": -87.618487 },
       "stops": [
         {
           "id": 30024,
@@ -342,10 +306,7 @@
       "name": "Dempster-Skokie",
       "description": "Dempster-Skokie  (Yellow Line)",
       "id": 40140,
-      "location": {
-        "latitude": 42.038951,
-        "longitude": -87.751919
-      },
+      "location": { "latitude": 42.038951, "longitude": -87.751919 },
       "stops": [
         {
           "id": 30026,
@@ -369,10 +330,7 @@
       "name": "Pulaski",
       "description": "Pulaski (Pink Line)",
       "id": 40150,
-      "location": {
-        "latitude": 41.853732,
-        "longitude": -87.724311
-      },
+      "location": { "latitude": 41.853732, "longitude": -87.724311 },
       "stops": [
         {
           "id": 30028,
@@ -396,10 +354,7 @@
       "name": "LaSalle/Van Buren",
       "description": "LaSalle/Van Buren (Brown, Orange, Purple & Pink lines)",
       "id": 40160,
-      "location": {
-        "latitude": 41.8768,
-        "longitude": -87.631739
-      },
+      "location": { "latitude": 41.8768, "longitude": -87.631739 },
       "stops": [
         {
           "id": 30030,
@@ -423,10 +378,7 @@
       "name": "Ashland",
       "description": "Ashland (Green & Pink lines)",
       "id": 40170,
-      "location": {
-        "latitude": 41.885269,
-        "longitude": -87.666969
-      },
+      "location": { "latitude": 41.885269, "longitude": -87.666969 },
       "stops": [
         {
           "id": 30032,
@@ -450,10 +402,7 @@
       "name": "Oak Park",
       "description": "Oak Park (Blue Line)",
       "id": 40180,
-      "location": {
-        "latitude": 41.872108,
-        "longitude": -87.791602
-      },
+      "location": { "latitude": 41.872108, "longitude": -87.791602 },
       "stops": [
         {
           "id": 30034,
@@ -477,10 +426,7 @@
       "name": "Sox-35th",
       "description": "Sox-35th (Red Line)",
       "id": 40190,
-      "location": {
-        "latitude": 41.831191,
-        "longitude": -87.630636
-      },
+      "location": { "latitude": 41.831191, "longitude": -87.630636 },
       "stops": [
         {
           "id": 30036,
@@ -504,10 +450,7 @@
       "name": "Damen",
       "description": "Damen (Pink Line)",
       "id": 40210,
-      "location": {
-        "latitude": 41.854517,
-        "longitude": -87.675975
-      },
+      "location": { "latitude": 41.854517, "longitude": -87.675975 },
       "stops": [
         {
           "id": 30040,
@@ -531,10 +474,7 @@
       "name": "Western",
       "description": "Western (Blue Line - Forest Park Branch)",
       "id": 40220,
-      "location": {
-        "latitude": 41.875478,
-        "longitude": -87.688436
-      },
+      "location": { "latitude": 41.875478, "longitude": -87.688436 },
       "stops": [
         {
           "id": 30042,
@@ -558,10 +498,7 @@
       "name": "Cumberland",
       "description": "Cumberland (Blue Line)",
       "id": 40230,
-      "location": {
-        "latitude": 41.984246,
-        "longitude": -87.838028
-      },
+      "location": { "latitude": 41.984246, "longitude": -87.838028 },
       "stops": [
         {
           "id": 30044,
@@ -585,10 +522,7 @@
       "name": "79th",
       "description": "79th (Red Line)",
       "id": 40240,
-      "location": {
-        "latitude": 41.750419,
-        "longitude": -87.625112
-      },
+      "location": { "latitude": 41.750419, "longitude": -87.625112 },
       "stops": [
         {
           "id": 30046,
@@ -612,10 +546,7 @@
       "name": "Kedzie-Homan",
       "description": "Kedzie-Homan (Blue Line)",
       "id": 40250,
-      "location": {
-        "latitude": 41.874341,
-        "longitude": -87.70604
-      },
+      "location": { "latitude": 41.874341, "longitude": -87.70604 },
       "stops": [
         {
           "id": 30048,
@@ -639,10 +570,7 @@
       "name": "State/Lake",
       "description": "State/Lake (Brown, Green, Orange, Pink & Purple lines)",
       "id": 40260,
-      "location": {
-        "latitude": 41.88574,
-        "longitude": -87.627835
-      },
+      "location": { "latitude": 41.88574, "longitude": -87.627835 },
       "stops": [
         {
           "id": 30050,
@@ -666,10 +594,7 @@
       "name": "Main",
       "description": "Main (Purple Line)",
       "id": 40270,
-      "location": {
-        "latitude": 42.033456,
-        "longitude": -87.679538
-      },
+      "location": { "latitude": 42.033456, "longitude": -87.679538 },
       "stops": [
         {
           "id": 30052,
@@ -693,10 +618,7 @@
       "name": "Central",
       "description": "Central (Green Line)",
       "id": 40280,
-      "location": {
-        "latitude": 41.887389,
-        "longitude": -87.76565
-      },
+      "location": { "latitude": 41.887389, "longitude": -87.76565 },
       "stops": [
         {
           "id": 30054,
@@ -720,10 +642,7 @@
       "name": "Ashland/63rd",
       "description": "Ashland/63rd (Green Line)",
       "id": 40290,
-      "location": {
-        "latitude": 41.77886,
-        "longitude": -87.663766
-      },
+      "location": { "latitude": 41.77886, "longitude": -87.663766 },
       "stops": [
         {
           "id": 30056,
@@ -747,10 +666,7 @@
       "name": "Indiana",
       "description": "Indiana (Green Line)",
       "id": 40300,
-      "location": {
-        "latitude": 41.821732,
-        "longitude": -87.621371
-      },
+      "location": { "latitude": 41.821732, "longitude": -87.621371 },
       "stops": [
         {
           "id": 30058,
@@ -774,10 +690,7 @@
       "name": "Western",
       "description": "Western (Orange Line)",
       "id": 40310,
-      "location": {
-        "latitude": 41.804546,
-        "longitude": -87.684019
-      },
+      "location": { "latitude": 41.804546, "longitude": -87.684019 },
       "stops": [
         {
           "id": 30060,
@@ -801,10 +714,7 @@
       "name": "Division",
       "description": "Division (Blue Line)",
       "id": 40320,
-      "location": {
-        "latitude": 41.903355,
-        "longitude": -87.666496
-      },
+      "location": { "latitude": 41.903355, "longitude": -87.666496 },
       "stops": [
         {
           "id": 30062,
@@ -828,10 +738,7 @@
       "name": "Grand",
       "description": "Grand (Red Line)",
       "id": 40330,
-      "location": {
-        "latitude": 41.891665,
-        "longitude": -87.628021
-      },
+      "location": { "latitude": 41.891665, "longitude": -87.628021 },
       "stops": [
         {
           "id": 30064,
@@ -855,37 +762,31 @@
       "name": "Berwyn",
       "description": "Berwyn (Red Line)",
       "id": 40340,
-      "location": {
-        "latitude": 41.977984,
-        "longitude": -87.658668
-      },
+      "location": { "latitude": 41.977984, "longitude": -87.658668 },
       "stops": [
         {
           "id": 30066,
           "direction": "N",
           "name": "Berwyn (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30067,
           "direction": "S",
           "name": "Berwyn (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "UIC-Halsted",
       "description": "UIC-Halsted (Blue Line)",
       "id": 40350,
-      "location": {
-        "latitude": 41.875474,
-        "longitude": -87.649707
-      },
+      "location": { "latitude": 41.875474, "longitude": -87.649707 },
       "stops": [
         {
           "id": 30068,
@@ -909,10 +810,7 @@
       "name": "Southport",
       "description": "Southport (Brown Line)",
       "id": 40360,
-      "location": {
-        "latitude": 41.943744,
-        "longitude": -87.663619
-      },
+      "location": { "latitude": 41.943744, "longitude": -87.663619 },
       "stops": [
         {
           "id": 30070,
@@ -936,10 +834,7 @@
       "name": "Washington",
       "description": "Washington (Blue Line)",
       "id": 40370,
-      "location": {
-        "latitude": 41.883164,
-        "longitude": -87.62944
-      },
+      "location": { "latitude": 41.883164, "longitude": -87.62944 },
       "stops": [
         {
           "id": 30072,
@@ -963,10 +858,7 @@
       "name": "Clark/Lake",
       "description": "Clark/Lake (Blue, Brown, Green, Orange, Purple & Pink lines)",
       "id": 40380,
-      "location": {
-        "latitude": 41.885737,
-        "longitude": -87.630886
-      },
+      "location": { "latitude": 41.885737, "longitude": -87.630886 },
       "stops": [
         {
           "id": 30074,
@@ -1004,10 +896,7 @@
       "name": "Forest Park",
       "description": "Forest Park (Blue Line)",
       "id": 40390,
-      "location": {
-        "latitude": 41.874257,
-        "longitude": -87.817318
-      },
+      "location": { "latitude": 41.874257, "longitude": -87.817318 },
       "stops": [
         {
           "id": 30076,
@@ -1031,10 +920,7 @@
       "name": "Noyes",
       "description": "Noyes (Purple Line)",
       "id": 40400,
-      "location": {
-        "latitude": 42.058282,
-        "longitude": -87.683337
-      },
+      "location": { "latitude": 42.058282, "longitude": -87.683337 },
       "stops": [
         {
           "id": 30078,
@@ -1058,10 +944,7 @@
       "name": "Cicero",
       "description": "Cicero (Pink Line)",
       "id": 40420,
-      "location": {
-        "latitude": 41.85182,
-        "longitude": -87.745336
-      },
+      "location": { "latitude": 41.85182, "longitude": -87.745336 },
       "stops": [
         {
           "id": 30082,
@@ -1085,10 +968,7 @@
       "name": "Clinton",
       "description": "Clinton (Blue Line)",
       "id": 40430,
-      "location": {
-        "latitude": 41.875539,
-        "longitude": -87.640984
-      },
+      "location": { "latitude": 41.875539, "longitude": -87.640984 },
       "stops": [
         {
           "id": 30084,
@@ -1112,10 +992,7 @@
       "name": "California",
       "description": "California (Pink Line)",
       "id": 40440,
-      "location": {
-        "latitude": 41.854109,
-        "longitude": -87.694774
-      },
+      "location": { "latitude": 41.854109, "longitude": -87.694774 },
       "stops": [
         {
           "id": 30086,
@@ -1139,10 +1016,7 @@
       "name": "95th/Dan Ryan",
       "description": "95th/Dan Ryan (Red Line)",
       "id": 40450,
-      "location": {
-        "latitude": 41.722377,
-        "longitude": -87.624342
-      },
+      "location": { "latitude": 41.722377, "longitude": -87.624342 },
       "stops": [
         {
           "id": 30088,
@@ -1166,10 +1040,7 @@
       "name": "Merchandise Mart",
       "description": "Merchandise Mart (Brown & Purple lines)",
       "id": 40460,
-      "location": {
-        "latitude": 41.888969,
-        "longitude": -87.633924
-      },
+      "location": { "latitude": 41.888969, "longitude": -87.633924 },
       "stops": [
         {
           "id": 30090,
@@ -1193,10 +1064,7 @@
       "name": "Racine",
       "description": "Racine (Blue Line)",
       "id": 40470,
-      "location": {
-        "latitude": 41.87592,
-        "longitude": -87.659458
-      },
+      "location": { "latitude": 41.87592, "longitude": -87.659458 },
       "stops": [
         {
           "id": 30092,
@@ -1220,10 +1088,7 @@
       "name": "Cicero",
       "description": "Cicero (Green Line)",
       "id": 40480,
-      "location": {
-        "latitude": 41.886519,
-        "longitude": -87.744698
-      },
+      "location": { "latitude": 41.886519, "longitude": -87.744698 },
       "stops": [
         {
           "id": 30009,
@@ -1247,10 +1112,7 @@
       "name": "Grand",
       "description": "Grand (Blue Line)",
       "id": 40490,
-      "location": {
-        "latitude": 41.891189,
-        "longitude": -87.647578
-      },
+      "location": { "latitude": 41.891189, "longitude": -87.647578 },
       "stops": [
         {
           "id": 30095,
@@ -1274,10 +1136,7 @@
       "name": "Garfield",
       "description": "Garfield (Green Line)",
       "id": 40510,
-      "location": {
-        "latitude": 41.795172,
-        "longitude": -87.618327
-      },
+      "location": { "latitude": 41.795172, "longitude": -87.618327 },
       "stops": [
         {
           "id": 30099,
@@ -1301,10 +1160,7 @@
       "name": "Foster",
       "description": "Foster (Purple Line)",
       "id": 40520,
-      "location": {
-        "latitude": 42.05416,
-        "longitude": -87.68356
-      },
+      "location": { "latitude": 42.05416, "longitude": -87.68356 },
       "stops": [
         {
           "id": 30101,
@@ -1328,10 +1184,7 @@
       "name": "Diversey",
       "description": "Diversey (Brown & Purple lines)",
       "id": 40530,
-      "location": {
-        "latitude": 41.932732,
-        "longitude": -87.653131
-      },
+      "location": { "latitude": 41.932732, "longitude": -87.653131 },
       "stops": [
         {
           "id": 30103,
@@ -1355,10 +1208,7 @@
       "name": "Wilson",
       "description": "Wilson (Red & Purple lines)",
       "id": 40540,
-      "location": {
-        "latitude": 41.964273,
-        "longitude": -87.657588
-      },
+      "location": { "latitude": 41.964273, "longitude": -87.657588 },
       "stops": [
         {
           "id": 30105,
@@ -1396,10 +1246,7 @@
       "name": "Irving Park",
       "description": "Irving Park (Blue Line)",
       "id": 40550,
-      "location": {
-        "latitude": 41.952925,
-        "longitude": -87.729229
-      },
+      "location": { "latitude": 41.952925, "longitude": -87.729229 },
       "stops": [
         {
           "id": 30107,
@@ -1423,10 +1270,7 @@
       "name": "Jackson",
       "description": "Jackson (Red Line)",
       "id": 40560,
-      "location": {
-        "latitude": 41.878153,
-        "longitude": -87.627596
-      },
+      "location": { "latitude": 41.878153, "longitude": -87.627596 },
       "stops": [
         {
           "id": 30109,
@@ -1448,12 +1292,9 @@
     },
     {
       "name": "California",
-      "description": "California (Blue Line)",
+      "description": "California  (Blue Line)",
       "id": 40570,
-      "location": {
-        "latitude": 41.921939,
-        "longitude": -87.69689
-      },
+      "location": { "latitude": 41.921939, "longitude": -87.69689 },
       "stops": [
         {
           "id": 30111,
@@ -1477,10 +1318,7 @@
       "name": "54th/Cermak",
       "description": "54th/Cermak (Pink Line)",
       "id": 40580,
-      "location": {
-        "latitude": 41.85177331,
-        "longitude": -87.75669201
-      },
+      "location": { "latitude": 41.85177331, "longitude": -87.75669201 },
       "stops": [
         {
           "id": 30113,
@@ -1504,10 +1342,7 @@
       "name": "Damen",
       "description": "Damen (Blue Line)",
       "id": 40590,
-      "location": {
-        "latitude": 41.909744,
-        "longitude": -87.677437
-      },
+      "location": { "latitude": 41.909744, "longitude": -87.677437 },
       "stops": [
         {
           "id": 30115,
@@ -1531,10 +1366,7 @@
       "name": "Kostner",
       "description": "Kostner (Pink Line)",
       "id": 40600,
-      "location": {
-        "latitude": 41.853751,
-        "longitude": -87.733258
-      },
+      "location": { "latitude": 41.853751, "longitude": -87.733258 },
       "stops": [
         {
           "id": 30117,
@@ -1558,10 +1390,7 @@
       "name": "Ridgeland",
       "description": "Ridgeland (Green Line)",
       "id": 40610,
-      "location": {
-        "latitude": 41.887159,
-        "longitude": -87.783661
-      },
+      "location": { "latitude": 41.887159, "longitude": -87.783661 },
       "stops": [
         {
           "id": 30119,
@@ -1585,10 +1414,7 @@
       "name": "Clark/Division",
       "description": "Clark/Division (Red Line)",
       "id": 40630,
-      "location": {
-        "latitude": 41.90392,
-        "longitude": -87.631412
-      },
+      "location": { "latitude": 41.90392, "longitude": -87.631412 },
       "stops": [
         {
           "id": 30121,
@@ -1612,10 +1438,7 @@
       "name": "North/Clybourn",
       "description": "North/Clybourn (Red Line)",
       "id": 40650,
-      "location": {
-        "latitude": 41.910655,
-        "longitude": -87.649177
-      },
+      "location": { "latitude": 41.910655, "longitude": -87.649177 },
       "stops": [
         {
           "id": 30125,
@@ -1639,10 +1462,7 @@
       "name": "Armitage",
       "description": "Armitage (Brown & Purple lines)",
       "id": 40660,
-      "location": {
-        "latitude": 41.918217,
-        "longitude": -87.652644
-      },
+      "location": { "latitude": 41.918217, "longitude": -87.652644 },
       "stops": [
         {
           "id": 30127,
@@ -1666,10 +1486,7 @@
       "name": "Western",
       "description": "Western (Blue Line - O'Hare Branch)",
       "id": 40670,
-      "location": {
-        "latitude": 41.916157,
-        "longitude": -87.687364
-      },
+      "location": { "latitude": 41.916157, "longitude": -87.687364 },
       "stops": [
         {
           "id": 30129,
@@ -1693,10 +1510,7 @@
       "name": "Adams/Wabash",
       "description": "Adams/Wabash (Brown, Green, Orange, Pink & Purple lines)",
       "id": 40680,
-      "location": {
-        "latitude": 41.879507,
-        "longitude": -87.626037
-      },
+      "location": { "latitude": 41.879507, "longitude": -87.626037 },
       "stops": [
         {
           "id": 30131,
@@ -1720,10 +1534,7 @@
       "name": "Dempster",
       "description": "Dempster (Purple Line)",
       "id": 40690,
-      "location": {
-        "latitude": 42.041655,
-        "longitude": -87.681602
-      },
+      "location": { "latitude": 42.041655, "longitude": -87.681602 },
       "stops": [
         {
           "id": 30133,
@@ -1747,10 +1558,7 @@
       "name": "Laramie",
       "description": "Laramie (Green Line)",
       "id": 40700,
-      "location": {
-        "latitude": 41.887163,
-        "longitude": -87.754986
-      },
+      "location": { "latitude": 41.887163, "longitude": -87.754986 },
       "stops": [
         {
           "id": 30135,
@@ -1774,10 +1582,7 @@
       "name": "Chicago",
       "description": "Chicago (Brown & Purple lines)",
       "id": 40710,
-      "location": {
-        "latitude": 41.89681,
-        "longitude": -87.635924
-      },
+      "location": { "latitude": 41.89681, "longitude": -87.635924 },
       "stops": [
         {
           "id": 30137,
@@ -1801,10 +1606,7 @@
       "name": "Cottage Grove",
       "description": "Cottage Grove (Green Line)",
       "id": 40720,
-      "location": {
-        "latitude": 41.780309,
-        "longitude": -87.605857
-      },
+      "location": { "latitude": 41.780309, "longitude": -87.605857 },
       "stops": [
         {
           "id": 30139,
@@ -1828,10 +1630,7 @@
       "name": "Washington/Wells",
       "description": "Washington/Wells (Brown, Orange, Purple & Pink lines)",
       "id": 40730,
-      "location": {
-        "latitude": 41.882695,
-        "longitude": -87.63378
-      },
+      "location": { "latitude": 41.882695, "longitude": -87.63378 },
       "stops": [
         {
           "id": 30141,
@@ -1855,10 +1654,7 @@
       "name": "Western",
       "description": "Western (Pink Line)",
       "id": 40740,
-      "location": {
-        "latitude": 41.854225,
-        "longitude": -87.685129
-      },
+      "location": { "latitude": 41.854225, "longitude": -87.685129 },
       "stops": [
         {
           "id": 30143,
@@ -1882,10 +1678,7 @@
       "name": "Harlem",
       "description": "Harlem (Blue Line - O'Hare Branch)",
       "id": 40750,
-      "location": {
-        "latitude": 41.98227,
-        "longitude": -87.8089
-      },
+      "location": { "latitude": 41.98227, "longitude": -87.8089 },
       "stops": [
         {
           "id": 30145,
@@ -1909,10 +1702,7 @@
       "name": "Granville",
       "description": "Granville (Red Line)",
       "id": 40760,
-      "location": {
-        "latitude": 41.993664,
-        "longitude": -87.659202
-      },
+      "location": { "latitude": 41.993664, "longitude": -87.659202 },
       "stops": [
         {
           "id": 30147,
@@ -1936,37 +1726,31 @@
       "name": "Lawrence",
       "description": "Lawrence (Red Line)",
       "id": 40770,
-      "location": {
-        "latitude": 41.969139,
-        "longitude": -87.658493
-      },
+      "location": { "latitude": 41.969139, "longitude": -87.658493 },
       "stops": [
         {
           "id": 30149,
           "direction": "N",
           "name": "Lawrence (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30150,
           "direction": "S",
           "name": "Lawrence (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Central Park",
       "description": "Central Park (Pink Line)",
       "id": 40780,
-      "location": {
-        "latitude": 41.853839,
-        "longitude": -87.714842
-      },
+      "location": { "latitude": 41.853839, "longitude": -87.714842 },
       "stops": [
         {
           "id": 30151,
@@ -1990,10 +1774,7 @@
       "name": "Monroe",
       "description": "Monroe (Blue Line)",
       "id": 40790,
-      "location": {
-        "latitude": 41.880703,
-        "longitude": -87.629378
-      },
+      "location": { "latitude": 41.880703, "longitude": -87.629378 },
       "stops": [
         {
           "id": 30153,
@@ -2017,10 +1798,7 @@
       "name": "Sedgwick",
       "description": "Sedgwick (Brown & Purple lines)",
       "id": 40800,
-      "location": {
-        "latitude": 41.910409,
-        "longitude": -87.639302
-      },
+      "location": { "latitude": 41.910409, "longitude": -87.639302 },
       "stops": [
         {
           "id": 30155,
@@ -2044,10 +1822,7 @@
       "name": "Illinois Medical District",
       "description": "Illinois Medical District (Blue Line)",
       "id": 40810,
-      "location": {
-        "latitude": 41.875706,
-        "longitude": -87.673932
-      },
+      "location": { "latitude": 41.875706, "longitude": -87.673932 },
       "stops": [
         {
           "id": 30157,
@@ -2071,10 +1846,7 @@
       "name": "Rosemont",
       "description": "Rosemont (Blue Line)",
       "id": 40820,
-      "location": {
-        "latitude": 41.983507,
-        "longitude": -87.859388
-      },
+      "location": { "latitude": 41.983507, "longitude": -87.859388 },
       "stops": [
         {
           "id": 30159,
@@ -2098,10 +1870,7 @@
       "name": "18th",
       "description": "18th (Pink Line)",
       "id": 40830,
-      "location": {
-        "latitude": 41.857908,
-        "longitude": -87.669147
-      },
+      "location": { "latitude": 41.857908, "longitude": -87.669147 },
       "stops": [
         {
           "id": 30161,
@@ -2125,10 +1894,7 @@
       "name": "South Boulevard",
       "description": "South Boulevard (Purple Line)",
       "id": 40840,
-      "location": {
-        "latitude": 42.027612,
-        "longitude": -87.678329
-      },
+      "location": { "latitude": 42.027612, "longitude": -87.678329 },
       "stops": [
         {
           "id": 30163,
@@ -2152,10 +1918,7 @@
       "name": "Harold Washington Library-State/Van Buren",
       "description": "Harold Washington Library-State/Van Buren (Brown, Orange, Purple & Pink lines)",
       "id": 40850,
-      "location": {
-        "latitude": 41.876862,
-        "longitude": -87.628196
-      },
+      "location": { "latitude": 41.876862, "longitude": -87.628196 },
       "stops": [
         {
           "id": 30165,
@@ -2179,10 +1942,7 @@
       "name": "Francisco",
       "description": "Francisco (Brown Line)",
       "id": 40870,
-      "location": {
-        "latitude": 41.966046,
-        "longitude": -87.701644
-      },
+      "location": { "latitude": 41.966046, "longitude": -87.701644 },
       "stops": [
         {
           "id": 30167,
@@ -2206,10 +1966,7 @@
       "name": "Thorndale",
       "description": "Thorndale (Red Line)",
       "id": 40880,
-      "location": {
-        "latitude": 41.990259,
-        "longitude": -87.659076
-      },
+      "location": { "latitude": 41.990259, "longitude": -87.659076 },
       "stops": [
         {
           "id": 30169,
@@ -2233,10 +1990,7 @@
       "name": "O'Hare",
       "description": "O'Hare (Blue Line)",
       "id": 40890,
-      "location": {
-        "latitude": 41.97766526,
-        "longitude": -87.90422307
-      },
+      "location": { "latitude": 41.97766526, "longitude": -87.90422307 },
       "stops": [
         {
           "id": 30171,
@@ -2260,10 +2014,7 @@
       "name": "Howard",
       "description": "Howard (Red, Purple & Yellow lines)",
       "id": 40900,
-      "location": {
-        "latitude": 42.019063,
-        "longitude": -87.672892
-      },
+      "location": { "latitude": 42.019063, "longitude": -87.672892 },
       "stops": [
         {
           "id": 30173,
@@ -2301,10 +2052,7 @@
       "name": "63rd",
       "description": "63rd (Red Line)",
       "id": 40910,
-      "location": {
-        "latitude": 41.780536,
-        "longitude": -87.630952
-      },
+      "location": { "latitude": 41.780536, "longitude": -87.630952 },
       "stops": [
         {
           "id": 30177,
@@ -2328,10 +2076,7 @@
       "name": "Pulaski",
       "description": "Pulaski (Blue Line)",
       "id": 40920,
-      "location": {
-        "latitude": 41.873797,
-        "longitude": -87.725663
-      },
+      "location": { "latitude": 41.873797, "longitude": -87.725663 },
       "stops": [
         {
           "id": 30179,
@@ -2355,10 +2100,7 @@
       "name": "Midway",
       "description": "Midway (Orange Line)",
       "id": 40930,
-      "location": {
-        "latitude": 41.78661,
-        "longitude": -87.737875
-      },
+      "location": { "latitude": 41.78661, "longitude": -87.737875 },
       "stops": [
         {
           "id": 30181,
@@ -2382,10 +2124,7 @@
       "name": "Halsted",
       "description": "Halsted (Green Line)",
       "id": 40940,
-      "location": {
-        "latitude": 41.778943,
-        "longitude": -87.644244
-      },
+      "location": { "latitude": 41.778943, "longitude": -87.644244 },
       "stops": [
         {
           "id": 30183,
@@ -2409,10 +2148,7 @@
       "name": "Pulaski",
       "description": "Pulaski (Orange Line)",
       "id": 40960,
-      "location": {
-        "latitude": 41.799756,
-        "longitude": -87.724493
-      },
+      "location": { "latitude": 41.799756, "longitude": -87.724493 },
       "stops": [
         {
           "id": 30185,
@@ -2436,10 +2172,7 @@
       "name": "Cicero",
       "description": "Cicero (Blue Line)",
       "id": 40970,
-      "location": {
-        "latitude": 41.871574,
-        "longitude": -87.745154
-      },
+      "location": { "latitude": 41.871574, "longitude": -87.745154 },
       "stops": [
         {
           "id": 30187,
@@ -2463,10 +2196,7 @@
       "name": "Harlem",
       "description": "Harlem (Blue Line - Forest Park Branch)",
       "id": 40980,
-      "location": {
-        "latitude": 41.87349,
-        "longitude": -87.806961
-      },
+      "location": { "latitude": 41.87349, "longitude": -87.806961 },
       "stops": [
         {
           "id": 30189,
@@ -2490,10 +2220,7 @@
       "name": "69th",
       "description": "69th (Red Line)",
       "id": 40990,
-      "location": {
-        "latitude": 41.768367,
-        "longitude": -87.625724
-      },
+      "location": { "latitude": 41.768367, "longitude": -87.625724 },
       "stops": [
         {
           "id": 30191,
@@ -2517,10 +2244,7 @@
       "name": "Cermak-Chinatown",
       "description": "Cermak-Chinatown (Red Line)",
       "id": 41000,
-      "location": {
-        "latitude": 41.853206,
-        "longitude": -87.630968
-      },
+      "location": { "latitude": 41.853206, "longitude": -87.630968 },
       "stops": [
         {
           "id": 30193,
@@ -2544,10 +2268,7 @@
       "name": "Rockwell",
       "description": "Rockwell (Brown Line)",
       "id": 41010,
-      "location": {
-        "latitude": 41.966115,
-        "longitude": -87.6941
-      },
+      "location": { "latitude": 41.966115, "longitude": -87.6941 },
       "stops": [
         {
           "id": 30195,
@@ -2571,10 +2292,7 @@
       "name": "Logan Square",
       "description": "Logan Square (Blue Line)",
       "id": 41020,
-      "location": {
-        "latitude": 41.929728,
-        "longitude": -87.708541
-      },
+      "location": { "latitude": 41.929728, "longitude": -87.708541 },
       "stops": [
         {
           "id": 30197,
@@ -2598,10 +2316,7 @@
       "name": "Polk",
       "description": "Polk (Pink Line)",
       "id": 41030,
-      "location": {
-        "latitude": 41.871551,
-        "longitude": -87.66953
-      },
+      "location": { "latitude": 41.871551, "longitude": -87.66953 },
       "stops": [
         {
           "id": 30199,
@@ -2625,10 +2340,7 @@
       "name": "Kedzie",
       "description": "Kedzie (Pink Line)",
       "id": 41040,
-      "location": {
-        "latitude": 41.853964,
-        "longitude": -87.705408
-      },
+      "location": { "latitude": 41.853964, "longitude": -87.705408 },
       "stops": [
         {
           "id": 30201,
@@ -2652,10 +2364,7 @@
       "name": "Linden",
       "description": "Linden (Purple Line)",
       "id": 41050,
-      "location": {
-        "latitude": 42.073153,
-        "longitude": -87.69073
-      },
+      "location": { "latitude": 42.073153, "longitude": -87.69073 },
       "stops": [
         {
           "id": 30203,
@@ -2679,10 +2388,7 @@
       "name": "Ashland",
       "description": "Ashland (Orange Line)",
       "id": 41060,
-      "location": {
-        "latitude": 41.839234,
-        "longitude": -87.665317
-      },
+      "location": { "latitude": 41.839234, "longitude": -87.665317 },
       "stops": [
         {
           "id": 30205,
@@ -2706,10 +2412,7 @@
       "name": "Kedzie",
       "description": "Kedzie (Green Line)",
       "id": 41070,
-      "location": {
-        "latitude": 41.884321,
-        "longitude": -87.706155
-      },
+      "location": { "latitude": 41.884321, "longitude": -87.706155 },
       "stops": [
         {
           "id": 30207,
@@ -2733,10 +2436,7 @@
       "name": "47th",
       "description": "47th (Green Line)",
       "id": 41080,
-      "location": {
-        "latitude": 41.809209,
-        "longitude": -87.618826
-      },
+      "location": { "latitude": 41.809209, "longitude": -87.618826 },
       "stops": [
         {
           "id": 30209,
@@ -2760,10 +2460,7 @@
       "name": "Monroe",
       "description": "Monroe (Red Line)",
       "id": 41090,
-      "location": {
-        "latitude": 41.880745,
-        "longitude": -87.627696
-      },
+      "location": { "latitude": 41.880745, "longitude": -87.627696 },
       "stops": [
         {
           "id": 30211,
@@ -2787,10 +2484,7 @@
       "name": "35th-Bronzeville-IIT",
       "description": "35th-Bronzeville-IIT (Green Line)",
       "id": 41120,
-      "location": {
-        "latitude": 41.831677,
-        "longitude": -87.625826
-      },
+      "location": { "latitude": 41.831677, "longitude": -87.625826 },
       "stops": [
         {
           "id": 30213,
@@ -2814,10 +2508,7 @@
       "name": "Halsted",
       "description": "Halsted (Orange Line)",
       "id": 41130,
-      "location": {
-        "latitude": 41.84678,
-        "longitude": -87.648088
-      },
+      "location": { "latitude": 41.84678, "longitude": -87.648088 },
       "stops": [
         {
           "id": 30215,
@@ -2841,10 +2532,7 @@
       "name": "King Drive",
       "description": "King Drive (Green Line)",
       "id": 41140,
-      "location": {
-        "latitude": 41.78013,
-        "longitude": -87.615546
-      },
+      "location": { "latitude": 41.78013, "longitude": -87.615546 },
       "stops": [
         {
           "id": 30217,
@@ -2868,10 +2556,7 @@
       "name": "Kedzie",
       "description": "Kedzie (Orange Line)",
       "id": 41150,
-      "location": {
-        "latitude": 41.804236,
-        "longitude": -87.704406
-      },
+      "location": { "latitude": 41.804236, "longitude": -87.704406 },
       "stops": [
         {
           "id": 30219,
@@ -2895,10 +2580,7 @@
       "name": "Clinton",
       "description": "Clinton (Green & Pink lines)",
       "id": 41160,
-      "location": {
-        "latitude": 41.885678,
-        "longitude": -87.641782
-      },
+      "location": { "latitude": 41.885678, "longitude": -87.641782 },
       "stops": [
         {
           "id": 30221,
@@ -2922,10 +2604,7 @@
       "name": "Garfield",
       "description": "Garfield (Red Line)",
       "id": 41170,
-      "location": {
-        "latitude": 41.79542,
-        "longitude": -87.631157
-      },
+      "location": { "latitude": 41.79542, "longitude": -87.631157 },
       "stops": [
         {
           "id": 30223,
@@ -2949,10 +2628,7 @@
       "name": "Kedzie",
       "description": "Kedzie (Brown Line)",
       "id": 41180,
-      "location": {
-        "latitude": 41.965996,
-        "longitude": -87.708821
-      },
+      "location": { "latitude": 41.965996, "longitude": -87.708821 },
       "stops": [
         {
           "id": 30225,
@@ -2976,10 +2652,7 @@
       "name": "Jarvis",
       "description": "Jarvis (Red Line)",
       "id": 41190,
-      "location": {
-        "latitude": 42.015876,
-        "longitude": -87.669092
-      },
+      "location": { "latitude": 42.015876, "longitude": -87.669092 },
       "stops": [
         {
           "id": 30227,
@@ -3003,37 +2676,31 @@
       "name": "Argyle",
       "description": "Argyle (Red Line)",
       "id": 41200,
-      "location": {
-        "latitude": 41.973453,
-        "longitude": -87.65853
-      },
+      "location": { "latitude": 41.973453, "longitude": -87.65853 },
       "stops": [
         {
           "id": 30229,
           "direction": "N",
           "name": "Argyle (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30230,
           "direction": "S",
           "name": "Argyle (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Wellington",
       "description": "Wellington (Brown & Purple lines)",
       "id": 41210,
-      "location": {
-        "latitude": 41.936033,
-        "longitude": -87.653266
-      },
+      "location": { "latitude": 41.936033, "longitude": -87.653266 },
       "stops": [
         {
           "id": 30231,
@@ -3057,10 +2724,7 @@
       "name": "Fullerton",
       "description": "Fullerton (Red, Brown & Purple lines)",
       "id": 41220,
-      "location": {
-        "latitude": 41.925051,
-        "longitude": -87.652866
-      },
+      "location": { "latitude": 41.925051, "longitude": -87.652866 },
       "stops": [
         {
           "id": 30233,
@@ -3098,10 +2762,7 @@
       "name": "47th",
       "description": "47th (Red Line)",
       "id": 41230,
-      "location": {
-        "latitude": 41.810318,
-        "longitude": -87.63094
-      },
+      "location": { "latitude": 41.810318, "longitude": -87.63094 },
       "stops": [
         {
           "id": 30237,
@@ -3125,10 +2786,7 @@
       "name": "Addison",
       "description": "Addison (Blue Line)",
       "id": 41240,
-      "location": {
-        "latitude": 41.94738,
-        "longitude": -87.71906
-      },
+      "location": { "latitude": 41.94738, "longitude": -87.71906 },
       "stops": [
         {
           "id": 30239,
@@ -3152,10 +2810,7 @@
       "name": "Central",
       "description": "Central (Purple Line)",
       "id": 41250,
-      "location": {
-        "latitude": 42.063987,
-        "longitude": -87.685617
-      },
+      "location": { "latitude": 42.063987, "longitude": -87.685617 },
       "stops": [
         {
           "id": 30241,
@@ -3179,10 +2834,7 @@
       "name": "Austin",
       "description": "Austin (Green Line)",
       "id": 41260,
-      "location": {
-        "latitude": 41.887293,
-        "longitude": -87.774135
-      },
+      "location": { "latitude": 41.887293, "longitude": -87.774135 },
       "stops": [
         {
           "id": 30243,
@@ -3206,10 +2858,7 @@
       "name": "43rd",
       "description": "43rd (Green Line)",
       "id": 41270,
-      "location": {
-        "latitude": 41.816462,
-        "longitude": -87.619021
-      },
+      "location": { "latitude": 41.816462, "longitude": -87.619021 },
       "stops": [
         {
           "id": 30245,
@@ -3233,10 +2882,7 @@
       "name": "Jefferson Park",
       "description": "Jefferson Park (Blue Line)",
       "id": 41280,
-      "location": {
-        "latitude": 41.970634,
-        "longitude": -87.760892
-      },
+      "location": { "latitude": 41.970634, "longitude": -87.760892 },
       "stops": [
         {
           "id": 30247,
@@ -3260,10 +2906,7 @@
       "name": "Kimball",
       "description": "Kimball (Brown Line)",
       "id": 41290,
-      "location": {
-        "latitude": 41.967901,
-        "longitude": -87.713065
-      },
+      "location": { "latitude": 41.967901, "longitude": -87.713065 },
       "stops": [
         {
           "id": 30249,
@@ -3287,10 +2930,7 @@
       "name": "Loyola",
       "description": "Loyola (Red Line)",
       "id": 41300,
-      "location": {
-        "latitude": 42.001073,
-        "longitude": -87.661061
-      },
+      "location": { "latitude": 42.001073, "longitude": -87.661061 },
       "stops": [
         {
           "id": 30251,
@@ -3314,10 +2954,7 @@
       "name": "Paulina",
       "description": "Paulina (Brown Line)",
       "id": 41310,
-      "location": {
-        "latitude": 41.943623,
-        "longitude": -87.670907
-      },
+      "location": { "latitude": 41.943623, "longitude": -87.670907 },
       "stops": [
         {
           "id": 30253,
@@ -3341,10 +2978,7 @@
       "name": "Belmont",
       "description": "Belmont (Red, Brown & Purple lines)",
       "id": 41320,
-      "location": {
-        "latitude": 41.939751,
-        "longitude": -87.65338
-      },
+      "location": { "latitude": 41.939751, "longitude": -87.65338 },
       "stops": [
         {
           "id": 30255,
@@ -3382,10 +3016,7 @@
       "name": "Montrose",
       "description": "Montrose (Blue Line)",
       "id": 41330,
-      "location": {
-        "latitude": 41.961539,
-        "longitude": -87.743574
-      },
+      "location": { "latitude": 41.961539, "longitude": -87.743574 },
       "stops": [
         {
           "id": 30259,
@@ -3409,10 +3040,7 @@
       "name": "LaSalle",
       "description": "LaSalle (Blue Line)",
       "id": 41340,
-      "location": {
-        "latitude": 41.875568,
-        "longitude": -87.631722
-      },
+      "location": { "latitude": 41.875568, "longitude": -87.631722 },
       "stops": [
         {
           "id": 30261,
@@ -3436,10 +3064,7 @@
       "name": "Oak Park",
       "description": "Oak Park (Green Line)",
       "id": 41350,
-      "location": {
-        "latitude": 41.886988,
-        "longitude": -87.793783
-      },
+      "location": { "latitude": 41.886988, "longitude": -87.793783 },
       "stops": [
         {
           "id": 30263,
@@ -3463,10 +3088,7 @@
       "name": "California",
       "description": "California (Green Line)",
       "id": 41360,
-      "location": {
-        "latitude": 41.88422,
-        "longitude": -87.696234
-      },
+      "location": { "latitude": 41.88422, "longitude": -87.696234 },
       "stops": [
         {
           "id": 30265,
@@ -3490,37 +3112,31 @@
       "name": "Bryn Mawr",
       "description": "Bryn Mawr (Red Line)",
       "id": 41380,
-      "location": {
-        "latitude": 41.983504,
-        "longitude": -87.65884
-      },
+      "location": { "latitude": 41.983504, "longitude": -87.65884 },
       "stops": [
         {
           "id": 30267,
           "direction": "N",
           "name": "Bryn Mawr (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30268,
           "direction": "S",
           "name": "Bryn Mawr (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Roosevelt",
       "description": "Roosevelt (Red, Orange & Green lines)",
       "id": 41400,
-      "location": {
-        "latitude": 41.867368,
-        "longitude": -87.627402
-      },
+      "location": { "latitude": 41.867405, "longitude": -87.62659 },
       "stops": [
         {
           "id": 30080,
@@ -3558,10 +3174,7 @@
       "name": "Chicago",
       "description": "Chicago (Blue Line)",
       "id": 41410,
-      "location": {
-        "latitude": 41.896075,
-        "longitude": -87.655214
-      },
+      "location": { "latitude": 41.896075, "longitude": -87.655214 },
       "stops": [
         {
           "id": 30271,
@@ -3585,10 +3198,7 @@
       "name": "Addison",
       "description": "Addison (Red Line)",
       "id": 41420,
-      "location": {
-        "latitude": 41.947428,
-        "longitude": -87.653626
-      },
+      "location": { "latitude": 41.947428, "longitude": -87.653626 },
       "stops": [
         {
           "id": 30273,
@@ -3612,10 +3222,7 @@
       "name": "87th",
       "description": "87th (Red Line)",
       "id": 41430,
-      "location": {
-        "latitude": 41.735372,
-        "longitude": -87.624717
-      },
+      "location": { "latitude": 41.735372, "longitude": -87.624717 },
       "stops": [
         {
           "id": 30275,
@@ -3639,10 +3246,7 @@
       "name": "Addison",
       "description": "Addison (Brown Line)",
       "id": 41440,
-      "location": {
-        "latitude": 41.947028,
-        "longitude": -87.674642
-      },
+      "location": { "latitude": 41.947028, "longitude": -87.674642 },
       "stops": [
         {
           "id": 30277,
@@ -3666,10 +3270,7 @@
       "name": "Chicago",
       "description": "Chicago (Red Line)",
       "id": 41450,
-      "location": {
-        "latitude": 41.896671,
-        "longitude": -87.628176
-      },
+      "location": { "latitude": 41.896671, "longitude": -87.628176 },
       "stops": [
         {
           "id": 30279,
@@ -3693,10 +3294,7 @@
       "name": "Irving Park",
       "description": "Irving Park (Brown Line)",
       "id": 41460,
-      "location": {
-        "latitude": 41.954521,
-        "longitude": -87.674868
-      },
+      "location": { "latitude": 41.954521, "longitude": -87.674868 },
       "stops": [
         {
           "id": 30281,
@@ -3720,10 +3318,7 @@
       "name": "Western",
       "description": "Western (Brown Line)",
       "id": 41480,
-      "location": {
-        "latitude": 41.966163,
-        "longitude": -87.688502
-      },
+      "location": { "latitude": 41.966163, "longitude": -87.688502 },
       "stops": [
         {
           "id": 30283,
@@ -3747,10 +3342,7 @@
       "name": "Harrison",
       "description": "Harrison (Red Line)",
       "id": 41490,
-      "location": {
-        "latitude": 41.874039,
-        "longitude": -87.627479
-      },
+      "location": { "latitude": 41.874039, "longitude": -87.627479 },
       "stops": [
         {
           "id": 30285,
@@ -3774,10 +3366,7 @@
       "name": "Montrose",
       "description": "Montrose (Brown Line)",
       "id": 41500,
-      "location": {
-        "latitude": 41.961756,
-        "longitude": -87.675047
-      },
+      "location": { "latitude": 41.961756, "longitude": -87.675047 },
       "stops": [
         {
           "id": 30287,
@@ -3801,10 +3390,7 @@
       "name": "Morgan",
       "description": "Morgan (Green & Pink lines)",
       "id": 41510,
-      "location": {
-        "latitude": 41.885586,
-        "longitude": -87.652193
-      },
+      "location": { "latitude": 41.885586, "longitude": -87.652193 },
       "stops": [
         {
           "id": 30295,
@@ -3828,10 +3414,7 @@
       "name": "Lake",
       "description": "Lake (Red Line)",
       "id": 41660,
-      "location": {
-        "latitude": 41.884809,
-        "longitude": -87.627813
-      },
+      "location": { "latitude": 41.884809, "longitude": -87.627813 },
       "stops": [
         {
           "id": 30289,
@@ -3855,10 +3438,7 @@
       "name": "Conservatory",
       "description": "Conservatory (Green Line)",
       "id": 41670,
-      "location": {
-        "latitude": 41.884904,
-        "longitude": -87.716523
-      },
+      "location": { "latitude": 41.884904, "longitude": -87.716523 },
       "stops": [
         {
           "id": 30291,
@@ -3882,10 +3462,7 @@
       "name": "Oakton-Skokie",
       "description": "Oakton-Skokie (Yellow Line)",
       "id": 41680,
-      "location": {
-        "latitude": 42.02624348,
-        "longitude": -87.74722084
-      },
+      "location": { "latitude": 42.02624348, "longitude": -87.74722084 },
       "stops": [
         {
           "id": 30297,
@@ -3909,10 +3486,7 @@
       "name": "Cermak-McCormick Place",
       "description": "Cermak-McCormick Place (Green Line)",
       "id": 41690,
-      "location": {
-        "latitude": 41.853115,
-        "longitude": -87.626402
-      },
+      "location": { "latitude": 41.853115, "longitude": -87.626402 },
       "stops": [
         {
           "id": 30381,
@@ -3936,10 +3510,7 @@
       "name": "Washington/Wabash",
       "description": "Washington/Wabash (Brown, Green, Orange, Purple & Pink lines)",
       "id": 41700,
-      "location": {
-        "latitude": 41.88322,
-        "longitude": -87.626189
-      },
+      "location": { "latitude": 41.88322, "longitude": -87.626189 },
       "stops": [
         {
           "id": 30383,
@@ -3958,7 +3529,31 @@
       ],
       "lines": ["brown", "green", "orange", "pink", "purple"],
       "accessible": true
+    },
+    {
+      "name": "Damen",
+      "description": "Damen (Green Line)",
+      "id": 41710,
+      "location": { "latitude": 41.88497405, "longitude": -87.67689149 },
+      "stops": [
+        {
+          "id": 30387,
+          "direction": "E",
+          "name": "Damen (63rd-bound)",
+          "accessible": true,
+          "lines": ["green"]
+        },
+        {
+          "id": 30388,
+          "direction": "W",
+          "name": "Damen (Harlem-bound)",
+          "accessible": true,
+          "lines": ["green"]
+        }
+      ],
+      "lines": ["green"],
+      "accessible": true
     }
   ],
-  "generatedAt": "2023-12-21"
+  "generatedAt": "2025-10-09"
 }
