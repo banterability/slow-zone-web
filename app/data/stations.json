@@ -304,7 +304,7 @@
     },
     {
       "name": "Dempster-Skokie",
-      "description": "Dempster-Skokie  (Yellow Line)",
+      "description": "Dempster-Skokie (Yellow Line)",
       "id": 40140,
       "location": { "latitude": 42.038951, "longitude": -87.751919 },
       "stops": [
@@ -768,19 +768,19 @@
           "id": 30066,
           "direction": "N",
           "name": "Berwyn (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30067,
           "direction": "S",
           "name": "Berwyn (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "UIC-Halsted",
@@ -1732,19 +1732,19 @@
           "id": 30149,
           "direction": "N",
           "name": "Lawrence (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30150,
           "direction": "S",
           "name": "Lawrence (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Central Park",
@@ -2682,19 +2682,19 @@
           "id": 30229,
           "direction": "N",
           "name": "Argyle (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30230,
           "direction": "S",
           "name": "Argyle (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Wellington",
@@ -3118,25 +3118,25 @@
           "id": 30267,
           "direction": "N",
           "name": "Bryn Mawr (Howard-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         },
         {
           "id": 30268,
           "direction": "S",
           "name": "Bryn Mawr (95th-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["red"]
         }
       ],
       "lines": ["red"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Roosevelt",
       "description": "Roosevelt (Red, Orange & Green lines)",
       "id": 41400,
-      "location": { "latitude": 41.867368, "longitude": -87.627402 },
+      "location": { "latitude": 41.867405, "longitude": -87.62659 },
       "stops": [
         {
           "id": 30080,
@@ -3529,7 +3529,31 @@
       ],
       "lines": ["brown", "green", "orange", "pink", "purple"],
       "accessible": true
+    },
+    {
+      "name": "Damen",
+      "description": "Damen (Green Line)",
+      "id": 41710,
+      "location": { "latitude": 41.88497405, "longitude": -87.67689149 },
+      "stops": [
+        {
+          "id": 30387,
+          "direction": "E",
+          "name": "Damen (63rd-bound)",
+          "accessible": true,
+          "lines": ["green"]
+        },
+        {
+          "id": 30388,
+          "direction": "W",
+          "name": "Damen (Harlem-bound)",
+          "accessible": true,
+          "lines": ["green"]
+        }
+      ],
+      "lines": ["green"],
+      "accessible": true
     }
   ],
-  "generatedAt": "2023-12-21"
+  "generatedAt": "2025-10-09"
 }
