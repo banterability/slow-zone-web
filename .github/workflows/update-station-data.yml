@@ -1,0 +1,50 @@
+name: Update CTA Station Data
+
+on:
+  # schedule:
+  #   - cron: "0 8 * * 1" # 8 AM UTC every Monday
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  update-data:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download and convert CTA data
+        env:
+          CHICAGO_DATA_PORTAL_APP_TOKEN: ${{ secrets.CHICAGO_DATA_PORTAL_APP_TOKEN }}
+        run: node data/refresh.js
+
+      - name: Process station data
+        run: npm run update-data
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Check for changes
+        id: changes
+        run: |
+          git diff --exit-code --quiet app/data/stations.json || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.changes.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "🤖 Update CTA station data"
+          title: "🤖 Update CTA station data"
+          body: "Automated update of CTA station data from Chicago Data Portal."
+          branch: update-station-data
+          branch-suffix: timestamp
