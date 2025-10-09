@@ -11,7 +11,7 @@ if (!API_TOKEN) {
 async function fetchStationData() {
   try {
     console.log('Fetching data from Chicago Data Portal...');
-    
+
     const response = await fetch(`${API_URL}?$limit=50000`, {
       headers: {
         'X-App-Token': API_TOKEN
@@ -24,8 +24,7 @@ async function fetchStationData() {
 
     const apiData = await response.json();
     console.log(`Fetched ${apiData.length} records from API`);
-    
-    // Transform API response to match existing stations-raw.json format
+
     const transformedData = apiData.map(record => ({
       STOP_ID: parseInt(record.stop_id),
       DIRECTION_ID: record.direction_id,
@@ -49,7 +48,7 @@ async function fetchStationData() {
     // Write the transformed data to stations-raw.json
     fs.writeFileSync('data/stations-raw.json', JSON.stringify(transformedData, null, 2));
     console.log(`Successfully downloaded and transformed ${transformedData.length} station records`);
-    
+
   } catch (error) {
     console.error('Failed to fetch station data:', error);
     process.exit(1);
