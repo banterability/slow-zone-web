@@ -11,81 +11,41 @@ if (!API_TOKEN) {
 
 const normalizeWhitespace = str => str.replace(/\s+/g, ' ');
 
-const buildLocation = locationString => {
-  let [latitude, longitude] = locationString.match(/([\d-.]+)/g);
-
-  latitude = parseFloat(latitude, 10);
-  longitude = parseFloat(longitude, 10);
-
-  return { latitude, longitude };
-};
-
-const toBoolean = value => {
-  if (value === true) {
-    return true;
-  } else if (value === false) {
-    return false;
-  } else if (value === "true") {
-    return true;
-  } else if (value === "false" || value === "") {
-    return false;
-  } else {
-    throw new Error("unknown value toBoolean: " + value);
-  }
-};
-
-const buildStop = stop => {
+const buildStop = station => {
   const stopData = {
-    id: parseInt(stop.STOP_ID, 10),
-    direction: stop.DIRECTION_ID,
-    name: stop.STOP_NAME,
-    accessible: toBoolean(stop.ADA),
+    id: parseInt(station.stop_id, 10),
+    direction: station.direction_id,
+    name: normalizeWhitespace(station.stop_name),
+    accessible: station.ada,
     lines: []
   };
 
-  if (toBoolean(stop.BLUE)) stopData.lines.push("blue");
-  if (toBoolean(stop.RED)) stopData.lines.push("red");
-  if (toBoolean(stop.G)) stopData.lines.push("green");
-  if (toBoolean(stop.BRN)) stopData.lines.push("brown");
-  if (toBoolean(stop.P) || toBoolean(stop.Pexp)) stopData.lines.push("purple");
-  if (toBoolean(stop.Y)) stopData.lines.push("yellow");
-  if (toBoolean(stop.Pnk)) stopData.lines.push("pink");
-  if (toBoolean(stop.O)) stopData.lines.push("orange");
+  if (station.blue) stopData.lines.push("blue");
+  if (station.red) stopData.lines.push("red");
+  if (station.g) stopData.lines.push("green");
+  if (station.brn) stopData.lines.push("brown");
+  if (station.p || station.pexp) stopData.lines.push("purple");
+  if (station.y) stopData.lines.push("yellow");
+  if (station.pnk) stopData.lines.push("pink");
+  if (station.o) stopData.lines.push("orange");
 
   stopData.lines = stopData.lines.sort();
 
   return stopData;
 };
 
-const buildStation = stop => {
+const buildStation = station => {
   return {
-    name: stop.STATION_NAME,
-    description: stop.STATION_DESCRIPTIVE_NAME,
-    id: parseInt(stop.MAP_ID, 10),
-    location: buildLocation(stop.Location),
+    name: normalizeWhitespace(station.station_name),
+    description: normalizeWhitespace(station.station_descriptive_name),
+    id: parseInt(station.map_id, 10),
+    location: {
+      latitude: parseFloat(station.location.latitude),
+      longitude: parseFloat(station.location.longitude)
+    },
     stops: []
   };
 };
-
-const transformRecord = record => ({
-  STOP_ID: parseInt(record.stop_id, 10),
-  DIRECTION_ID: record.direction_id,
-  STOP_NAME: normalizeWhitespace(record.stop_name),
-  STATION_NAME: normalizeWhitespace(record.station_name),
-  STATION_DESCRIPTIVE_NAME: normalizeWhitespace(record.station_descriptive_name),
-  MAP_ID: parseInt(record.map_id, 10),
-  ADA: record.ada,
-  RED: record.red,
-  BLUE: record.blue,
-  G: record.g,
-  BRN: record.brn,
-  P: record.p,
-  Pexp: record.pexp,
-  Y: record.y,
-  Pnk: record.pnk,
-  O: record.o,
-  Location: `(${record.location.latitude}, ${record.location.longitude})`
-});
 
 const updateStationData = async () => {
   console.log('Fetching data from Chicago Data Portal...');
@@ -103,10 +63,8 @@ const updateStationData = async () => {
   const apiData = await response.json();
   console.log(`Fetched ${apiData.length} records from API`);
 
-  const transformedData = apiData.map(transformRecord);
-
-  const byStation = transformedData.reduce((memo, stop) => {
-    const stationId = parseInt(stop.MAP_ID, 10);
+  const byStation = apiData.reduce((memo, stop) => {
+    const stationId = parseInt(stop.map_id, 10);
     let stationData;
 
     console.log("stop before BuildStop", stop);
@@ -117,17 +75,17 @@ const updateStationData = async () => {
       stationData = memo[stationId];
       console.log(
         "--> adding stop",
-        stop.STOP_NAME,
+        stop.stop_name,
         "to existing station",
-        stop.STATION_NAME
+        stop.station_name
       );
     } else {
       stationData = buildStation(stop);
       console.log(
         "> Adding station",
-        stop.STATION_NAME,
+        stop.station_name,
         "and stop",
-        stop.STOP_NAME
+        stop.stop_name
       );
     }
 
