@@ -1,5 +1,4 @@
 import * as fs from 'node:fs';
-import { every, flatten, uniq } from "lodash-es";
 
 const API_URL = 'https://data.cityofchicago.org/resource/8pix-ypme.json';
 const API_TOKEN = process.env.CHICAGO_DATA_PORTAL_APP_TOKEN;
@@ -11,23 +10,23 @@ if (!API_TOKEN) {
 
 const normalizeWhitespace = str => str.replace(/\s+/g, ' ');
 
-const buildStop = station => {
+const buildStop = stop => {
   const stopData = {
-    id: parseInt(station.stop_id, 10),
-    direction: station.direction_id,
-    name: normalizeWhitespace(station.stop_name),
-    accessible: station.ada,
+    id: parseInt(stop.stop_id, 10),
+    direction: stop.direction_id,
+    name: normalizeWhitespace(stop.stop_name),
+    accessible: stop.ada,
     lines: []
   };
 
-  if (station.blue) stopData.lines.push("blue");
-  if (station.red) stopData.lines.push("red");
-  if (station.g) stopData.lines.push("green");
-  if (station.brn) stopData.lines.push("brown");
-  if (station.p || station.pexp) stopData.lines.push("purple");
-  if (station.y) stopData.lines.push("yellow");
-  if (station.pnk) stopData.lines.push("pink");
-  if (station.o) stopData.lines.push("orange");
+  if (stop.blue) stopData.lines.push("blue");
+  if (stop.red) stopData.lines.push("red");
+  if (stop.g) stopData.lines.push("green");
+  if (stop.brn) stopData.lines.push("brown");
+  if (stop.p || stop.pexp) stopData.lines.push("purple");
+  if (stop.y) stopData.lines.push("yellow");
+  if (stop.pnk) stopData.lines.push("pink");
+  if (stop.o) stopData.lines.push("orange");
 
   stopData.lines = stopData.lines.sort();
 
@@ -67,8 +66,6 @@ const updateStationData = async () => {
     const stationId = parseInt(stop.map_id, 10);
     let stationData;
 
-    console.log("stop before BuildStop", stop);
-
     const stopData = buildStop(stop);
 
     if (memo[stationId]) {
@@ -96,11 +93,8 @@ const updateStationData = async () => {
 
   const summarize = Object.keys(byStation).map(stationId => {
     const data = byStation[stationId];
-    data.lines = uniq(flatten(data.stops.map(stop => stop.lines))).sort();
-    data.accessible = every(
-      data.stops.map(stop => stop.accessible),
-      accessible => accessible
-    );
+    data.lines = [...new Set(data.stops.flatMap(stop => stop.lines))].sort();
+    data.accessible = data.stops.every(stop => stop.accessible);
     data.stops = data.stops.sort((a, b) => (a.id > b.id ? 1 : -1));
 
     return data;
