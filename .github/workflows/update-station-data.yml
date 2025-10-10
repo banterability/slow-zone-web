@@ -30,13 +30,7 @@ jobs:
           CHICAGO_DATA_PORTAL_APP_TOKEN: ${{ secrets.CHICAGO_DATA_PORTAL_APP_TOKEN }}
         run: npm run update-stations
 
-      - name: Check for changes
-        id: changes
-        run: |
-          git diff --exit-code --quiet app/data/stations.json || echo "changes=true" >> $GITHUB_OUTPUT
-
       - name: Create Pull Request
-        if: steps.changes.outputs.changes == 'true'
         uses: peter-evans/create-pull-request@v7
         with:
           commit-message: "🤖 Update CTA station data"
