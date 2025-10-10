@@ -1,19 +1,26 @@
 version: 2
 updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  commit-message:
-      prefix: '🤖 '
-  groups:
-    eslint:
-      patterns:
-        - "eslint*"
-    remix:
-      patterns:
-        - "@remix-run/*"
-        - "@vercel/remix"
-    stylelint:
-      patterns:
-        - 'styleint*'
+  - package-ecosystem: npm
+    directory: "/"
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "🤖 "
+    groups:
+      eslint:
+        patterns:
+          - "eslint*"
+      remix:
+        patterns:
+          - "@remix-run/*"
+          - "@vercel/remix"
+      stylelint:
+        patterns:
+          - "stylelint*"
+
+  - package-ecosystem: github-actions
+    directory: "/"
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: "🤖 "
