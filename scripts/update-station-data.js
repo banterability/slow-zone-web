@@ -100,8 +100,7 @@ const updateStationData = async () => {
   fs.writeFileSync(
     `app/data/stations.json`,
     JSON.stringify({
-      stations: summarize,
-      generatedAt: new Date().toISOString().split("T")[0]
+      stations: summarize
     })
   );
 
