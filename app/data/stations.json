@@ -3136,7 +3136,7 @@
       "name": "Roosevelt",
       "description": "Roosevelt (Red, Orange & Green lines)",
       "id": 41400,
-      "location": { "latitude": 41.867405, "longitude": -87.62659 },
+      "location": { "latitude": 41.867368, "longitude": -87.627402 },
       "stops": [
         {
           "id": 30080,
