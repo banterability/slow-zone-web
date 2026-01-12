@@ -10,9 +10,10 @@ updates:
       eslint:
         patterns:
           - "eslint*"
-      remix:
+      react-router:
         patterns:
-          - "@remix-run/*"
+          - "react-router"
+          - "@react-router/*"
       stylelint:
         patterns:
           - "stylelint*"
