@@ -1,5 +1,5 @@
-import { data } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { data } from "react-router";
+import { useLoaderData } from "react-router";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
 

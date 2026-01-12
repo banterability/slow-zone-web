@@ -2,7 +2,7 @@ import { cacheHeader } from "pretty-cache-header";
 
 import { STATION_LOCATIONS } from "~/data/stations";
 
-import type { LoaderFunction } from "@remix-run/node";
+import type { LoaderFunction } from "react-router";
 
 function notFound() {
   throw new Response("Not Found", {

@@ -1,4 +1,4 @@
-import { type MetaFunction } from "@remix-run/node";
+import * as Sentry from "@sentry/react-router";
 import {
   Links,
   Meta,
@@ -7,8 +7,8 @@ import {
   ScrollRestoration,
   isRouteErrorResponse,
   useRouteError,
-} from "@remix-run/react";
-import { withSentry, captureRemixErrorBoundaryError } from "@sentry/remix";
+} from "react-router";
+import type { MetaFunction } from "react-router";
 
 import styles from "~/styles/global.css?url";
 
@@ -33,7 +33,7 @@ export const meta: MetaFunction = () => {
   return [{ title: "Slow Zone" }];
 };
 
-function App() {
+export default function App() {
   return (
     <html lang="en">
       <head>
@@ -62,9 +62,7 @@ export const ErrorBoundary = () => {
   if (isRouteErrorResponse(error) && error.status === 404) {
     // i can't know how to hear anymore about 404s!
   } else {
-    captureRemixErrorBoundaryError(error);
+    Sentry.captureException(error);
   }
   return <div>Something went wrong</div>;
 };
-
-export default withSentry(App);

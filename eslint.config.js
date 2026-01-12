@@ -13,8 +13,8 @@ const compat = new FlatCompat({
 });
 
 export default [{
-    ignores: ["api", "node_modules", "build", "public/build"],
-}, ...compat.extends("@remix-run/eslint-config", "@remix-run/eslint-config/node", "prettier"), {
+    ignores: ["api", "node_modules", "build", ".react-router"],
+}, ...compat.extends("prettier"), {
     rules: {
         "import/order": ["error", {
             alphabetize: {

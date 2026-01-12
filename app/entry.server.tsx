@@ -1,21 +1,23 @@
 import { PassThrough } from "node:stream";
 
-import { createReadableStreamFromReadable } from "@remix-run/node";
-import { RemixServer } from "@remix-run/react";
-import * as Sentry from "@sentry/remix";
+import { createReadableStreamFromReadable } from "@react-router/node";
+import * as Sentry from "@sentry/react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-
-import type { AppLoadContext, EntryContext } from "@remix-run/node";
-
-export function handleError(error, { request }) {
-  Sentry.captureRemixServerException(error, "remix.server", request);
-}
+import type { AppLoadContext, EntryContext } from "react-router";
+import { ServerRouter } from "react-router";
 
 Sentry.init({
   dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.sentry.io/4504314010730496",
-  tracesSampleRate: 1,
+  tracesSampleRate: 1.0,
 });
+
+export function handleError(
+  error: unknown,
+  { request }: { request: Request },
+) {
+  Sentry.captureException(error, { extra: { url: request.url } });
+}
 
 const ABORT_DELAY = 5_000;
 
@@ -50,7 +52,7 @@ function handleBotRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
+      <ServerRouter
         context={remixContext}
         url={request.url}
         abortDelay={ABORT_DELAY}
@@ -100,7 +102,7 @@ function handleBrowserRequest(
   return new Promise((resolve, reject) => {
     let shellRendered = false;
     const { pipe, abort } = renderToPipeableStream(
-      <RemixServer
+      <ServerRouter
         context={remixContext}
         url={request.url}
         abortDelay={ABORT_DELAY}

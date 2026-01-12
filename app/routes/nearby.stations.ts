@@ -1,4 +1,4 @@
-import { json, type DataFunctionArgs } from "@remix-run/node";
+import type { LoaderFunctionArgs } from "react-router";
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 
@@ -11,7 +11,7 @@ import {
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
 
-export async function loader({ request }: DataFunctionArgs) {
+export async function loader({ request }: LoaderFunctionArgs) {
   let latitude, longitude, count;
 
   try {
@@ -51,5 +51,5 @@ export async function loader({ request }: DataFunctionArgs) {
       };
     });
 
-  return json({ stations: nearestStations });
+  return { stations: nearestStations };
 }
