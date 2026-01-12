@@ -3,6 +3,7 @@ import { fileURLToPath } from "node:url";
 
 import { FlatCompat } from "@eslint/eslintrc";
 import js from "@eslint/js";
+import importPlugin from "eslint-plugin-import";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -15,6 +16,9 @@ const compat = new FlatCompat({
 export default [{
     ignores: ["api", "node_modules", "build", ".react-router"],
 }, ...compat.extends("prettier"), {
+    plugins: {
+        import: importPlugin,
+    },
     rules: {
         "import/order": ["error", {
             alphabetize: {
