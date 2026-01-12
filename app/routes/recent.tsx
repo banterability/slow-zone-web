@@ -1,9 +1,8 @@
-import { useLoaderData } from "@remix-run/react";
+import type { ClientLoaderFunctionArgs } from "react-router";
+import { useLoaderData } from "react-router";
 
 import { StationListItem } from "~/components/StationListItem";
 import { getRecentStations } from "~/store/RecentStations";
-
-import type { ClientLoaderFunctionArgs } from "@remix-run/react";
 
 function EmptyState() {
   return (
