@@ -12,10 +12,7 @@ Sentry.init({
   tracesSampleRate: 1.0,
 });
 
-export function handleError(
-  error: unknown,
-  { request }: { request: Request },
-) {
+export function handleError(error: unknown, { request }: { request: Request }) {
   Sentry.captureException(error, { extra: { url: request.url } });
 }
 
