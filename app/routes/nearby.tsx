@@ -2,8 +2,8 @@ import { useFetcher } from "@remix-run/react";
 import { useEffect, useState } from "react";
 
 import { StationListItem } from "~/components/StationListItem";
-import nearbyStyles from "~/styles/nearby.css";
-import stationStyles from "~/styles/stations.css";
+import nearbyStyles from "~/styles/nearby.css?url";
+import stationStyles from "~/styles/stations.css?url";
 
 import type { Station } from "~/types/station";
 
