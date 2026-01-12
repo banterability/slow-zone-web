@@ -16,7 +16,6 @@
     "@remix-run/node": "2.16.7",
     "@remix-run/react": "2.16.7",
     "@sentry/remix": "10.33.0",
-    "@vercel/remix": "2.16.7",
     "clsx": "2.1.1",
     "geolib": "3.3.4",
     "isbot": "5.1.32",
