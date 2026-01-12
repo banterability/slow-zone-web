@@ -1,7 +1,6 @@
 import { type MetaFunction } from "@remix-run/node";
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -11,7 +10,7 @@ import {
 } from "@remix-run/react";
 import { withSentry, captureRemixErrorBoundaryError } from "@sentry/remix";
 
-import styles from "~/styles/global.css";
+import styles from "~/styles/global.css?url";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
@@ -53,7 +52,6 @@ function App() {
         <Footer />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );

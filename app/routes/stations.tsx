@@ -1,6 +1,6 @@
 import { Outlet } from "@remix-run/react";
 
-import styles from "~/styles/stations.css";
+import styles from "~/styles/stations.css?url";
 
 export function meta() {
   return [
