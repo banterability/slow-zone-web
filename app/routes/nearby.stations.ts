@@ -1,4 +1,4 @@
-import { json, type DataFunctionArgs } from "@vercel/remix";
+import { json, type DataFunctionArgs } from "@remix-run/node";
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 

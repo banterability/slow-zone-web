@@ -1,3 +1,4 @@
+import { type MetaFunction } from "@remix-run/node";
 import {
   Links,
   LiveReload,
@@ -9,7 +10,6 @@ import {
   useRouteError,
 } from "@remix-run/react";
 import { withSentry, captureRemixErrorBoundaryError } from "@sentry/remix";
-import { type MetaFunction } from "@vercel/remix";
 
 import styles from "~/styles/global.css";
 

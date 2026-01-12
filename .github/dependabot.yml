@@ -13,7 +13,6 @@ updates:
       remix:
         patterns:
           - "@remix-run/*"
-          - "@vercel/remix"
       stylelint:
         patterns:
           - "stylelint*"

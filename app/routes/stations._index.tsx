@@ -1,5 +1,5 @@
+import { json } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
-import { json } from "@vercel/remix";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
 
