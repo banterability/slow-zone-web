@@ -10,6 +10,10 @@ import { ORDERED_STATIONS } from "~/data/stations";
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
+type LoaderData = {
+  stations: Station[];
+};
+
 export function loader() {
   return data(
     { stations: ORDERED_STATIONS },
@@ -32,7 +36,7 @@ export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
 }
 
 export default function StationList() {
-  const { stations } = useLoaderData<typeof loader>();
+  const { stations } = useLoaderData<LoaderData>();
   const allLines: Line[] = [
     "blue",
     "brown",

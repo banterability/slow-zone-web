@@ -1,4 +1,4 @@
-export function StaticMap({ stationId }: { stationId: string }) {
+export function StaticMap({ stationId }: { stationId: number }) {
   return (
     <div
       className="static-map"

@@ -48,13 +48,13 @@ export default function Nearby() {
     stationFetcher.load(`/nearby/stations?${qs.toString()}`);
   };
 
-  function locationSuccess(position) {
+  function locationSuccess(position: GeolocationPosition) {
     const { latitude, longitude } = position.coords;
     setLocated(true);
     fetchStations(latitude, longitude);
   }
 
-  function locationError(error) {
+  function locationError(_error: GeolocationPositionError) {
     setLocated(true);
   }
 

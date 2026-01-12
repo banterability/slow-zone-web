@@ -1,4 +1,4 @@
-import type { LoaderFunction, MetaFunction } from "react-router";
+import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { useLoaderData } from "react-router";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
@@ -16,7 +16,15 @@ import {
 import { pushRecentStation } from "~/store/RecentStations";
 import { client } from "~/util/slow-zone.server";
 
-export const loader: LoaderFunction = async ({ params }) => {
+import type { Arrival } from "~/types/arrival";
+import type { Station } from "~/types/station";
+
+type LoaderData = {
+  station: Station;
+  arrivals: Arrival[];
+};
+
+export async function loader({ params }: LoaderFunctionArgs) {
   const { stationId } = params;
   invariant(stationId, "stationId is required");
   const station = ORDERED_STATIONS.find(
@@ -31,18 +39,20 @@ export const loader: LoaderFunction = async ({ params }) => {
   const arrivals = await client.getArrivalsForStation(stationId);
 
   return { station, arrivals };
-};
+}
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
   return [
     {
-      title: `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
+      title:
+        `${(data as LoaderData)?.station?.name} • Slow Zone` ||
+        "Station • Slow Zone",
     },
   ];
 };
 
 export default function StationId() {
-  const { station, arrivals } = useLoaderData<typeof loader>();
+  const { station, arrivals } = useLoaderData<LoaderData>();
   const { name, id, lines } = station;
 
   const [favorite, setFavorite] = useState(false);
