@@ -1,4 +1,4 @@
-import { json, type LoaderFunction, type MetaFunction } from "@remix-run/node";
+import type { LoaderFunction, MetaFunction } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
@@ -30,7 +30,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
   const arrivals = await client.getArrivalsForStation(stationId);
 
-  return json({ station, arrivals });
+  return { station, arrivals };
 };
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
