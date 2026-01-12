@@ -1,4 +1,4 @@
-import { json } from "@remix-run/node";
+import { data } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
@@ -11,7 +11,7 @@ import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
 export function loader() {
-  return json(
+  return data(
     { stations: ORDERED_STATIONS },
     {
       headers: {
