@@ -13,37 +13,37 @@
     "update-stations": "node scripts/update-station-data.js && prettier --write 'app/data/stations.json'"
   },
   "dependencies": {
-    "@react-router/fs-routes": "^7.13.0",
-    "@react-router/node": "^7.12.0",
-    "@sentry/react-router": "^10.40.0",
+    "@react-router/fs-routes": "7.13.0",
+    "@react-router/node": "7.13.0",
+    "@sentry/react-router": "10.41.0",
     "clsx": "2.1.1",
     "geolib": "3.3.4",
     "isbot": "5.1.35",
     "pretty-cache-header": "1.0.0",
     "react": "19.2.4",
-    "react-dom": "19.2.3",
-    "react-router": "^7.12.0",
+    "react-dom": "19.2.4",
+    "react-router": "7.13.0",
     "slow-zone": "4.2.0",
     "tiny-invariant": "1.3.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "3.3.4",
     "@eslint/js": "9.39.2",
-    "@react-router/dev": "^7.12.0",
-    "@react-router/serve": "^7.12.0",
-    "@sentry/vite-plugin": "^5.1.1",
+    "@react-router/dev": "7.13.0",
+    "@react-router/serve": "7.13.0",
+    "@sentry/vite-plugin": "5.1.1",
     "@types/react": "19.2.14",
     "@types/react-dom": "19.2.3",
     "eslint-config-prettier": "10.1.8",
-    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-import": "2.32.0",
     "lodash": "4.17.23",
     "npm-run-all": "4.1.5",
     "prettier": "3.8.1",
     "stylelint": "17.4.0",
     "stylelint-config-standard": "40.0.0",
     "typescript": "5.9.3",
-    "vite": "^7.3.1",
-    "vite-tsconfig-paths": "^6.1.1"
+    "vite": "7.3.1",
+    "vite-tsconfig-paths": "6.1.1"
   },
   "engines": {
     "node": "24.x"
