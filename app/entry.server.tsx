@@ -5,7 +5,7 @@ import * as Sentry from "@sentry/react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import type { AppLoadContext, EntryContext } from "react-router";
-import { ServerRouter } from "react-router";
+import { ServerRouter, isRouteErrorResponse } from "react-router";
 
 Sentry.init({
   dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.sentry.io/4504314010730496",
@@ -13,6 +13,9 @@ Sentry.init({
 });
 
 export function handleError(error: unknown, { request }: { request: Request }) {
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    return;
+  }
   Sentry.captureException(error, { extra: { url: request.url } });
 }
 
