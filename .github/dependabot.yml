@@ -4,6 +4,8 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+      time: "09:15"
+      timezone: "America/Chicago"
     commit-message:
       prefix: "🤖 "
     groups:
@@ -24,6 +26,8 @@ updates:
     directory: "/"
     schedule:
       interval: daily
+      time: "09:15"
+      timezone: "America/Chicago"
     commit-message:
       prefix: "🤖 "
     cooldown:
