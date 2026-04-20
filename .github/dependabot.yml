@@ -12,10 +12,18 @@ updates:
       eslint:
         patterns:
           - "eslint*"
+      react:
+        patterns:
+          - "react*"
+        exclude-patterns:
+          - "react-router*"
       react-router:
         patterns:
           - "react-router"
           - "@react-router/*"
+      sentry:
+        patterns:
+          - "@sentry/*"
       stylelint:
         patterns:
           - "stylelint*"
