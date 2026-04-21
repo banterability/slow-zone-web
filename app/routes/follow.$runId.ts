@@ -10,6 +10,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   invariant(runId, "runId is required");
 
   try {
+    // TODO: drop cast once slow-zone narrows followTrain's Promise<unknown> return.
     const arrivals = (await client.followTrain(runId)) as Arrival[];
     return { arrivals, error: null };
   } catch (error) {
