@@ -8,7 +8,8 @@ import {
   isRouteErrorResponse,
   useRouteError,
 } from "react-router";
-import type { MetaFunction } from "react-router";
+
+import type { Route } from "./+types/root";
 
 import styles from "~/styles/global.css?url";
 
@@ -29,7 +30,7 @@ export function links() {
   ];
 }
 
-export const meta: MetaFunction = () => {
+export const meta: Route.MetaFunction = () => {
   return [{ title: "Slow Zone" }];
 };
 

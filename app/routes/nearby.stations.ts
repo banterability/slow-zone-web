@@ -1,4 +1,3 @@
-import type { LoaderFunctionArgs } from "react-router";
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 
@@ -8,10 +7,12 @@ import {
   type StationLocation,
 } from "~/data/stations";
 
+import type { Route } from "./+types/nearby.stations";
+
 const findStation = (stationId: number) =>
   ORDERED_STATIONS.find((station) => station.id === stationId);
 
-export async function loader({ request }: LoaderFunctionArgs) {
+export async function loader({ request }: Route.LoaderArgs) {
   let latitude, longitude, count;
 
   try {

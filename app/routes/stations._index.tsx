@@ -7,6 +7,7 @@ import { ListFilter } from "~/components/ListFilter";
 import { StationListItem } from "~/components/StationListItem";
 import { ORDERED_STATIONS } from "~/data/stations";
 
+import type { Route } from "./+types/stations._index";
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
 
@@ -29,7 +30,7 @@ export function loader() {
   );
 }
 
-export function headers({ loaderHeaders }: { loaderHeaders: Headers }) {
+export function headers({ loaderHeaders }: Route.HeadersArgs) {
   return {
     "Cache-Control": loaderHeaders.get("Cache-Control"),
   };

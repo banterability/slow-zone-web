@@ -1,4 +1,3 @@
-import type { LoaderFunctionArgs, MetaFunction } from "react-router";
 import { useLoaderData } from "react-router";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
@@ -16,6 +15,7 @@ import {
 import { pushRecentStation } from "~/store/RecentStations";
 import { client } from "~/util/slow-zone.server";
 
+import type { Route } from "./+types/stations.$stationId";
 import type { Arrival } from "~/types/arrival";
 import type { Station } from "~/types/station";
 
@@ -24,7 +24,7 @@ type LoaderData = {
   arrivals: Arrival[];
 };
 
-export async function loader({ params }: LoaderFunctionArgs) {
+export async function loader({ params }: Route.LoaderArgs) {
   const { stationId } = params;
   invariant(stationId, "stationId is required");
   const station = ORDERED_STATIONS.find(
@@ -41,12 +41,11 @@ export async function loader({ params }: LoaderFunctionArgs) {
   return { station, arrivals };
 }
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+export const meta: Route.MetaFunction = ({ data }) => {
   return [
     {
       title:
-        `${(data as LoaderData)?.station?.name} • Slow Zone` ||
-        "Station • Slow Zone",
+        `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
     },
   ];
 };

@@ -1,8 +1,9 @@
-import type { ClientLoaderFunctionArgs } from "react-router";
 import { useLoaderData } from "react-router";
 
 import { StationListItem } from "~/components/StationListItem";
 import { getRecentStations } from "~/store/RecentStations";
+
+import type { Route } from "./+types/recent";
 
 function EmptyState() {
   return (
@@ -23,7 +24,7 @@ export function meta() {
   ];
 }
 
-export function clientLoader({ request }: ClientLoaderFunctionArgs) {
+export function clientLoader({ request }: Route.ClientLoaderArgs) {
   const stations = getRecentStations();
   return stations;
 }
