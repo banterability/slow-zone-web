@@ -15,7 +15,6 @@ import { pushRecentStation } from "~/store/RecentStations";
 import { client } from "~/util/slow-zone.server";
 
 import type { Route } from "./+types/stations.$stationId";
-import type { Arrival } from "~/types/arrival";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { stationId } = params;
@@ -29,8 +28,7 @@ export async function loader({ params }: Route.LoaderArgs) {
     });
   }
 
-  // TODO: drop cast once slow-zone narrows getArrivalsForStation's Promise<unknown> return.
-  const arrivals = (await client.getArrivalsForStation(stationId)) as Arrival[];
+  const arrivals = await client.getArrivalsForStation(stationId);
 
   return { station, arrivals };
 }

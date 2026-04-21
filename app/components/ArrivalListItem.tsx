@@ -2,7 +2,7 @@ import { Fragment, useId, useState } from "react";
 import { useFetcher } from "react-router";
 
 import type { loader as followLoader } from "~/routes/follow.$runId";
-import type { Arrival } from "~/types/arrival";
+import type { Arrival } from "slow-zone";
 
 type Props = {
   arrival: Arrival;

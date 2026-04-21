@@ -2,7 +2,7 @@ import { Fragment } from "react";
 
 import { ArrivalListItem } from "~/components/ArrivalListItem";
 
-import type { Arrival } from "~/types/arrival";
+import type { Arrival } from "slow-zone";
 
 type Props = {
   arrivals: Arrival[];
