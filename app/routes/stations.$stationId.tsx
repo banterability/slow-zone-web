@@ -44,8 +44,7 @@ export async function loader({ params }: Route.LoaderArgs) {
 export const meta: Route.MetaFunction = ({ data }) => {
   return [
     {
-      title:
-        `${data?.station?.name} • Slow Zone` || "Station • Slow Zone",
+      title: `${data?.station?.name ?? "Station"} • Slow Zone`,
     },
   ];
 };
