@@ -9,6 +9,7 @@
     "lint:css": "stylelint \"**/*.css\"",
     "lint:js": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "prettier": "prettier --write .github/ app/ *.md package.json",
+    "prettier:check": "prettier --check .github/ app/ *.md package.json",
     "typecheck": "react-router typegen && tsc -b",
     "update-stations": "node scripts/update-station-data.js && prettier --write 'app/data/stations.json'"
   },
