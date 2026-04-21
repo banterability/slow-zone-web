@@ -5,7 +5,7 @@ import { StationListItem } from "~/components/StationListItem";
 import nearbyStyles from "~/styles/nearby.css?url";
 import stationStyles from "~/styles/stations.css?url";
 
-import type { Station } from "~/types/station";
+import type { loader as nearbyStationsLoader } from "./nearby.stations";
 
 function LoadingState() {
   return (
@@ -39,7 +39,7 @@ export function meta() {
 
 export default function Nearby() {
   const [located, setLocated] = useState(false);
-  const stationFetcher = useFetcher();
+  const stationFetcher = useFetcher<typeof nearbyStationsLoader>();
 
   const fetchStations = (lat: number, lng: number) => {
     const qs = new URLSearchParams();
@@ -93,7 +93,7 @@ export default function Nearby() {
       {located ? (
         stationFetcher.data?.stations ? (
           <ul className="station-list">
-            {stationFetcher.data?.stations.map((station: Station) => {
+            {stationFetcher.data?.stations.map((station) => {
               const { id, name, lines } = station;
               return (
                 <StationListItem key={id} id={id} name={name} lines={lines} />
