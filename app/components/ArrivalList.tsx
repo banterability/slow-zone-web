@@ -1,5 +1,7 @@
 import { Fragment } from "react";
 
+import { ArrivalListItem } from "~/components/ArrivalListItem";
+
 import type { Arrival } from "~/types/arrival";
 
 type Props = {
@@ -34,28 +36,12 @@ export function ArrivalList({ arrivals }: Props) {
           return (
             <Fragment key={id}>
               <li className="arrival-list__section-header">{description}</li>
-              {arrivals.map((arrival: Arrival) => {
-                const {
-                  destination: { name },
-                  prediction: { arrivalString, arrivalMinutes },
-                  route,
-                } = arrival;
-
-                return (
-                  <li
-                    className={`arrival-list-item cta-${route.class}`}
-                    key={`arrival:${route.run}`}
-                  >
-                    <span className="arrival-list-item__eta">
-                      {arrivalMinutes} min
-                    </span>
-                    <span className="arrival-list-item__headsign">{name}</span>
-                    <span className="arrival-list-item__time">
-                      {arrivalString}
-                    </span>
-                  </li>
-                );
-              })}
+              {arrivals.map((arrival: Arrival) => (
+                <ArrivalListItem
+                  key={`arrival:${arrival.route.run}`}
+                  arrival={arrival}
+                />
+              ))}
             </Fragment>
           );
         })}
