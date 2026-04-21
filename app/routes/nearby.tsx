@@ -80,7 +80,6 @@ export default function Nearby() {
           <h3>Nearby Stations</h3>
           <div className="nearby-button">
             <button
-              className="nearby-list-refresh"
               onClick={getLocation}
               disabled={stationFetcher.state !== "idle"}
             >
