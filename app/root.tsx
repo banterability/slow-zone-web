@@ -6,7 +6,6 @@ import {
   Scripts,
   ScrollRestoration,
   isRouteErrorResponse,
-  useRouteError,
 } from "react-router";
 
 import type { Route } from "./+types/root";
@@ -58,8 +57,7 @@ export default function App() {
   );
 }
 
-export const ErrorBoundary = () => {
-  const error = useRouteError();
+export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error) && error.status === 404) {
     // i can't know how to hear anymore about 404s!
   } else {
