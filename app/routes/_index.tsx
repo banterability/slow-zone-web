@@ -1,8 +1,8 @@
-import { useLoaderData } from "react-router";
-
 import { Star } from "~/components/icons/Star";
 import { StationListItem } from "~/components/StationListItem";
 import { getFavoriteStations } from "~/store/FavoriteStations";
+
+import type { Route } from "./+types/_index";
 
 export function clientLoader() {
   const stations = getFavoriteStations();
@@ -21,9 +21,7 @@ export function HydrateFallback() {
     </>
   );
 }
-export default function Index() {
-  const stations = useLoaderData<typeof clientLoader>();
-
+export default function Index({ loaderData: stations }: Route.ComponentProps) {
   return (
     <>
       <div className="page__header">
