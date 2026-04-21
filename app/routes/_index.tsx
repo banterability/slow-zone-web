@@ -12,10 +12,10 @@ export function clientLoader() {
 export function HydrateFallback() {
   return (
     <>
-      <div className="page__header">
+      <div className="page-header">
         <h3>Favorite Stations</h3>
       </div>
-      <div className="page__main">
+      <div className="page-main">
         <p>Loading...</p>
       </div>
     </>
@@ -24,7 +24,7 @@ export function HydrateFallback() {
 export default function Index({ loaderData: stations }: Route.ComponentProps) {
   return (
     <>
-      <div className="page__header">
+      <div className="page-header">
         <h3>Favorite Stations</h3>
       </div>
       {stations.length ? (
@@ -34,7 +34,7 @@ export default function Index({ loaderData: stations }: Route.ComponentProps) {
           ))}
         </ul>
       ) : (
-        <div className="page__main">
+        <div className="page-main">
           <p>You don't have any favorite stations.</p>
           <Star active={false} />
           <p>Use the star on a station‘s page to add it to your favorites.</p>

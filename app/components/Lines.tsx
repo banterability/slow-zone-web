@@ -14,8 +14,8 @@ export function Lines({ lines, activeLines = lines, onLineClick }: Props) {
       {lines.map((line) => (
         <div
           className={clsx(`line cta-${line}`, {
-            "line--hidden": !activeLines.includes(line),
-            "line--clickable": Boolean(onLineClick),
+            "line-hidden": !activeLines.includes(line),
+            "line-clickable": Boolean(onLineClick),
           })}
           key={line}
           {...(onLineClick && { onClick: () => onLineClick(line) })}

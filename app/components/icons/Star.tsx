@@ -20,9 +20,9 @@ export function Star({
       xmlns="http://www.w3.org/2000/svg"
       onClick={onClick}
       aria-label={active ? altTextActive : altTextInactive}
-      className={clsx("icon--star", {
-        "icon--star--active": active,
-        "icon--star--clickable": onClick,
+      className={clsx("icon-star", {
+        "icon-star-active": active,
+        "icon-star-clickable": onClick,
       })}
       viewBox="0 0 164 164"
     >
@@ -31,7 +31,7 @@ export function Star({
           d="M126.77 143.622l-9.394-50.128 37.065-35.031-50.577-6.556L82 5.832 60.136 51.907 9.56 58.463l37.065 35.031-9.395 50.128L82 119.197l44.77 24.425z"
           stroke="#000"
           strokeWidth="5"
-          className="icon-star__shape"
+          className="icon-star-shape"
         />
         {active ? (
           <path

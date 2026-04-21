@@ -9,7 +9,7 @@ import type { loader as nearbyStationsLoader } from "./nearby.stations";
 
 function LoadingState() {
   return (
-    <div className="page__main">
+    <div className="page-main">
       <p>Detecting your location…</p>
     </div>
   );
@@ -17,7 +17,7 @@ function LoadingState() {
 
 function ErrorState() {
   return (
-    <div className="page__main">
+    <div className="page-main">
       <p>Unable to get your location.</p>
       <p>
         Make sure you have allowed access to your location data in your browser.
@@ -75,12 +75,12 @@ export default function Nearby() {
 
   return (
     <>
-      <div className="page__header">
-        <div className="nearby__header">
+      <div className="page-header">
+        <div className="nearby-header">
           <h3>Nearby Stations</h3>
-          <div className="nearby__button">
+          <div className="nearby-button">
             <button
-              className="nearby-list__refresh"
+              className="nearby-list-refresh"
               onClick={getLocation}
               disabled={stationFetcher.state !== "idle"}
             >

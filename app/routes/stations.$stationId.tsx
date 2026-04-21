@@ -64,8 +64,8 @@ export default function StationId({ loaderData }: Route.ComponentProps) {
   return (
     <>
       <div className="station-header">
-        <div className="station-header--meta">
-          <div className="station-header--favorite">
+        <div className="station-header-meta">
+          <div className="station-header-favorite">
             <Star
               active={favorite}
               altTextActive="Remove Favorite"
@@ -76,8 +76,8 @@ export default function StationId({ loaderData }: Route.ComponentProps) {
               }}
             />
           </div>
-          <h2 className="station-header--title">{name}</h2>
-          <div className="station-header--lines">
+          <h2 className="station-header-title">{name}</h2>
+          <div className="station-header-lines">
             <Lines lines={lines} />
           </div>
         </div>

@@ -26,8 +26,8 @@ export function ArrivalList({ arrivals }: Props) {
 
   return (
     <>
-      <div className="arrival-list__header">
-        <h3 className="arrival-list__title">Arrivals</h3>
+      <div className="arrival-list-header">
+        <h3 className="arrival-list-title">Arrivals</h3>
       </div>
       <ul className="arrival-list">
         {Object.values(arrivalsByStop).map((arrivals) => {
@@ -35,7 +35,7 @@ export function ArrivalList({ arrivals }: Props) {
 
           return (
             <Fragment key={id}>
-              <li className="arrival-list__section-header">{description}</li>
+              <li className="arrival-list-section-header">{description}</li>
               {arrivals.map((arrival: Arrival) => (
                 <ArrivalListItem
                   key={`arrival:${arrival.route.run}`}

@@ -9,11 +9,11 @@ body {
   background-color: #f0eeee;
 }
 
-.page__header {
+.page-header {
   margin: 0 0.5em;
 }
 
-.page__main {
+.page-main {
   margin: 0.5em;
 }
 
@@ -65,16 +65,16 @@ body {
   background-size: cover;
 }
 
-.icon--star {
+.icon-star {
   width: 50px;
   height: 50px;
 }
 
-.icon--star--clickable {
+.icon-star-clickable {
   cursor: pointer;
 }
 
-.icon--star--active .icon-star__shape {
+.icon-star-active .icon-star-shape {
   fill: #f9e300;
 }
 
@@ -90,19 +90,19 @@ body {
   margin: 1px;
 }
 
-.line--clickable {
+.line-clickable {
   cursor: pointer;
 }
 
-.line--hidden {
+.line-hidden {
   filter: blur(2px) saturate(60%);
 }
 
-.line--clickable:hover {
+.line-clickable:hover {
   filter: blur(2px) saturate(60%);
 }
 
-.line--hidden:hover {
+.line-hidden:hover {
   filter: blur(2px) saturate(100%);
 }
 
@@ -176,7 +176,7 @@ body {
   border-top: 2px solid rgb(86 90 92);
 }
 
-.station-list__item {
+.station-list-item {
   align-items: center;
   cursor: pointer;
   display: flex;
@@ -187,12 +187,12 @@ body {
   margin: 0.75em 0;
 }
 
-.station-list__item__name {
+.station-list-item-name {
   font-size: 1.25em;
   margin: 0;
 }
 
-.station-list__item__distance {
+.station-list-item-distance {
   font-size: 0.85em;
   margin: 0;
 }
