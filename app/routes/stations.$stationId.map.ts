@@ -2,7 +2,7 @@ import { cacheHeader } from "pretty-cache-header";
 
 import { STATION_LOCATIONS } from "~/data/stations";
 
-import type { LoaderFunction } from "react-router";
+import type { Route } from "./+types/stations.$stationId.map";
 
 function notFound() {
   throw new Response("Not Found", {
@@ -38,7 +38,7 @@ function buildQueryString({
   return params.toString();
 }
 
-export const loader: LoaderFunction = async ({ params }) => {
+export const loader = async ({ params }: Route.LoaderArgs) => {
   const { stationId } = params;
   if (!stationId) return notFound();
 
