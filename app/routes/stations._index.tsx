@@ -1,5 +1,4 @@
 import { data } from "react-router";
-import { useLoaderData } from "react-router";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
 
@@ -10,10 +9,6 @@ import { ORDERED_STATIONS } from "~/data/stations";
 import type { Route } from "./+types/stations._index";
 import type { Line } from "~/types/line";
 import type { Station } from "~/types/station";
-
-type LoaderData = {
-  stations: Station[];
-};
 
 export function loader() {
   return data(
@@ -36,8 +31,8 @@ export function headers({ loaderHeaders }: Route.HeadersArgs) {
   };
 }
 
-export default function StationList() {
-  const { stations } = useLoaderData<LoaderData>();
+export default function StationList({ loaderData }: Route.ComponentProps) {
+  const { stations } = loaderData;
   const allLines: Line[] = [
     "blue",
     "brown",

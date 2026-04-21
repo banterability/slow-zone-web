@@ -1,5 +1,3 @@
-import { useLoaderData } from "react-router";
-
 import { StationListItem } from "~/components/StationListItem";
 import { getRecentStations } from "~/store/RecentStations";
 
@@ -42,9 +40,7 @@ export function HydrateFallback() {
   );
 }
 
-export default function Recent() {
-  const stations = useLoaderData<typeof clientLoader>();
-
+export default function Recent({ loaderData: stations }: Route.ComponentProps) {
   return (
     <>
       <div className="page__header">

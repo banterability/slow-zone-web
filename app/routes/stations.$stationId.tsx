@@ -1,4 +1,3 @@
-import { useLoaderData } from "react-router";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 
@@ -17,12 +16,6 @@ import { client } from "~/util/slow-zone.server";
 
 import type { Route } from "./+types/stations.$stationId";
 import type { Arrival } from "~/types/arrival";
-import type { Station } from "~/types/station";
-
-type LoaderData = {
-  station: Station;
-  arrivals: Arrival[];
-};
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { stationId } = params;
@@ -36,7 +29,8 @@ export async function loader({ params }: Route.LoaderArgs) {
     });
   }
 
-  const arrivals = await client.getArrivalsForStation(stationId);
+  // TODO: drop cast once slow-zone narrows getArrivalsForStation's Promise<unknown> return.
+  const arrivals = (await client.getArrivalsForStation(stationId)) as Arrival[];
 
   return { station, arrivals };
 }
@@ -49,8 +43,8 @@ export const meta: Route.MetaFunction = ({ data }) => {
   ];
 };
 
-export default function StationId() {
-  const { station, arrivals } = useLoaderData<LoaderData>();
+export default function StationId({ loaderData }: Route.ComponentProps) {
+  const { station, arrivals } = loaderData;
   const { name, id, lines } = station;
 
   const [favorite, setFavorite] = useState(false);
