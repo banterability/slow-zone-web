@@ -2,7 +2,7 @@
   position: relative;
 }
 
-.station-header--meta {
+.station-header-meta {
   position: absolute;
   top: 0;
   left: 0;
@@ -14,19 +14,19 @@
   width: 100%;
 }
 
-.station-header--title {
+.station-header-title {
   font-weight: bold;
   font-size: 1.3rem;
   margin: 0;
   text-align: center;
 }
 
-.station-header--lines {
+.station-header-lines {
   padding-right: 0.5em;
   text-align: right;
 }
 
-.station-header--favorite {
+.station-header-favorite {
   padding-left: 0.5em;
 }
 
@@ -35,19 +35,19 @@
   margin: 0;
 }
 
-.arrival-list__header {
+.arrival-list-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 0 0.5em;
 }
 
-.arrival-list__title {
+.arrival-list-title {
   font-size: 1.2em;
   margin: 0.5em 0;
 }
 
-.arrival-list__refresh {
+.arrival-list-refresh {
   font-size: 1em;
 }
 
@@ -70,23 +70,23 @@
   cursor: pointer;
 }
 
-.arrival-list-item__eta {
+.arrival-list-item-eta {
   font-size: 1.2em;
   font-weight: bold;
 }
 
-.arrival-list-item__headsign {
+.arrival-list-item-headsign {
   font-size: 1.1em;
   text-align: center;
 }
 
-.arrival-list-item__time {
+.arrival-list-item-time {
   font-variant-numeric: tabular-nums;
   font-size: 1.2em;
   text-align: right;
 }
 
-.arrival-list-item__toggle-next-stops {
+.arrival-list-item-toggle-next-stops {
   text-align: right;
 }
 
@@ -94,7 +94,7 @@
   border-bottom: 0;
 }
 
-.arrival-list__section-header {
+.arrival-list-section-header {
   background-color: rgb(86 90 92);
   color: #f5f2f2;
   padding: 0.5em 0 0.5em 0.5em;
@@ -124,12 +124,12 @@
   font-size: 0.95em;
 }
 
-.follow-list-item--selected {
+.follow-list-item-selected {
   color: #000;
   font-weight: bold;
 }
 
-.follow-list-item--selected::before {
+.follow-list-item-selected::before {
   content: "▸";
   position: absolute;
   left: 0.5em;
@@ -139,21 +139,21 @@
   line-height: 1;
 }
 
-.follow-list-item__minutes {
+.follow-list-item-minutes {
   font-variant-numeric: tabular-nums;
 }
 
-.follow-list-item__name {
+.follow-list-item-name {
   text-align: center;
 }
 
-.follow-list-item__time {
+.follow-list-item-time {
   font-variant-numeric: tabular-nums;
   text-align: right;
 }
 
-.follow-list__loading,
-.follow-list__error {
+.follow-list-loading,
+.follow-list-error {
   padding: 0.75em 0.5em 0.75em 1.5em;
   color: rgb(86 90 92);
   font-size: 0.95em;

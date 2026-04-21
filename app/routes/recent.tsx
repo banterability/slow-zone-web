@@ -5,7 +5,7 @@ import type { Route } from "./+types/recent";
 
 function EmptyState() {
   return (
-    <div className="page__main">
+    <div className="page-main">
       <p>You don't have any recent stations.</p>
       <p>
         Visit any station‘s page and it will automatically appear in this list.
@@ -30,10 +30,10 @@ export function clientLoader({ request }: Route.ClientLoaderArgs) {
 export function HydrateFallback() {
   return (
     <>
-      <div className="page__header">
+      <div className="page-header">
         <h3>Recent Stations</h3>
       </div>
-      <div className="page__main">
+      <div className="page-main">
         <p>Loading...</p>
       </div>
     </>
@@ -43,7 +43,7 @@ export function HydrateFallback() {
 export default function Recent({ loaderData: stations }: Route.ComponentProps) {
   return (
     <>
-      <div className="page__header">
+      <div className="page-header">
         <h3>Recent Stations</h3>
       </div>
 

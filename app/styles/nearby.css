@@ -1,9 +1,9 @@
-.nearby__header {
+.nearby-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.nearby__button {
+.nearby-button {
   max-height: 30px;
 }

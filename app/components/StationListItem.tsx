@@ -14,11 +14,11 @@ export function StationListItem({ id, name, lines }: Props) {
   return (
     <li>
       <Link
-        className="station-list__item"
+        className="station-list-item"
         to={`/stations/${id}`}
         prefetch="intent"
       >
-        <p className="station-list__item__name">{name}</p>
+        <p className="station-list-item-name">{name}</p>
         <Lines lines={lines} />
       </Link>
     </li>
