@@ -14,6 +14,7 @@ export default defineConfig((config) => ({
         org: "banterability",
         project: "slow-zone",
         authToken: process.env.SENTRY_AUTH_TOKEN,
+        release: { name: process.env.VERCEL_GIT_COMMIT_SHA },
       },
       config,
     ),

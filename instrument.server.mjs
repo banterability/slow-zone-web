@@ -3,6 +3,7 @@ import { nodeProfilingIntegration } from "@sentry/profiling-node";
 
 Sentry.init({
   dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.us.sentry.io/4504314010730496",
+  release: process.env.VERCEL_GIT_COMMIT_SHA,
 
   // Adds request headers and IP for users, for more info visit:
   // https://docs.sentry.io/platforms/javascript/guides/react-router/configuration/options/#sendDefaultPii
