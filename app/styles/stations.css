@@ -51,6 +51,11 @@
   font-size: 1em;
 }
 
+.arrival-list-empty {
+  margin: 1em 0.5em;
+  color: #666;
+}
+
 .arrival-list-item-wrapper {
   list-style: none;
 }

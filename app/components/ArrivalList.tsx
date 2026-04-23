@@ -9,6 +9,19 @@ type Props = {
 };
 
 export function ArrivalList({ arrivals }: Props) {
+  if (arrivals.length === 0) {
+    return (
+      <>
+        <div className="arrival-list-header">
+          <h3 className="arrival-list-title">Arrivals</h3>
+        </div>
+        <p className="arrival-list-empty">
+          No predictions currently available for this station :/
+        </p>
+      </>
+    );
+  }
+
   const arrivalsByStop = arrivals.reduce(
     (memo: { [key: string]: Arrival[] }, arrival: Arrival) => {
       const stopId = arrival.station.stop.id;

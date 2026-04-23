@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react-router";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 
@@ -14,6 +15,7 @@ import {
 import { pushRecentStation } from "~/store/RecentStations";
 import { client } from "~/util/slow-zone.server";
 
+import type { Arrival } from "slow-zone";
 import type { Route } from "./+types/stations.$stationId";
 
 export async function loader({ params }: Route.LoaderArgs) {
@@ -28,7 +30,12 @@ export async function loader({ params }: Route.LoaderArgs) {
     });
   }
 
-  const arrivals = await client.getArrivalsForStation(stationId);
+  let arrivals: Arrival[] = [];
+  try {
+    arrivals = await client.getArrivalsForStation(stationId);
+  } catch (error) {
+    Sentry.captureException(error, { extra: { stationId } });
+  }
 
   return { station, arrivals };
 }
