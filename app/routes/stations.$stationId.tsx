@@ -15,8 +15,8 @@ import {
 import { pushRecentStation } from "~/store/RecentStations";
 import { client } from "~/util/slow-zone.server";
 
-import type { Arrival } from "slow-zone";
 import type { Route } from "./+types/stations.$stationId";
+import type { Arrival } from "slow-zone";
 
 export async function loader({ params }: Route.LoaderArgs) {
   const { stationId } = params;

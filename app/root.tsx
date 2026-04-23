@@ -8,12 +8,13 @@ import {
   isRouteErrorResponse,
 } from "react-router";
 
-import type { Route } from "./+types/root";
 
 import styles from "~/styles/global.css?url";
 
 import Footer from "./components/Footer";
 import Header from "./components/Header";
+
+import type { Route } from "./+types/root";
 
 export function links() {
   return [

@@ -1,6 +1,6 @@
-import { data } from "react-router";
 import { cacheHeader } from "pretty-cache-header";
 import { useState } from "react";
+import { data } from "react-router";
 
 import { ListFilter } from "~/components/ListFilter";
 import { StationListItem } from "~/components/StationListItem";
@@ -55,7 +55,7 @@ export default function StationList({ loaderData }: Route.ComponentProps) {
 
   const toggleLine = (line: Line) => {
     if (visibleLines.includes(line)) {
-      let idx = visibleLines.indexOf(line);
+      const idx = visibleLines.indexOf(line);
       visibleLines.splice(idx, 1);
       setVisibleLines([...visibleLines]);
     } else {
