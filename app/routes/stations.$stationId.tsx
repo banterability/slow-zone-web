@@ -54,11 +54,13 @@ export default function StationId({ loaderData }: Route.ComponentProps) {
 
   const [favorite, setFavorite] = useState(false);
 
-  function addFavorite() {
-    addFavoriteStation(id, { lines, title: name, id });
-  }
-  function removeFavorite() {
-    removeFavoriteStation(id);
+  function toggleFavorite() {
+    if (favorite) {
+      removeFavoriteStation(id);
+    } else {
+      addFavoriteStation(id, { lines, title: name, id });
+    }
+    setFavorite(!favorite);
   }
   // hydrate favorite & add to history in browser
   useEffect(() => {
@@ -75,10 +77,7 @@ export default function StationId({ loaderData }: Route.ComponentProps) {
               active={favorite}
               altTextActive="Remove Favorite"
               altTextInactive="Add Favorite"
-              onClick={() => {
-                favorite ? removeFavorite() : addFavorite();
-                setFavorite(!favorite);
-              }}
+              onClick={toggleFavorite}
             />
           </div>
           <h2 className="station-header-title">{name}</h2>
