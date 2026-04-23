@@ -1,3 +1,4 @@
+import * as Sentry from "@sentry/react-router";
 import { PassThrough } from "node:stream";
 
 import { createReadableStreamFromReadable } from "@react-router/node";
@@ -7,9 +8,13 @@ import { ServerRouter } from "react-router";
 
 import type { AppLoadContext, EntryContext } from "react-router";
 
+export const handleError = Sentry.createSentryHandleError({
+  logErrors: false,
+});
+
 const ABORT_DELAY = 5_000;
 
-export default function handleRequest(
+async function handleRequest(
   request: Request,
   responseStatusCode: number,
   responseHeaders: Headers,
@@ -122,3 +127,7 @@ function handleBrowserRequest(
     setTimeout(abort, ABORT_DELAY);
   });
 }
+export default Sentry.wrapSentryHandleRequest(handleRequest);
+export const unstable_instrumentations = [
+  Sentry.createSentryServerInstrumentation(),
+];

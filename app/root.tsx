@@ -1,10 +1,5 @@
-import {
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
-} from "react-router";
+import * as Sentry from "@sentry/react-router";
+import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
 import styles from "~/styles/global.css?url";
 
@@ -56,5 +51,8 @@ export default function App() {
 }
 
 export const ErrorBoundary = () => {
+  if (error && error instanceof Error) {
+    Sentry.captureException(error);
+  }
   return <div>Something went wrong</div>;
 };
