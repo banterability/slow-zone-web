@@ -24,4 +24,4 @@ See `.env.example` for the full list. Of those:
 
 ## Deployment
 
-Automatically deployed via Vercel's [Git Integration](https://vercel.com/docs/concepts/git).
+Automatically deployed via Vercel's [Git Integration](https://vercel.com/docs/concepts/git). Errors are reported to Sentry.
