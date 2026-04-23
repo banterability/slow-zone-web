@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/react-router";
+import { captureException } from "@sentry/react-router";
 import {
   Links,
   Meta,
@@ -61,7 +61,7 @@ export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
   if (isRouteErrorResponse(error) && error.status === 404) {
     // i can't know how to hear anymore about 404s!
   } else {
-    Sentry.captureException(error);
+    captureException(error);
   }
   return <div>Something went wrong</div>;
 };
