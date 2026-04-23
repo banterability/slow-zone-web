@@ -22,7 +22,7 @@ export function meta() {
   ];
 }
 
-export function clientLoader({ request }: Route.ClientLoaderArgs) {
+export function clientLoader() {
   const stations = getRecentStations();
   return stations;
 }

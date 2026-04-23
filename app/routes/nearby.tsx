@@ -1,5 +1,5 @@
-import { useFetcher } from "react-router";
 import { useEffect, useState } from "react";
+import { useFetcher } from "react-router";
 
 import { StationListItem } from "~/components/StationListItem";
 import nearbyStyles from "~/styles/nearby.css?url";
