@@ -11,7 +11,7 @@ Station data (names, locations, lines, accessibility) are sourced from the [Chic
 Install Node 24, `cp .env.example .env`, and set at least `CTA_API_KEY`. Then:
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 ### Environment variables
@@ -20,8 +20,8 @@ See `.env.example` for the full list. Of those:
 
 - `CTA_API_KEY` — key for the CTA Train Tracker API. **Required at runtime**. Passed through to `slow-zone`.
 - `GOOGLE_MAPS_STATIC_API_KEY` — key for the Google Maps Static API. Used to render station map thumbnails. The maps won't show up without it, but the rest of the app works.
-- `CHICAGO_DATA_PORTAL_APP_TOKEN` — app token for the Chicago Data Portal. Only needed if you run `npm run update-stations` locally.
-- `SENTRY_AUTH_TOKEN` — used by the Sentry Vite plugin to create releases & upload source maps during `npm run build`. Only needed for production builds.
+- `CHICAGO_DATA_PORTAL_APP_TOKEN` — app token for the Chicago Data Portal. Only needed if you run `pnpm run update-stations` locally.
+- `SENTRY_AUTH_TOKEN` — used by the Sentry Vite plugin to create releases & upload source maps during `pnpm run build`. Only needed for production builds.
 
 ## Deployment
 

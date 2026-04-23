@@ -20,7 +20,7 @@ jobs:
       - name: Update CTA station data
         env:
           CHICAGO_DATA_PORTAL_APP_TOKEN: ${{ secrets.CHICAGO_DATA_PORTAL_APP_TOKEN }}
-        run: npm run update-stations
+        run: pnpm run update-stations
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v8
