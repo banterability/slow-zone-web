@@ -65,6 +65,8 @@ export default function StationId({ loaderData }: Route.ComponentProps) {
   // hydrate favorite & add to history in browser
   useEffect(() => {
     pushRecentStation(id, { lines, title: name, id });
+    // Client-side hydration from localStorage — see useSyncExternalStore for a proper fix.
+    // eslint-disable-next-line @eslint-react/set-state-in-effect
     setFavorite(isFavorite(id));
   }, [id, lines, name]);
 

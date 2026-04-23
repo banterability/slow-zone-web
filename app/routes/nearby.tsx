@@ -71,6 +71,8 @@ export default function Nearby() {
       return;
     }
     getLocation();
+    // Mount-only: getLocation has a new identity each render.
+    // eslint-disable-next-line @eslint-react/exhaustive-deps
   }, []);
 
   return (
