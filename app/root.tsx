@@ -1,5 +1,12 @@
-import * as Sentry from "@sentry/react-router";
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import { captureException } from "@sentry/react-router";
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+} from "react-router";
 
 import styles from "~/styles/global.css?url";
 
@@ -50,9 +57,11 @@ export default function App() {
   );
 }
 
-export const ErrorBoundary = () => {
-  if (error && error instanceof Error) {
-    Sentry.captureException(error);
+export const ErrorBoundary = ({ error }: Route.ErrorBoundaryProps) => {
+  if (isRouteErrorResponse(error) && error.status === 404) {
+    // i can't know how to hear anymore about 404s!
+  } else {
+    captureException(error);
   }
   return <div>Something went wrong</div>;
 };
