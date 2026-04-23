@@ -1,24 +1,11 @@
 import { PassThrough } from "node:stream";
 
 import { createReadableStreamFromReadable } from "@react-router/node";
-import { captureException, init } from "@sentry/react-router";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-import { ServerRouter, isRouteErrorResponse } from "react-router";
+import { ServerRouter } from "react-router";
 
 import type { AppLoadContext, EntryContext } from "react-router";
-
-init({
-  dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.sentry.io/4504314010730496",
-  tracesSampleRate: 1.0,
-});
-
-export function handleError(error: unknown, { request }: { request: Request }) {
-  if (isRouteErrorResponse(error) && error.status === 404) {
-    return;
-  }
-  captureException(error, { extra: { url: request.url } });
-}
 
 const ABORT_DELAY = 5_000;
 
