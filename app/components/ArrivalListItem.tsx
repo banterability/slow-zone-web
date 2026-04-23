@@ -51,11 +51,11 @@ export function ArrivalListItem({ arrival }: Props) {
             <div className="follow-list-loading">Loading…</div>
           ) : fetcher.data && !fetcher.data.error ? (
             <ul className="follow-list">
-              {fetcher.data.arrivals.map((stop, index) => {
+              {fetcher.data.arrivals.map((stop) => {
                 const isCurrentStop = stop.station.stop.id === stopId;
                 return (
                   <li
-                    key={`${stop.station.stop.id}:${index}`}
+                    key={stop.station.stop.id}
                     className={
                       isCurrentStop
                         ? "follow-list-item follow-list-item-selected"
