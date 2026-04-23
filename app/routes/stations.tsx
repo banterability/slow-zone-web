@@ -1,4 +1,4 @@
-import * as Sentry from "@sentry/react-router";
+import { captureException } from "@sentry/react-router";
 import { isRouteErrorResponse, Outlet, useRouteError } from "react-router";
 
 import styles from "~/styles/stations.css?url";
@@ -26,7 +26,7 @@ export default function StationsRoute() {
 export function ErrorBoundary() {
   const error = useRouteError();
   if (!(isRouteErrorResponse(error) && error.status === 404)) {
-    Sentry.captureException(error);
+    captureException(error);
   }
   return (
     <div className="error-container">Couldn&apos;t load this station.</div>
