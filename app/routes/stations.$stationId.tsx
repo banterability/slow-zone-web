@@ -1,4 +1,3 @@
-import { captureException } from "@sentry/react-router";
 import { useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 
@@ -34,7 +33,7 @@ export async function loader({ params }: Route.LoaderArgs) {
   try {
     arrivals = await client.getArrivalsForStation(stationId);
   } catch (error) {
-    captureException(error, { extra: { stationId } });
+    console.error(error);
   }
 
   return { station, arrivals };

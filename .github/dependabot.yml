@@ -21,9 +21,6 @@ updates:
         patterns:
           - "react-router"
           - "@react-router/*"
-      sentry:
-        patterns:
-          - "@sentry/*"
       stylelint:
         patterns:
           - "stylelint*"

@@ -21,8 +21,7 @@ See `.env.example` for the full list. Of those:
 - `CTA_API_KEY` — key for the CTA Train Tracker API. **Required at runtime**. Passed through to `slow-zone`.
 - `GOOGLE_MAPS_STATIC_API_KEY` — key for the Google Maps Static API. Used to render station map thumbnails. The maps won't show up without it, but the rest of the app works.
 - `CHICAGO_DATA_PORTAL_APP_TOKEN` — app token for the Chicago Data Portal. Only needed if you run `pnpm run update-stations` locally.
-- `SENTRY_AUTH_TOKEN` — used by the Sentry Vite plugin to create releases & upload source maps during `pnpm run build`. Only needed for production builds.
 
 ## Deployment
 
-Automatically deployed via Vercel's [Git Integration](https://vercel.com/docs/concepts/git). Errors are reported to Sentry.
+Automatically deployed via Vercel's [Git Integration](https://vercel.com/docs/concepts/git).
