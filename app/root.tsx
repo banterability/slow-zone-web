@@ -8,7 +8,6 @@ import {
   isRouteErrorResponse,
 } from "react-router";
 
-
 import styles from "~/styles/global.css?url";
 
 import Footer from "./components/Footer";
