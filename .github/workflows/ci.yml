@@ -23,6 +23,10 @@ jobs:
       - uses: ./.github/actions/setup
       - name: ESLint
         run: pnpm run lint:js
+      - name: "notify vercel"
+        uses: "vercel/repository-dispatch/actions/status@v1"
+        with:
+          name: "Vercel - slow-zone: 🔬 ESLint"
 
   stylelint:
     name: 🎨 Stylelint
@@ -33,6 +37,10 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Stylelint
         run: pnpm run lint:css
+      - name: "notify vercel"
+        uses: "vercel/repository-dispatch/actions/status@v1"
+        with:
+          name: "Vercel - slow-zone: 🎨 Stylelint"
 
   prettier:
     name: 💅 Prettier
@@ -43,6 +51,10 @@ jobs:
       - uses: ./.github/actions/setup
       - name: Prettier
         run: pnpm run prettier:check
+      - name: "notify vercel"
+        uses: "vercel/repository-dispatch/actions/status@v1"
+        with:
+          name: "Vercel - slow-zone: 💅 Prettier"
 
   typecheck:
     name: 👾 TypeScript
@@ -53,3 +65,7 @@ jobs:
       - uses: ./.github/actions/setup
       - name: TypeScript
         run: pnpm run typecheck
+      - name: "notify vercel"
+        uses: "vercel/repository-dispatch/actions/status@v1"
+        with:
+          name: "Vercel - slow-zone: 👾 TypeScript"
