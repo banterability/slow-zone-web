@@ -132,4 +132,4 @@ function handleBrowserRequest(
   });
 }
 export default wrapSentryHandleRequest(handleRequest);
-export const unstable_instrumentations = [createSentryServerInstrumentation()];
+export const instrumentations = [createSentryServerInstrumentation()];
