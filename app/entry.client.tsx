@@ -27,9 +27,7 @@ startTransition(() => {
   hydrateRoot(
     document,
     <StrictMode>
-      <HydratedRouter
-        instrumentations={[tracing.clientInstrumentation]}
-      />
+      <HydratedRouter instrumentations={[tracing.clientInstrumentation]} />
     </StrictMode>,
   );
 });
