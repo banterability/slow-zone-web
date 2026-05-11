@@ -28,7 +28,7 @@ startTransition(() => {
     document,
     <StrictMode>
       <HydratedRouter
-        unstable_instrumentations={[tracing.clientInstrumentation]}
+        instrumentations={[tracing.clientInstrumentation]}
       />
     </StrictMode>,
   );
