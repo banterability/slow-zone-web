@@ -95,9 +95,15 @@ export default function Nearby() {
         stationFetcher.data?.stations ? (
           <ul className="station-list">
             {stationFetcher.data?.stations.map((station) => {
-              const { id, name, lines } = station;
+              const { id, name, lines, distance } = station;
               return (
-                <StationListItem key={id} id={id} name={name} lines={lines} />
+                <StationListItem
+                  key={id}
+                  id={id}
+                  name={name}
+                  lines={lines}
+                  distance={distance}
+                />
               );
             })}
           </ul>
