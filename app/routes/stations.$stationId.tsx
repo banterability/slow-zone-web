@@ -40,10 +40,10 @@ export async function loader({ params }: Route.LoaderArgs) {
   return { station, arrivals };
 }
 
-export const meta: Route.MetaFunction = ({ data }) => {
+export const meta: Route.MetaFunction = ({ loaderData }) => {
   return [
     {
-      title: `${data?.station?.name ?? "Station"} • Slow Zone`,
+      title: `${loaderData?.station?.name ?? "Station"} • Slow Zone`,
     },
   ];
 };

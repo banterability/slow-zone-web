@@ -10,7 +10,7 @@ import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
 import { ServerRouter } from "react-router";
 
-import type { AppLoadContext, EntryContext } from "react-router";
+import type { EntryContext } from "react-router";
 
 export const handleError = createSentryHandleError({
   logErrors: false,
@@ -23,7 +23,6 @@ async function handleRequest(
   responseStatusCode: number,
   responseHeaders: Headers,
   remixContext: EntryContext,
-  _loadContext: AppLoadContext,
 ) {
   return isbot(request.headers.get("user-agent"))
     ? handleBotRequest(
