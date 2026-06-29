@@ -9,10 +9,10 @@ importers:
   .:
     dependencies:
       '@react-router/fs-routes':
-        specifier: 7.18.0
+        specifier: '7'
         version: 7.18.0(@react-router/dev@7.18.0(@react-router/serve@7.18.0(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3))(@types/node@25.8.0)(lightningcss@1.32.0)(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3)(vite@8.1.0(@types/node@25.8.0)(esbuild@0.27.7)))(typescript@6.0.3)
       '@react-router/node':
-        specifier: 7.18.0
+        specifier: '7'
         version: 7.18.0(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3)
       '@sentry/profiling-node':
         specifier: 10.62.0
@@ -39,7 +39,7 @@ importers:
         specifier: 19.2.7
         version: 19.2.7(react@19.2.7)
       react-router:
-        specifier: 7.18.0
+        specifier: '7'
         version: 7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7)
       slow-zone:
         specifier: 4.4.0
@@ -55,10 +55,10 @@ importers:
         specifier: 10.0.1
         version: 10.0.1(eslint@10.5.0)
       '@react-router/dev':
-        specifier: 7.18.0
+        specifier: '7'
         version: 7.18.0(@react-router/serve@7.18.0(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3))(@types/node@25.8.0)(lightningcss@1.32.0)(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3)(vite@8.1.0(@types/node@25.8.0)(esbuild@0.27.7))
       '@react-router/serve':
-        specifier: 7.18.0
+        specifier: '7'
         version: 7.18.0(react-router@7.18.0(react-dom@19.2.7(react@19.2.7))(react@19.2.7))(typescript@6.0.3)
       '@types/react':
         specifier: 19.2.17
