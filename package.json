@@ -20,7 +20,7 @@
     "@sentry/react-router": "10.65.0",
     "clsx": "2.1.1",
     "geolib": "3.3.14",
-    "isbot": "5.2.0",
+    "isbot": "5.2.1",
     "pretty-cache-header": "1.0.0",
     "react": "19.2.7",
     "react-dom": "19.2.7",
