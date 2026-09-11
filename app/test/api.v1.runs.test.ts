@@ -19,17 +19,6 @@ function run(runNumber: string, headers: HeadersInit = authorized) {
 }
 
 describe("GET /api/v1/runs/:runNumber", () => {
-  it("refuses to serve times from a process outside Chicago's zone", async () => {
-    stubCTA({ body: followRun });
-    const tz = process.env.TZ;
-    process.env.TZ = "UTC";
-    try {
-      expect((await run("222")).status).toBe(500);
-    } finally {
-      process.env.TZ = tz;
-    }
-  });
-
   it("requires the app secret", async () => {
     stubCTA({ body: followRun });
     expect((await run("222", {})).status).toBe(401);

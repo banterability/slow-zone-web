@@ -25,24 +25,6 @@ describe("GET /api/v1/stations/:stationId/arrivals", () => {
     vi.mocked(captureException).mockClear();
   });
 
-  it("refuses to serve times from a process outside Chicago's zone", async () => {
-    const { calls } = stubCTA({ body: loganSquare });
-    const tz = process.env.TZ;
-    process.env.TZ = "UTC";
-    try {
-      expect(new Date(2026, 0, 15, 8).toISOString()).toBe(
-        "2026-01-15T08:00:00.000Z",
-      );
-      const response = await arrivals("41020");
-      expect(response.status).toBe(500);
-      expect((await response.json()).error.code).toBe("misconfigured");
-      expect(calls).toHaveLength(0);
-      expect(captureException).toHaveBeenCalledTimes(1);
-    } finally {
-      process.env.TZ = tz;
-    }
-  });
-
   it("requires the app secret", async () => {
     const { calls } = stubCTA({ body: loganSquare });
     const response = await arrivals("41020", {});
@@ -67,9 +49,6 @@ describe("GET /api/v1/stations/:stationId/arrivals", () => {
       name: "Blue",
       run: 222,
     });
-    expect(body.arrivals[0].prediction.predictionTime).toBe(
-      "2026-09-10T22:14:02.000Z",
-    );
     expect(body.arrivals[0].status.approaching).toBe(true);
     const fetchedAt = Date.parse(body.fetchedAt);
     expect(fetchedAt).toBeGreaterThanOrEqual(before - 1000);

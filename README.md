@@ -22,7 +22,6 @@ See `.env.example` for the full list. Of those:
 - `GOOGLE_MAPS_STATIC_API_KEY` — key for the Google Maps Static API. Used to render station map thumbnails. The maps won't show up without it, but the rest of the app works.
 - `CHICAGO_DATA_PORTAL_APP_TOKEN` — app token for the Chicago Data Portal. Only needed if you run `pnpm run update-stations` locally.
 - `SLOW_ZONE_APP_SECRET` — bearer token for API access from the iOS app.
-- `TZ` — must be `America/Chicago`. The CTA API returns Chicago wall-clock times with no zone marker and `slow-zone` parses them in the process zone.
 
 ### API for the iOS app
 
