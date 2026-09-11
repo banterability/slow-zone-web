@@ -44,6 +44,16 @@ jobs:
       - name: Prettier
         run: pnpm run prettier:check
 
+  vitest:
+    name: 🧪 Vitest
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v7.0.1
+      - uses: ./.github/actions/setup
+      - name: Vitest
+        run: pnpm test
+
   typecheck:
     name: 👾 TypeScript
     runs-on: ubuntu-latest

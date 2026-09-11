@@ -10,6 +10,7 @@
     "lint:js": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
     "prettier": "prettier --write .github/ app/ *.md package.json",
     "prettier:check": "prettier --check .github/ app/ *.md package.json",
+    "test": "vitest run",
     "typecheck": "react-router typegen && tsc -b",
     "update-stations": "node scripts/update-station-data.js && prettier --write 'app/data/stations.json'"
   },
@@ -46,7 +47,8 @@
     "stylelint": "17.15.0",
     "stylelint-config-standard": "40.0.0",
     "typescript": "6.0.3",
-    "vite": "8.2.2"
+    "vite": "8.2.2",
+    "vitest": "5.0.0"
   },
   "engines": {
     "node": "24.x"
