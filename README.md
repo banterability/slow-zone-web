@@ -29,7 +29,7 @@ Resource routes under `/api/v1/`, tested with `pnpm test`:
 
 - `GET /api/v1/stations` — the bundled station data, with an `ETag`. Public.
 - `GET /api/v1/stations/:stationId/arrivals` — `slow-zone`'s arrivals for the station plus `fetchedAt`. Needs `Authorization: Bearer <SLOW_ZONE_APP_SECRET>`.
-- `GET /api/v1/runs/:runNumber` — the followed train's remaining stops plus `fetchedAt`. Same auth.
+- `GET /api/v1/runs/:runNumber` — the followed train's remaining stops plus `fetchedAt`. `:runNumber` is `route.run` as the CTA spells it, leading zeros included. Same auth.
 
 Errors are `{"error": {"code", "message"}}`.
 

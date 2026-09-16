@@ -47,7 +47,7 @@ describe("GET /api/v1/stations/:stationId/arrivals", () => {
       directionId: 1,
       id: "Blue",
       name: "Blue",
-      run: 222,
+      run: "222",
     });
     expect(body.arrivals[0].status.approaching).toBe(true);
     const fetchedAt = Date.parse(body.fetchedAt);
