@@ -34,8 +34,17 @@ describe("GET /api/v1/runs/:runNumber", () => {
     const body = await response.json();
     expect(body.arrivals).toHaveLength(9);
     expect(body.arrivals[0].route.id).toBe("Blue Line");
+    expect(body.arrivals[0].route.run).toBe("222");
     expect(body.arrivals[0].station.name).toBe("Belmont");
     expect(typeof body.fetchedAt).toBe("string");
+  });
+
+  it("forwards a zero-padded run number to the CTA untouched", async () => {
+    const { calls } = stubCTA({ body: followRun });
+    const response = await run("018");
+
+    expect(response.status).toBe(200);
+    expect(calls[0]).toMatch(/ttfollow\.aspx\?.*runnumber=018/);
   });
 
   it("maps CTA error 501 to 404 run_not_found", async () => {

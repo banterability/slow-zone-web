@@ -42,8 +42,8 @@ importers:
         specifier: 8.3.1
         version: 8.3.1(react-dom@19.3.0(react@19.3.0))(react@19.3.0)
       slow-zone:
-        specifier: 4.4.0
-        version: 4.4.0
+        specifier: 5.0.1
+        version: 5.0.1
       tiny-invariant:
         specifier: 1.3.3
         version: 1.3.3
@@ -2884,8 +2884,8 @@ packages:
     resolution: {integrity: sha512-qMCMfhY040cVHT43K9BFygqYbUPFZKHOg7K73mtTWJRb8pyP3fzf4Ixd5SzdEJQ6MRUg/WBnOLxghZtKKurENQ==}
     engines: {node: '>=10'}
 
-  slow-zone@4.4.0:
-    resolution: {integrity: sha512-Y+Ld9zydQvr/Hwj2yiqOmRDh9KL9Grm9SOMLkfV+lUafAIHR+JDLV6ZIDq1l9Db5ZbshLlJIhzZCrE2piq+cew==}
+  slow-zone@5.0.1:
+    resolution: {integrity: sha512-BxPwMgYr2lTb4nCrcqxHTsE6CVBgVVFkU/Wt/hm49Z2HZc0aGm0F4jqsIRCKnXYizDLMZY1NKNYBBLHRs8shTQ==}
     engines: {node: '>=18'}
 
   source-map-js@1.2.1:
@@ -6218,7 +6218,7 @@ snapshots:
       astral-regex: 2.0.0
       is-fullwidth-code-point: 3.0.0
 
-  slow-zone@4.4.0:
+  slow-zone@5.0.1:
     dependencies:
       dateline: 5.1.0
 
