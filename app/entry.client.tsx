@@ -13,9 +13,7 @@ const tracing = reactRouterTracingIntegration({
 
 init({
   dsn: "https://aabb17fa9d9d4ac4aa1193839af9fe74@o33492.ingest.us.sentry.io/4504314010730496",
-  sendDefaultPii: true,
   integrations: [tracing, replayIntegration()],
-  enableLogs: true,
   tracesSampleRate: 1.0,
   tracePropagationTargets: [/^\//],
   replaysSessionSampleRate: 0.1,
