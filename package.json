@@ -20,7 +20,7 @@
     "@sentry/profiling-node": "11.6.0",
     "@sentry/react-router": "11.6.0",
     "clsx": "2.1.1",
-    "geolib": "3.3.14",
+    "geolib": "4.0.0",
     "isbot": "5.2.2",
     "pretty-cache-header": "1.0.0",
     "react": "19.3.0",

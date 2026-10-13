@@ -24,8 +24,8 @@ importers:
         specifier: 2.1.1
         version: 2.1.1
       geolib:
-        specifier: 3.3.14
-        version: 3.3.14
+        specifier: 4.0.0
+        version: 4.0.0
       isbot:
         specifier: 5.2.2
         version: 5.2.2
@@ -2009,8 +2009,8 @@ packages:
     resolution: {integrity: sha512-3hN7NaskYvMDLQY55gnW3NQ+mesEAepTqlg+VEbj7zzqEMBVNhzcGYYeqFo/TlYz6eQiFcp1HcsCZO+nGgS8zg==}
     engines: {node: '>=6.9.0'}
 
-  geolib@3.3.14:
-    resolution: {integrity: sha512-uQ1772h3OjhWvL/HhSRZTMjBKIKoc4wFksLDqzqOkuG/2TgBbTwFamU0Disx3sNFk/BOweHyhKoVaYDuLIpsxQ==}
+  geolib@4.0.0:
+    resolution: {integrity: sha512-q6xrjzO5epECM1FjYLPwAeK6FSgCrgcZeeAOMKJ5kjxyyqD+mhSXnQJGHkMb9ju9R2XFat8T0Iiuyje6VdQTow==}
 
   get-east-asian-width@1.7.0:
     resolution: {integrity: sha512-XjH1AECxf0giL2V1aU8vKyRR2ppRUb5c0EvT7zuJTokQ74bNo52zOtghqdWIqrhUD79fo3x0WfKZdOqxF6LG1Q==}
@@ -5155,7 +5155,7 @@ snapshots:
 
   gensync@1.0.0-beta.2: {}
 
-  geolib@3.3.14: {}
+  geolib@4.0.0: {}
 
   get-east-asian-width@1.7.0: {}
 
