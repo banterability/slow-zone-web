@@ -1,11 +1,7 @@
 import { getDistance, orderByDistance, convertDistance } from "geolib";
 import invariant from "tiny-invariant";
 
-import {
-  STATION_LOCATIONS,
-  ORDERED_STATIONS,
-  type StationLocation,
-} from "~/data/stations";
+import { STATION_LOCATIONS, ORDERED_STATIONS } from "~/data/stations";
 
 import type { Route } from "./+types/nearby.stations";
 
@@ -39,7 +35,7 @@ export async function loader({ request }: Route.LoaderArgs) {
   const nearestStations = orderByDistance(userLocation, STATION_LOCATIONS)
     .slice(0, count)
     .map((result) => {
-      const station = findStation((result as StationLocation).stationId);
+      const station = findStation(result.stationId);
       invariant(station);
       const distance = getDistance(station.location, userLocation);
 
