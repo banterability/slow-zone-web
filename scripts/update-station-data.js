@@ -1,10 +1,18 @@
+import { execFileSync } from 'node:child_process';
 import * as fs from 'node:fs';
+import * as os from 'node:os';
+import * as path from 'node:path';
+
+import { applyGtfs, buildSummary, parseCsv, rollUpStation } from './gtfs.js';
 
 const API_TOKEN = process.env.CHICAGO_DATA_PORTAL_APP_TOKEN;
 if (!API_TOKEN) {
   console.error('CHICAGO_DATA_PORTAL_APP_TOKEN environment variable is required');
   process.exit(1);
 }
+
+const GTFS_URL = 'https://www.transitchicago.com/downloads/sch_data/google_transit.zip';
+const SUMMARY_PATH = process.env.STATION_DATA_SUMMARY_PATH;
 
 const normalizeWhitespace = str => str.replace(/\s+/g, ' ');
 
@@ -42,6 +50,41 @@ const buildStation = station => {
     },
     stops: []
   };
+};
+
+const fetchGtfsStops = async () => {
+  console.log('Fetching GTFS feed from CTA...');
+
+  const response = await fetch(GTFS_URL);
+  if (!response.ok) {
+    throw new Error(`Couldn't download the GTFS feed: HTTP status ${response.status}`);
+  }
+
+  const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'cta-gtfs-'));
+  try {
+    const zipPath = path.join(dir, 'google_transit.zip');
+    fs.writeFileSync(zipPath, new Uint8Array(await response.arrayBuffer()));
+
+    let stops;
+    try {
+      // stops.txt is over a megabyte, past execFileSync's default maxBuffer.
+      stops = execFileSync('unzip', ['-p', zipPath, 'stops.txt'], {
+        encoding: 'utf8',
+        maxBuffer: 16 * 1024 * 1024
+      });
+    } catch (error) {
+      throw new Error(`Couldn't read stops.txt from the GTFS feed: ${error.message}`, {
+        cause: error
+      });
+    }
+
+    const rows = parseCsv(stops);
+    console.log(`Read ${rows.length} rows from GTFS stops.txt`);
+
+    return { rows, lastModified: response.headers.get('last-modified') };
+  } finally {
+    fs.rmSync(dir, { recursive: true, force: true });
+  }
 };
 
 const updateStationData = async () => {
@@ -88,23 +131,25 @@ const updateStationData = async () => {
     return memo;
   }, {});
 
-  const summarize = Object.keys(byStation).map(stationId => {
-    const data = byStation[stationId];
-    data.lines = [...new Set(data.stops.flatMap(stop => stop.lines))].sort();
-    data.accessible = data.stops.every(stop => stop.accessible);
-    data.stops = data.stops.sort((a, b) => (a.id > b.id ? 1 : -1));
+  const summarize = Object.keys(byStation).map(stationId => rollUpStation(byStation[stationId]));
 
-    return data;
-  });
+  const gtfs = await fetchGtfsStops();
+  const { stations, changes } = applyGtfs(summarize, gtfs.rows);
+  const summary = buildSummary(changes, gtfs.lastModified);
 
   fs.writeFileSync(
     `app/data/stations.json`,
     JSON.stringify({
-      stations: summarize
+      stations
     })
   );
 
-  console.log(`Successfully processed ${summarize.length} stations`);
+  if (SUMMARY_PATH) {
+    fs.writeFileSync(SUMMARY_PATH, summary);
+  }
+  console.log(summary);
+
+  console.log(`Successfully processed ${stations.length} stations`);
 };
 
 try {
