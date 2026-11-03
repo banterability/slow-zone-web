@@ -187,20 +187,6 @@
           "name": "Sheridan (95th-bound)",
           "accessible": false,
           "lines": ["red"]
-        },
-        {
-          "id": 30293,
-          "direction": "N",
-          "name": "Sheridan (Howard-Linden-bound)",
-          "accessible": false,
-          "lines": []
-        },
-        {
-          "id": 30294,
-          "direction": "S",
-          "name": "Sheridan (Loop-bound)",
-          "accessible": false,
-          "lines": []
         }
       ],
       "lines": ["red"],
@@ -565,30 +551,6 @@
       ],
       "lines": ["blue"],
       "accessible": true
-    },
-    {
-      "name": "State/Lake",
-      "description": "State/Lake (Brown, Green, Orange, Pink & Purple lines)",
-      "id": 40260,
-      "location": { "latitude": 41.88574, "longitude": -87.627835 },
-      "stops": [
-        {
-          "id": 30050,
-          "direction": "E",
-          "name": "State/Lake (Inner Loop)",
-          "accessible": false,
-          "lines": ["green", "orange", "pink", "purple"]
-        },
-        {
-          "id": 30051,
-          "direction": "W",
-          "name": "State/Lake (Outer Loop)",
-          "accessible": false,
-          "lines": ["brown", "green"]
-        }
-      ],
-      "lines": ["brown", "green", "orange", "pink", "purple"],
-      "accessible": false
     },
     {
       "name": "Main",
@@ -1070,19 +1032,19 @@
           "id": 30092,
           "direction": "E",
           "name": "Racine (O'Hare-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["blue"]
         },
         {
           "id": 30093,
           "direction": "W",
           "name": "Racine (Forest Pk-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["blue"]
         }
       ],
       "lines": ["blue"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "Cicero",
@@ -2840,19 +2802,19 @@
           "id": 30243,
           "direction": "E",
           "name": "Austin (63rd-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["green"]
         },
         {
           "id": 30244,
           "direction": "W",
           "name": "Austin (Harlem-bound)",
-          "accessible": false,
+          "accessible": true,
           "lines": ["green"]
         }
       ],
       "lines": ["green"],
-      "accessible": false
+      "accessible": true
     },
     {
       "name": "43rd",
