@@ -20,6 +20,7 @@ jobs:
       - name: Update CTA station data
         env:
           CHICAGO_DATA_PORTAL_APP_TOKEN: ${{ secrets.CHICAGO_DATA_PORTAL_APP_TOKEN }}
+          STATION_DATA_SUMMARY_PATH: ${{ runner.temp }}/station-data-summary.md
         run: pnpm run update-stations
 
       - name: Create Pull Request
@@ -27,7 +28,7 @@ jobs:
         with:
           commit-message: "🤖 Update CTA station data"
           title: "🤖 Update CTA station data"
-          body: "Automated update of CTA station data from Chicago Data Portal."
+          body-path: ${{ runner.temp }}/station-data-summary.md
           branch: station-data
           assignees: banterability
           reviewers: banterability
