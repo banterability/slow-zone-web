@@ -17,8 +17,8 @@
   "dependencies": {
     "@react-router/fs-routes": "8.5.2",
     "@react-router/node": "8.5.2",
-    "@sentry/profiling-node": "11.16.0",
-    "@sentry/react-router": "11.16.0",
+    "@sentry/profiling-node": "11.17.0",
+    "@sentry/react-router": "11.17.0",
     "clsx": "2.1.1",
     "geolib": "4.0.2",
     "isbot": "5.2.3",
