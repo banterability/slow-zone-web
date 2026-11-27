@@ -27,8 +27,8 @@ importers:
         specifier: 4.0.2
         version: 4.0.2
       isbot:
-        specifier: 5.2.3
-        version: 5.2.3
+        specifier: 5.2.4
+        version: 5.2.4
       pretty-cache-header:
         specifier: 1.0.0
         version: 1.0.0
@@ -2159,10 +2159,6 @@ packages:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
 
-  ignore@7.0.14:
-    resolution: {integrity: sha512-wCBiZ77u1tuWde6G/nfOtLaCTYcFDU5yCzARzK10y+rLhzYoL7a7yEemcopcc2Mzow7gZOIjnV2ym1NYmdiJOQ==}
-    engines: {node: '>= 4'}
-
   ignore@7.0.16:
     resolution: {integrity: sha512-52N+Y4HRMOJmbLmr+DqO4iSRyyB7N52gm7PWCT6h0p978+oKbqHCB7gIJIwZvBUsjlSdWbrBFqUSmIFNZMpn0A==}
     engines: {node: '>= 4'}
@@ -2294,8 +2290,8 @@ packages:
   isarray@2.0.5:
     resolution: {integrity: sha512-xHjhDr3cNBK0BzdUJSPXZntQUx/mwMS5Rw4A7lPJ90XGAO6ISP/ePDNuo0vhqOZU+UD5JoodwCAAoZQd3FeAKw==}
 
-  isbot@5.2.3:
-    resolution: {integrity: sha512-e8gGz3VzAuImtTMnB5PqNRRWGAswObTc+X+X5a8PttKT78VSSFec98w9ZwUoy6jJdlvJkVdLiN+WMgA8TewoZg==}
+  isbot@5.2.4:
+    resolution: {integrity: sha512-qFPSy82nnxEUrHdKpIQPVpYwsGJqL/+VGWYVYP5c8XMOyRRPDVb1C5ZMwmKs3nB4Evsw/ux0WqHBkf2UUawC1A==}
     engines: {node: '>=18'}
 
   isexe@2.0.0:
@@ -3674,7 +3670,7 @@ snapshots:
       dedent: 1.7.2
       es-module-lexer: 2.3.2
       exit-hook: 5.1.0
-      isbot: 5.2.3
+      isbot: 5.2.4
       jsesc: 3.1.0
       lodash: 4.18.1
       p-map: 7.1.1
@@ -5228,8 +5224,6 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  ignore@7.0.14: {}
-
   ignore@7.0.16: {}
 
   import-meta-resolve@4.2.0: {}
@@ -5389,7 +5383,7 @@ snapshots:
   isarray@2.0.5:
     optional: true
 
-  isbot@5.2.3: {}
+  isbot@5.2.4: {}
 
   isexe@2.0.0: {}
 
